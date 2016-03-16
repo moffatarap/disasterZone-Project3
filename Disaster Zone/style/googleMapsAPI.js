@@ -1,8 +1,8 @@
-/**** GOOGLE MAPS API Disaster Zone MDDN201 P3 [2015] (300317288) ****/
+/**** GOOGLE MAPS API Disaster Zone MDDN352 P1 [2016] (300317288) ****/
 
 /*** CUSTOM SETTINGS ***/
-var map;
-var marker;
+var map; //varable for map, called in html
+var marker; //varable for markers in googleMapsAPI
 
 /** NEW MAP METHOD **/
 /** CUSTOM UI ELEMENTS  START **/

@@ -1,4 +1,4 @@
-/* custom javaScrypt MDDN201 P3 [2015] (300317288)*/
+/* custom javaScrypt MDDN352 P1 [2016] (300317288)*/
 
 $(document).ready(function () {
    
