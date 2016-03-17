@@ -6,9 +6,9 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
 /*** HEADER ***/
+/*+ TEXT SIZE +*/
 h1 {
-    font-family:'lato';
-   
+    font-family:'lato';   
 }
 
 h2 {
@@ -48,26 +48,13 @@ h5 {
     
 }
 
-/** MAP KEY ITEMS END **/
+
 
 /** PARAGRAPH **/
 p {
     font-family:'Lato';
-    color:#201c1c; /* off black*/
-    
+    color:#201c1c; /* off black*/    
 }
-
-/** LIST ELEMENT **/
-/* UNSORTED */
-ul {
-    font-family:'Lato';
-    
-}
-
-li {
-    color:#201c1c; /* off black*/ 
-}
-/* SORTED */
 
 /* A LINK */
 a:link {
@@ -77,16 +64,15 @@ a:link {
 a {
     color:#378148; /*GREEN*/
 }
+/*+ TEXT SIZE END +*/
+
+
 
 /**** FONT-SIZE-STYLE-END ****/
 
 /***** BODY *****/
 body {    
-    width:auto;
-    height:100%;
-    overflow:hidden;
-    padding:0.2%;
-    margin:auto;
+    
     /**/
     border: 2px solid blue;
 }
@@ -95,19 +81,7 @@ body {
 
 /***** HEADER *****/
 header {
-    width:100%;
-    height:12%;
-    margin:auto;
-    overflow:hidden;
-    
-     /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.2em;
-    border-top-left-radius:0.6em;
-    /*R*/
-    border-bottom-right-radius:0.2em;
-    border-top-right-radius:0.6em;
-	background-color:#183152; /*DARK BLUE */
+   
    /**/
    border: 2px solid orange;
 }
@@ -118,77 +92,34 @@ header {
 /* HTML */
 html {
 
-/* COLOR */
- background-color:#f9f9f9; /*OFF WHITE*/
+
  /* */
  border: 2px solid red;
 }
 
 /***** ARTICLE *****/
 article {
-    height:75%;
-    /* colors */
-    background-color:#f9f9f9; /*OFF WHITE*/
-
+    
     /* */
     border: 2px solid green;
 }
 
-/***  BOOTSTRAP EDIT ***/
-.container {
-    /**/
-    border: 2px solid pink;
-}
-.container-fluid {
-/* overflow:hidden;*/
-padding:0.2%;
-/**/
+/***  SKELETON EDIT ***/
+.columns {
+    
 }
 
-.row {
-    border: 2px solid black;
-}
+/*** SKELETON EDIT END ***/
 
-/** CLASS END **/
-/*** BOOTSTRAP EDIT END ***/
 /***** ARTICLE END *****/
 
 /***** FOOTER *****/
 footer {
-    width:100%;
-    height:auto;
-    margin:auto;
-
-   /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-	background-color:#183152; /*DARK BLUE */
+   
    /**/
 }
 
-footer p {
-  text-align:right;
-  margin-top:1%;
-  color:#f9f9f9;
-}
 
-/*** ID ***/
-#footerDiv {
-    width:100%;
-    height:6vw;
-    margin:inherit;
-   /**/
-}
-
-/*** ID END ***/
-/***** FOOTER END *****/
-
-
-/*** INDEX STYLE END ***/
 
 
 /* MANY CSS MUCH CODE */
