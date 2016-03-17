@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!--INDEX Disaster Zone MDDN352 P1 [2016] (300317288) -->
 <!-- HEADER -->
@@ -49,13 +49,7 @@
     <script src="./style/javaScryptCustom.js"></script>
 
     <!-- -===== JQuery Plug-in Load =====- -->
-    <!--== GOOGLE API CUSTOM SETTINGS ==-->
-
-    <!--= GOOGLE API KEY =-->
-    <script defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtKo2P7hgtRk1NUTlPjg_LDwC4EtKXgUo&amp;callback=initMap">
-    </script>
-    <script src="./style/googleMapsAPI.js"></script>
+   
 </head>
 
 <!-- HEADER FINISH -->
@@ -75,334 +69,26 @@
             <!-- CONTAIN END -->
 
             <!-- ALERT CONTAIN -->
-            <div class="headerAlert">
-                <div id="altertText" class="">
-                    <img id="imgAlert" src="./media/img/alerts/alertsText.png" alt="Alerts">
-                </div>
-                <!-- SMS ALERT -->
-                <div id="alertID" class="smsAlert">
-                    <img id="imgAlert1" src="./media/img/alerts/sms.png" alt="SMS">
-                </div>
-                <!-- EMAIL ALERT -->
-                <div id="alertID1" class="emailAlert">
-                    <img id="imgAlert2" src="./media/img/alerts/email.png" alt="EMAIL">
-                </div>
-                <!-- RADIO ALERT -->
-                <div id="alertID2" class="radioAlert">
-                    <img id="imgAlert3" src="./media/img/alerts/radio.png" alt="RADIO">
-                </div>
-
-            </div>
+            
 
             <!-- ALERT CONTAIN END -->
             <!-- ALERTS SHOW -->
             <!--+ SMS ALERT +-->
-            <div id="smsAlertShow" class="hidden">
-                <p>Sign up for disaster zone alerts get notified of disasters in your area directly to your phone.</p>
-                <!--SMS FORM TITLES-->
-                <!-- SMS FORM CONTAIN -->
-                <div class="container-fluid">
-                    <div id="inputDiv" class="inputDivRow1">
-                        <h6>Phone:</h6>
-                        <br>
-                        <h6>Country:</h6>
-                        <br>
-                        <h6>Town:</h6>
-                        <br>
-                        <h6>Post Code:</h6>
-                    </div>
-                    <!--SMS FORM TITLES END-->
-                    <!--SMS FORM -->
-                    <!-- INPUT DIV 2 -->
-                    <div id="inputDiv1" class="inputDivRow2">
-                        <form>
-                            <!--PHONE NUMBER -->
-                            <!--SET VALUE TO NUMBER [P3]-->
-                            <input type="text" placeholder="027 4689 4531" name="SMS" maxlength="11" required>
-                            <!--COUNTRY-->
-                            <input type="text" placeholder="New Zealand" name="Country" required>
-                            <!--TOWN -->
-                            <input type="text" placeholder="Kapiti" name="Town" required>
-                            <!--POST CODE--> <!--SET VALUE TO NUMBER [P3]-->
-                            <input type="text" placeholder="5026" name="Post Code" maxlength="5" required>
-                        </form>
-                        <!-- INPUT DIV 2 END -->
-                    </div>
-                    <!-- SMS FORM CONTAIN END-->
-                </div>
-                <!--TERMS OF SERVICE FORM-->
-                <form>
-                    <p>By ticking this box you agree to, our terms of service and to receive automated alerts to your phone number. Disaster Zone will only send alerts that you choose to receive in the event of a disaster.</p>
-                    <input type="radio" name="agree" value="Yes"><h6>Yes</h6>
-                    <input type="radio" name="agree" value="No" checked><h6>No</h6>
-                    <!-- SUBMIT -->
-                    <input type="submit" value="Submit">
-                </form>
-                <!--SMS FORM END -->
-
-            </div>
-
-            <!--++ EMAIL ALERT ++-->
-            <div id="emailAlertShow" class="hidden">
-                <p>Sign up for disaster zone alerts get notified of disasters in your area directly to your email.</p>
-                <!--EMAIL FORM TITLES-->
-                <!-- EMAIL FORM CONTAIN -->
-                <div class="container-fluid">
-                    <div id="inputDiv2" class="inputDivRow1">
-                        <h6>Email:</h6>
-                        <br>
-                        <h6>Country:</h6>
-                        <br>
-                        <h6>Town:</h6>
-                        <br>
-                        <h6>Post Code:</h6>
-                    </div>
-                    <!--EMAIL FORM TITLES END-->
-                    <!--EMAIL FORM -->
-                    <!-- INPUT DIV 2 -->
-                    <div id="inputDiv3" class="inputDivRow2">
-                        <form>
-                            <!--EMAIL ADDRESS -->
-                            <input type="text" placeholder="yourname@gmail.com" name="EMAIL" required>
-                            <!--COUNTRY-->
-                            <input type="text" placeholder="New Zealand" name="Country" required>
-                            <!--TOWN -->
-                            <input type="text" placeholder="Kapiti" name="Town" required>
-                            <!--POST CODE-->
-                            <input type="text" placeholder="5026" name="Post Code" maxlength="5" required>
-                        </form>
-                        <!-- INPUT DIV 2 END -->
-                    </div>
-                    <!-- EMAIL FORM CONTAIN END-->
-                </div>
-                <!--TERMS OF SERVICE FORM]-->
-                <form>
-                    <p>By ticking this box you agree to, our terms of service and to receive automated alerts to your email address above. Disaster Zone will only send alerts that you choose to receive in the event of a disaster.</p>
-                    <input type="radio" name="agree" value="Yes"><h6>Yes</h6>
-                    <input type="radio" name="agree" value="No" checked><h6>No</h6>
-                    <!-- SUBMIT -->
-                    <input type="submit" value="Submit">
-                </form>
-                <!--EMAIL FORM END -->
-            </div>
-
-            <!--+++ RADIO ALERT +++-->
-            <div id="radioAlertShow" class="hidden">
-                <p>Emergency radio frequencies [NZ ONLY] tune in to the frequency&#39;s below to, keep up to date in a disaster Radio New Zealand National.</p>
-
-                <!--RADIO FEQUENCY TITLES-->
-                <div class="container-fluid">
-                    <div id="inputDiv4" class="inputDivRow1">
-                        <h6>Auckland:</h6>
-                        <br>
-                        <h6>Christchurch:</h6>
-                        <br>
-                        <h6>Dunedin:</h6>
-                        <br>
-                        <h6>Gisborne:</h6>
-                        <br>
-                        <h6>Kapiti:</h6>
-                        <br>
-                        <h6>Napier:</h6>
-                        <br>
-                        <h6>Queenstown:</h6>
-                        <br>
-                        <h6>Taupo:</h6>
-                        <br>
-                        <h6>Wellington:</h6>
-                        <br>
-                        <h6>Whangarei:</h6>
-                    </div>
-                    <!--RADIO FORM TITLES END-->
-                    <!-- INPUT DIV 2 [RADIO FREQUENCYS]-->
-                    <div id="inputDiv5" class="inputDivRow2">
-                        <!-- Auckland -->
-                        <h6>101.4 FM, 837 AM</h6>
-                        <!-- Christchurch -->
-                        <h6>101.7 FM, 675 AM</h6>
-                        <!-- Dunedin -->
-                        <h6>101.4 FM , 810 AM</h6>
-                        <!-- Gisborne -->
-                        <h6>101.3 FM, 1314 AM</h6>
-                        <!-- Kapiti -->
-                        <h6>101.5 FM, 567 AM</h6>
-                        <!-- Napier -->
-                        <h6>101.5 FM, 630 AM</h6>
-                        <!-- Queenstown -->
-                        <h6>101.6 FM, 1134 AM</h6>
-                        <!-- Taupo -->
-                        <h6>101.6 FM</h6>
-                        <!-- Wellington -->
-                        <h6>101.3 FM, 567 AM</h6>
-                        <!-- Whangarei -->
-                        <h6>104.4 FM, 837 AM </h6>
-                        <!-- INPUT DIV 2 END -->
-                    </div>
-
-                </div>
-                <!--OTHER RADIO FREQUENCYS]-->
-                <br>
-                <p>For a complete emergency radio frequency list please visit this <a href="http://www.radionz.co.nz/assets/cms_uploads/000/000/063/Radio_NZ_Frequency_List.pdf" target="_blank">link.</a></p>
-                <!--RADIO FORM END -->
-            </div>
-
-            <!--++== ALERTS POP UP DIV END ==++-->
+           
             <!-- HEADER CONTAIN -->
         </div>
         <!-- CONTAIN END -->
         <!-- HEADER ALERTS END -->
         <!--++== ALERTS POP UP DIV ==++-->
-        <div class="moreInfoHide">
-            <!--++++ NEWS ++++-->
-            <div class="navNews" id="navBar">
-                <h1 class="h1NavHeader">News</h1>
-            </div>
-
-            <!--++ PREPARE  ++-->
-            <div class="navPrep" id="navBar1">
-                <h1 class="h1NavHeader">Prepare</h1>
-            </div>
-
-            <!--+ COMMUNICATION +-->
-            <div class="navCommunication" id="navBar2">
-                <h1 class="h1NavHeader">Communication</h1>
-            </div>
-
-            <!--+++ HELP OUT +++-->
-            <div class="navHelpOut" id="navBar3">
-                <h1 class="h1NavHeader">Help Out</h1>
-            </div>
-            <!-- MORE INFO HIDE -->
-            <!-- ALERTS SHOW END -->
-        </div>
+        
     </header>
     <!-- HEADER END -->
 
-    <!--+++++== NAV EXPAND ==++++-->
-    <!--++++ NEWS [NOW A GOOGLE API UI ELEMENT]++++-->
-    
-    <!--++ Prepare ++-->
-    <div class="hidden" id="navPExpand">
-        <!-- PREP CONTENT ROW 1 -->
-        <div class="PECR1">
-            <h2>Disaster Kit:</h2>
-            <p>
-                In the event of a disaster having a disaster kit will greatly help you manage to support yourself and family.
-                Below are some recommended items for your own personal disaster kit.
-                Your kit should have the supplies needed for up-to three days.
-            </p>
-
-            <!--SURVIAL ITEMS -->
-            <h2>Survival Items:</h2>
-
-            <ul>
-                <li>Battery powered torch, with spare battery&#39;s or self-charging.</li>
-                <li>Portable radio</li>
-                <li>First aid kit and any prescription meds</li>
-                <li>Blankets and sleeping bags</li>
-                <li>Pet supply&#39;s</li>
-                <li>Toilet paper and rubbish bags</li>
-                <li>Lighter or matches</li>
-                <li>Cooking gas</li>
-            </ul>
-
-            <!--FOOD AND WATER -->
-            <h2>Food and Water:</h2>
-
-            <ul>
-                <li>Canned food</li>
-                <li>Dried food</li>
-                <li>Water three liters per person per day</li>
-                <li>Water for washing and cooking</li>
-                <li>Portable cooker gas powered</li>
-                <li>Can opener </li>
-            </ul>
-
-            <!-- ENDING NOTE -->
-            <p>Store all items in a cool dark place, and check the supplies every 12 months.</p>
-        </div>
-        <!-- PREP CONTENT ROW 1 END -->
-    </div>
-
-    <!--+ COMMUNICATION +-->
-    <div class="hidden" id="navComExpand">
-
-        <h2>Need Help?</h2>
-        <p>
-            Emergency contact details are below, friend or family member missing? Report missing persons below.
-        </p>
-
-        <!-- EMERGENCY CONTACT LIST -->
-        <h2>Emergency Contacts:</h2>
-        <h4>NZ: 111</h4>
-        <h4>AUS: 0</h4>
-        <h4>USA & CANDA: 911</h4>
-        <h4>EUROPE & RUSSA : 112</h4>
-        <h4>UK: 999</h4>
-        <p>For country&#39;s not yet listed please visit <a href="https://chartsbin.com/view/1983" target="_blank">World Wide Emergency Phone Numbers.</a></p>
-
-        <!-- CIVIL DEFENCE [WARNING USING THIS LINK, IF YOU DONT HAVE EMAIL CLIENT SET UP RIGHT WILL CRASH THINGS] -->
-        <h2>Civil Defense [NZ only]:</h2>
-        <p>In a effected area need support? Find your local Civil Defense numbers and addresses at this <a href="https://civildefence.govt.nz/find-your-civil-defence-group" target="_blank">link.</a></p>
-
-        <!-- REPORT DISASTER [WARNING USING THIS LINK, IF YOU DONT HAVE EMAIL CLIENT SET UP RIGHT WILL CRASH THINGS] -->
-        <h2>Report A Disaster</h2>
-        <p>Event about to unfold in your area? Let us know on this email <a href="mailto:reportdisaster@disasterzone.com">reportdisaster@disasterzone.com</a>   </p>
-
-        <h2>Update A Disaster</h2>
-        <p>In a Disaster Zone? Keep the world updated send us images videos or any useful information to <a href="mailto:updates@disasterzone.com">updates@disasterzone.com</a> </p>
-
-        <!-- MISSING PERSONS REPORT -->
-        <h2>Missing Persons</h2>
-        <p>Coming soon website still under construction</p>
-        <!--+& MISSING persons not done due to its complexity and time constraints&+-->
-     </div>
-
-    <!--+++ HELP OUT +++-->
-    <div class="hidden" id="navHExpand">
-        <!-- HELP OUT HEADER -->
-        <p>
-            In an area of disaster? Want to help out with clean up and support use the dedicated contact links below.
-        </p>
-
-        <!-- Volunteer-->
-        <h2>Volunteer In Your Area</h2>
-        <p>
-            Able bodied and keen to help out? Volunteer in your area when a disaster is declared, you will be called upon to help out and coordinate the clean-up and support of your community.
-            (0800 3427 8372)
-        </p>
-
-        <!-- DONATE-->
-        <h2>Donate</h2>
-        <p>
-            Support areas of disaster though this tough time, donate to the relief fund sponsored by Disaster Zone every donation you make will go directly to where it&#39;s needed.
-            Here at Disaster Zone we take no commission but only act as a middle man, with coordinating with local
-            families and authorities to get your donations directly to where they are needed most.
-        </p>
-
-        <h4>Disaster Zone Relief Fund</h4>
-        <br>
-        <!-- DONATE BUTTON -->
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" style=" width:4vw; height:auto;">
-            <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
-
-        <!-- DONATE BUTTON END -->
-    </div>
-
-    <!--+++++== NAV EXPAND END ==++++-->
     <!-- ARTICLE STARTS -->
     <article>
         <!--+ MAIN CONTAINER +-->
-        <div class="container-fluid" id="mainContainerApi">
-                <!-- GOOGLE MAP API -->
-                <div id="googleAPI">
-                    <!-- GOOGLE MAP API IS DISPLAYED IN THIS DIV VIA JAVA [GOOGLEMAPSAPI.JS]-->
-                </div>
+        <div class="container-fluid">
+               
             </div>
              <!-- GOOGLE MAP API ENDS -->
         <!--+- MAIN CONTAINER END -+-->
