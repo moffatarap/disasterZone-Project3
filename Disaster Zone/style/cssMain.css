@@ -132,6 +132,27 @@ article {
 }
 /** NAV END **/
 
+/*+ PAGE 1 +*/
+/* ID */
+#slide1 {
+     /**/
+     border:1px dotted #b200ff;
+}
+#decorative {
+     /**/
+     border:1px dotted #b023d9;
+}
+/* CLASS */
+
+/*++ PAGE 2++*/
+/* ID */
+#slide2 {
+
+    /* */
+    border:1px dotted #0fd1a2;
+}
+/* CLASS */
+
 /***  FRAMEWORK EDIT  COOL KITTEN END***/
 
 
