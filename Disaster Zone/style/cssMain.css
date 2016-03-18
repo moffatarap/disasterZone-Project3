@@ -108,6 +108,23 @@ article {
 
 /** NAV **/
 /*=+ CLASS +=*/
+.menu {
+    /**/
+    border: 1px solid green;
+}
+
+.container {
+
+     /**/
+     border:1px solid orange;
+}
+
+.clearfix {
+
+    /*
+    border: 1px dotted #808080;*/
+}
+
 /*= ID =*/
 #nav {
     /**/
