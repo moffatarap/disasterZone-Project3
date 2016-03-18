@@ -104,12 +104,19 @@ article {
     border: 2px solid green;
 }
 
-/***  SKELETON EDIT ***/
-.columns {
-    
-}
+/***  FRAMEWORK EDIT  COOL KITTEN ***/
 
-/*** SKELETON EDIT END ***/
+/** NAV **/
+/*=+ CLASS +=*/
+/*= ID =*/
+#nav {
+    /**/
+    border:2px solid black;
+}
+/** NAV END **/
+
+/***  FRAMEWORK EDIT  COOL KITTEN END***/
+
 
 /***** ARTICLE END *****/
 
