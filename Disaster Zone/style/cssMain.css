@@ -104,6 +104,9 @@ article {
     border: 2px solid green;
 }
 
+/*===== GOOGLE MAPS API =====*/
+
+
 /***  FRAMEWORK EDIT  COOL KITTEN ***/
 
 /** NAV **/
@@ -128,7 +131,7 @@ article {
 .grid_12 {
     
     /**/
-    border: 10px solid #eae612;
+    border: 1px solid #eae612;
 }
 
 /*= ID =*/
