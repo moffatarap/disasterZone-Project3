@@ -1,4 +1,4 @@
-/* Global */
+/*===== MAIN CSS =====*/
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -23,11 +23,11 @@ a:visited {
 	text-decoration: none;
 }
 
+/*===== MAIN CSS END =====*/
 
 
 
-
-/* Navigation */
+/*===== NAV DESKTOP =====*/
 
 .menu {
 	position:fixed;
@@ -41,18 +41,21 @@ a:visited {
 	text-align: center;
 	margin: 10px 0;
 }
+
 #nav {
-	text-align: right;
+	text-align: left;
 	margin: 30px 0 0 0;
 }
 .navigation{
-	float: right;
+	
 	list-style: none;
 	margin: 0;
+    width: 100%;
 }
 .navigation li{
 	float: left;
-	padding:0 0 0 50px;
+	padding-right:5%;
+    font-size:1.5em;
 }
 .navigation li:hover{
 	cursor:pointer;
@@ -65,15 +68,15 @@ a:visited {
 	font-weight:bold;
 }
 
+/*===== NAV END =====*/
 
 
-
-/* General Slides */ 
+/*===== SLIDES =====*/ 
 
 .slide{
 	background-attachment: fixed;
 	width:100%;
-	height:auto;
+	height:1000px; /* TEMP SETTING CHANGE LATER [Auto]*/
 	position: relative;
 	padding:140px 0;
 }
@@ -182,27 +185,31 @@ a:visited {
 /* Slide 5 */
 
 #slide5{
-	background-image:url('../images/sunglasses.png');
-	background-color:#8a8683;
+	background-image:url('');
+	background-color:#ffffff;
 	color:#ffffff;
 }
 #slide5 h1 {
 	font-size: 3.8em;
 	letter-spacing: -3px;
 	line-height: 0px;
-	color:#ffffff;
+	color:#808080;
 	font-weight: 700;
 }
 #slide5 h2 {
 	font-size: 2em;
-	color: #ffffff;
+	color: #808080;
 	line-height: 0px;
 	padding-bottom:20px;
 	font-weight: 400;
 }
 
 
-/* Tablet */
+/*===== SLIDES END =====*/ 
+
+/**++++++ MEDIA QUERY ++++++**/
+
+/*===== TABLET =====*/
 @media screen and (max-width: 1024px) {
 
 #logo {
@@ -271,12 +278,20 @@ a:visited {
 	line-height: 1em;
 }
 
+#slide5 h1 {
+    line-height: 1em;
+    }
+
+#slide5 h2 {
+    line-height: 1em;
+    }
+
 }
 
 
 
 
-/* Mobile */
+/*===== MOBILE =====*/
 @media screen and (max-width: 480px) {
 
 #logo {
@@ -335,9 +350,16 @@ a:visited {
 	line-height: 1em;
 }
 
+#slide5 h1 {
+    line-height: 1em;
+    }
+
+#slide5 h2 {
+    line-height: 1em;
+    }
 
 }
 
-
+/**++++++ MEDIA QUERY END ++++++**/
 
 
