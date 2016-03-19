@@ -88,15 +88,17 @@ a:visited {
 
 #slide1{
 	
-    background-image:url("https://i.imgur.com/cEZi6Kt.jpg"); /*NEEDS FIXING*/
-    z-index:100;
-    position:relative;
+    background-image:url("http://i.imgur.com/eOHlQel.png"); /*NEEDS FIXING*/
+    background-repeat: no-repeat;
+    background-size:cover;
+
+
 }
 #slide1 h1 {
 	font-size: 3.8em;
 	letter-spacing: -3px;
 	line-height: 0px;
-	color:#8a8683;
+	color:#ffffff;
 	font-weight: 700;
     margin-top:25%;
     text-align:center;
@@ -104,16 +106,16 @@ a:visited {
 }
 #slide1 h2 {
 	font-size: 2em;
-	color: #8a8683;
+	color: #ffffff;
 	line-height: 0px;
 	padding-bottom:20px;
 	font-weight: 400;
     text-align:center;
+    margin-bottom:25%;
 }
 
 #slide1BG {
- background-image:url("https://i.imgur.com/cEZi6Kt.jpg");
- background-repeat: no-repeat;
+
 
 }
 
@@ -137,6 +139,7 @@ a:visited {
 	color: #ffffff;
 	line-height: 0px;
 	padding-bottom:20px;
+    margin-bottom: 5%;
 	font-weight: 400;
 }
 
