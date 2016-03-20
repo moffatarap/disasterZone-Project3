@@ -13,12 +13,24 @@ h1 {
 
 h2 {
     font-family:'Lato';
-    
-    
+    font-size: 1em;
+	color: #b200ff;
+	line-height: 0px;
+	padding-bottom:20px;
+    margin-bottom: 5%;	
 }
+
+    
+
  
 h3 {
     font-family:'Lato';
+    font-size: 2em;
+    color:black;
+    text-align:center;
+    
+    
+	
     
 }
 
@@ -53,7 +65,10 @@ h5 {
 /** PARAGRAPH **/
 p {
     font-family:'Lato';
-    color:#201c1c; /* off black*/    
+    color:#201c1c; /* off black*/  
+    font-size:1.2em; 
+    text-align:left;
+    padding:0.2%; 
 }
 
 /* A LINK */
@@ -133,6 +148,8 @@ article {
     /**/
     border: 1px solid #eae612;
 }
+
+
 
 /*= ID =*/
 #nav {
