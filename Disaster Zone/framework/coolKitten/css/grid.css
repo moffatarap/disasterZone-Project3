@@ -33,15 +33,23 @@
 .omega{margin-right:0;}
 
 .container{
-	width: 90%; /*width: 1000px;*/
-	max-width: 1000px;
+	width: 65%; /*width: 1920;*/
+	max-width: 1920px;
 	margin: auto;
 	
 }
 
 
 
-.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}* html .clearfix,*:first-child+html .clearfix{zoom:1}
+.clear{
+    clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0
+
+}
+.clearfix:after{
+    clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0
+
+}* html  .clearfix,*:first-child+html .clearfix{zoom:1}                                                                              
+                                                                                       
 
 
 
