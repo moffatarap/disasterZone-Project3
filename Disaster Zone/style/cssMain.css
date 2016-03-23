@@ -67,7 +67,10 @@ h5 {
     
 }
 
-
+/**= LIST STYLE =**/
+ul {
+    text-align:left;
+}
 
 /** PARAGRAPH **/
 p {
