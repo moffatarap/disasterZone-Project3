@@ -150,12 +150,12 @@ a:visited {
 }
 
 #slide2 h2 {
-	/*font-size: 3em;*/
+	/*font-size: 3em;
 	color: #b200ff;
 	padding-bottom:20px;
     margin-bottom: 5%;
 	font-weight: 400;
-    text-align:center;
+    text-align:center; */
 }
 
 
@@ -195,13 +195,12 @@ a:visited {
 }
  
 #slide4 h2 {
-	/* */font-size: 3em;
+	/* font-size: 3em;*/
 	color: #b200ff;
 	line-height: 0px;
 	padding-bottom:20px;
     margin-bottom: 5%;
-	font-weight: 400;
-    text-align:center;
+	
 }
 
 /* Slide 5 */
@@ -213,7 +212,7 @@ a:visited {
 }
 
 #slide5 h2 {
-	font-size: 3em;
+	/*font-size: 3em;*/
 	color: #b200ff;
 	padding-bottom:20px;
     margin-bottom: 5%;
