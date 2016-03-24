@@ -167,10 +167,21 @@ article {
 	
     display: table;   
 	margin: 0 auto;
-    
+    /*      T R B L*/
+    padding:0 0.5% 0 0.5%;
     /**/
     border:2px dashed white;
 }
+
+#table li {
+    margin: 0 1.00em 0 0;
+}
+
+/* REMOVES LAST LI ELEMENTS MARGIN */
+#table li:last-child {
+
+     margin: 0 0 0 0;
+    }
 
 /*= ID =*/
 #nav {

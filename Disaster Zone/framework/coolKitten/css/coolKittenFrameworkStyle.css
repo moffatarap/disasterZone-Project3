@@ -70,9 +70,12 @@ a:visited {
 .navigation li{
     
     font-size:1.5em;
-    /*list-style:none;*/
-    display:inline-block;
     
+    display:inline-block;
+    list-style:none;
+    
+    
+    /*line-height:200px;*/
 }
 
 
@@ -81,6 +84,11 @@ a:visited {
 	cursor:pointer;
 	color: #a9d3d0;
 }
+
+.navigation ul {
+    font-size:0;
+    
+    }
 
 .navigation .active{
 	cursor:pointer;
