@@ -72,9 +72,12 @@ h7 {
     
 }
 
-
+/* DISASTER TYPES DISASTER NAMES TABLE */
 h5 {
     font-family:'Lato';
+    text-align:center;
+    /* */
+    
     
 }
 
@@ -186,13 +189,13 @@ article {
     /* */
 }
 
-/* DISASTER TYPES
+/* DISASTER TYPES*/
 #iconAlign {
-    position:absolute;
+    
     /**/
     background-color:green;
 
-}  */
+}  
 
 
 /****&& DIVS END &&****/
