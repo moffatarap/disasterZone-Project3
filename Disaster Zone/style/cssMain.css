@@ -28,10 +28,6 @@ h3 {
     font-size: 2em;
     color:black;
     text-align:center;
-    
-    
-	
-    
 }
 
 /* ALERT FROM TITLE */
@@ -69,7 +65,8 @@ h5 {
 
 /**= LIST STYLE =**/
 ul {
-    text-align:left;
+    padding:0; /* to offset random +40 padding*/
+    
 }
 
 /** PARAGRAPH **/
@@ -165,6 +162,15 @@ article {
 }
 
 
+/* CENTERS NAV BAR LI CONTENT */
+#table {
+	
+    display: table;   
+	margin: 0 auto;
+    
+    /**/
+    border:2px dashed white;
+}
 
 /*= ID =*/
 #nav {
