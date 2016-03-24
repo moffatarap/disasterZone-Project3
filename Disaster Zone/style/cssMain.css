@@ -33,7 +33,7 @@ h2 {
     
 }
 
-    
+ 
 
 /* SUBHEADER EACH PAGE */
 h3 {
@@ -44,6 +44,8 @@ h3 {
     /**/
     margin:0.2% 0 0.2% 0;
 }
+
+
 
 /* ALERT FROM TITLE */
 h6 {
@@ -104,6 +106,20 @@ a {
 
 /**= LIST STYLE =**/
 
+/* SEVERITY SCALE */
+ol {
+    color:#1f1b1a;
+    font-size:1.2em; 
+    text-align:left;
+    /**/
+}
+
+ol li {
+     margin-bottom:1em;
+     
+}
+
+
 /* API LI EDIT */
 .apiLu {
       text-align:left;
@@ -117,9 +133,15 @@ a {
 
 ul {
     padding:0; /* to offset random +40 padding*/
-    
+    color:#1f1b1a;
+    list-style:none;
 }
 
+/* ALERT TYLES LIST STYLE */
+#slide4 ul li {
+    text-align:left;
+    margin-left:0.250em;
+}
 
 
 
