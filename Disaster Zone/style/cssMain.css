@@ -15,9 +15,8 @@ h2 {
     font-family:'Lato';
     font-size: 1em;
 	color: #b200ff;
-	line-height: 0px;
-	padding-bottom:20px;
-    margin-bottom: 5%;	
+    /*      T  R B L*/
+	margin: 5% 0 0 0;	
 }
 
     
@@ -63,12 +62,6 @@ h5 {
     
 }
 
-/**= LIST STYLE =**/
-ul {
-    padding:0; /* to offset random +40 padding*/
-    
-}
-
 /** PARAGRAPH **/
 p {
     font-family:'Lato';
@@ -87,6 +80,26 @@ a {
     color:#378148; /*GREEN*/
 }
 /*+ TEXT SIZE END +*/
+
+
+/**= LIST STYLE =**/
+
+/* API LI EDIT */
+.apiLu {
+      text-align:left;
+      list-style:none;
+      /**/
+      
+      font-size:1.2em;
+      color:black;
+}
+
+
+ul {
+    padding:0; /* to offset random +40 padding*/
+    
+}
+
 
 
 
@@ -130,6 +143,25 @@ article {
     /* */
     border: 2px solid green;
 }
+
+/****&& DIVS &&****/
+
+/**& CLASS &**/
+.slideHeader {
+    overflow:hidden;
+    /**/
+    border:1px solid #c918fc;
+}
+
+/* & ID & */
+
+#about {
+    background-color:#183052;
+    /* */
+}
+
+
+/****&& DIVS END &&****/
 
 /*===== GOOGLE MAPS API =====*/
 
