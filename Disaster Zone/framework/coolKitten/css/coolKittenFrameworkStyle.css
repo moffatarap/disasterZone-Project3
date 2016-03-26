@@ -286,20 +286,33 @@ ul li {
 
 
 /*===== MOBILE =====*/
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
 
 /* NAV FONT SIZE*/
-.navigation li {
-        font-size: 1em;
-        /**/
+.navigationPhone {
 
 }
 
-.navigation ul {
+.navigation li {
+        font-size: 1em;
+        /**/
+        
+        
+}
+
+.navigationPhone ul {
         font-size: 0;
         
 }
 /* HIDES NORMAL NAV */
+#menu {
+    display:none;
+
+}
+
+#menu container {
+    display:none;
+}
 
 #nav {
     display:none;
@@ -307,12 +320,30 @@ ul li {
 }
 
 /* PHONE NAV */
+.menuPhone {
+	position:fixed;
+	top:0px;
+	width:100%; 
+	height:auto;
+
+    /*      T    R  B   L*/
+    padding:0.5% 0 0.5% 0;    
+	background-color:#183052;
+
+    -webkit-box-shadow: 3px 3px 41px 2px rgba(0,0,0,0.27);
+    -moz-box-shadow: 3px 3px 41px 2px rgba(0,0,0,0.27);
+    box-shadow: 3px 3px 41px 2px rgba(0,0,0,0.27);
+	z-index:100;
+    color:#f9f9f9;
+}
+
+
 
 #navPhone {
     
 	width: 100%;
     height:auto;
-    float:left;
+    
 }
 
 /* PHONE NAV END */

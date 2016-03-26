@@ -283,12 +283,12 @@ article {
     padding:0 0.5% 0 0.5%;
     /**/
     border:2px dashed white;
+
 }
 
 #table li {
     margin: 0 1.00em 0 0;
 }
-
 
 /* REMOVES LAST LI ELEMENTS MARGIN */
 #table li:last-child {
@@ -332,6 +332,27 @@ article {
      
 }
 /* CLASS */
+
+/* MOBILE MEDIA QUERY */
+@media screen and (max-width: 640px) {
+
+ #table li {
+    margin: 0 0.02% 0 0;
+}
+
+ #table {
+	
+    display: table;   
+	margin: 0 auto;
+    width:100%;
+    /*      T R B L*/
+    padding:0 0.5% 0 0.5%;
+    /**/
+    border:2px dashed white;
+
+}
+
+}
 
 /***  FRAMEWORK EDIT  COOL KITTEN END***/
 
