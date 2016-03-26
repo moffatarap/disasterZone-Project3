@@ -8,98 +8,89 @@
 /*** HEADER ***/
 /*+ TEXT SIZE +*/
 h1 {
-    font-family:'lato';
-    font-size:5em; 
-    color:#f9f9f9; 
-    margin-bottom:0.0500em; 
+    font-family: 'lato';
+    font-size: 5em;
+    color: #f9f9f9;
+    margin-bottom: 0.0500em;
 }
 
 #slide1 h2 {
-    font-family:'Lato';
+    font-family: 'Lato';
     font-size: 2.2em;
-	color: #f9f9f9;
-
+    color: #f9f9f9;
 }
 
 h2 {
-    font-family:'Lato';
+    font-family: 'Lato';
     font-size: 3.2em;
-	color: #f9f9f9;
-   
-	text-align:center;
-    
+    color: #f9f9f9;
+    text-align: center;
     /*      T  R B L  */
-	padding: 1% 0 1% 0;
-    
+    padding: 1% 0 1% 0;
 }
 
- 
+
 
 /* SUBHEADER EACH PAGE */
 h3 {
-    font-family:'Lato';
+    font-family: 'Lato';
     font-size: 2em;
-    color:#378048;
-    text-align:left;
+    color: #378048;
+    text-align: left;
     /**/
-    margin:0.2% 0 0.2% 0;
+    margin: 0.2% 0 0.2% 0;
 }
 
 
 
 /* ALERT FROM TITLE */
 h6 {
-    font-family:'Lato';
-   
-
+    font-family: 'Lato';
 }
 
- /** ICONS PAGE#2 **/
+/** ICONS PAGE#2 **/
 h4 {
-    font-family:'Lato';
-    font-size:1.5em;
-    color:black;
+    font-family: 'Lato';
+    font-size: 1.5em;
+    color: black;
 }
 
 h5 {
-    font-family:'Lato';
-    font-size:1.3em;
-    color:black;
+    font-family: 'Lato';
+    font-size: 1.3em;
+    color: black;
 }
 
 /* FOR UI KEY HEADER */
 
 h7 {
-    font-family:'Lato';
-    
+    font-family: 'Lato';
 }
 
 /* DISASTER TYPES DISASTER NAMES TABLE */
 h5 {
-    font-family:'Lato';
-    text-align:center;
+    font-family: 'Lato';
+    text-align: center;
     /* */
-    
-    
 }
 
 /** PARAGRAPH **/
 p {
-    font-family:'Lato';
-    color:#201c1c; /* off black*/  
-    font-size:1.2em; 
-    text-align:left;
+    font-family: 'Lato';
+    color: #201c1c; /* off black*/
+    font-size: 1.2em;
+    text-align: left;
     /**/
-    margin-left:0.250em;
+    margin-left: 0.250em;
 }
 
 /* A LINK */
 a:link {
-    color:#378148; /* GREEN*/
+    color: #378148; /* GREEN*/
 }
 
 a {
-    color:#378148; /*GREEN*/
+    color: #378148; /*GREEN*/
 }
 /*+ TEXT SIZE END +*/
 
@@ -108,54 +99,49 @@ a {
 
 /* SEVERITY SCALE */
 ol {
-    color:#1f1b1a;
-    font-size:1.2em; 
-    text-align:left;
+    color: #1f1b1a;
+    font-size: 1.2em;
+    text-align: left;
     /**/
 }
 
-ol li {
-     margin-bottom:1em;
-     
-}
+    ol li {
+        margin-bottom: 1em;
+    }
 
 
 /* API LI EDIT */
 .apiLu {
-
-      font-size:1.2em;
-      color:black;
-      text-align:left;
-      list-style:none;
-      /**/
-      line-height:0.590em;     
-
+    font-size: 1.2em;
+    color: black;
+    text-align: left;
+    list-style: none;
+    /**/
+    line-height: 0.590em;
 }
 
 .techFLu {
-
-      font-size:1.2em;
-      color:black;
-      text-align:left;
-      list-style:none;
-      /**/
-      line-height:1.44em;     
-
+    font-size: 1.2em;
+    color: black;
+    text-align: left;
+    list-style: none;
+    /**/
+    line-height: 1.44em;
 }
 
 
 ul {
-    padding:0; /* to offset random +40 padding*/
-    color:#f9f9f9;
-    list-style:none;
+    padding: 0; /* to offset random +40 padding*/
+    color: #f9f9f9;
+    list-style: none;
 }
 
 /* ALERT TYLES LIST STYLE */
 #slide4 ul li {
-    text-align:left;
-    font-size:1.1em;
-    margin-left:0.250em;
-    color:#1f1b1a;
+    text-align: left;
+    font-size: 1.1em;
+    margin-left: 0.250em;
+    color: #1f1b1a;
 }
 
 
@@ -163,24 +149,21 @@ ul {
 /**** FONT-SIZE-STYLE-END ****/
 
 /***** BODY *****/
-body {    
-    
+body {
     /**/
     border: 2px solid blue;
 }
 
 .iconTypes {
-    height:90px;
-
+    height: 90px;
 }
 
 /***** BODY END *****/
 
 /***** HEADER *****/
 header {
-   
-   /**/
-   border: 2px solid orange;
+    /**/
+    border: 2px solid orange;
 }
 
 /*** HEADER CONTENT ***/
@@ -188,15 +171,12 @@ header {
 /*** HEADER FINISH ***/
 /* HTML */
 html {
-
-
- /* */
- border: 2px solid red;
+    /* */
+    border: 2px solid red;
 }
 
 /***** ARTICLE *****/
 article {
-    
     /* */
     border: 2px solid green;
 }
@@ -205,38 +185,34 @@ article {
 
 /**& CLASS &**/
 .slideHeader {
-    
-    width:100%;
-    
+    width: 100%;
     /**/
-    border:1px solid #c918fc;
+    border: 1px solid #c918fc;
 }
 
 .disasterTypesContain {
-    height:70px;
-    overflow:hidden;
+    height: 70px;
+    overflow: hidden;
     /**/
-    border:1px dashed white;
+    border: 1px dashed white;
 }
 
 /* & ID & */
 
 #about {
-    background-color:#183052;
+    background-color: #183052;
     /* */
 }
 /* MAKES CONCEPT PAGE 2 INLINE WITH PAGE 1*/
 #aboutConcept {
-    padding-top:2.2em;
+    padding-top: 2.2em;
 }
 
 /* DISASTER TYPES*/
 #iconAlign {
-    
     /**/
-    background-color:green;
-
-}  
+    background-color: green;
+}
 
 
 
@@ -256,109 +232,95 @@ article {
 }
 
 .container {
-
-     /**/
-     border:1px solid orange;
+    /**/
+    border: 1px solid orange;
 }
 
 .clearfix {
-
     /*
     border: 1px dotted #808080;*/
 }
 
 .grid_12 {
-    
     /**/
     border: 1px solid #eae612;
 }
 
 .grid_1 {
-    border:1px solid white;
+    border: 1px solid white;
 }
+
 .grid_2 {
-    border:1px solid white;
+    border: 1px solid white;
 }
 
 /*= ID =*/
 #nav {
     /**/
-    border:2px solid black;
+    border: 2px solid black;
 }
 /** NAV END **/
 
 /*+ PAGE 1 +*/
 /* ID */
 #slide1 {
-     /**/
-     border:1px dotted #b200ff;
+    /**/
+    border: 1px dotted #b200ff;
 }
+
 #decorative {
-     /**/
-     border:1px dotted #b023d9;
+    /**/
+    border: 1px dotted #b023d9;
 }
 /* CLASS */
 
 /*++ PAGE 2++*/
 /* ID */
 #slide2 {
-
     /* */
-    border:1px dotted #0fd1a2;
+    border: 1px dotted #0fd1a2;
 }
 
 #test {
-    
-    
-     /*  */
-     background-color:#ffffff;
-     
-     
+    /*  */
+    background-color: #ffffff;
 }
 /* CLASS */
 
 /* MOBILE MEDIA QUERY */
 @media screen and (max-width: 640px) {
 
- #tablePhone li {
-    margin: 0 0.02% 0 0;
-}
+    #tablePhone li {
+        margin: 0 0.02% 0 0;
+    }
 
- #tablePhone {
-	
-    display: table;   
-	margin: 0 auto;
-    width:100%;
-    /*      T R B L*/
-    padding:0 0.5% 0 0.5%;
-    /**/
-    border:2px dashed white;
-
-}
-
+    #tablePhone {
+        display: table;
+        margin: 0 auto;
+        width: 100%;
+        /*      T R B L*/
+        padding: 0 0.5% 0 0.5%;
+        /**/
+        border: 2px dashed white;
+    }
 }
 
 /***  FRAMEWORK EDIT  COOL KITTEN END***/
 /*= NAV =*/
 /* ADDING AND REMOVING CONTENT DEPENDING ON SCREEN SIZE */
 #navHome {
-
 }
 
-#navAbout{
-
+#navAbout {
 }
 
-#navDisaster{
-    
+#navDisaster {
 }
 
-#navSystems{
-
+#navSystems {
 }
 
-#navscope{
-
+#navscope {
 }
 /*= NAV CONTENT END =*/
 
@@ -366,8 +328,7 @@ article {
 
 /***** FOOTER *****/
 footer {
-   
-   /**/
+    /**/
 }
 
 
