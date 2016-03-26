@@ -60,12 +60,6 @@ a:visited {
 }
 
 
-.navigation{
-	
-    
-	
-    
-}
 
 .navigation li{
     
@@ -212,13 +206,8 @@ a:visited {
 
 .navigation li {
         font-size: 1.3em;
+        
 }
-
-#logo {
-	width: 100%;
-	text-align: center;
-}
-
 
 #decorative {
 	display:none;
@@ -299,73 +288,58 @@ ul li {
 /*===== MOBILE =====*/
 @media screen and (max-width: 480px) {
 
-#logo {
-	width: 100%;
-	text-align: center;
+/* NAV FONT SIZE*/
+.navigation li {
+        font-size: 1em;
+        /**/
+
 }
+
+.navigation ul {
+        font-size: 0;
+        
+}
+/* HIDES NORMAL NAV */
 
 #nav {
-	width:100%;
-	margin:5px 0;
+    display:none;
+
 }
 
-.navigation{
+/* PHONE NAV */
+
+#navPhone {
+    
 	width: 100%;
-	float: left;
-	list-style: none;
-
+    height:auto;
+    float:left;
 }
 
-.navigation li{
-	float: left;
-	width:25%;
-    color:#f9f9f9;
+/* PHONE NAV END */
+#decorative {
+	display:none;
 }
 
-
-.slide{
-	background-attachment: fixed;
+#content {
+	
 	width:100%;
-	position: relative;
-	padding:150px 0;
+    /*text-align:center;*/
 }
 
+#content p {
+    font-size:1.1em;
+    line-height:1.5em; /* SETS LINE GAP BETWEEN P ELEMENTS*/
+
+}
 
 #slide1 h1 {
-	line-height: 1em;
+	
 }
 #slide1 h2 {
 	line-height: 1em;
 }
-#slide2 h1 {
-	line-height: 1em;
-}
-#slide2 h2 {
-	line-height: 1em;
-}
-#slide3 h1 {
-	line-height: 1em;
-}
-#slide3 h2 {
-	line-height: 1em;
-}
-#slide4 h1 {
-	line-height: 1em;
-}
-#slide4 h2 {
-	line-height: 1em;
-}
 
-#slide5 h1 {
-    line-height: 1em;
-    }
-
-#slide5 h2 {
-    line-height: 1em;
-    }
 
 }
 
 /**++++++ MEDIA QUERY END ++++++**/
-
-
