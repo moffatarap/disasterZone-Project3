@@ -273,7 +273,9 @@ article {
     border: 1px solid #eae612;
 }
 
-
+.grid_2 {
+    border:1px solid white;
+}
 /* CENTERS NAV BAR LI CONTENT */
 #table {
 	
