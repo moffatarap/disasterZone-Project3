@@ -319,6 +319,12 @@ ul li {
 
 }
 
+#table {
+    display:none;
+}
+
+
+
 /* PHONE NAV */
 .menuPhone {
 	position:fixed;

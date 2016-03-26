@@ -336,11 +336,11 @@ article {
 /* MOBILE MEDIA QUERY */
 @media screen and (max-width: 640px) {
 
- #table li {
+ #tablePhone li {
     margin: 0 0.02% 0 0;
 }
 
- #table {
+ #tablePhone {
 	
     display: table;   
 	margin: 0 auto;
