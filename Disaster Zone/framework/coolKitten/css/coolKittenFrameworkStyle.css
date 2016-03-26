@@ -230,6 +230,13 @@ a:visited {
     /*text-align:center;*/
 }
 
+#content p {
+    font-size:1.1em;
+    line-height:1.4em; /* SETS LINE GAP BETWEEN P ELEMENTS*/
+
+}
+
+/* SLIDE 1 */
 #slide1 h1 {
     font-size:3.3em;
 	
@@ -239,6 +246,27 @@ a:visited {
     font-size:1.5em;
 	
 }
+
+/* SLIDE 2 */
+#content h2 {
+    font-size:2.5em;
+	
+}
+
+#content h3 {
+    font-size:1.6em;
+    padding-top:2%;
+	
+}
+
+/* SLIDE 3 */
+
+
+/* SLIDE 4 */
+
+
+/* SLIDE 5 */
+
 
 
 
