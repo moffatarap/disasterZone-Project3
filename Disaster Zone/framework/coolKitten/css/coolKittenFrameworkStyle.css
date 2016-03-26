@@ -200,87 +200,120 @@ a:visited {
 /*===== SLIDES END =====*/ 
 
 /**++++++ MEDIA QUERY ++++++**/
+/*====== DESKTOP ======*/
+@media screen and (min-width: 1366px) {
+
+    /* HIDES SECOND ELEMENT LI UNLESS SCREEN SIZE IS LESS THAN 1366PX*/
+#navHome li:nth-child(2){
+    
+
+}
+
+#navAbout{
+
+}
+
+#navDisaster li:nth-child(2){
+    display:none;
+    
+}
+
+#navSystems li:nth-child(2){
+    display:none;
+}
+
+#navscope li:nth-child(2){
+    display:none;
+}
+
+}
 
 /*===== TABLET =====*/
 @media screen and (max-width: 1024px) {
 
-.navigation li {
+    .navigation li {
         font-size: 1.3em;
-        
-}
-
-#decorative {
-	display:none;
-}
-
-#content {
-	
-	width:100%;
-    /*text-align:center;*/
-}
-
-#content p {
-    font-size:1.1em;
-    line-height:1.5em; /* SETS LINE GAP BETWEEN P ELEMENTS*/
-
-}
-
-/* SLIDE 1 */
-#slide1 h1 {
-    font-size:3.3em;
-	
-}
-
-#slide1 h2 {
-    font-size:1.5em;
-	
-}
-
-/* SLIDE 2 */
-#content h2 {
-    font-size:2.5em;
-	
-}
-
-#content h3 {
-    font-size:1.6em;
-    padding-top:2%;
-	
-}
-
-ol li {
-    font-size:0.9em;
-}
-
-ul li {
-    font-size:0.9em;
     }
 
-/* SLIDE 3 */
+    #decorative {
+        display: none;
+    }
 
-#slide3 h2 {
-    font-size:2.5em;
+    #content {
+        width: 100%;
+        /*text-align:center;*/
+    }
+
+        #content p {
+            font-size: 1.1em;
+            line-height: 1.5em; /* SETS LINE GAP BETWEEN P ELEMENTS*/
+        }
+
+    /* SLIDE 1 */
+    #slide1 h1 {
+        font-size: 3.3em;
+    }
+
+    #slide1 h2 {
+        font-size: 1.5em;
+    }
+
+    /* SLIDE 2 */
+    #content h2 {
+        font-size: 2.5em;
+    }
+
+    #content h3 {
+        font-size: 1.6em;
+        padding-top: 2%;
+    }
+
+    ol li {
+        font-size: 0.9em;
+    }
+
+    ul li {
+        font-size: 0.9em;
+    }
+
+    /* SLIDE 3 */
+
+    #slide3 h2 {
+        font-size: 2.5em;
+    }
+
+
+
+    #slide3 h5 {
+        font-size: 1.3em;
+    }
+
+    /* SLIDE 4 */
+    #slide4 h2 {
+        font-size: 2.5em;
+    }
+
+
+
+    /* SLIDE 5 */
+    #slide5 h2 {
+        font-size: 2.5em;
+    }
+
+/* HIDE NAV FIRST ELEMENT */
+#navDisaster li:nth-child(1){
+    display:none;
+    
 }
 
-
-
-#slide3 h5 {
-    font-size:1.3em;
+#navSystems li:nth-child(1){
+    display:none;
 }
 
-/* SLIDE 4 */
-#slide4 h2 {
-     font-size:2.5em;
+#navscope li:nth-child(1){
+    display:none;
 }
-
-
-
-/* SLIDE 5 */
-#slide5 h2 {
-    font-size:2.5em;
 }
-
-
 
 
 
