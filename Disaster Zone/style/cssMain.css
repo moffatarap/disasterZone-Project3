@@ -122,25 +122,40 @@ ol li {
 
 /* API LI EDIT */
 .apiLu {
+
+      font-size:1.2em;
+      color:black;
       text-align:left;
       list-style:none;
       /**/
-      
+      line-height:0.590em;     
+
+}
+
+.techFLu {
+
       font-size:1.2em;
       color:black;
+      text-align:left;
+      list-style:none;
+      /**/
+      line-height:1.44em;     
+
 }
 
 
 ul {
     padding:0; /* to offset random +40 padding*/
-    color:#f9f9f9;;
+    color:#f9f9f9;
     list-style:none;
 }
 
 /* ALERT TYLES LIST STYLE */
 #slide4 ul li {
     text-align:left;
+    font-size:1.1em;
     margin-left:0.250em;
+    color:#1f1b1a;
 }
 
 
