@@ -105,6 +105,15 @@ a:visited {
         display: none;
     }
 
+/* HAMBURGER ICON */
+#navIcon {
+    height:2em;
+    width:auto;
+    
+}
+
+/***+++ NAV TABLET OR PHONE END +++****/
+
 
 /*===== SLIDES =====*/
 
@@ -207,7 +216,9 @@ a:visited {
 @media screen and (min-width: 1366px) {
 
     /* HIDES SECOND ELEMENT LI UNLESS SCREEN SIZE IS LESS THAN 1366PX*/
-
+    #navIcon {
+        display:none;
+    }
 }
 
 /*===== TABLET =====*/
@@ -329,22 +340,7 @@ a:visited {
     .navigationPhone ul {
         font-size: 0;
     }
-    /* HIDES NORMAL NAV */
-    #menu {
-        display: none;
-    }
-
-        #menu container {
-            display: none;
-        }
-
-    #nav {
-        display: none;
-    }
-
-
-
-
+   
     /* PHONE NAV */
 
     /* PHONE NAV END */

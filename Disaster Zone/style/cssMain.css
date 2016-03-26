@@ -259,6 +259,8 @@ article {
     /**/
     border: 2px solid black;
 }
+
+/* HAMBURGER ICON */
 /** NAV END **/
 
 /*+ PAGE 1 +*/
@@ -287,23 +289,7 @@ article {
 }
 /* CLASS */
 
-/* MOBILE MEDIA QUERY */
-@media screen and (max-width: 640px) {
 
-    #tablePhone li {
-        margin: 0 0.02% 0 0;
-    }
-
-    #tablePhone {
-        display: table;
-        margin: 0 auto;
-        width: 100%;
-        /*      T R B L*/
-        padding: 0 0.5% 0 0.5%;
-        /**/
-        border: 2px dashed white;
-    }
-}
 
 /***  FRAMEWORK EDIT  COOL KITTEN END***/
 /*= NAV =*/
