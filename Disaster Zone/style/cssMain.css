@@ -210,6 +210,10 @@ article {
     background-color:#183052;
     /* */
 }
+/* MAKES CONCEPT PAGE 2 INLINE WITH PAGE 1*/
+#aboutConcept {
+    padding-top:2.2em;
+}
 
 /* DISASTER TYPES*/
 #iconAlign {
@@ -218,6 +222,8 @@ article {
     background-color:green;
 
 }  
+
+
 
 
 /****&& DIVS END &&****/
