@@ -273,30 +273,12 @@ article {
     border: 1px solid #eae612;
 }
 
+.grid_1 {
+    border:1px solid white;
+}
 .grid_2 {
     border:1px solid white;
 }
-/* CENTERS NAV BAR LI CONTENT */
-#table {
-	
-    display: table;   
-	margin: 0 auto;
-    /*      T R B L*/
-    padding:0 0.5% 0 0.5%;
-    /**/
-    border:2px dashed white;
-
-}
-
-#table li {
-    margin: 0 1.00em 0 0;
-}
-
-/* REMOVES LAST LI ELEMENTS MARGIN */
-#table li:last-child {
-
-     margin: 0 0 0 0;
-    }
 
 /*= ID =*/
 #nav {
