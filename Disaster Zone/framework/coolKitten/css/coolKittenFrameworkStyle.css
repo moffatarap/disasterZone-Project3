@@ -210,6 +210,10 @@ a:visited {
 /*===== TABLET =====*/
 @media screen and (max-width: 1024px) {
 
+.navigation li {
+        font-size: 1.3em;
+}
+
 #logo {
 	width: 100%;
 	text-align: center;
