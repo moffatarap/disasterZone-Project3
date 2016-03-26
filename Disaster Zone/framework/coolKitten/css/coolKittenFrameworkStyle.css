@@ -84,7 +84,26 @@ a:visited {
     text-decoration: underline;
 }
 
-/*===== NAV END =====*/
+/*===== NAV DESKTOP END =====*/
+
+/***+++ NAV TABLET OR PHONE +++****/
+    #navHome li:nth-child(2) {
+    }
+
+    #navAbout {
+    }
+
+    #navDisaster li:nth-child(2) {
+        display: none;
+    }
+
+    #navSystems li:nth-child(2) {
+        display: none;
+    }
+
+    #navscope li:nth-child(2) {
+        display: none;
+    }
 
 
 /*===== SLIDES =====*/
@@ -188,27 +207,11 @@ a:visited {
 @media screen and (min-width: 1366px) {
 
     /* HIDES SECOND ELEMENT LI UNLESS SCREEN SIZE IS LESS THAN 1366PX*/
-    #navHome li:nth-child(2) {
-    }
 
-    #navAbout {
-    }
-
-    #navDisaster li:nth-child(2) {
-        display: none;
-    }
-
-    #navSystems li:nth-child(2) {
-        display: none;
-    }
-
-    #navscope li:nth-child(2) {
-        display: none;
-    }
 }
 
 /*===== TABLET =====*/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1344px) {
 
     .navigation li {
         font-size: 1.3em;
@@ -281,15 +284,30 @@ a:visited {
 
     /* HIDE NAV FIRST ELEMENT */
     #navDisaster li:nth-child(1) {
-        display: none;
+        display:none;
+        
     }
 
     #navSystems li:nth-child(1) {
-        display: none;
+        display:none;
     }
 
     #navscope li:nth-child(1) {
-        display: none;
+        display:none;
+    }
+
+    /* SHOW NAV SECOND ELEMENT */
+        #navDisaster li:nth-child(2) {
+        display:initial;
+        
+    }
+
+    #navSystems li:nth-child(2) {
+        display:initial;
+    }
+
+    #navscope li:nth-child(2) {
+        display:initial;
     }
 }
 
