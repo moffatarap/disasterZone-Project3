@@ -155,7 +155,9 @@ body {
 }
 
 .iconTypes {
-    height: 90px;
+    height: 6em;
+    
+
 }
 
 /***** BODY END *****/
@@ -202,6 +204,16 @@ article {
 #about {
     background-color: #183052;
     /* */
+}
+
+#reportedDisasters {
+    background-color: #183052;
+    /**/
+}
+
+#severityScale {
+    background-color: #183052;
+    /**/
 }
 /* MAKES CONCEPT PAGE 2 INLINE WITH PAGE 1*/
 #aboutConcept {
@@ -301,6 +313,19 @@ article {
 
 /*= NAV CONTENT END =*/
 
+/* PAGE 3 TABLE */
+table {
+    width:100%;
+    height:auto;
+    display:table;
+    /**/
+    border: 2px solid white;
+}
+
+td {
+    /**/
+    border:2px solid white;
+}
 /***** ARTICLE END *****/
 
 /***** FOOTER *****/

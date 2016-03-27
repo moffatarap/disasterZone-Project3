@@ -180,7 +180,9 @@
             <!-- PAGE 3 CONTAINER -->
             <div class="container clearfix">
                 <!-- CONTENT -->
-                <h2>Reported Disasters</h2>
+                <div id="reportedDisasters" class="slideHeader">
+                    <h2>Reported Disasters</h2>
+                </div>
                 <div id="content" class="grid_12">
                     <!-- 1# DISASTER TYPES -->
                     <div class="grid_12">
@@ -190,77 +192,59 @@
                     <!-- 1# DISASTER TYPES END [FOR GIGGLES http://i.imgur.com/hFb3Aw6.gifv] -->
                     <!-- 1.2# ICONS AND DISASTER TYPES [REMOVE TEST + ]-->
                     <div id="#" class="grid_12">
-                        <!-- 1.3# ROW 1 -->
-                        <div id="test" class="grid_2">
-                            <h4>ICON</h4>
-                        </div>
-                        <div id="test" class="grid_5 omega">
-                            <h4>EVENT</h4>
-                        </div>
-                        <div id="test" class="grid_5 omega">
-                            <h4>SCALE SYSTEM</h4>
-                        </div>
-                        <!-- 1.3# ROW 1 END -->
-                        <!-- 1.4# ROW 2 EARTHQUAKE -->
-                        <div id="test" class="grid_2">
-                            <img class="iconTypes" src="./media/img/mapKeys/key/earthquake.png">
-                        </div>
-                        <div id="test" class="grid_5 omega">
-                            <h5>Earthquake</h5>
-                        </div>
-                        <div id="test" class="grid_5 omega">
-                            <h5>Richter-scale</h5>
-                        </div>
-                        <!-- 1.4# ROW 2 END -->
-                        <!-- 1.4# ROW 3 -->
-                        <div id="test" class="grid_2">
-                            <img class="iconTypes" src="./media/img/mapKeys/key/flood.png">
-                        </div>
-                        <div id="test" class="grid_5">
-                            <h5>Flood</h5>
-                        </div>
-                        <div id="test" class="grid_5 omega">
-                            <h5>Meters of water</h5>
-                        </div>
-                        <!-- 1.4# ROW 3 END -->
-                        <!-- 1.5# ROW 4 -->
-                        <div id="test" class="grid_2">
-                            <img class="iconTypes" src="./media/img/mapKeys/key/hurricane.png">
-                        </div>
-                        <div id="test" class="grid_5">
-                            <h5>Hurricane</h5>
-                        </div>
-                        <div id="test" class="grid_5 omega">
-                            <h5>Saffir- Simpson Scale</h5>
-                        </div>
-                        <!-- 1.5# ROW 4 END -->
-                        <!-- 1.6# ROW 5 -->
-                        <div id="test" class="grid_2">
-                            <img class="iconTypes" src="./media/img/mapKeys/key/tornado.png">
-                        </div>
-                        <div id="test" class="grid_5">
-                            <h5>Tornado</h5>
-                        </div>
-                        <div id="test" class="grid_5 omega">
-                            <h5>Enhanced Fujita Scale</h5>
-                        </div>
-                        <!-- 1.5# ROW 5 END -->
-                        <!-- 1.7# ROW 6 -->
-                        <div id="test" class="grid_2">
-                            <img class="iconTypes" src="./media/img/mapKeys/key/fire.png">
-                        </div>
-                        <div id="test" class="grid_5">
-                            <h5>Fire</h5>
-                        </div>
-                        <div id="test" class="grid_5 omega">
-                            <h5>Fire Danger Rating</h5>
-                        </div>
-                        <!-- 1.7# ROW 6 END -->
+                        <!-- DISASTER TYPES TABLE START -->
+                        <table>
+                            <!-- ROW 1 -->
+                            <tr>
+                                <td><h4>ICON</h4></td> <td><h4>EVENT</h4></td> <td><h4>SCALE SYSTEM</h4></td>
+                            </tr>
+                            <!-- ROW 2 EARTH QUAKE -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/earthquake.png"></td>
+                                <td><h5>Earthquake</h5></td>
+                                <td><h5>Richter-scale</h5></td>
+
+                            </tr>
+
+                            <!-- ROW 3 FLOOD -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/flood.png"></td>
+                                <td><h5>Flood</h5></td>
+                                <td><h5>Meters of water</h5></td>
+                            </tr>
+
+                            <!-- ROW 4 HURRICANE -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/hurricane.png"></td>
+                                <td><h5>Hurricane</h5></td>
+                                <td><h5>Saffir-Simpson Scale</h5></td>
+                            </tr>
+
+                            <!-- ROW 5 TORNADO -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/tornado.png"></td>
+                                <td><h5>Tornado</h5></td>
+                                <td><h5>Enhanced Fujita Scale</h5></td>
+                            </tr>
+
+                            <!-- ROW 6 FIRE -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/fire.png"></td>
+                                <td><h5>Fire</h5></td>
+                                <td><h5>Fire Danger Rating</h5></td>
+                            </tr>
+
+
+
+                        </table>
+                        <!-- DISASTER TYPES TABLE END -->
                     </div>
                     <!-- 1.2# ICONS AND DISASTER TYPES END-->
                     <!-- 2# SEVERITY SCALE -->
                     <div class="grid_12">
-                        <h2>Disaster Zone Severity Scale</h2>
+                        <div id="severityScale" class="slideHeader">
+                            <h2>Disaster Zone Severity Scale</h2>
+                        </div>
                     </div>
                     <!-- 2.2# SEVERITY PT1 -->
                     <div class="grid_6">
