@@ -27,13 +27,13 @@ a:visited {
     text-decoration: none;
 }
 
-.hamburgerContain {
+#hamburgerContain {
     height:auto;
 
 }
 
 /* HIDE ELEMENTS */
-#hidden {
+.hidden {
     display:none;
 }
 /*===== MAIN CSS END =====*/
@@ -225,7 +225,13 @@ a:visited {
 /**++++++ MEDIA QUERY ++++++**/
 /*====== DESKTOP ======*/
 @media screen and (min-width: 1366px) {
+    .hidden {
+    display:initial;
+}
 
+    #navIcon {
+        display: none;
+    }
 
 }
 
@@ -329,8 +335,13 @@ a:visited {
         display:initial;
     }
 
-        #navIcon {
-        display:none;
+    #navIcon {
+        display: none;
+    }
+    .hidden {
+        display: none;
+    }
+
 }
 
 
@@ -378,11 +389,12 @@ a:visited {
     /* NAV BAR ICON */
     #navIcon {
         display: initial;
+        border:1px solid white;
     }
 
     /* HIDDEN ID */
-.hamburgerContain {
-    display:initial;
+#hamburgerContain {
+    display:none;
 }
 }
 
