@@ -135,7 +135,7 @@ a:visited {
     height: auto; /* TEMP SETTING CHANGE LATER [Auto]*/
     position: relative;
     /* T    L B R */
-    padding: 140px 0 240px 0;
+    padding: 10% 0 15% 0;
 }
 
 
@@ -367,16 +367,9 @@ a:visited {
     /* PHONE NAV */
 
     /* PHONE NAV END */
-    #decorative {
-        display: none;
-    }
 
-    #content {
-        width: 100%;
-        /*text-align:center;*/
-    }
 
-        #content p {
+ content p {
             font-size: 1.1em;
             line-height: 1.5em; /* SETS LINE GAP BETWEEN P ELEMENTS*/
         }
