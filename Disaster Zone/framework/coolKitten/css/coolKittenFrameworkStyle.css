@@ -36,6 +36,12 @@ a:visited {
 .hidden {
     display:none;
 }
+
+/* DISASTER ICONS */
+.iconTypes {
+    height: 6em;
+
+}
 /*===== MAIN CSS END =====*/
 
 
@@ -388,6 +394,10 @@ a:visited {
     #navIcon {
         display: initial;
         border:1px solid white;
+    }
+    /* DISASTER ICONS */
+    .iconTypes {
+        height:4em;
     }
 
     /* HIDDEN ID */
