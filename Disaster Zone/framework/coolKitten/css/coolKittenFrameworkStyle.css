@@ -27,6 +27,15 @@ a:visited {
     text-decoration: none;
 }
 
+.hamburgerContain {
+    height:auto;
+
+}
+
+/* HIDE ELEMENTS */
+#hidden {
+    display:none;
+}
 /*===== MAIN CSS END =====*/
 
 
@@ -109,8 +118,10 @@ a:visited {
 #navIcon {
     height:2em;
     width:auto;
+    display:none;
     
 }
+
 
 /***+++ NAV TABLET OR PHONE END +++****/
 
@@ -215,10 +226,7 @@ a:visited {
 /*====== DESKTOP ======*/
 @media screen and (min-width: 1366px) {
 
-    /* HIDES SECOND ELEMENT LI UNLESS SCREEN SIZE IS LESS THAN 1366PX*/
-    #navIcon {
-        display:none;
-    }
+
 }
 
 /*===== TABLET =====*/
@@ -320,6 +328,9 @@ a:visited {
     #navscope li:nth-child(2) {
         display:initial;
     }
+
+        #navIcon {
+        display:none;
 }
 
 
@@ -364,6 +375,15 @@ a:visited {
     #slide1 h2 {
         line-height: 1em;
     }
+    /* NAV BAR ICON */
+    #navIcon {
+        display: initial;
+    }
+
+    /* HIDDEN ID */
+.hamburgerContain {
+    display:initial;
+}
 }
 
 /**++++++ MEDIA QUERY END ++++++**/
