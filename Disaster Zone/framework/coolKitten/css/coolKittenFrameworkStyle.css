@@ -362,17 +362,13 @@ a:visited {
 @media screen and (max-width: 640px) {
 
     /* NAV FONT SIZE*/
-    .navigationPhone {
-    }
+
 
     .navigation li {
         font-size: 1em;
         /**/
     }
 
-    .navigationPhone ul {
-        font-size: 0;
-    }
    
     /* PHONE NAV */
 
@@ -380,16 +376,22 @@ a:visited {
 
 
  content p {
-            font-size: 1.1em;
+            font-size: 0.9em;
             line-height: 1.5em; /* SETS LINE GAP BETWEEN P ELEMENTS*/
         }
 
-    #slide1 h1 {
+  #slide1 h1 {
+        font-size: 2.5em;
     }
 
-    #slide1 h2 {
-        line-height: 1em;
-    }
+   #slide1 h2 {
+    font-family: 'Lato';
+    font-size: 1.5em;
+    color: #f9f9f9;
+}
+
+
+
     /* NAV BAR ICON */
     #navIcon {
         display: initial;
