@@ -231,11 +231,14 @@ article {
 
 #footerDiv {
         background-color: #183052;
+        height:5em;
+        
     /**/
 }
 
 #footerDiv p {
     color:#f9f9f9;
+    padding-left:1%;
     /* */
 }
 /*== ID SLIDES END ==*/
