@@ -137,7 +137,7 @@ ul {
     text-align: left;
     font-size: 1.1em;
     margin-left: 0.250em;
-    color: #1f1b1a;
+    color: #f9f9f9;
 }
 
 
@@ -193,6 +193,8 @@ article {
 
 /* & ID & */
 
+/*== ID SLIDES ==*/
+
 #about {
     background-color: #183052;
     /* */
@@ -223,6 +225,27 @@ article {
     background-color: #183052;
     /**/
 }
+
+/*== ID SLIDES END ==*/
+
+/*== ID  ALERT TYPES ==*/
+#smsBG {
+    background-color: #183052;
+    /**/
+}
+
+#emailBG {
+    background-color: #183052;
+    /**/
+}
+
+#pushBG {
+    background-color: #183052;
+    /**/
+}
+/*== ID  ALERT TYPES END ==*/
+
+
 /* MAKES CONCEPT PAGE 2 INLINE WITH PAGE 1*/
 #aboutConcept {
     padding-top: 2.2em;
