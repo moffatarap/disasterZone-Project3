@@ -147,10 +147,7 @@ ul {
 body {
     /**/
     border: 2px solid blue;
-    background-color:white;
 }
-
-
 
 
 
@@ -339,11 +336,11 @@ article {
 }
 
 .fullscreenVideo {
-    position: relative;
+     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    
+    height: 100%;
 }
 
 @media (min-aspect-ratio: 16/9) {
@@ -356,7 +353,7 @@ article {
 @media (max-aspect-ratio: 16/9) {
   .fullscreenVideo {
     width: auto;
-    height: 99%;
+    height: 100%;
   }
 }
 #decorative {
@@ -426,12 +423,7 @@ tr:first-child {
 
 /***** FOOTER *****/
 footer {
-    background-color:white;
-    height:auto;
-    z-index:1;
-
     /**/
-
 }
 
 
