@@ -241,6 +241,16 @@ article {
     border:1px solid green;
 } 
 
+#mapAddress {
+    color:black;
+    /**/
+    border:2px solid #edff05;
+}
+
+#errorCantFind{
+    /**/
+    border:2px solid #104cdc;
+}
 
 /* GEO LOCATION GOOGLE API END */
 

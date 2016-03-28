@@ -1,4 +1,5 @@
-/**** GOOGLE MAPS API Disaster Zone MDDN352 P1 [201] (300317288) ****/
+/**** GOOGLE MAPS API Disaster Zone MDDN352 P1 [2016] (300317288) ****/
+/* CODE ADAPTED FROM http://www.sitepoint.com/working-with-geolocation-and-google-maps-api/ */
 
 function writeAddressName(latLng) {
     var geocoder = new google.maps.Geocoder();
@@ -7,29 +8,34 @@ function writeAddressName(latLng) {
     },
     function (results, status) {
         if (status == google.maps.GeocoderStatus.OK)
-            document.getElementById("address").innerHTML = results[0].formatted_address;
+            document.getElementById("mapAddress").innerHTML = results[0].formatted_address;
         else
             document.getElementById("error").innerHTML += "Unable to retrieve your address" + "<br />";
     });
 }
-
+/* SUCESSFUL LOCATION OF USER */
 function geolocationSuccess(position) {
     var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
     // Write the formatted address
     writeAddressName(userLatLng);
 
+    /* GOOGLE MAPS STYLE and options */
     var myOptions = {
         zoom: 16,
         center: userLatLng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+
     // Draw the map
     var mapObject = new google.maps.Map(document.getElementById("googleAPI"), myOptions);
+
     // Place the marker
     new google.maps.Marker({
         map: mapObject,
         position: userLatLng
     });
+
     // Draw a circle around the user position to have an idea of the current localization accuracy
     var circle = new google.maps.Circle({
         center: userLatLng,
@@ -40,18 +46,20 @@ function geolocationSuccess(position) {
         strokeColor: '#0000FF',
         strokeOpacity: 1.0
     });
+
     mapObject.fitBounds(circle.getBounds());
 }
 
 function geolocationError(positionError) {
     document.getElementById("error").innerHTML += "Error: " + positionError.message + "<br />";
 }
-
+/* LOCATE USER */
 function geolocateUser() {
+
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         var positionOptions = {
-            enableHighAccuracy: true,
+            enableHighAccuracy: true, //accuracy 
             timeout: 10 * 2000 // 10 seconds
         };
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
