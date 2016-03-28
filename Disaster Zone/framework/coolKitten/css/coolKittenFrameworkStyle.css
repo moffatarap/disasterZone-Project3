@@ -157,20 +157,20 @@ td {
     height: auto;
 }
 #underlineH1 {
-    width:45%;
+    width:70%;
     margin:auto;
-    /**/
-    border: 1px solid #378048;
-    box-shadow:0.188em 0.188em 0.188em rgba(0, 0, 0, 0.77);
+    overflow:visible;    
+    border-bottom: 0.188em double   #378048;
+    
+    /*
+    box-shadow:0.188em 0.188em 0.188em 0.188em rgba(0, 0, 0, 0.77); */
 }
     #slide1 h1 {
         margin-top: 15%;
-        text-align: center;        
+        text-align: center;
+        position:relative;        
         
         /* FOR CHROME */
-        -webkit-text-decoration-color: #378048;
-
-
         text-shadow:5px 5px 5px rgba(0, 0, 0, 0.77);
 
 
@@ -242,7 +242,7 @@ td {
 
 /**++++++ MEDIA QUERY ++++++**/
 /*====== DESKTOP ======*/
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1345px) {
 .hidden {
     display:initial;
 }
@@ -496,6 +496,7 @@ td {
     margin-top:0;
 
 }
+
 }
 
 /**++++++ MEDIA QUERY END ++++++**/
