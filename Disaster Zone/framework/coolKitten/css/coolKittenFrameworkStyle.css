@@ -1,15 +1,11 @@
 /*===== MAIN CSS =====*/
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    
     font-weight: 400;
     font-size: 1em;
-    color: #8a8683;
-    background-color: #ffffff;
-}
-
-img {
-    max-width: 100%;
+    color: #f9f9f9;
+    
 }
 
 a:link {
@@ -22,10 +18,7 @@ a:hover {
     text-decoration: none;
 }
 
-a:visited {
-    color: #f68f67;
-    text-decoration: none;
-}
+
 
 #hamburgerContain {
     height:auto;
@@ -69,12 +62,6 @@ td {
     color: #f9f9f9;
 }
 
-
-#logo {
-    text-align: center;
-    margin: 0.625em 0;
-}
-
 #nav {
     width: 100%;
     height: auto;
@@ -84,7 +71,10 @@ td {
 
 
 .navigation li {
+    font-family: 'Lato';
+    padding-left:5%;
     font-size: 1.5em;
+
     display: inline-block;
     list-style: none;
     margin:auto;
@@ -93,7 +83,7 @@ td {
 
 
 
-    .navigation li:hover {
+.navigation li:hover {
         cursor: pointer;
         color: #378048;
     }
@@ -105,7 +95,7 @@ td {
 .navigation .active {
     cursor: pointer;
     color: #c5d7ed;
-    text-decoration: underline;
+    
 }
 
 /*===== NAV DESKTOP END =====*/
@@ -192,7 +182,7 @@ td {
 /* Slide 3 */
 
 #slide3 {
-    background-color: #aac8e2;
+    background-color: #c5d7ed;
     height: auto;
 }
 
@@ -202,39 +192,29 @@ td {
         text-align: center;
     }
 
-#test {
-    background-color: #bde2df;
-    color: #ffffff;
-    text-align: center;
-    font-weight: 400;
-}
-
-
-
-
 /* Slide 4 */
 
 #slide4 {
-    background-color: #eaebff;
-    color: #ffffff;
-    height: auto;
-}
-
-    #slide4 h2 {
-    }
-
-/* Slide 5 */
-
-#slide5 {
     background-color: #aac8e2;
     color: #ffffff;
     height: auto;
 }
 
-    #slide5 h2 {
+#slide4 h2 {
+    }
+
+/* Slide 5 */
+
+#slide5 {
+    background-color: #eaebff;
+    color: #ffffff;
+    height: auto;
+}
+
+#slide5 h2 {
         /*font-size: 3em;*/
         text-align: center;
-    }
+}
 
 
 /*===== SLIDES END =====*/
@@ -242,13 +222,13 @@ td {
 /**++++++ MEDIA QUERY ++++++**/
 /*====== DESKTOP ======*/
 @media screen and (min-width: 1366px) {
-    .hidden {
+.hidden {
     display:initial;
 }
 
-    #navIcon {
+#navIcon {
         display: none;
-    }
+}
 
 }
 
@@ -259,16 +239,12 @@ td {
         font-size: 1.3em;
     }
 
-    #decorative {
-        display: none;
-    }
-
-    #content {
+   #content {
         width: 100%;
         /*text-align:center;*/
     }
 
-        #content p {
+   #content p {
             font-size: 1.1em;
             line-height: 1.5em; /* SETS LINE GAP BETWEEN P ELEMENTS*/
         }
@@ -477,9 +453,6 @@ td {
     background-repeat: no-repeat;
     background-position:center center;
     background-size: cover;
-    
-    
-
 }
 
 .fullscreenVideo {
