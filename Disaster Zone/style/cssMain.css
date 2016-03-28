@@ -47,14 +47,18 @@ h6 {
 /** ICONS PAGE#2 **/
 h4 {
     font-family: 'Lato';
+    font-weight:bold;
     font-size: 1.5em;
-    color: black;
+    color: #f9f9f9;
+    text-align:center;
 }
 
+/* DISASTER TYPES DISASTER NAMES TABLE */
 h5 {
     font-family: 'Lato';
     font-size: 1.3em;
-    color: black;
+    color: #1f1b1a;
+    text-align: center;
 }
 
 /* FOR UI KEY HEADER */
@@ -63,12 +67,7 @@ h7 {
     font-family: 'Lato';
 }
 
-/* DISASTER TYPES DISASTER NAMES TABLE */
-h5 {
-    font-family: 'Lato';
-    text-align: center;
-    /* */
-}
+
 
 /** PARAGRAPH **/
 p {
@@ -160,7 +159,7 @@ header {
     border: 2px solid orange;
 }
 
-/*** HEADER CONTENT ***/
+
 
 /*** HEADER FINISH ***/
 /* HTML */
@@ -192,37 +191,41 @@ article {
 }
 
 /* & ID & */
+#content {
+    background:#f9f9f9;
+    overflow:hidden;
+}
 
 /*== ID SLIDES ==*/
 
 #about {
-    background-color: #183052;
+    background-color: #365c80;
     /* */
 }
 
 #reportedDisasters {
-    background-color: #183052;
+    background-color: #365c80;
     /**/
 }
 
 #severityScale {
-    background-color: #183052;
+    background-color: #365c80;
     /**/
 }
 
 #reportSystems {
-    background-color: #183052;
+    background-color: #365c80;
     /**/
 
 }
 
 #pScope {
-    background-color: #183052;
+    background-color: #365c80;
     /**/
 }
 
 #wOutcome {
-    background-color: #183052;
+    background-color: #365c80;
     /**/
 }
 
@@ -230,17 +233,17 @@ article {
 
 /*== ID  ALERT TYPES ==*/
 #smsBG {
-    background-color: #183052;
+    background-color: #365c80;
     /**/
 }
 
 #emailBG {
-    background-color: #183052;
+    background-color: #365c80;
     /**/
 }
 
 #pushBG {
-    background-color: #183052;
+    background-color: #365c80;
     /**/
 }
 /*== ID  ALERT TYPES END ==*/
@@ -329,11 +332,11 @@ article {
     /* */
     border: 1px dotted #0fd1a2;
 }
-
+/*
 #test {
-    /*  */
+      
     background-color: #ffffff;
-}
+}*/
 /* CLASS */
 
 
@@ -353,9 +356,15 @@ table {
     border: 2px solid white;
 }
 
-td {
+
+tr {
     /**/
-    border:2px solid white;
+    background-color:#c5d7ed;
+}
+
+tr:first-child {
+    /**/
+    background-color:#375d81;
 }
 /***** ARTICLE END *****/
 

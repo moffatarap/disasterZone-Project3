@@ -42,6 +42,12 @@ a:visited {
     height: 6em;
 
 }
+
+/* REPORTED DISASTERS TABEL */
+td {
+    /**/
+    border:0.6em solid #f9f9f9;
+}
 /*===== MAIN CSS END =====*/
 
 
@@ -356,6 +362,10 @@ a:visited {
         display: initial;
     }
 
+    td {
+    /**/
+    border:0.4em solid #f9f9f9;
+}
 }
 
 
@@ -455,6 +465,10 @@ a:visited {
         .hidden {
         display: none;
     }
+
+  td {
+    /**/
+    border:0.2em solid #f9f9f9;
 
 }
 
