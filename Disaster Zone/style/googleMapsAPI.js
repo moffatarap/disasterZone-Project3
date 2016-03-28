@@ -21,14 +21,101 @@ function geolocationSuccess(position) {
     writeAddressName(userLatLng);
 
     /* GOOGLE MAPS STYLE and options */
-    var myOptions = {
-        zoom: 16,
-        center: userLatLng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+    var mapOptions = {
+        //MAP OPTIONS
+        zoom: 16, //sets zoom level
+        draggable: false, //disable drag
+        zoomControl: true, //disable or enable zoom
+        zoomControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_TOP
+        },
+        disableDoubleClickZoom: true, //disables zoom
+        scrollwheel: false, //disables scroll wheel
+        disableDefaultUI: true, //disables UI
+        mapTypeId: google.maps.MapTypeId.ROADMAP, //sets terrain view
+        /* STYLES */
+        styles: [{
+            //WATER
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [{ 
+                "color": "#183052"
+            }]
+        }, {
+            //LANDSCAPE
+            "featureType": "landscape",
+            "elementType": "geometry",
+            "stylers": [{ 
+                "color": "#378048"
+            }]
+        }, {
+            //ROAD
+            "featureType": "road",
+            "elementType": "geometry",
+            "stylers": [{ 
+                "color": "#f9f9f9"
+            },{ 
+                "lightness": -37 }]
+        },{
+            "featureType": "transit",
+            "elementType": "geometry",
+            "stylers": [{ 
+                "color": "#49717f" }] 
+        }, {
+            //TEXT ELEMENTS
+            "elementType": "labels.text.stroke",
+            "stylers": [{ 
+                "visibility": "on" 
+            },{ 
+                "color": "#201c1b"
+            },{ 
+                "weight": 2 
+            },{ 
+                "gamma": 0.84 }]
+        },{
+            "elementType": "labels.text.fill",
+            "stylers": [{ 
+                "color": "#ffffff" }]
+        },{
+            "featureType": "administrative",
+            "elementType": "geometry",
+            "stylers": [{ 
+                "weight": 0.6 
+            },{ 
+                "color": "#1c4f54" }]
+        },{
+            "elementType": "labels.icon",
+            "stylers": [{ 
+                "visibility": "off" }]
+        },{
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [{ 
+                "color": "#436775" }] 
+        },{
+            "featureType": "administrative.locality",
+            "elementType": "labels",
+            "stylers": [{
+                "visibility": "on"}]
+        },{
+            "featureType": "administrative.neighborhood",
+            "elementType": "labels",
+            "stylers": [{
+                "visibility": "off"}]
+        },{
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels",
+            "stylers": [{
+                "visibility": "off"}]
+        },{
+        }],
+    
+        /* STYLES END */
+        center:userLatLng
     };
 
     // Draw the map
-    var mapObject = new google.maps.Map(document.getElementById("googleAPI"), myOptions);
+    var mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
 
     // Place the marker
     new google.maps.Marker({
@@ -41,10 +128,10 @@ function geolocationSuccess(position) {
         center: userLatLng,
         radius: position.coords.accuracy,
         map: mapObject,
-        fillColor: '#0000FF',
+        fillColor: '#e88329',
         fillOpacity: 0.5,
-        strokeColor: '#0000FF',
-        strokeOpacity: 1.0
+        strokeColor: '#1f1b1a',
+        strokeOpacity: 0.9
     });
 
     mapObject.fitBounds(circle.getBounds());
