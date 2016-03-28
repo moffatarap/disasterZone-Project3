@@ -41,6 +41,11 @@ td {
     /**/
     border:0.6em solid #f9f9f9;
 }
+
+/* MAKES CONCEPT PAGE 2 INLINE WITH PAGE 1*/
+#aboutConcept {
+    padding-top: 2.4em;
+}
 /*===== MAIN CSS END =====*/
 
 
@@ -463,6 +468,19 @@ td {
     display:none;
 }
 
+#aboutConcept {
+    padding-top:0;
+    
+}
+#olSeverityScale2 {
+
+}
+
+#olSeverityScale2 ol {
+    padding-top:0;
+    margin-top:0;
+
+}
 }
 
 /**++++++ MEDIA QUERY END ++++++**/
