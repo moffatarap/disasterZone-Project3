@@ -184,7 +184,7 @@ td {
 /* Slide 2 */
 
 #slide2 {
-    background-color: #f68f67;
+    background-color: #eaebff;
     color: #ffffff;
     height: auto; /* CANGE TO EM*/
 }
@@ -192,7 +192,7 @@ td {
 /* Slide 3 */
 
 #slide3 {
-    background-color: #ff0000;
+    background-color: #aac8e2;
     height: auto;
 }
 
@@ -215,7 +215,7 @@ td {
 /* Slide 4 */
 
 #slide4 {
-    background-color: #8a8683;
+    background-color: #eaebff;
     color: #ffffff;
     height: auto;
 }
@@ -226,8 +226,7 @@ td {
 /* Slide 5 */
 
 #slide5 {
-    background-image: url('');
-    background-color: #12e84a;
+    background-color: #aac8e2;
     color: #ffffff;
     height: auto;
 }
