@@ -151,6 +151,7 @@ td {
     position: relative;
     /* T    L B R */
     padding: 10% 0 15% 0;
+    overflow:hidden;
 }
 
 
@@ -158,11 +159,11 @@ td {
 /* Slide 1 */
 
 #slide1 {
-    background-image: url("http://i.imgur.com/eOHlQel.png"); /*NEEDS FIXING*/
-    background-repeat: no-repeat;
-    background-size: cover;
+
     height: auto;
+    overflow:hidden;
 }
+
 
     #slide1 h1 {
         margin-top: 25%;
@@ -365,7 +366,9 @@ td {
     td {
     /**/
     border:0.4em solid #f9f9f9;
-}
+   }
+
+
 }
 
 
@@ -466,9 +469,26 @@ td {
         display: none;
     }
 
-  td {
-    /**/
-    border:0.2em solid #f9f9f9;
+    td {
+        /**/
+        border: 0.2em solid #f9f9f9;
+    }
+
+        /* DISABLED VIDEO */
+#slide1BGVideo { 
+    background-image: url(./media/img/slide1StaticImg.png); /* CANT GET TO WORK WITH LOCAL*/
+    background-image: url(http://i.imgur.com/eOHlQel.png); 
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: cover;
+    
+    
+
+}
+
+.fullscreenVideo {
+    display:none;
+}
 
 }
 

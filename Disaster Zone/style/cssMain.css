@@ -147,7 +147,10 @@ ul {
 body {
     /**/
     border: 2px solid blue;
+    background-color:white;
 }
+
+
 
 
 
@@ -323,15 +326,39 @@ article {
 /* VIDEO BACKGROUND */
 
 #slide1BGVideo {
-
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -99;
     /**/
     border:2px solid white;
 
 }
 
 .fullscreenVideo {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
 }
 
+@media (min-aspect-ratio: 16/9) {
+  .fullscreenVideo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreenVideo {
+    width: auto;
+    height: 99%;
+  }
+}
 #decorative {
     /**/
     border: 1px dotted #b023d9;
@@ -399,7 +426,12 @@ tr:first-child {
 
 /***** FOOTER *****/
 footer {
+    background-color:white;
+    height:auto;
+    z-index:1;
+
     /**/
+
 }
 
 
