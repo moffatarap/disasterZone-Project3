@@ -235,9 +235,13 @@ article {
 }
 
 /* GEO LOCATION GOOGLE API */
-#map {
-
+#googleAPI {
+    height:51em;
+    /**/
+    border:1px solid green;
 }
+
+
 /* GEO LOCATION GOOGLE API END */
 
 #footerDiv {
