@@ -227,6 +227,19 @@ article {
     /**/
 }
 
+#geoLocation {
+    
+    background-color: #365c80;
+    /**/
+
+}
+
+/* GEO LOCATION GOOGLE API */
+#map {
+
+}
+/* GEO LOCATION GOOGLE API END */
+
 #footerDiv {
     margin-top:-20px;
      background-color: #183052;
