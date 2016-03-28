@@ -320,6 +320,18 @@ article {
     border: 1px dotted #b200ff;
 }
 
+/* VIDEO BACKGROUND */
+
+#slide1BGVideo {
+
+    /**/
+    border:2px solid white;
+
+}
+
+.fullscreenVideo {
+}
+
 #decorative {
     /**/
     border: 1px dotted #b023d9;
