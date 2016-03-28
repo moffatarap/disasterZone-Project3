@@ -429,7 +429,8 @@ td {
     /* NAV BAR ICON */
     #navIcon {
         display: initial;
-        border:1px solid white;
+        /*
+        border:1px solid white;*/
     }
     /* DISASTER ICONS */
     .iconTypes {
