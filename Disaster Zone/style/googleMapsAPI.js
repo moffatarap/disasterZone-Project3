@@ -1,52 +1,40 @@
-/**** GOOGLE MAPS API Disaster Zone MDDN352 P1 [2016] (300317288) ****/
-
-/*** CUSTOM SETTINGS ***/
-var map;
-var marker;
-
-/** NEW MAP METHOD **/
-
-/*** START MAP ***/
+/**** GOOGLE MAPS API Disaster Zone MDDN352 P1 [201] (300317288) ****/
 
 function initMap() {
-    /******* ARRAY POS METHOD ******
-    var mapPositions = [
-        new google.maps.LatLng(-38.8833, 175.2617), //[0] TAUMARUNI EARTH QUAKE NZ
-        new google.maps.LatLng(-31.9522, 115.8589), //[1] PERTH BUSH FIRE AUS
-        new google.maps.LatLng(19.9094, 99.8275), //[2] CHIANG RAI FLOOD THAILAND
-        new google.maps.LatLng(40.0000, -89.0000), //[3] ILLINOIS TORNADO USA
-        new google.maps.LatLng(-15.4700, -47.5500), //[4] HURRICANE BRAZIL
-    ] */
+    var map = new google.maps.Map(document.getElementById('googleAPI'), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 6
+    });
+    var infoWindow = new google.maps.InfoWindow({ map: map });
 
-    /** AFTER WINDOW LOADS FUNCTION **/
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
 
-    window.onload = function () {
-        var mapOptions = {
-            //MAP OPTIONS
-            zoom: 3, //sets zoom level
-            draggable: true, //disable drag
-            zoomControl: true, //disable or enable zoom
-            zoomControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_TOP
-            },
-            disableDoubleClickZoom: true, //disables zoom
-            scrollwheel: false, //disables scroll wheel
-            disableDefaultUI: true, //disables UI
-            mapTypeId: google.maps.MapTypeId.TERRAIN, //sets terrain view
-
-            center: { lat: 1.4667, lng: -173.0333 } //starting Kiribati
-        };
-
-        /* GEO LOCATION */
-        var infoWindow = new google.maps.InfoWindow(); //creates new infowindow for each marker
-        /* GEO LOCATION END */
-
-
-
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            map.setCenter(pos);
+        }, function () {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
     }
+}
 
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+}
        
-    }
+   
 
 
 
