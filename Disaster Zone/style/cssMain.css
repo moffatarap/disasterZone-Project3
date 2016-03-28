@@ -229,6 +229,15 @@ article {
     /**/
 }
 
+#footerDiv {
+        background-color: #183052;
+    /**/
+}
+
+#footerDiv p {
+    color:#f9f9f9;
+    /* */
+}
 /*== ID SLIDES END ==*/
 
 /*== ID  ALERT TYPES ==*/
