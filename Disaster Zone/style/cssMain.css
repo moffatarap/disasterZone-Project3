@@ -235,12 +235,6 @@ article {
 }
 
 /* GEO LOCATION GOOGLE API */
-#googleAPI {
-    height:51em;
-    /**/
-    border:1px solid green;
-} 
-
 #mapAddress {
     color:black;
     /**/

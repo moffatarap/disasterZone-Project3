@@ -62,7 +62,7 @@ function geolocationSuccess(position) {
             "stylers": [{ 
                 "color": "#49717f" }] 
         }, {
-            //TEXT ELEMENTS
+            //TEXT ELEMENTS STROKE
             "elementType": "labels.text.stroke",
             "stylers": [{ 
                 "visibility": "on" 
@@ -72,26 +72,32 @@ function geolocationSuccess(position) {
                 "weight": 2 
             },{ 
                 "gamma": 0.84 }]
-        },{
+        }, {
+            //TEXT ELEMENTS FILL
             "elementType": "labels.text.fill",
             "stylers": [{ 
-                "color": "#ffffff" }]
-        },{
+                "color": "#f9f9f9"
+            }]
+        }, {
+            //SECTORS
             "featureType": "administrative",
             "elementType": "geometry",
             "stylers": [{ 
                 "weight": 0.6 
             },{ 
-                "color": "#1c4f54" }]
+                "color": "#ae00ff"
+            }]
         },{
             "elementType": "labels.icon",
             "stylers": [{ 
                 "visibility": "off" }]
-        },{
+        }, {
+            //PARKS
             "featureType": "poi.park",
             "elementType": "geometry",
             "stylers": [{ 
-                "color": "#436775" }] 
+                "color": "#2d632b"
+            }]
         },{
             "featureType": "administrative.locality",
             "elementType": "labels",
@@ -101,12 +107,12 @@ function geolocationSuccess(position) {
             "featureType": "administrative.neighborhood",
             "elementType": "labels",
             "stylers": [{
-                "visibility": "off"}]
+                "visibility": "on"}]
         },{
             "featureType": "administrative.land_parcel",
             "elementType": "labels",
             "stylers": [{
-                "visibility": "off"}]
+                "visibility": "on"}]
         },{
         }],
     
