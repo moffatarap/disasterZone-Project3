@@ -8,7 +8,7 @@ function writeAddressName(latLng) {
     },
     function (results, status) {
         if (status == google.maps.GeocoderStatus.OK)
-            document.getElementById("mapAddress").innerHTML = results[0].formatted_address;
+            document.getElementById("mapAddress").innerHTML += results[0].formatted_address;
         else
             document.getElementById("error").innerHTML += "Unable to retrieve your address" + "<br />";
     });

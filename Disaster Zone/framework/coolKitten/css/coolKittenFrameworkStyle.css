@@ -204,7 +204,6 @@ td {
 
 #slide2 {
     background-color: #eaebff;
-    color: #ffffff;
     height: auto; /* CANGE TO EM*/
 }
 
@@ -225,7 +224,6 @@ td {
 
 #slide4 {
     background-color: #aac8e2;
-    color: #ffffff;
     height: auto;
 }
 
@@ -236,7 +234,6 @@ td {
 
 #slide5 {
     background-color: #eaebff;
-    color: #ffffff;
     height: auto;
 }
 
@@ -369,6 +366,11 @@ td {
     /**/
     border:0.4em solid #f9f9f9;
    }
+
+#googleAPI {
+    height:41em;
+    
+}
 
 
 }
@@ -503,6 +505,11 @@ td {
     padding-top:0;
     margin-top:0;
 
+}
+
+#googleAPI {
+    height:31em;
+    
 }
 
 }
