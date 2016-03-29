@@ -248,12 +248,12 @@ article {
 }
 
 #cameraItems h3 {
-    padding-left:2%;
+    padding-left:10%;
 
 }
 
 #cameraItems input{
-    padding-left:2%;
+    padding-left:10%;
     display:inline-block;
 
 }
@@ -261,6 +261,19 @@ article {
 #cameraItems2 {
     /* */
     border:2px solid orange;
+}
+
+#cameraItems2 h3 {
+     
+    /* */
+
+}
+
+
+#cameraItems2 input {
+    
+    /* */
+
 }
 /* GEO LOCATION GOOGLE API */
 #mapAddress {
