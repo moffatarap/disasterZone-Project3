@@ -243,8 +243,8 @@ article {
 
 #cameraItems {
     
-    /* */
-    border:2px solid green;
+    /* 
+    border:2px solid green;*/
 }
 
 #cameraItems h3 {
@@ -259,8 +259,8 @@ article {
 }
 
 #cameraItems2 {
-    /* */
-    border:2px solid orange;
+    /* 
+    border:2px solid orange; */
 }
 
 #cameraItems2 h3 {
@@ -275,6 +275,21 @@ article {
     /* */
 
 }
+
+/* INPUT STYLE */
+/* TEXT */
+input[type = "file"] {
+    color:#183052;
+}
+
+
+
+
+/* BUTTON */
+
+
+
+/* INPUT STYLE END */
 /* GEO LOCATION GOOGLE API */
 #mapAddress {
     color:#1f1b1a;
