@@ -234,6 +234,34 @@ article {
 
 }
 
+#cameraAccess{
+
+    background-color: #365c80;
+    /**/
+    
+}
+
+#cameraItems {
+    
+    /* */
+    border:2px solid green;
+}
+
+#cameraItems h3 {
+    padding-left:2%;
+
+}
+
+#cameraItems input{
+    padding-left:2%;
+    display:inline-block;
+
+}
+
+#cameraItems2 {
+    /* */
+    border:2px solid orange;
+}
 /* GEO LOCATION GOOGLE API */
 #mapAddress {
     color:#1f1b1a;
