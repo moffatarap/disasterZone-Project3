@@ -247,35 +247,11 @@ article {
     border:2px solid green;*/
 }
 
-#cameraItems h3 {
-    padding-left:10%;
-
-}
-
-#cameraItems input{
-    padding-left:10%;
-    display:inline-block;
-
-}
 
 #cameraItems2 {
     /* 
     border:2px solid orange; */
 }
-
-#cameraItems2 h3 {
-     
-    /* */
-
-}
-
-
-#cameraItems2 input {
-    
-    /* */
-
-}
-
 /* INPUT STYLE */
 /* TEXT */
 input[type = "file"] {

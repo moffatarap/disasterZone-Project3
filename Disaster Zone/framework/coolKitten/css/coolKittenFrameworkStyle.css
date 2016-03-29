@@ -54,6 +54,19 @@ td {
     /*
     border:1px solid green;*/
 } 
+
+#cameraItems h3 {
+    padding-left:10%;
+    /* */
+
+}
+
+#cameraItems input{
+    padding-left:10%;
+    
+
+}
+
 /*===== MAIN CSS END =====*/
 
 
@@ -510,6 +523,32 @@ td {
 #googleAPI {
     height:31em;
     
+}
+
+#cameraItems h3 {
+    padding-left:2%;
+
+}
+
+#cameraItems input{
+    padding-left:2%;
+    
+
+}
+
+
+
+#cameraItems2 h3 {
+     padding-left:2%;
+    /* */
+
+}
+
+
+#cameraItems2 input {
+    padding-left:2%;
+    /* */
+
 }
 
 }
