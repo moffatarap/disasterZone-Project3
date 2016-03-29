@@ -236,14 +236,18 @@ article {
 
 /* GEO LOCATION GOOGLE API */
 #mapAddress {
-    color:black;
+    color:#1f1b1a;
     margin-top:1%;
     margin-left:1%;
+
     /*
     border:2px solid #edff05;*/
 }
 
 #errorCantFind{
+    color:#1f1b1a;
+    margin-top:1%;
+    margin-left:1%;
     /*
     border:2px solid #104cdc;*/
 }
