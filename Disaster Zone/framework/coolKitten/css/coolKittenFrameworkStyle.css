@@ -193,7 +193,7 @@ td {
         position:relative;        
         
         /* FOR CHROME */
-        text-shadow:5px 5px 5px rgba(0, 0, 0, 0.77);
+        text-shadow:5px 5px 7px rgba(0, 0, 0, 0.77);
 
 
         
@@ -204,15 +204,15 @@ td {
         text-align: center;
         margin-bottom: 25%;
 
-        text-shadow:5px 5px 5px rgba(0, 0, 0, 0.77);
+        text-shadow:5px 5px 7px rgba(0, 0, 0, 0.77);
         /*
         text-decoration:underline;
         text-decoration-color:#378048;  */
     }
 
-
-
-
+#content h3 {
+        margin-left: 0.5%;
+    }
 
 /* Slide 2 */
 
@@ -307,6 +307,7 @@ td {
     #content h3 {
         font-size: 1.6em;
         padding-top: 2%;
+        
     }
 
     ol li {
