@@ -150,6 +150,7 @@ td {
 #navIcon {
     height:2em;
     width:auto;
+    padding-left:2%;
     display:none;
     
 }
