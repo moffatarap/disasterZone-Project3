@@ -1,4 +1,4 @@
-/**** GOOGLE MAPS API Disaster Zone MDDN352 P1 [2016] (300317288) ****/
+/**** GOOGLE MAPS API Disaster Zone MDDN352 P2 [2016] (300317288) ****/
 /* CODE ADAPTED FROM http://www.sitepoint.com/working-with-geolocation-and-google-maps-api/ */
 
 function writeAddressName(latLng) {

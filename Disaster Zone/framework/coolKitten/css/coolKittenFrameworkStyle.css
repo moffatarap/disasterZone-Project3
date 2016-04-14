@@ -51,8 +51,8 @@ td {
     height:51em;
     width:auto;
     overflow:hidden;
-    /*
-    border:1px solid green;*/
+    /**/
+    border:1px solid green;
 } 
 
 #cameraItems h3 {
@@ -477,8 +477,8 @@ td {
     /* NAV BAR ICON */
     #navIcon {
         display: initial;
-        /*
-        border:1px solid white;*/
+        /**/
+        border:1px solid white;
     }
     /* DISASTER ICONS */
     .iconTypes {
