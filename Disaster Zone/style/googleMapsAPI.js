@@ -157,9 +157,6 @@ function geolocateUser() {
 
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
-        // call PubNub realtime API
-        pubs();
-
         var positionOptions = {
             enableHighAccuracy: true, //accuracy 
             timeout: 10 * 2000 // 10 seconds
@@ -180,33 +177,12 @@ function redraw() {
    setMap(map);
 }
 
-
-function pushCoordToArray(latIn, lngIn) {
-    lineCoordinatesArray.push(new google.maps.LatLng(latIn, lngIn));
-}
-function pubs() {
-    pubnub = PUBNUB.init({
-        publish_key: 'pub-c-afe941da-29b9-4d8c-a2a5-b79cd7aa797b ',
-        subscribe_key: 'sub-c-189f8734-04e1-11e6-a6dc-02ee2ddab7fe'
-    })
-
-    pubnub.subscribe({
-        channel: "mymaps",
-        message: function (message, channel) {
-            console.log(message)
-            lat = message['lat'];
-            lng = message['lng'];
-            //custom method
-            redraw();
-        },
-        connect: function () { console.log("PubNub Connected") }
-    })
-}
 /* refresh geolocation */
 setInterval(function () {
+
+    geolocateUser()
     
-    
-}, 6000);
+}, 12000);
 
 window.onload = geolocateUser;
 

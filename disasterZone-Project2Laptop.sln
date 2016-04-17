@@ -8,20 +8,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Disaster Zone(4)", "http://
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_3069"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\GitHub\disasterZone-Project2\Disaster Zone\"
+		Debug.AspNetCompiler.PhysicalPath = "Disaster Zone\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3069\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_3069"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\GitHub\disasterZone-Project2\Disaster Zone\"
+		Release.AspNetCompiler.PhysicalPath = "Disaster Zone\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3069\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\..\GitHub\disasterZone-Project2\Disaster Zone\"
+		SlnRelativePath = "Disaster Zone\"
 	EndProjectSection
 EndProject
 Global
