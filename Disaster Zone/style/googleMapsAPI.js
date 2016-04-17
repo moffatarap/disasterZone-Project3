@@ -17,6 +17,7 @@ function writeAddressName(latLng) {
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
 }
+
 /* SUCESSFUL LOCATION OF USER */
 function geolocationSuccess(position) {
     var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -156,6 +157,9 @@ function geolocateUser() {
 
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
+        // call PubNub realtime API
+        pubs();
+
         var positionOptions = {
             enableHighAccuracy: true, //accuracy 
             timeout: 10 * 2000 // 10 seconds
@@ -166,7 +170,7 @@ function geolocateUser() {
         document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support location";
 }
 /* API CODE BELOW */
-/* PUNNUB REALTIME GEO LOCATION 
+/* PUNNUB REALTIME GEO LOCATION */
 // moves the marker and center of map
 function redraw() {
     map.setCenter({ lat: lat, lng: lng, alt: 0 })
@@ -197,15 +201,11 @@ function pubs() {
         },
         connect: function () { console.log("PubNub Connected") }
     })
-}*/
+}
 /* refresh geolocation */
 setInterval(function () {
-    new google.maps.Marker({
-        map: mapObject,
-        position: userLatLng
-    });
-    geolocateUser();
-
+    
+    
 }, 6000);
 
 window.onload = geolocateUser;
