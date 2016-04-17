@@ -1,7 +1,9 @@
 /**** GOOGLE MAPS API Disaster Zone MDDN352 P2 [2016] (300317288) ****/
 /* CODE ADAPTED FROM http://www.sitepoint.com/working-with-geolocation-and-google-maps-api/ */
-var map;
-var lineCoordinatesArray = [];
+
+/*=/ VARABLES \=*/
+
+/*=/ VARABLES END \=*/
 
 function writeAddressName(latLng) {
     var geocoder = new google.maps.Geocoder();
@@ -10,9 +12,9 @@ function writeAddressName(latLng) {
     },
     function (results, status) {
         if (status == google.maps.GeocoderStatus.OK)
-            document.getElementById("mapAddress").innerHTML += results[0].formatted_address;
+            document.getElementById("mapAddress").innerHTML = results[0].formatted_address;
         else
-            document.getElementById("error").innerHTML += "Unable to retrieve your address" + "<br />";
+            document.getElementById("errorCantFind").innerHTML = "Unable to retrieve your address" + "<br />";
     });
 }
 /* SUCESSFUL LOCATION OF USER */
@@ -146,7 +148,7 @@ function geolocationSuccess(position) {
 }
 
 function geolocationError(positionError) {
-    document.getElementById("errorCantFind").innerHTML += "Error: " + positionError.message + "<br />";
+    document.getElementById("errorCantFind").innerHTML = "Error: " + positionError.message + "<br />";
 }
 
 /* LOCATE USER */
@@ -161,10 +163,10 @@ function geolocateUser() {
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
     }
     else
-        document.getElementById("errorCantFind").innerHTML += "Your browser doesn't support the Geolocation API";
+        document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support the Geolocation API";
 }
-
-/* PUNNUB REALTIME GEO LOCATION */
+/* API CODE BELOW */
+/* PUNNUB REALTIME GEO LOCATION 
 // moves the marker and center of map
 function redraw() {
     map.setCenter({ lat: lat, lng: lng, alt: 0 })
@@ -195,7 +197,8 @@ function pubs() {
         },
         connect: function () { console.log("PubNub Connected") }
     })
-}
+}*/
+
 setInterval(function () {
     //....
     geolocateUser();
