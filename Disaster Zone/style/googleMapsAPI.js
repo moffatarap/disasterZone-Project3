@@ -1,5 +1,7 @@
 /**** GOOGLE MAPS API Disaster Zone MDDN352 P2 [2016] (300317288) ****/
 /* CODE ADAPTED FROM http://www.sitepoint.com/working-with-geolocation-and-google-maps-api/ */
+var map;
+var lineCoordinatesArray = [];
 
 function writeAddressName(latLng) {
     var geocoder = new google.maps.Geocoder();
@@ -137,15 +139,16 @@ function geolocationSuccess(position) {
         fillColor: '#e88329',
         fillOpacity: 0.5,
         strokeColor: '#1f1b1a',
-        strokeOpacity: 0.9
+        strokeOpacity: 0.85
     });
 
     mapObject.fitBounds(circle.getBounds());
 }
 
 function geolocationError(positionError) {
-    document.getElementById("error").innerHTML += "Error: " + positionError.message + "<br />";
+    document.getElementById("errorCantFind").innerHTML += "Error: " + positionError.message + "<br />";
 }
+
 /* LOCATE USER */
 function geolocateUser() {
 
@@ -158,10 +161,23 @@ function geolocateUser() {
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
     }
     else
-        document.getElementById("error").innerHTML += "Your browser doesn't support the Geolocation API";
+        document.getElementById("errorCantFind").innerHTML += "Your browser doesn't support the Geolocation API";
 }
 
 /* PUNNUB REALTIME GEO LOCATION */
+// moves the marker and center of map
+function redraw() {
+    map.setCenter({ lat: lat, lng: lng, alt: 0 })
+    map_marker.setPosition({ lat: lat, lng: lng, alt: 0 });
+    pushCoordToArray(lat, lng);
+
+   setMap(map);
+}
+
+
+function pushCoordToArray(latIn, lngIn) {
+    lineCoordinatesArray.push(new google.maps.LatLng(latIn, lngIn));
+}
 function pubs() {
     pubnub = PUBNUB.init({
         publish_key: 'pub-c-afe941da-29b9-4d8c-a2a5-b79cd7aa797b ',
@@ -180,6 +196,11 @@ function pubs() {
         connect: function () { console.log("PubNub Connected") }
     })
 }
+setInterval(function () {
+    //....
+    geolocateUser();
+
+}, 3000);
 
 window.onload = geolocateUser;
 
