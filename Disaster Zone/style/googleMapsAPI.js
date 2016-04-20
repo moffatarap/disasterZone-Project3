@@ -29,37 +29,7 @@ function pubs() {
 /* PUBNUB API REALTIME DATA END */
 
 /* INITILIZE MAP START */
-/* INITILIZE MAP END */
-
-/* CONVERT LATLNG TO ADDRESS [WORKING]*/
-function writeAddressName(latLng) {
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({
-        "location": latLng
-    },
-    function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK)
-            //formatted address from latLng
-            document.getElementById("mapAddress").innerHTML += results[0].formatted_address + "<br/>";
-            //+= for debugging, to show all addresses = to just show one address at a time
-
-        else
-            //if address cant be found show error code
-            document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
-    });
-}
-
-/* CONVERT LATLNG TO ADDRESS END */
-
-/* MAP OPTOIONS */
-/* MAP OPTOIONS END */
-/* SUCESSFUL LOCATION OF USER */
-function geolocationSuccess(position) {
-    userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-    // Write the formatted address
-    writeAddressName(userLatLng);
-
+function initialise() {
     /* GOOGLE MAPS STYLE and options */
     var mapOptions = {
         //MAP OPTIONS
@@ -162,10 +132,7 @@ function geolocationSuccess(position) {
             }]
         }, {
         }],
-
-        /* STYLES END */
-        center: userLatLng
-    };
+    }
 
     // DRAW GOOGLE MAP
     mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
@@ -187,7 +154,67 @@ function geolocationSuccess(position) {
     });
 
     mapObject.fitBounds(circle.getBounds());
+
 }
+/* INITILIZE MAP END */
+
+/* CONVERT LATLNG TO ADDRESS [WORKING]*/
+function writeAddressName(latLng) {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+        "location": latLng
+    },
+    function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK)
+            //formatted address from latLng
+            document.getElementById("mapAddress").innerHTML += results[0].formatted_address + "<br/>";
+            //+= for debugging, to show all addresses = to just show one address at a time
+
+        else
+            //if address cant be found show error code
+            document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
+    });
+}
+
+/* CONVERT LATLNG TO ADDRESS END */
+
+/* MAP OPTOIONS */
+/* MAP OPTOIONS END */
+/* SUCESSFUL LOCATION OF USER */
+function geolocationSuccess(position) {
+    userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+    // Write the formatted address
+    writeAddressName(userLatLng);
+
+    
+
+        /* STYLES END */
+        center: userLatLng
+    };
+
+    /* [DISABLED FOR TESTING]
+    // DRAW GOOGLE MAP
+    mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
+
+    //DRAW NEW MARKER
+    mapMarker = new google.maps.Marker({
+        map: mapObject,
+        position: userLatLng
+    })
+    //DRAW CIRCLE
+    circle = new google.maps.Circle({
+        center: userLatLng,
+        radius: position.coords.accuracy,
+        map: mapObject,
+        fillColor: '#e88329',
+        fillOpacity: 0.5,
+        strokeColor: '#1f1b1a',
+        strokeOpacity: 0.85
+    });
+
+    mapObject.fitBounds(circle.getBounds()); */
+//}
 
 /* IF ERROR FUNCTION */
 function geolocationError(positionError) {
@@ -234,7 +261,8 @@ setInterval(function () {
 
 }, 33000);
 
-window.onload = geoLocateUser;
+//window.onload = geoLocateUser;
+window.onload = initialise;
 
 
 
