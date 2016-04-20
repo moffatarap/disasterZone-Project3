@@ -134,9 +134,10 @@ function initialise() {
         }],
     }
 
-    // DRAW GOOGLE MAP
+   // DRAW GOOGLE MAP
     mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
-
+    /* DRAW GOOGLE MAP LONG VERSION */
+    /* DRAW GOOGLE MAP LONG VERSION END*/
     //DRAW NEW MARKER
     mapMarker = new google.maps.Marker({
         map: mapObject,
@@ -233,7 +234,8 @@ function geoLocateUser() {
 
         };
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
-
+        // DRAW GOOGLE MAP
+        
 
     }
     else
@@ -253,16 +255,25 @@ function reDraw() {
 
 }
 
+//FUNCTION THAT RUNS OTHER FUNCTIONS ON LOAD
+function onLoadDo() {
+    //initialise();
+    geoLocateUser();
+    
+
+
+}
+
 /* GET NEW GEOLOCATION AND MOVE MARKER */
 setInterval(function () {
 
     reDraw();
     geoLocateUser()
 
-}, 33000);
+}, 33000); //33000
 
-//window.onload = geoLocateUser;
-window.onload = initialise;
+window.onload = onLoadDo();
+
 
 
 
