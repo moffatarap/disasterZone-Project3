@@ -155,6 +155,9 @@ function initialise() {
 
     mapObject.fitBounds(circle.getBounds());
 
+    //calls geolocation
+    
+
 }
 /* INITILIZE MAP END */
 
@@ -225,6 +228,7 @@ function geolocationError(positionError) {
 /* GEOLOCATE USER */
 function geoLocateUser() {
     pubs();
+    
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         var positionOptions = {
@@ -234,12 +238,13 @@ function geoLocateUser() {
         };
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
 
+        //initialise();
+
 
     }
     else
         document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support location";
 }
-
 
 /* GEOLOCATE USER END*/
 
