@@ -2,9 +2,33 @@
 /* CODE ADAPTED FROM http://www.sitepoint.com/working-with-geolocation-and-google-maps-api/ */
 
 /*=/ VARABLES \=*/
+var mapMarker; //var for marker
+var mapObject; //var for the google map
+var userLatLng; //latLng of user
+var circle; //circle for measuring accuracy 
 
 /*=/ VARABLES END \=*/
 
+/* PUBNUB API REALTIME DATA [not sure if working]*/
+function pubs() {
+    pubnub = PUBNUB.init({
+        publish_key: 'pub-c-afe941da-29b9-4d8c-a2a5-b79cd7aa797b',
+        subscribe_key: 'sub-c-189f8734-04e1-11e6-a6dc-02ee2ddab7fe'
+    })
+
+    pubnub.subscribe({
+        channel: "myMap",
+        message: function (message, channel) {
+            console.log(message)
+            latLng = message['LatLng'];
+        },
+
+    })
+}
+
+/* PUBNUB API REALTIME DATA END */
+
+/* CONVERT LATLNG TO ADDRESS */
 function writeAddressName(latLng) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({
@@ -12,15 +36,23 @@ function writeAddressName(latLng) {
     },
     function (results, status) {
         if (status == google.maps.GeocoderStatus.OK)
-            document.getElementById("mapAddress").innerHTML = results[0].formatted_address;
+            //formatted address from latLng
+            document.getElementById("mapAddress").innerHTML += results[0].formatted_address + "<br/>";
+            //+= for debugging, to show all addresses = to just show one address at a time
+
         else
+            //if address cant be found show error code
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
 }
 
+/* CONVERT LATLNG TO ADDRESS END */
+
+/* MAP OPTOIONS */
+/* MAP OPTOIONS END */
 /* SUCESSFUL LOCATION OF USER */
 function geolocationSuccess(position) {
-    var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
     // Write the formatted address
     writeAddressName(userLatLng);
@@ -43,99 +75,105 @@ function geolocationSuccess(position) {
             //WATER
             "featureType": "water",
             "elementType": "geometry",
-            "stylers": [{ 
+            "stylers": [{
                 "color": "#183052"
             }]
         }, {
             //LANDSCAPE
             "featureType": "landscape",
             "elementType": "geometry",
-            "stylers": [{ 
+            "stylers": [{
                 "color": "#378048"
             }]
         }, {
             //ROAD
             "featureType": "road",
             "elementType": "geometry",
-            "stylers": [{ 
+            "stylers": [{
                 "color": "#f9f9f9"
-            },{ 
-                "lightness": -37 }]
-        },{
+            }, {
+                "lightness": -37
+            }]
+        }, {
             "featureType": "transit",
             "elementType": "geometry",
-            "stylers": [{ 
-                "color": "#49717f" }] 
+            "stylers": [{
+                "color": "#49717f"
+            }]
         }, {
             //TEXT ELEMENTS STROKE
             "elementType": "labels.text.stroke",
-            "stylers": [{ 
-                "visibility": "on" 
-            },{ 
+            "stylers": [{
+                "visibility": "on"
+            }, {
                 "color": "#201c1b"
-            },{ 
-                "weight": 2 
-            },{ 
-                "gamma": 0.84 }]
+            }, {
+                "weight": 2
+            }, {
+                "gamma": 0.84
+            }]
         }, {
             //TEXT ELEMENTS FILL
             "elementType": "labels.text.fill",
-            "stylers": [{ 
+            "stylers": [{
                 "color": "#f9f9f9"
             }]
         }, {
             //SECTORS
             "featureType": "administrative",
             "elementType": "geometry",
-            "stylers": [{ 
-                "weight": 0.6 
-            },{ 
+            "stylers": [{
+                "weight": 0.6
+            }, {
                 "color": "#ae00ff"
             }]
-        },{
+        }, {
             "elementType": "labels.icon",
-            "stylers": [{ 
-                "visibility": "off" }]
+            "stylers": [{
+                "visibility": "off"
+            }]
         }, {
             //PARKS
             "featureType": "poi.park",
             "elementType": "geometry",
-            "stylers": [{ 
+            "stylers": [{
                 "color": "#2d632b"
             }]
-        },{
+        }, {
             "featureType": "administrative.locality",
             "elementType": "labels",
             "stylers": [{
-                "visibility": "on"}]
-        },{
+                "visibility": "on"
+            }]
+        }, {
             "featureType": "administrative.neighborhood",
             "elementType": "labels",
             "stylers": [{
-                "visibility": "on"}]
-        },{
+                "visibility": "on"
+            }]
+        }, {
             "featureType": "administrative.land_parcel",
             "elementType": "labels",
             "stylers": [{
-                "visibility": "on"}]
-        },{
+                "visibility": "on"
+            }]
+        }, {
         }],
-    
+
         /* STYLES END */
-        center:userLatLng
+        center: userLatLng
     };
 
-    // Draw the map
-    var mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
+    // DRAW GOOGLE MAP
+    mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
 
-    // Place the marker
-    new google.maps.Marker({
+    //DRAW NEW MARKER
+    mapMarker = new google.maps.Marker({
         map: mapObject,
         position: userLatLng
-    });
-
-    // Draw a circle around the user position to have an idea of the current localization accuracy
-    var circle = new google.maps.Circle({
+    })
+    //DRAW CIRCLE
+    circle = new google.maps.Circle({
         center: userLatLng,
         radius: position.coords.accuracy,
         map: mapObject,
@@ -148,51 +186,59 @@ function geolocationSuccess(position) {
     mapObject.fitBounds(circle.getBounds());
 }
 
+/* IF ERROR FUNCTION */
 function geolocationError(positionError) {
     document.getElementById("errorCantFind").innerHTML = "Error: " + positionError.message + "<br />";
 }
+/* IF ERROR FUNCTION END */
 
-/* LOCATE USER */
-function geolocateUser() {
-
+/* GEOLOCATE USER */
+function geoLocateUser() {
+    pubs();
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         var positionOptions = {
             enableHighAccuracy: true, //accuracy 
             timeout: 10 * 2000 // 10 seconds
+
         };
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
+
     }
     else
         document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support location";
 }
-/* API CODE BELOW */
-/* PUNNUB REALTIME GEO LOCATION */
-// moves the marker and center of map
-function redraw() {
-    map.setCenter({ lat: lat, lng: lng, alt: 0 })
-    map_marker.setPosition({ lat: lat, lng: lng, alt: 0 });
-    pushCoordToArray(lat, lng);
 
-   setMap(map);
+
+/* GEOLOCATE USER END*/
+
+/* MOVE MARKER TO UPDATED LOCATION */
+function reDraw() {
+
+    //sets mapMarker to the position of user LatLng
+    mapMarker.setPosition(userLatLng);
+    //sets center of map
+    mapObject.setCenter(userLatLng)
+
 }
 
-/* refresh geolocation */
+/* GET NEW GEOLOCATION AND MOVE MARKER */
 setInterval(function () {
 
-    geolocateUser()
-    
-}, 12000);
+    reDraw();
+    geoLocateUser()
 
-window.onload = geolocateUser;
+}, 33000);
 
-   
-   
+window.onload = geoLocateUser;
 
 
 
 
 
 
-    
+
+
+
+
 
