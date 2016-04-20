@@ -1,9 +1,6 @@
 /**** GOOGLE MAPS API Disaster Zone MDDN352 P2 [2016] (300317288) ****/
 /* CODE ADAPTED FROM http://www.sitepoint.com/working-with-geolocation-and-google-maps-api/ */
-$(document).ready(function () {
 
-
-});
 
 /*=/ VARABLES \=*/
 var mapMarker; //var for marker
@@ -43,6 +40,7 @@ var mapOptions = {
     scrollwheel: false, //disables scroll wheel
     disableDefaultUI: true, //disables UI
     mapTypeId: google.maps.MapTypeId.ROADMAP, //sets terrain view
+    center: { lat: 1.4667, lng: -173.0333 }
     /* STYLES */
     styles: [{
         //WATER
@@ -135,13 +133,13 @@ var mapOptions = {
 }
 
 /* INITILIZE MAP START */
-function initialise() {
+function initialize() {
     /* GOOGLE MAPS STYLE and options */
     
 
    // DRAW GOOGLE MAP
     //mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
-    mapObject =  google.maps.Map(document.getElementById("googleAPI"));
+    mapObject = new google.maps.Map(document.getElementById("googleAPI"),mapOptions);
     /* DRAW GOOGLE MAP LONG VERSION */
 
     /* DRAW GOOGLE MAP LONG VERSION END*/
@@ -149,7 +147,9 @@ function initialise() {
     mapMarker = new google.maps.Marker({
         map: mapObject,
         position: userLatLng
-    })
+    });
+    //SETS MAP FOR MAP MARKER
+    
     //DRAW CIRCLE
     circle = new google.maps.Circle({
         center: userLatLng,
@@ -161,9 +161,13 @@ function initialise() {
         strokeOpacity: 0.85
     });
 
-    mapObject.fitBounds(circle.getBounds());
+    //mapObject.fitBounds(circle.getBounds());
 
 }
+
+
+   
+
 /* INITILIZE MAP END */
 
 /* CONVERT LATLNG TO ADDRESS [WORKING]
@@ -283,14 +287,14 @@ function reDraw() {
 
 } */
 
-/* FUNCTION THAT RUNS OTHER FUNCTIONS ON LOAD
+/* FUNCTION THAT RUNS OTHER FUNCTIONS ON LOAD*/
 function onLoadDo() {
     initialise();
     //geoLocateUser();
     
 
 
-} */
+} 
 
 /* GET NEW GEOLOCATION AND MOVE MARKER 
 setInterval(function () {
@@ -300,7 +304,7 @@ setInterval(function () {
 
 }, 33000); //33000
 */
-//window.onload = onLoadDo;
+window.onload = onLoadDo;
 
 
 
