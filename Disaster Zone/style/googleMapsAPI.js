@@ -9,7 +9,7 @@ var circle; //circle for measuring accuracy
 
 /*=/ VARABLES END \=*/
 
-/* PUBNUB API REALTIME DATA [not sure if working]*/
+/* PUBNUB API REALTIME DATA [WORKING]*/
 function pubs() {
     pubnub = PUBNUB.init({
         publish_key: 'pub-c-afe941da-29b9-4d8c-a2a5-b79cd7aa797b',
@@ -28,7 +28,10 @@ function pubs() {
 
 /* PUBNUB API REALTIME DATA END */
 
-/* CONVERT LATLNG TO ADDRESS */
+/* INITILIZE MAP START */
+/* INITILIZE MAP END */
+
+/* CONVERT LATLNG TO ADDRESS [WORKING]*/
 function writeAddressName(latLng) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({
@@ -203,6 +206,7 @@ function geoLocateUser() {
 
         };
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
+
 
     }
     else
