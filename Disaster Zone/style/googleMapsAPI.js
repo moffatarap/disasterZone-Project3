@@ -1,5 +1,9 @@
 /**** GOOGLE MAPS API Disaster Zone MDDN352 P2 [2016] (300317288) ****/
 /* CODE ADAPTED FROM http://www.sitepoint.com/working-with-geolocation-and-google-maps-api/ */
+$(document).ready(function () {
+
+
+});
 
 /*=/ VARABLES \=*/
 var mapMarker; //var for marker
@@ -9,7 +13,7 @@ var circle; //circle for measuring accuracy
 
 /*=/ VARABLES END \=*/
 
-/* PUBNUB API REALTIME DATA [WORKING]*/
+/* PUBNUB API REALTIME DATA [WORKING]
 function pubs() {
     pubnub = PUBNUB.init({
         publish_key: 'pub-c-afe941da-29b9-4d8c-a2a5-b79cd7aa797b',
@@ -24,119 +28,122 @@ function pubs() {
         },
 
     })
-}
+}*/
 
 /* PUBNUB API REALTIME DATA END */
+var mapOptions = {
+    //MAP OPTIONS
+    zoom: 16, //sets zoom level
+    draggable: false, //disabled for mobile deivces and computers drag
+    zoomControl: true, //disable or enable zoom
+    zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_TOP
+    },
+    disableDoubleClickZoom: true, //disables zoom
+    scrollwheel: false, //disables scroll wheel
+    disableDefaultUI: true, //disables UI
+    mapTypeId: google.maps.MapTypeId.ROADMAP, //sets terrain view
+    /* STYLES */
+    styles: [{
+        //WATER
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#183052"
+        }]
+    }, {
+        //LANDSCAPE
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#378048"
+        }]
+    }, {
+        //ROAD
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f9f9f9"
+        }, {
+            "lightness": -37
+        }]
+    }, {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#49717f"
+        }]
+    }, {
+        //TEXT ELEMENTS STROKE
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "visibility": "on"
+        }, {
+            "color": "#201c1b"
+        }, {
+            "weight": 2
+        }, {
+            "gamma": 0.84
+        }]
+    }, {
+        //TEXT ELEMENTS FILL
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#f9f9f9"
+        }]
+    }, {
+        //SECTORS
+        "featureType": "administrative",
+        "elementType": "geometry",
+        "stylers": [{
+            "weight": 0.6
+        }, {
+            "color": "#ae00ff"
+        }]
+    }, {
+        "elementType": "labels.icon",
+        "stylers": [{
+            "visibility": "off"
+        }]
+    }, {
+        //PARKS
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#2d632b"
+        }]
+    }, {
+        "featureType": "administrative.locality",
+        "elementType": "labels",
+        "stylers": [{
+            "visibility": "on"
+        }]
+    }, {
+        "featureType": "administrative.neighborhood",
+        "elementType": "labels",
+        "stylers": [{
+            "visibility": "on"
+        }]
+    }, {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels",
+        "stylers": [{
+            "visibility": "on"
+        }]
+    }, {
+    }],
+}
 
 /* INITILIZE MAP START */
 function initialise() {
     /* GOOGLE MAPS STYLE and options */
-    var mapOptions = {
-        //MAP OPTIONS
-        zoom: 16, //sets zoom level
-        draggable: false, //disabled for mobile deivces and computers drag
-        zoomControl: true, //disable or enable zoom
-        zoomControlOptions: {
-            position: google.maps.ControlPosition.RIGHT_TOP
-        },
-        disableDoubleClickZoom: true, //disables zoom
-        scrollwheel: false, //disables scroll wheel
-        disableDefaultUI: true, //disables UI
-        mapTypeId: google.maps.MapTypeId.ROADMAP, //sets terrain view
-        /* STYLES */
-        styles: [{
-            //WATER
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#183052"
-            }]
-        }, {
-            //LANDSCAPE
-            "featureType": "landscape",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#378048"
-            }]
-        }, {
-            //ROAD
-            "featureType": "road",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#f9f9f9"
-            }, {
-                "lightness": -37
-            }]
-        }, {
-            "featureType": "transit",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#49717f"
-            }]
-        }, {
-            //TEXT ELEMENTS STROKE
-            "elementType": "labels.text.stroke",
-            "stylers": [{
-                "visibility": "on"
-            }, {
-                "color": "#201c1b"
-            }, {
-                "weight": 2
-            }, {
-                "gamma": 0.84
-            }]
-        }, {
-            //TEXT ELEMENTS FILL
-            "elementType": "labels.text.fill",
-            "stylers": [{
-                "color": "#f9f9f9"
-            }]
-        }, {
-            //SECTORS
-            "featureType": "administrative",
-            "elementType": "geometry",
-            "stylers": [{
-                "weight": 0.6
-            }, {
-                "color": "#ae00ff"
-            }]
-        }, {
-            "elementType": "labels.icon",
-            "stylers": [{
-                "visibility": "off"
-            }]
-        }, {
-            //PARKS
-            "featureType": "poi.park",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#2d632b"
-            }]
-        }, {
-            "featureType": "administrative.locality",
-            "elementType": "labels",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "administrative.neighborhood",
-            "elementType": "labels",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "administrative.land_parcel",
-            "elementType": "labels",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-        }],
-    }
+    
 
    // DRAW GOOGLE MAP
-    mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
+    //mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
+    mapObject =  google.maps.Map(document.getElementById("googleAPI"));
     /* DRAW GOOGLE MAP LONG VERSION */
+
     /* DRAW GOOGLE MAP LONG VERSION END*/
     //DRAW NEW MARKER
     mapMarker = new google.maps.Marker({
@@ -159,7 +166,7 @@ function initialise() {
 }
 /* INITILIZE MAP END */
 
-/* CONVERT LATLNG TO ADDRESS [WORKING]*/
+/* CONVERT LATLNG TO ADDRESS [WORKING]
 function writeAddressName(latLng) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({
@@ -175,13 +182,13 @@ function writeAddressName(latLng) {
             //if address cant be found show error code
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
-}
+}*/
 
 /* CONVERT LATLNG TO ADDRESS END */
 
 /* MAP OPTOIONS */
 /* MAP OPTOIONS END */
-/* SUCESSFUL LOCATION OF USER */
+/* SUCESSFUL LOCATION OF USER
 function geolocationSuccess(position) {
     userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
@@ -190,9 +197,9 @@ function geolocationSuccess(position) {
 
     
 
-        /* STYLES END */
+        //centerView
         center: userLatLng
-    };
+}; */
 
     /* [DISABLED FOR TESTING]
     // DRAW GOOGLE MAP
@@ -217,13 +224,13 @@ function geolocationSuccess(position) {
     mapObject.fitBounds(circle.getBounds()); */
 //}
 
-/* IF ERROR FUNCTION */
+/* IF ERROR FUNCTION 
 function geolocationError(positionError) {
     document.getElementById("errorCantFind").innerHTML = "Error: " + positionError.message + "<br />";
-}
+}*/
 /* IF ERROR FUNCTION END */
 
-/* GEOLOCATE USER */
+/* [DISABLED] GEOLOCATE USER 
 function geoLocateUser() {
     pubs();
     // If the browser supports the Geolocation API
@@ -240,12 +247,33 @@ function geoLocateUser() {
     }
     else
         document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support location";
-}
+} */
+
+/* GEO LOCATE USER 
+function geoLocateUser() {
+    
+    // If the browser supports the Geolocation API
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
+        var positionOptions = {
+            enableHighAccuracy: true, //accuracy 
+            timeout: 10 * 2000 // 10 seconds
+
+        };
+        //callsPubNub data API 
+        pubs();
+        google.maps.event.addDomListener(window, 'load', initialise());
+
+
+    }
+    else
+        document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support location";
+}*/
 
 
 /* GEOLOCATE USER END*/
 
-/* MOVE MARKER TO UPDATED LOCATION */
+/* MOVE MARKER TO UPDATED LOCATION 
 function reDraw() {
 
     //sets mapMarker to the position of user LatLng
@@ -253,26 +281,26 @@ function reDraw() {
     //sets center of map
     mapObject.setCenter(userLatLng)
 
-}
+} */
 
-//FUNCTION THAT RUNS OTHER FUNCTIONS ON LOAD
+/* FUNCTION THAT RUNS OTHER FUNCTIONS ON LOAD
 function onLoadDo() {
-    //initialise();
-    geoLocateUser();
+    initialise();
+    //geoLocateUser();
     
 
 
-}
+} */
 
-/* GET NEW GEOLOCATION AND MOVE MARKER */
+/* GET NEW GEOLOCATION AND MOVE MARKER 
 setInterval(function () {
 
     reDraw();
-    geoLocateUser()
+    //geoLocateUser()
 
 }, 33000); //33000
-
-window.onload = onLoadDo();
+*/
+//window.onload = onLoadDo;
 
 
 
