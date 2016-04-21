@@ -168,7 +168,7 @@ function geoLocateUser() {
 
         };
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
-
+        
     }
     else
         document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support location";
@@ -181,7 +181,6 @@ function geolocationSuccess(position) {
 
     // Write the formatted address
     writeAddressName(userLatLng);
-
     center: userLatLng; //centers map position to that of user latLng
 }
 /* 3# === SUCCESS LOCATION OF USER [END] ===*/
