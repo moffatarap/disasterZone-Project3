@@ -15,11 +15,15 @@ var mapCenterArray = [
     new google.maps.LatLng(0,0), //[1]
 ]
 /*=/ VARABLES END \=*/
+var mapOptions = {
+    center: userLatLng,
+
+}
 
 
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
 window.onload = function () {
-    var mapOptions = {
+        mapOptions = {
         //MAP OPTIONS
         zoom: 3, //sets zoom level
         draggable: false, //disable drag
@@ -31,7 +35,7 @@ window.onload = function () {
         scrollwheel: false, //disables scroll wheel
         disableDefaultUI: true, //disables UI
         mapTypeId: google.maps.MapTypeId.TERRAIN, //sets terrain view
-        center: { lat: 1.4667, lng: -173.0333 },
+        center: { lat: 40.9881, lng: 174.0333 }, //PAEKAKARIKI TEMP
         
     
         
