@@ -110,18 +110,35 @@ window.onload = function () {
         }, {
         }],
        
-
+        
     };
 
     mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
-    google.maps.event.addDomListener(window, 'load', initialize);
+    geoLocateUser();
 }
 
 /* 1# = ON LOAD SET STYLE MAP AND STARTING LOCATION [END] =*/
+/* 1.1# =- PUBNUB REALTIME STORE INFO -= */
+function pubs() {
+    pubnub = PUBNUB.init({
+        publish_key: 'pub-c-afe941da-29b9-4d8c-a2a5-b79cd7aa797b',
+        subscribe_key: 'sub-c-189f8734-04e1-11e6-a6dc-02ee2ddab7fe'
+    })
+
+    pubnub.subscribe({
+        channel: "myMap",
+        message: function (message, channel) {
+            console.log(message)
+            latLng = message['LatLng'];
+        },
+
+    })
+}
+/* 1.1# =- PUBNUB REALTIME STORE INFO -= */
 
 /* 2# == GEO LOCATE USER == */
 function geoLocateUser() {
-    pubs();
+    //pubs();
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         var positionOptions = {
@@ -143,5 +160,14 @@ function geolocationSuccess(position) {
 
     // Write the formatted address
     writeAddressName(userLatLng);
+
+    center: userLatLng; //centers map position to that of user latLng
 }
 /* 3# === SUCCESS LOCATION OF USER [END] ===*/
+
+/* 4# ====  GEO LOCATION ERROR ==== */
+function geolocationError(positionError) {
+    document.getElementById("errorCantFind").innerHTML = "Error: " + positionError.message + "<br />";
+}
+/* 4# ====  GEO LOCATION ERROR [END]==== */
+
