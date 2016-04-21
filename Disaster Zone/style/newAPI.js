@@ -5,14 +5,24 @@ var userLatLng; //latLng of user
 var circle; //circle for measuring accuracy
 var geocoder; //geocode to address
 
+/* LOCATION ARRAY */
+var mapCenterNum1;
+mapCenterNum1 = 0;
+var mapUserCenterNub2;
+mapUserCenterNub2 = 1;
+var mapCenterArray = [
+    new google.maps.LatLng(1.4667, -173.0333), //[0]
+    new google.maps.LatLng(0,0), //[1]
+]
 /*=/ VARABLES END \=*/
+
 
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
 window.onload = function () {
     var mapOptions = {
         //MAP OPTIONS
         zoom: 3, //sets zoom level
-        draggable: true, //disable drag
+        draggable: false, //disable drag
         zoomControl: true, //disable or enable zoom
         zoomControlOptions: {
         position: google.maps.ControlPosition.RIGHT_TOP
@@ -22,6 +32,8 @@ window.onload = function () {
         disableDefaultUI: true, //disables UI
         mapTypeId: google.maps.MapTypeId.TERRAIN, //sets terrain view
         center: { lat: 1.4667, lng: -173.0333 },
+        
+    
         
         styles: [{
             //WATER
@@ -117,6 +129,7 @@ window.onload = function () {
 
     mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
     geoLocateUser();
+    
 }
 
 /* 1# = ON LOAD SET STYLE MAP AND STARTING LOCATION [END] =*/
@@ -149,7 +162,7 @@ function writeAddressName(latLng) {
             //formatted address from latLng
             document.getElementById("mapAddress").innerHTML += results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
-
+            
         else
             //if address cant be found show error code
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
@@ -160,6 +173,9 @@ function writeAddressName(latLng) {
 /* 2# == GEO LOCATE USER == */
 function geoLocateUser() {
     pubs();
+    mapOptions = {
+        cemter: userLatLng,
+    }
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         var positionOptions = {
@@ -180,9 +196,13 @@ function geolocationSuccess(position) {
     userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
     // Write the formatted address
+    //mapCenterArray[mapUserCenterNub2] == userLatLng;
     writeAddressName(userLatLng);
+    //mapCenterArray[mapUserCenterNub2] == userLatLng;
     center: userLatLng; //centers map position to that of user latLng
+
 }
+
 /* 3# === SUCCESS LOCATION OF USER [END] ===*/
 
 /* 4# ====  GEO LOCATION ERROR ==== */
@@ -191,3 +211,23 @@ function geolocationError(positionError) {
 }
 /* 4# ====  GEO LOCATION ERROR [END]==== */
 
+/* 5# ===== RE DRAW MARKER ===== */
+function reDraw() {
+
+    //sets mapMarker to the position of user LatLng
+    mapMarker.setPosition(userLatLng);
+    //sets center of map
+    mapObject.setCenter(userLatLng)
+
+}
+/* 5# ===== RE DRAW MARKER [END] ===== */
+
+/* 6# ====== REFRESH MARKER LOCATION ====== */
+setInterval(function () {
+
+    reDraw();
+    geoLocateUser();
+
+}, 33000); //33000
+
+/* 6# ====== REFRESH MARKER LOCATION [END] ====== */
