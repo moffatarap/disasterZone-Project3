@@ -26,7 +26,7 @@ window.onload = function () {
         mapOptions = {
         //MAP OPTIONS
         zoom: 3, //sets zoom level
-        draggable: false, //disable drag
+        draggable: true, //disable drag
         zoomControl: true, //disable or enable zoom
         zoomControlOptions: {
         position: google.maps.ControlPosition.RIGHT_TOP
@@ -34,7 +34,7 @@ window.onload = function () {
         disableDoubleClickZoom: true, //disables zoom
         scrollwheel: false, //disables scroll wheel
         disableDefaultUI: true, //disables UI
-        mapTypeId: google.maps.MapTypeId.TERRAIN, //sets terrain view
+        //mapTypeId: google.maps.MapTypeId.TERRAIN, //sets terrain view
         center: { lat: 40.9881, lng: 174.0333 }, //PAEKAKARIKI TEMP
         
     
