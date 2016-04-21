@@ -2,7 +2,8 @@
 var mapMarker; //var for marker
 var mapObject; //var for the google map
 var userLatLng; //latLng of user
-var circle; //circle for measuring accuracy 
+var circle; //circle for measuring accuracy
+var geocoder; //geocode to address
 
 /*=/ VARABLES END \=*/
 
@@ -20,7 +21,8 @@ window.onload = function () {
         scrollwheel: false, //disables scroll wheel
         disableDefaultUI: true, //disables UI
         mapTypeId: google.maps.MapTypeId.TERRAIN, //sets terrain view
-        center:{ lat: 1.4667, lng: -173.0333 },
+        center: { lat: 1.4667, lng: -173.0333 },
+        
         styles: [{
             //WATER
             "featureType": "water",
@@ -136,9 +138,28 @@ function pubs() {
 }
 /* 1.1# =- PUBNUB REALTIME STORE INFO -= */
 
+/* 1.2# =-- CONVERT LatLng TO ADDRESS --= */
+function writeAddressName(latLng) {
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+        "location": latLng
+    },
+    function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK)
+            //formatted address from latLng
+            document.getElementById("mapAddress").innerHTML += results[0].formatted_address + "<br/>";
+            //+= for debugging, to show all addresses = to just show one address at a time
+
+        else
+            //if address cant be found show error code
+            document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
+    });
+}
+/* 1.2# =-- CONVERT LatLng TO ADDRESS --= */
+
 /* 2# == GEO LOCATE USER == */
 function geoLocateUser() {
-    //pubs();
+    pubs();
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         var positionOptions = {
