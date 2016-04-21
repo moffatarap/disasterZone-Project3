@@ -167,15 +167,34 @@ function writeAddressName(latLng) {
             //if address cant be found show error code
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
+
+    //DRAW GOOGLE MAP
+   // mapObject = new google.maps.Map(document.getElementById("googleAPI"),mapOptions);
+
+    //DRAW NEW MARKER
+    mapMarker = new google.maps.Marker({
+        map: mapObject,
+        position: userLatLng
+    })
+    //DRAW CIRCLE
+    circle = new google.maps.Circle({
+        center: userLatLng,
+        radius: position.coords.accuracy,
+        map: mapObject,
+        fillColor: '#e88329',
+        fillOpacity: 0.5,
+        strokeColor: '#1f1b1a',
+        strokeOpacity: 0.85
+    });
+
+    mapObject.fitBounds(circle.getBounds());
 }
 /* 1.2# =-- CONVERT LatLng TO ADDRESS --= */
 
 /* 2# == GEO LOCATE USER == */
 function geoLocateUser() {
     pubs();
-    mapOptions = {
-        cemter: userLatLng,
-    }
+ 
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         var positionOptions = {
