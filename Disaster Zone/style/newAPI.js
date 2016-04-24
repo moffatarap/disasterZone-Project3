@@ -180,7 +180,7 @@ function writeAddressName(latLng) {
         map: mapObject,
         position: userLatLng
     })
-    //DRAW CIRCLE
+    /*DRAW CIRCLE [DISABLED]
     circle = new google.maps.Circle({
         center: userLatLng,
         radius: position.coords.accuracy,
@@ -191,7 +191,7 @@ function writeAddressName(latLng) {
         strokeOpacity: 0.85
     });
 
-    mapObject.fitBounds(circle.getBounds());
+    mapObject.fitBounds(circle.getBounds()); */
 }
 /* 1.2# =-- CONVERT LatLng TO ADDRESS --= */
 
