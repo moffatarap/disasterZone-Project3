@@ -4,135 +4,142 @@ var mapObject; //var for the google map
 var userLatLng; //latLng of user
 var circle; //circle for measuring accuracy
 var geocoder; //geocode to address
+var mapLoad;
+var geoRefresh = 1; //sets geoRefresh function
+/* SET VARABLE NUMBERE */
+mapLoad = 0;
 
 /* LOCATION ARRAY */
-var mapCenterNum1;
-mapCenterNum1 = 0;
-var mapUserCenterNub2;
-mapUserCenterNub2 = 1;
-var mapCenterArray = [
-    new google.maps.LatLng(1.4667, -173.0333), //[0]
-    new google.maps.LatLng(0,0), //[1]
-]
+
 /*=/ VARABLES END \=*/
 var mapOptions = {
-    center: userLatLng,
+    //MAP OPTIONS
+    zoom: 3, //sets zoom level
+    draggable: true, //disable drag
+    zoomControl: true, //disable or enable zoom
+    zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_TOP
+    },
+    disableDoubleClickZoom: true, //disables zoom
+    scrollwheel: false, //disables scroll wheel
+    disableDefaultUI: true, //disables UI
+    //mapTypeId: google.maps.MapTypeId.TERRAIN, //sets terrain view
+    //center: { lat: 40.9881, lng: 174.0333 }, //PAEKAKARIKI TEMP
+    center: userLatLng, //PAEKAKARIKI TEMP
+        
+    
+        
+    styles: [{
+        //WATER
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#183052"
+        }]
+    }, {
+        //LANDSCAPE
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#378048"
+        }]
+    }, {
+        //ROAD
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#f9f9f9"
+        }, {
+            "lightness": -37
+        }]
+    }, {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#49717f"
+        }]
+    }, {
+        //TEXT ELEMENTS STROKE
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "visibility": "on"
+        }, {
+            "color": "#201c1b"
+        }, {
+            "weight": 2
+        }, {
+            "gamma": 0.84
+        }]
+    }, {
+        //TEXT ELEMENTS FILL
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#f9f9f9"
+        }]
+    }, {
+        //SECTORS
+        "featureType": "administrative",
+        "elementType": "geometry",
+        "stylers": [{
+            "weight": 0.6
+        }, {
+            "color": "#ae00ff"
+        }]
+    }, {
+        "elementType": "labels.icon",
+        "stylers": [{
+            "visibility": "off"
+        }]
+    }, {
+        //PARKS
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#2d632b"
+        }]
+    }, {
+        "featureType": "administrative.locality",
+        "elementType": "labels",
+        "stylers": [{
+            "visibility": "on"
+        }]
+    }, {
+        "featureType": "administrative.neighborhood",
+        "elementType": "labels",
+        "stylers": [{
+            "visibility": "on"
+        }]
+    }, {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels",
+        "stylers": [{
+            "visibility": "on"
+        }]
+    }, {
+    }],
+       
+        
+};
 
-}
 
 
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
 window.onload = function () {
-        mapOptions = {
-        //MAP OPTIONS
-        zoom: 3, //sets zoom level
-        draggable: true, //disable drag
-        zoomControl: true, //disable or enable zoom
-        zoomControlOptions: {
-        position: google.maps.ControlPosition.RIGHT_TOP
-        },
-        disableDoubleClickZoom: true, //disables zoom
-        scrollwheel: false, //disables scroll wheel
-        disableDefaultUI: true, //disables UI
-        //mapTypeId: google.maps.MapTypeId.TERRAIN, //sets terrain view
-        center: { lat: 40.9881, lng: 174.0333 }, //PAEKAKARIKI TEMP
-        
-    
-        
-        styles: [{
-            //WATER
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#183052"
-            }]
-        }, {
-            //LANDSCAPE
-            "featureType": "landscape",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#378048"
-            }]
-        }, {
-            //ROAD
-            "featureType": "road",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#f9f9f9"
-            }, {
-                "lightness": -37
-            }]
-        }, {
-            "featureType": "transit",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#49717f"
-            }]
-        }, {
-            //TEXT ELEMENTS STROKE
-            "elementType": "labels.text.stroke",
-            "stylers": [{
-                "visibility": "on"
-            }, {
-                "color": "#201c1b"
-            }, {
-                "weight": 2
-            }, {
-                "gamma": 0.84
-            }]
-        }, {
-            //TEXT ELEMENTS FILL
-            "elementType": "labels.text.fill",
-            "stylers": [{
-                "color": "#f9f9f9"
-            }]
-        }, {
-            //SECTORS
-            "featureType": "administrative",
-            "elementType": "geometry",
-            "stylers": [{
-                "weight": 0.6
-            }, {
-                "color": "#ae00ff"
-            }]
-        }, {
-            "elementType": "labels.icon",
-            "stylers": [{
-                "visibility": "off"
-            }]
-        }, {
-            //PARKS
-            "featureType": "poi.park",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#2d632b"
-            }]
-        }, {
-            "featureType": "administrative.locality",
-            "elementType": "labels",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "administrative.neighborhood",
-            "elementType": "labels",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-            "featureType": "administrative.land_parcel",
-            "elementType": "labels",
-            "stylers": [{
-                "visibility": "on"
-            }]
-        }, {
-        }],
-       
-        
-    };
-
-    mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
     geoLocateUser();
+    //mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
+    //geoLocateUser();
+
+    //on first loop create map
+    if (mapLoad === 1) {
+        mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
+        
+
+    }
+
+    else {
+
+    }
+   
     
 }
 
@@ -178,7 +185,7 @@ function writeAddressName(latLng) {
     //DRAW NEW MARKER
     mapMarker = new google.maps.Marker({
         map: mapObject,
-        position: userLatLng
+        position: userLatLng,
     })
     /*DRAW CIRCLE [DISABLED]
     circle = new google.maps.Circle({
@@ -197,7 +204,10 @@ function writeAddressName(latLng) {
 
 /* 2# == GEO LOCATE USER == */
 function geoLocateUser() {
+    //loadPubNub Realtime GEOLOCATION API FUNCTION
     pubs();
+    //add 1 to mapLoad varable
+    mapLoad += 1;
  
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
@@ -211,6 +221,8 @@ function geoLocateUser() {
     }
     else
         document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support location";
+
+    
 }
 /* 2# == GEO LOCATE USER END ==*/
 
@@ -219,9 +231,7 @@ function geolocationSuccess(position) {
     userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
     // Write the formatted address
-    //mapCenterArray[mapUserCenterNub2] == userLatLng;
     writeAddressName(userLatLng);
-    //mapCenterArray[mapUserCenterNub2] == userLatLng;
     center: userLatLng; //centers map position to that of user latLng
 
 }
@@ -249,8 +259,21 @@ function reDraw() {
 setInterval(function () {
 
     reDraw();
-    geoLocateUser();
+    /*GeoLocate User Every Second refresh*/
+    //if geoRefresh var = 10, then run geolocation function and reset geoRefresh to 1
+    if (geoRefresh === 10) {
+        geoLocateUser();
+        geoRefresh = 1;
+        
+    }
+    //if geoRefresh var = > 10 then add 1 to geoRefresh var
+    else {
+        geoRefresh += 1;
 
-}, 33000); //33000
+    }
+    
+    //geoLocateUser();
+
+}, 3300); //33000
 
 /* 6# ====== REFRESH MARKER LOCATION [END] ====== */
