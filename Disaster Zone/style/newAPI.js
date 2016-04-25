@@ -170,15 +170,27 @@ function writeAddressName(latLng) {
 
     //set marker creation on load of map
     if (mapLoad === 1) {
+        //create map marker
         mapMarker = new google.maps.Marker({
             map: mapObject,
             position: userLatLng,
         })
+        //create circle under the map marker
+        circle = new google.maps.Circle({
+            center: userLatLng,
+            radius: 2, //needs to be set dynamically 
+            map: mapObject,
+            fillColor: '#e88329',
+            fillOpacity: 0.5,
+            strokeColor: '#1f1b1a',
+            strokeOpacity: 0.85
+        });
 
     }
     //change marker position to new user LatLng
     else {
-        mapMarker.setPosition(userLatLng)
+        mapMarker.setPosition(userLatLng); //mapMarker LatLng
+        circle.setPosition(userLatLng); //cirlce LatLng [NOT MOVING]
     }
 
    /* DRAW NEW MARKER
@@ -195,9 +207,9 @@ function writeAddressName(latLng) {
         fillOpacity: 0.5,
         strokeColor: '#1f1b1a',
         strokeOpacity: 0.85
-    });
+    });*/
 
-    mapObject.fitBounds(circle.getBounds()); */
+    mapObject.fitBounds(circle.getBounds()); 
 }
 /* 1.2# =-- CONVERT LatLng TO ADDRESS --= */
 
@@ -218,9 +230,9 @@ function geoLocateUser() {
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
         
     }
-    else
+    else {
         document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support location";
-
+    }
     
 }
 /* 2# == GEO LOCATE USER END ==*/
@@ -247,8 +259,10 @@ function geolocationError(positionError) {
 function reDraw() {
 
     //sets mapMarker to the position of user LatLng
-    mapMarker.setPosition(userLatLng);
-    //sets center of map
+    /* SEEMS TO OVERLAP [DISALBED]? 
+    //mapMarker.setPosition(userLatLng);
+    //circle.setPosition(userLatLng);
+    //sets center of map*/
     mapObject.setCenter(userLatLng)
 
 }
