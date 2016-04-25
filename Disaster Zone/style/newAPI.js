@@ -4,10 +4,10 @@ var mapObject; //var for the google map
 var userLatLng; //latLng of user
 var circle; //circle for measuring accuracy
 var geocoder; //geocode to address
-var mapLoad;
+var mapLoad = 0; //sets mapLoad to [0]
 var geoRefresh = 1; //sets geoRefresh function
 /* SET VARABLE NUMBERE */
-mapLoad = 0;
+
 
 /* LOCATION ARRAY */
 
@@ -18,17 +18,14 @@ var mapOptions = {
     draggable: true, //disable drag
     zoomControl: true, //disable or enable zoom
     zoomControlOptions: {
-        position: google.maps.ControlPosition.RIGHT_TOP
+    position: google.maps.ControlPosition.RIGHT_TOP
     },
     disableDoubleClickZoom: true, //disables zoom
     scrollwheel: false, //disables scroll wheel
     disableDefaultUI: true, //disables UI
-    //mapTypeId: google.maps.MapTypeId.TERRAIN, //sets terrain view
-    //center: { lat: 40.9881, lng: 174.0333 }, //PAEKAKARIKI TEMP
-    center: userLatLng, //PAEKAKARIKI TEMP
+    center: userLatLng, //center map
         
-    
-        
+    /* STYLE SETTINGS */    
     styles: [{
         //WATER
         "featureType": "water",
@@ -117,7 +114,7 @@ var mapOptions = {
         }]
     }, {
     }],
-       
+    /* STYLE SETTINGS */
         
 };
 
@@ -126,20 +123,12 @@ var mapOptions = {
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
 window.onload = function () {
     geoLocateUser();
-    //mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
-    //geoLocateUser();
-
+    
     //on first loop create map
     if (mapLoad === 1) {
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
-        
-
     }
 
-    else {
-
-    }
-   
     
 }
 
@@ -179,14 +168,24 @@ function writeAddressName(latLng) {
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
 
-    //DRAW GOOGLE MAP
-   // mapObject = new google.maps.Map(document.getElementById("googleAPI"),mapOptions);
+    //set marker creation on load of map
+    if (mapLoad === 1) {
+        mapMarker = new google.maps.Marker({
+            map: mapObject,
+            position: userLatLng,
+        })
 
-    //DRAW NEW MARKER
+    }
+    //change marker position to new user LatLng
+    else {
+        mapMarker.setPosition(userLatLng)
+    }
+
+   /* DRAW NEW MARKER
     mapMarker = new google.maps.Marker({
         map: mapObject,
-        position: userLatLng,
-    })
+        position: userLatLng, 
+    })*/
     /*DRAW CIRCLE [DISABLED]
     circle = new google.maps.Circle({
         center: userLatLng,
@@ -266,7 +265,7 @@ setInterval(function () {
         geoRefresh = 1;
         
     }
-    //if geoRefresh var = > 10 then add 1 to geoRefresh var
+    //if geoRefresh var = > 10 then add 1 to geoRefresh 
     else {
         geoRefresh += 1;
 
