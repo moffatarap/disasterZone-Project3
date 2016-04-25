@@ -2,7 +2,7 @@
 var mapMarker; //var for marker
 var mapObject; //var for the google map
 var userLatLng; //latLng of user
-var circle; //circle for measuring accuracy
+var accuracyDraw; //circle for measuring accuracy
 var geocoder; //geocode to address
 var mapLoad = 0; //sets mapLoad to [0]
 var geoRefresh = 1; //sets geoRefresh function
@@ -158,11 +158,14 @@ function writeAddressName(latLng) {
         "location": latLng
     },
     function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK)
+        if (status == google.maps.GeocoderStatus.OK) {
             //formatted address from latLng
             document.getElementById("mapAddress").innerHTML += results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
             
+            //sets zoom level to fit location on screen
+            mapObject.fitBounds(results[0].geometry.viewport);
+        }
         else
             //if address cant be found show error code
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
@@ -175,8 +178,9 @@ function writeAddressName(latLng) {
             map: mapObject,
             position: userLatLng,
         })
-        //create circle under the map marker
-        circle = new google.maps.Circle({
+
+        /*create circle under the map marker [DISALBED ]
+        accuracyDraw = new google.maps.Circle({
             center: userLatLng,
             radius: 2, //needs to be set dynamically 
             map: mapObject,
@@ -184,32 +188,15 @@ function writeAddressName(latLng) {
             fillOpacity: 0.5,
             strokeColor: '#1f1b1a',
             strokeOpacity: 0.85
-        });
+        }); */
 
     }
     //change marker position to new user LatLng
     else {
         mapMarker.setPosition(userLatLng); //mapMarker LatLng
-        circle.setPosition(userLatLng); //cirlce LatLng [NOT MOVING]
+        /* accuracyDraw.setPosition(userLatLng); //cirlce LatLng [NOT MOVING] */
     }
-
-   /* DRAW NEW MARKER
-    mapMarker = new google.maps.Marker({
-        map: mapObject,
-        position: userLatLng, 
-    })*/
-    /*DRAW CIRCLE [DISABLED]
-    circle = new google.maps.Circle({
-        center: userLatLng,
-        radius: position.coords.accuracy,
-        map: mapObject,
-        fillColor: '#e88329',
-        fillOpacity: 0.5,
-        strokeColor: '#1f1b1a',
-        strokeOpacity: 0.85
-    });*/
-
-    mapObject.fitBounds(circle.getBounds()); 
+    /* [accuracyDraw DISABLED]   mapObject.fitBounds(accuracyDraw.getBounds()); */
 }
 /* 1.2# =-- CONVERT LatLng TO ADDRESS --= */
 
@@ -262,7 +249,9 @@ function reDraw() {
     /* SEEMS TO OVERLAP [DISALBED]? 
     //mapMarker.setPosition(userLatLng);
     //circle.setPosition(userLatLng);
+    
     //sets center of map*/
+    //[breaks]accuracyDraw.setPosition(userLatLng);
     mapObject.setCenter(userLatLng)
 
 }
