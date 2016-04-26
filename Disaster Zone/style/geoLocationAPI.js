@@ -7,10 +7,11 @@ var geocoder; //geocode to address
 var mapLoad = 0; //sets mapLoad to [0]
 var geoRefresh = 1; //sets geoRefresh function
 var firebaseDB; //creates firebaseDB var
-/* SET VARABLE NUMBERE */
 
 
-/* LOCATION ARRAY */
+
+/* DISASTER LOCATION ARRAY */
+//write
 
 /*=/ VARABLES END \=*/
 var mapOptions = {
