@@ -135,7 +135,7 @@ var mapOptions = {
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
 window.onload = function () {
     geoLocateUser();
-    
+    console.log('windowOnLoad'); //debug
     //on first loop create map
     if (mapLoad === 1) {
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
@@ -173,7 +173,8 @@ function writeAddressName(latLng) {
         "location": latLng
     },
     function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
+        if (status === google.maps.GeocoderStatus.OK) {
+            console.log('geoLocationOK'); //debug
             //formatted address from latLng
             document.getElementById("mapAddress").innerHTML = results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
@@ -183,12 +184,14 @@ function writeAddressName(latLng) {
         }
         else
             //if address cant be found show error code
+            console.log('geoLocationFail'); //debug
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
 
     //set marker creation on load of map
     if (mapLoad === 1) {
         //create map marker
+        console.log('mapMarkerSetPositonInital'); //debug
         mapMarker = new google.maps.Marker({
             map: mapObject,
             position: userLatLng,
@@ -197,6 +200,7 @@ function writeAddressName(latLng) {
 }
     //change marker position to new user LatLng
     else {
+        console.log('mapMarkerSetPositon'); //debug
         mapMarker.setPosition(userLatLng); //mapMarker LatLng
         
     }
@@ -213,6 +217,7 @@ function geoLocateUser() {
  
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
+        console.log('geoLocateUser'); //debug
         var positionOptions = {
             enableHighAccuracy: true, //accuracy 
             timeout: 10 * 2000 // 10 seconds
@@ -222,7 +227,8 @@ function geoLocateUser() {
         
     }
     else {
-        document.getElementById("errorCantFind").innerHTML = "Your browser doesn't support location";
+        console.log('doesNotSupport'); //debug
+        document.getElementById("errorCantFind").innerHTML = "<p>Your browser doesn't support location</p>";
     }
     
 }
@@ -231,7 +237,7 @@ function geoLocateUser() {
 /* 3# === SUCCESS LOCATION OF USER === */
 function geolocationSuccess(position) {
     userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
+    console.log('mapPositionSucess'); //debug
     // Write the formatted address
     writeAddressName(userLatLng);
     center: userLatLng; //centers map position to that of user latLng
@@ -246,18 +252,24 @@ function geolocationError(positionError) {
 }
 /* 4# ====  GEO LOCATION ERROR [END]==== */
 
+
 /* 5# ===== RE DRAW MARKER ===== */
 function reDraw() {
+    var userLatLngToWarn = userLatLng;
     /*DISPLAY WARNING IF USER IS NEAR DISASTER 
     if (userLatLng === userLatLng) {
         document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
     } */
-    locationWarningArray[2] = userLatLng;
-    if (locationWarningArray[2] === userLatLng) {
+    console.log('reDraw');//writes to debug redraw
+    //locationWarningArray[2] = userLatLng;
+
+    if (locationWarningArray[1] === userLatLngToWarn) {
         document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
-    }
+    } 
+
+
     //sets center of map*/
     //[breaks]accuracyDraw.setPosition(userLatLng);
     mapObject.setCenter(userLatLng)
@@ -273,10 +285,9 @@ setInterval(function () {
     //if geoRefresh var = 10, then run geolocation function and reset geoRefresh to 1
     if (geoRefresh === 10) {
         geoLocateUser();
-        //saves LatLng to firebase
-        //var latLngDB = userLatLng.toString();
+        console.log('geoLocateUser'); //writes to debug geoLocateUser
 
-        //push data to Firebase
+        /* PUSH DATA TO FIREBASE */
         //savesUserLatLng to firebase
         firebaseDB.push({
             latLngUser: userLatLng.toString(), //latLng to db
