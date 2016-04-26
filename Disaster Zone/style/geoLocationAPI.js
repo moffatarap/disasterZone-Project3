@@ -164,7 +164,7 @@ function writeAddressName(latLng) {
     function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             //formatted address from latLng
-            document.getElementById("mapAddress").innerHTML += results[0].formatted_address + "<br/>";
+            document.getElementById("mapAddress").innerHTML = results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
             
             //sets zoom level to fit location on screen
@@ -183,22 +183,11 @@ function writeAddressName(latLng) {
             position: userLatLng,
         })
 
-        /*create circle under the map marker [DISALBED ]
-        accuracyDraw = new google.maps.Circle({
-            center: userLatLng,
-            radius: 2, //needs to be set dynamically 
-            map: mapObject,
-            fillColor: '#e88329',
-            fillOpacity: 0.5,
-            strokeColor: '#1f1b1a',
-            strokeOpacity: 0.85
-        }); */
-
-    }
+}
     //change marker position to new user LatLng
     else {
         mapMarker.setPosition(userLatLng); //mapMarker LatLng
-        /* accuracyDraw.setPosition(userLatLng); //cirlce LatLng [NOT MOVING] */
+        
     }
     /* [accuracyDraw DISABLED]   mapObject.fitBounds(accuracyDraw.getBounds()); */
 }
@@ -249,11 +238,6 @@ function geolocationError(positionError) {
 /* 5# ===== RE DRAW MARKER ===== */
 function reDraw() {
 
-    //sets mapMarker to the position of user LatLng
-    /* SEEMS TO OVERLAP [DISALBED]? 
-    //mapMarker.setPosition(userLatLng);
-    //circle.setPosition(userLatLng);
-    
     //sets center of map*/
     //[breaks]accuracyDraw.setPosition(userLatLng);
     mapObject.setCenter(userLatLng)
@@ -275,8 +259,9 @@ setInterval(function () {
         //push data to Firebase
         //savesUserLatLng to firebase
         firebaseDB.push({
-            latLngUser: userLatLng.toString(),
-            addressUser: latlng.toString(),
+            latLngUser: userLatLng.toString(), //latLng to db
+            addressUser: document.getElementById("mapAddress").innerHTML, //formatted address to db from html
+            geoLocateFail: document.getElementById("errorCantFind").innerHTML, //if fail save to db
         });
 
         geoRefresh = 1;
