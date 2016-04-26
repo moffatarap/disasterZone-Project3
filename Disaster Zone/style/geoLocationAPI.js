@@ -7,6 +7,7 @@ var geocoder; //geocode to address
 var mapLoad = 0; //sets mapLoad to [0]
 var geoRefresh = 1; //sets geoRefresh function
 var firebaseDB; //creates firebaseDB var
+var latLngFDB; //LatLng for firebaseDB
 /* SET VARABLE NUMBERE */
 
 
@@ -271,12 +272,11 @@ setInterval(function () {
         geoLocateUser();
         //saves LatLng to firebase
         //var latLngDB = userLatLng.toString();
-        var latLngFDB = new google.maps.LatLng(userLatLng.lat, userLatLng.lng);
+
+        latLngFDB = new google.maps.LatLng(userLatLng.lat, userLatLng.lng);
         //push data to Firebase
         //               string
-        firebaseDB.push() {
-            //sdsd
-        };
+        firebaseDB.push(userLatLng.toString());
         geoRefresh = 1;
         
     }
