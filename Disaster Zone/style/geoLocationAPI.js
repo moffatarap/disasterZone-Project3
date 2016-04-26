@@ -6,6 +6,7 @@ var accuracyDraw; //circle for measuring accuracy
 var geocoder; //geocode to address
 var mapLoad = 0; //sets mapLoad to [0]
 var geoRefresh = 1; //sets geoRefresh function
+var firebaseDB; //creates firebaseDB var
 /* SET VARABLE NUMBERE */
 
 
@@ -129,7 +130,7 @@ window.onload = function () {
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
 
         //firebase database
-        var firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
+        firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
     }
 
     
@@ -269,7 +270,9 @@ setInterval(function () {
     if (geoRefresh === 10) {
         geoLocateUser();
         //saves LatLng to firebase
-        firebase.push(userLatLng);
+        var latLngDB = userLatLng.toString();
+
+        firebaseDB.push({latLngDB:''});
         geoRefresh = 1;
         
     }
