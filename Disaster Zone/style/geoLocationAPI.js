@@ -16,8 +16,12 @@ var locationWarningArray = [
     //                     lat                 lng
     new google.maps.LatLng(-40.98590134003134, 174.95394012824352), //[0] 40 wellington rd
     new google.maps.LatLng(-40.980371999999996, 174.96758169999998), //[1] // 355-359 state highway paekak
+    , //[2]
 
 ];
+
+//var locatonWarningTest = new google.maps.LatLng(-40.980371999999996, 174.96758169999998);
+                                                
 
 /*=/ VARABLES END \=*/
 var mapOptions = {
@@ -249,8 +253,8 @@ function reDraw() {
         document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
     } */
-
-    if (locationWarningArray[0] === userLatLng) {
+    locationWarningArray[2] = userLatLng;
+    if (locationWarningArray[2] === userLatLng) {
         document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
     }
