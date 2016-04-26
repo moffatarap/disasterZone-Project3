@@ -184,7 +184,6 @@ function writeAddressName(latLng) {
         }
         else
             //if address cant be found show error code
-            console.log('geoLocationFail'); //debug
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
 
@@ -264,6 +263,15 @@ function reDraw() {
     console.log('reDraw');//writes to debug redraw
     //locationWarningArray[2] = userLatLng;
 
+    /* DEBUG SECTION */
+
+    //console.log(locationWarningArray[1]);
+    //console.log(userLatLng);
+
+    console.log(userLatLngToWarn); //checking value of function
+    console.log(userLatLngToWarn);
+    /* DEBUG SECTION END */
+
     if (locationWarningArray[1] === userLatLngToWarn) {
         document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
@@ -271,7 +279,6 @@ function reDraw() {
 
 
     //sets center of map*/
-    //[breaks]accuracyDraw.setPosition(userLatLng);
     mapObject.setCenter(userLatLng)
 
 }
