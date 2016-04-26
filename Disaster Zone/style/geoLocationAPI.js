@@ -14,7 +14,7 @@ var geoRefresh = 1; //sets geoRefresh function
 /*=/ VARABLES END \=*/
 var mapOptions = {
     //MAP OPTIONS
-    zoom: 3, //sets zoom level
+    //zoom: 3, //sets zoom level
     draggable: true, //disable drag
     zoomControl: true, //disable or enable zoom
     zoomControlOptions: {
@@ -127,6 +127,9 @@ window.onload = function () {
     //on first loop create map
     if (mapLoad === 1) {
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
+
+        //firebase database
+        var firebaseDB = new Firebase("<https://intense-fire-9287.firebaseio.com>");
     }
 
     
@@ -265,6 +268,8 @@ setInterval(function () {
     //if geoRefresh var = 10, then run geolocation function and reset geoRefresh to 1
     if (geoRefresh === 10) {
         geoLocateUser();
+        //saves LatLng to firebase
+        firebase.push(userLatLng);
         geoRefresh = 1;
         
     }
