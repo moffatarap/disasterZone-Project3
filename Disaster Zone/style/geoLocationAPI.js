@@ -273,8 +273,12 @@ setInterval(function () {
         //var latLngDB = userLatLng.toString();
 
         //push data to Firebase
-        //               string
-        firebaseDB.push(userLatLng.toString());
+        //savesUserLatLng to firebase
+        firebaseDB.push({
+            latLngUser: userLatLng.toString(),
+            addressUser: latlng.toString(),
+        });
+
         geoRefresh = 1;
         
     }
