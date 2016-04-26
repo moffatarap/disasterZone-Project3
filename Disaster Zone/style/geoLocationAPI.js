@@ -12,19 +12,20 @@ var longitude; //lng for warning system, based off userLatLng var
 
 
 /* DISASTER LOCATION ARRAY */
-//write location warnings array
-var locationWarningArray = [
+//location warning LAT 
+var locWLatArray = [
     //                     lat                 lng
-    new google.maps.LatLng(-40.98590134003134, 174.95394012824352), //[0] 40 wellington rd
-    new google.maps.LatLng(-40.980371999999996, 174.96758169999998), //[1] // 355-359 state highway paekak
-    , //[2]
+    -40.980371999999996, //[0] 355-359 state highway paekak
+    
 
 ];
-
-//var locatonWarningTest = new google.maps.LatLng(-40.980371999999996, 174.96758169999998);
-                                                
+//location warning LNG 
+locWLngArray = [
+    174.96758169999998,//[0] 355-359 state highway paekak 
+];
 
 /*=/ VARABLES END \=*/
+
 var mapOptions = {
     //MAP OPTIONS
     //zoom: 3, //sets zoom level
@@ -266,11 +267,6 @@ function reDraw() {
     console.log(geoRefresh); //checks value of geoRefresh
 
     /* DEBUG SECTION END */
-   if (latitude === -40.980371999999996) {
-        document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
-
-    } 
-
 
     //sets center of map*/
     mapObject.setCenter(userLatLng)
@@ -301,10 +297,20 @@ setInterval(function () {
         /*BREAK USER LATLNG INTO LAT AND LNG */
         latitude = userLatLng.lat(); //sets latitude to userLatLng lat value
         longitude = userLatLng.lng(); //sets lon to userLatLng lat value
+        //DEBUG
         console.log(latitude);
         console.log(longitude);
+        //DEBUG END
+        /*BREAK USER LATLNG INTO LAT AND LNG [END] -40.980371999999996
+        if (latitude === locWLngArray[0]) {
+            document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
-        /*BREAK USER LATLNG INTO LAT AND LNG*/
+        } */
+
+        if (latitude === locWLatArray[0] && longitude === locWLngArray[0]) {
+            document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
+
+        }
 
         geoRefresh = 1;
         
