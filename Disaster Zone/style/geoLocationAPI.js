@@ -13,7 +13,9 @@ var firebaseDB; //creates firebaseDB var
 /* DISASTER LOCATION ARRAY */
 //write location warnings array
 var locationWarningArray = [
-    new google.maps.LatLng(), //[0] 40 wellington rd
+    //                     lat                 lng
+    new google.maps.LatLng(-40.98590134003134, 174.95394012824352), //[0] 40 wellington rd
+    new google.maps.LatLng(-40.980371999999996, 174.96758169999998), //[1] // 355-359 state highway paekak
 
 ];
 
@@ -242,7 +244,16 @@ function geolocationError(positionError) {
 
 /* 5# ===== RE DRAW MARKER ===== */
 function reDraw() {
+    /*DISPLAY WARNING IF USER IS NEAR DISASTER 
+    if (userLatLng === userLatLng) {
+        document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
+    } */
+
+    if (locationWarningArray[0] === userLatLng) {
+        document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
+
+    }
     //sets center of map*/
     //[breaks]accuracyDraw.setPosition(userLatLng);
     mapObject.setCenter(userLatLng)
