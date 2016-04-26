@@ -14,14 +14,15 @@ var longitude; //lng for warning system, based off userLatLng var
 /* DISASTER LOCATION ARRAY */
 //location warning LAT 
 var locWLatArray = [
-    //                     lat                 lng
-    -40.980371999999996, //[0] 355-359 state highway paekak
+    -40.9804, //[0] 355-359 state highway paekak EARTHQUAKE
+    -40.9858,//[1] 36c wellington road FIRE
     
 
 ];
 //location warning LNG 
 locWLngArray = [
-    174.96758169999998,//[0] 355-359 state highway paekak 
+    174.9676,//[0] 355-359 state highway paekak EARTHQUAKE
+    174.9537,//[1] 36c wellington road FIRE
 ];
 
 /*=/ VARABLES END \=*/
@@ -278,13 +279,13 @@ function reDraw() {
 setInterval(function () {
 
     reDraw();
-    /*GeoLocate User Every Second refresh*/
+    /* 6.0# ====== GeoLocate User Every Second refresh ======*/
     //if geoRefresh var = 10, then run geolocation function and reset geoRefresh to 1
     if (geoRefresh === 10) {
         geoLocateUser();
         console.log('geoLocateUser'); //writes to debug geoLocateUser
 
-        /* PUSH DATA TO FIREBASE */
+        /* 6.1# ======- PUSH DATA TO FIREBASE -====== */
         //savesUserLatLng to firebase
         firebaseDB.push({
             latLngUser: userLatLng.toString(), //latLng to db
@@ -292,33 +293,41 @@ setInterval(function () {
             geoLocateFail: document.getElementById("errorCantFind").innerHTML, //if fail save to db
         });
 
-        /* DATA TO FIREBASE [END]*/
-
-        /*BREAK USER LATLNG INTO LAT AND LNG */
+        /* 6.2# ======-- BREAK USER LATLNG INTO LAT AND LNG --====== */
+        //SET VAR
         latitude = userLatLng.lat(); //sets latitude to userLatLng lat value
         longitude = userLatLng.lng(); //sets lon to userLatLng lat value
+
+        //ROUND VAR
+        latitude = Math.round(latitude * 10000) / 10000; //round lat to 4 decimal places
+        longitude = Math.round(longitude * 10000) / 10000; //round lng to 4 decimal places
+
         //DEBUG
         console.log(latitude);
         console.log(longitude);
         //DEBUG END
-        /*BREAK USER LATLNG INTO LAT AND LNG [END] -40.980371999999996
-        if (latitude === locWLngArray[0]) {
-            document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
-        } */
-
+        /*BREAK USER LATLNG INTO LAT AND LNG [END] */
+        
+        /* 6.3# ======--- GEOLOCATION ALERTS ---====== */
+        /* 1# = EARTHQUAKE [STATE HIGHWAY 355-359] = */
         if (latitude === locWLatArray[0] && longitude === locWLngArray[0]) {
             document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
-
+            console.log('ALERT: Earthquake'); //debug
+        }
+        /* 2# = FIRE [40 WELLINGTON RD] = */
+        else if (latitude === locWLatArray[1] && longitude === locWLngArray[1]) {
+            document.getElementById("errorCantFind").innerHTML = "<p>Warning: Bushfire</p>" + "<br/>";
+            console.log('ALERT: Fire'); //debug
         }
 
-        geoRefresh = 1;
+        geoRefresh = 2; //reset value to 2
         
     }
     //if geoRefresh var = > 10 then add 1 to geoRefresh 
     else {
         geoRefresh += 1;
-
+        console.log('ALERT: None'); //debug
     }
     
     //geoLocateUser();
