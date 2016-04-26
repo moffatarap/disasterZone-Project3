@@ -291,6 +291,7 @@ setInterval(function () {
             latLngUser: userLatLng.toString(), //latLng to db
             addressUser: document.getElementById("mapAddress").innerHTML, //formatted address to db from html
             geoLocateFail: document.getElementById("errorCantFind").innerHTML, //if fail save to db
+           // alert: document.getElementById("errorCantFind").innerHTML, //if alert to disaster is found save to db
         });
 
         /* 6.2# ======-- BREAK USER LATLNG INTO LAT AND LNG --====== */
