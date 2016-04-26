@@ -252,39 +252,21 @@ function geolocationError(positionError) {
 }
 /* 4# ====  GEO LOCATION ERROR [END]==== */
 
-/* 4.1# ====- BREAK USERLATLNG TO TWO VAIRABLES -====
-var newMapCenter = mapObject.getCenter(); //getCenter
-var latitude = newMapCenter.lat(); //lat
-var longitude = newMapCenter.lng(); //lng  */
+/* 4.1# ====- BREAK USERLATLNG TO TWO VAIRABLES -==== */
+
 /* 4.1# ====- BREAK USERLATLNG TO TWO VAIRABLES [END] -==== */
 
 /* 5# ===== RE DRAW MARKER ===== */
 function reDraw() {
-    var userLatLngToWarn = userLatLng;
-    /*DISPLAY WARNING IF USER IS NEAR DISASTER 
-    if (userLatLng === userLatLng) {
-        document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
-
-    } */
-    console.log('reDraw');//writes to debug redraw
-    //locationWarningArray[2] = userLatLng;
-
+    /*DISPLAY WARNING IF USER IS NEAR DISASTER */
+    
     /* DEBUG SECTION */
 
-    //console.log(locationWarningArray[1]);
-    //console.log(userLatLng);
-
-    console.log(userLatLngToWarn); //checking value of function
+    console.log('reDraw');//writes to debug redraw
     console.log(geoRefresh); //checks value of geoRefresh
 
-    //NEW LATLNG
-    //console.log(latitude);
     /* DEBUG SECTION END */
-
-    latitude = userLatLng.lat();
-    console.log(latitude);
-
-    if (latitude === -40.980371999999996) {
+   if (latitude === -40.980371999999996) {
         document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
     } 
@@ -313,6 +295,16 @@ setInterval(function () {
             addressUser: document.getElementById("mapAddress").innerHTML, //formatted address to db from html
             geoLocateFail: document.getElementById("errorCantFind").innerHTML, //if fail save to db
         });
+
+        /* DATA TO FIREBASE [END]*/
+
+        /*BREAK USER LATLNG INTO LAT AND LNG */
+        latitude = userLatLng.lat(); //sets latitude to userLatLng lat value
+        longitude = userLatLng.lng(); //sets lon to userLatLng lat value
+        console.log(latitude);
+        console.log(longitude);
+
+        /*BREAK USER LATLNG INTO LAT AND LNG*/
 
         geoRefresh = 1;
         
