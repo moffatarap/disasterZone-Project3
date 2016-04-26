@@ -270,9 +270,13 @@ setInterval(function () {
     if (geoRefresh === 10) {
         geoLocateUser();
         //saves LatLng to firebase
-        var latLngDB = userLatLng.toString();
-
-        firebaseDB.push({latLngDB:''});
+        //var latLngDB = userLatLng.toString();
+        var latLngFDB = new google.maps.LatLng(userLatLng.lat, userLatLng.lng);
+        //push data to Firebase
+        //               string
+        firebaseDB.push() {
+            //sdsd
+        };
         geoRefresh = 1;
         
     }
