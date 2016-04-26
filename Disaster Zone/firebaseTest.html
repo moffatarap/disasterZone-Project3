@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
 <head>
-    <title>firebaseTest</title>
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script> <!-- FIREBASE -->
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script> <!-- JQuery-->
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
 </head>
 <body>
+    <div id='messagesDiv'></div>
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Message'>
     <script>
@@ -14,14 +15,18 @@
             if (e.keyCode == 13) {
                 var name = $('#nameInput').val();
                 var text = $('#messageInput').val();
-                //ADD items to DB
-                myDataRef.push('User' + name + 'says' + text);
-              $('#messageInput').val('');
+                myDataRef.push({ name: name, text: text });
+                $('#messageInput').val('');
             }
         });
-
-        //on receipt of message notify of it
-
+        myDataRef.on('child_added', function (snapshot) {
+            var message = snapshot.val();
+            displayChatMessage(message.name, message.text);
+        });
+        function displayChatMessage(name, text) {
+            $('<div/>').text(text).prepend($('<em/>').text(name + ': ')).appendTo($('#messagesDiv'));
+            $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+        };
     </script>
 </body>
 </html>

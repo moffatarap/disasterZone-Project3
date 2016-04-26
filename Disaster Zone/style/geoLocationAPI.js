@@ -129,7 +129,7 @@ window.onload = function () {
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
 
         //firebase database
-        var firebaseDB = new Firebase("<https://intense-fire-9287.firebaseio.com>");
+        var firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
     }
 
     
