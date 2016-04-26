@@ -7,7 +7,8 @@ var geocoder; //geocode to address
 var mapLoad = 0; //sets mapLoad to [0]
 var geoRefresh = 1; //sets geoRefresh function
 var firebaseDB; //creates firebaseDB var
-
+var latitude; //lat for warning system, based off userLatLng var
+var longitude; //lng for warning system, based off userLatLng var
 
 
 /* DISASTER LOCATION ARRAY */
@@ -251,6 +252,11 @@ function geolocationError(positionError) {
 }
 /* 4# ====  GEO LOCATION ERROR [END]==== */
 
+/* 4.1# ====- BREAK USERLATLNG TO TWO VAIRABLES -====
+var newMapCenter = mapObject.getCenter(); //getCenter
+var latitude = newMapCenter.lat(); //lat
+var longitude = newMapCenter.lng(); //lng  */
+/* 4.1# ====- BREAK USERLATLNG TO TWO VAIRABLES [END] -==== */
 
 /* 5# ===== RE DRAW MARKER ===== */
 function reDraw() {
@@ -269,10 +275,16 @@ function reDraw() {
     //console.log(userLatLng);
 
     console.log(userLatLngToWarn); //checking value of function
-    console.log(userLatLngToWarn);
+    console.log(geoRefresh); //checks value of geoRefresh
+
+    //NEW LATLNG
+    //console.log(latitude);
     /* DEBUG SECTION END */
 
-    if (locationWarningArray[1] === userLatLngToWarn) {
+    latitude = userLatLng.lat();
+    console.log(latitude);
+
+    if (latitude === -40.980371999999996) {
         document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
 
     } 
