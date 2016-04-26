@@ -11,7 +11,11 @@ var firebaseDB; //creates firebaseDB var
 
 
 /* DISASTER LOCATION ARRAY */
-//write
+//write location warnings array
+var locationWarningArray = [
+    new google.maps.LatLng(), //[0] 40 wellington rd
+
+];
 
 /*=/ VARABLES END \=*/
 var mapOptions = {
