@@ -14,14 +14,14 @@ var fourDPR = 10000;  //sets rounding var
 
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
 //location warning LAT 
-var locWLatArray = [
+var disasterLocLatArray = [
     -40.9881, //[0] PAEKAKARIKI EARTHQUAKE
     -40.9858, //[1] 36c wellington road FIRE
     
 
 ];
 //location warning LNG 
-var locWLngArray = [
+var disasterLocLngArray = [
     174.9510, //[0] PAEKAKARIKI EARTHQUAKE
     174.9537, //[1] 36c wellington road FIRE
 ];
@@ -342,7 +342,7 @@ setInterval(function () {
         //    console.log('ALERT: Fire'); //debug
         //}
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
-        if (latitude <= locWLatArray[0] + disasterOffsetArray[0] && latitude >= locWLatArray[0] - disasterOffsetArray[0] && longitude <= locWLngArray[0] + disasterOffsetArray[1] && longitude >= locWLngArray[0] - disasterOffsetArray[1]) {
+        if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[0] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[0] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[1] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[1]) {
             document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
             console.log('ALERT: Earthquake'); //debug
         };
