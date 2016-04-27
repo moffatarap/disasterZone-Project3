@@ -16,14 +16,16 @@ var fourDPR = 10000;  //sets rounding var
 //location warning LAT 
 var disasterLocLatArray = [
     -40.9881, //[0] PAEKAKARIKI EARTHQUAKE
-    -40.9858, //[1] 36c wellington road FIRE
+    -40.9800, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
+    -41.3000, //[2] WELLINGTON FLOOD BASIN RESERVE
     
 
 ];
 //location warning LNG 
 var disasterLocLngArray = [
     174.9510, //[0] PAEKAKARIKI EARTHQUAKE
-    174.9537, //[1] 36c wellington road FIRE
+    174.9560, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
+    174.7801, //[2] WELLINGTON FLOOD BASIN RESERVE
 ];
 /* 1# = DISASTER LOCATION ARRAYS [END] =*/
 
@@ -47,8 +49,11 @@ var disasterOffsetArray = [
 
 /* 3# === DISASTER MARKER ARRAY === */
 var disasterMarkerAY = [
-    ,//[0]
-    ,//[1]
+    ,//[0] - EARTHQUAKE
+    ,//[1] - FIRE
+    ,//[2] - FLOOD
+    ,//[3] - HURRICANE
+    ,//[4] - TORNADO
 ];
 /* 3# === DISASTER MARKER ARRAY [END] === */
 
@@ -87,6 +92,7 @@ var iconArray = [
     './media/img/mapKeys/event/weak/fireW.png',           //[24]  WEAK
 ];
 /* 4# ==== DISASTER ICON ARRAY [END] ==== */
+
 /*=/ VARABLES END \=*/
 
 var mapOptions = {
@@ -213,6 +219,12 @@ window.onload = function () {
 
         });
         //FIRE
+        disasterMarkerAY[1] = new google.maps.Marker({
+            map: mapObject,
+            position: { lat: disasterLocLatArray[0], lng: disasterLocLngArray[0] }, //PAEKAKARIKI
+            icon: iconArray[0],
+
+        });
 
         //firebase database
         firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");

@@ -44,12 +44,46 @@ lat: 0.0044
 lng: 0.0025
 
 DISASTER ALERT OFFSET VALUES [END]
+
+DISASTER EXAMPLES
+
+/*= #1 =*/
+EARTHQUAKE PAEKAKARIKI
+lat: -40.9881
+Lng: 174.9510
+
+/*== #2 ==*/
+FIRE PAEKAKARIKI CAMPBELL PARK
+lat: -40.9800
+Lng: 174.9560
+
+/*=== #3 ===*/
+FLOOD WELLINGTON BASIN RESERVE
+lat: -41.3000
+Lng: 174.7801
+
+/*==== #4 ====*/
+HURRICANE WELLINGTON SOMES ISLAND
+lat:
+Lng:
+
+/*===== #5 =====*/
+TORNADO WELLINGTON AIRPORT
+lat:
+Lng:
+
+
+
+
+
+
 /* WOLF METHOD */
   if (latitude <= locWLatArray[0] + 0.0379 && latitude >= locWLatArray[0] - 0.0379 && longitude <= locWLngArray[0] + 0.0300 && longitude >= locWLngArray[0] - 0.0300) {
             document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
             console.log('ALERT: Earthquake'); //debug
         };
 /* WOLF METHOD [END]*/
+
 /* PAOA METHOD */
 if (latitude >= 40.9671 && latitude <= -41.0050 && longitude >= 174.9710 && longitude <= 174.9410) {
             document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
