@@ -45,6 +45,23 @@ var disasterOffsetArray = [
 ];
 /* 2# == DISASTER OFFSET ARRAY [END] ==*/
 
+/* 3# === DISASTER MARKER ARRAY === */
+var disasterMarkerAY = [
+    ,//[0]
+    ,//[1]
+];
+/* 3# === DISASTER MARKER ARRAY [END] === */
+
+/* 4# ==== DISASTER ICON ARRAY ==== */
+var iconArray = [
+    // 4.0 EARTHQUAKE, Flood , Hurricane, Tornado , Fire
+    './media/img/mapKeys/event/light/earthquakeL.png',  //[0] EARTHQUAKE 
+    './media/img/mapKeys/event/severe/fireS.png',      //[1] PERTH BUSH FIRE AUS
+    './media/img/mapKeys/event/strong/floodST.png',    //[2] CHIANG RAI FLOOD THAILAND
+    './media/img/mapKeys/event/moderate/tornadoM.png', //[3] ILLINOIS TORNADO USA
+    './media/img/mapKeys/event/weak/hurricaneW.png'    //[4]  HURRICANE BRAZIL
+];
+/* 4# ==== DISASTER ICON ARRAY [END] ==== */
 /*=/ VARABLES END \=*/
 
 var mapOptions = {
@@ -162,6 +179,15 @@ window.onload = function () {
     //on first loop create map
     if (mapLoad === 1) {
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
+        /* disasterMarker creation */
+        //EARTHQUAKE
+        disasterMarkerAY[0] = new google.maps.Marker({
+            map: mapObject,
+            position: { lat: disasterLocLatArray[0], lng: disasterLocLngArray[0] }, //PAEKAKARIKI
+            icon: iconArray[0],
+
+        });
+        //FIRE
 
         //firebase database
         firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
