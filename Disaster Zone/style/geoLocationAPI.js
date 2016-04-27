@@ -18,14 +18,16 @@ var disasterLocLatArray = [
     -40.9881, //[0] PAEKAKARIKI EARTHQUAKE
     -40.9800, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
     -41.3000, //[2] WELLINGTON FLOOD BASIN RESERVE
-    
-
+    -41.2581, //[3] WELLINGTON HURRICANE SOMES ISLAND
+    -41.3275, //[4] WELLINGTON TORNADO AIRPORT
 ];
 //location warning LNG 
 var disasterLocLngArray = [
     174.9510, //[0] PAEKAKARIKI EARTHQUAKE
     174.9560, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
     174.7801, //[2] WELLINGTON FLOOD BASIN RESERVE
+    174.8659, //[3] WELLINGTON HURRICANE SOMES ISLAND
+    174.8075, //[4] WELLINGTON TORNADO AIRPORT
 ];
 /* 1# = DISASTER LOCATION ARRAYS [END] =*/
 
@@ -210,21 +212,50 @@ window.onload = function () {
     //on first loop create map
     if (mapLoad === 1) {
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
-        /* disasterMarker creation */
-        //EARTHQUAKE
+
+        /*====== DISASTER MARKER CREATION ======*/
+
+        /* 1.0# = EARTHQUAKE = */
         disasterMarkerAY[0] = new google.maps.Marker({
             map: mapObject,
             position: { lat: disasterLocLatArray[0], lng: disasterLocLngArray[0] }, //PAEKAKARIKI
             icon: iconArray[0],
 
         });
-        //FIRE
+
+        /* 1.1# == FIRE ==*/
         disasterMarkerAY[1] = new google.maps.Marker({
             map: mapObject,
-            position: { lat: disasterLocLatArray[0], lng: disasterLocLngArray[0] }, //PAEKAKARIKI
-            icon: iconArray[0],
+            position: { lat: disasterLocLatArray[1], lng: disasterLocLngArray[1] }, //PAEKAKARIKI
+            icon: iconArray[22],
 
         });
+
+        /* 1.2# == FLOOD ==*/
+        disasterMarkerAY[2] = new google.maps.Marker({
+            map: mapObject,
+            position: { lat: disasterLocLatArray[2], lng: disasterLocLngArray[2] }, //WELLINGTON
+            icon: iconArray[8],
+
+        });
+
+        /* 1.3# ===  HURRICANE ===*/
+        disasterMarkerAY[3] = new google.maps.Marker({
+            map: mapObject,
+            position: { lat: disasterLocLatArray[3], lng: disasterLocLngArray[3] }, //WELLINGTON
+            icon: iconArray[11],
+
+        });
+
+        /* 1.4# ==== TORNADO ====*/
+        disasterMarkerAY[4] = new google.maps.Marker({
+            map: mapObject,
+            position: { lat: disasterLocLatArray[4], lng: disasterLocLngArray[4] }, //WELLINGTON
+            icon: iconArray[19],
+
+        });
+
+        /*====== DISASTER MARKER CREATION [END] ======*/
 
         //firebase database
         firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
