@@ -328,7 +328,9 @@ setInterval(function () {
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
 
         /* 6.3# ======--- GEOLOCATION ALERTS RE-DO ---====== */
-        if (latitude >= )
+        if (latitude >= 40.9671 && latitude <= -41.0050) {
+
+        }
         /* 6.3# ======--- GEOLOCATION ALERTS RE-DO [END] ---====== */
         geoRefresh = 2; //reset value to 2
         
