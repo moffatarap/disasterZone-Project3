@@ -316,21 +316,22 @@ setInterval(function () {
         
         /* 6.3# ======--- GEOLOCATION ALERTS ---====== */
         /* 1# = EARTHQUAKE [STATE HIGHWAY 355-359] = */
-        if (latitude === locWLatArray[0] && longitude === locWLngArray[0]) {
+        //if (latitude === locWLatArray[0] && longitude === locWLngArray[0]) {
+        //    document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
+        //    console.log('ALERT: Earthquake'); //debug
+        //}
+        ///* 2# = FIRE [40 WELLINGTON RD] = */
+        //else if (latitude === locWLatArray[1] && longitude === locWLngArray[1]) {
+        //    document.getElementById("errorCantFind").innerHTML = "<p>Warning: Bushfire</p>" + "<br/>";
+        //    console.log('ALERT: Fire'); //debug
+        //}
+        /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
+        if (latitude <= locWLatArray[0] + 0.0379 && latitude >= locWLatArray[0] - 0.0379 && longitude <= locWLngArray[0] + 0.0300 && longitude >= locWLngArray[0] - 0.0300) {
             document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
             console.log('ALERT: Earthquake'); //debug
-        }
-        /* 2# = FIRE [40 WELLINGTON RD] = */
-        else if (latitude === locWLatArray[1] && longitude === locWLngArray[1]) {
-            document.getElementById("errorCantFind").innerHTML = "<p>Warning: Bushfire</p>" + "<br/>";
-            console.log('ALERT: Fire'); //debug
-        }
-        /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
-
+        };
         /* 6.3# ======--- GEOLOCATION ALERTS RE-DO ---====== */
-        if (latitude >= 40.9671 && latitude <= -41.0050) {
-
-        }
+        
         /* 6.3# ======--- GEOLOCATION ALERTS RE-DO [END] ---====== */
         geoRefresh = 2; //reset value to 2
         
