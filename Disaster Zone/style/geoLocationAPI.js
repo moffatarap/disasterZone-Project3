@@ -9,35 +9,37 @@ var geoRefresh = 1; //sets geoRefresh function
 var firebaseDB; //creates firebaseDB var
 var latitude; //lat for warning system, based off userLatLng var
 var longitude; //lng for warning system, based off userLatLng var
+var fourDPR = 10000;  //sets rounding var
 
 
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
 //location warning LAT 
 var locWLatArray = [
     -40.9881, //[0] PAEKAKARIKI EARTHQUAKE
-    -40.9858,//[1] 36c wellington road FIRE
+    -40.9858, //[1] 36c wellington road FIRE
     
 
 ];
 //location warning LNG 
 var locWLngArray = [
-    174.9510,//[0] PAEKAKARIKI EARTHQUAKE
-    174.9537,//[1] 36c wellington road FIRE
+    174.9510, //[0] PAEKAKARIKI EARTHQUAKE
+    174.9537, //[1] 36c wellington road FIRE
 ];
 /* 1# = DISASTER LOCATION ARRAYS [END] =*/
 
 /* 2# == DISASTER OFFSET ARRAY ==*/
+//sets offset depending on severity of the disaster, this offset will alert users with in the defined range to a disaster
 var disasterOffsetArray = [
-    0.0379,//[0] - LAT || 1 SEVERE
-    0.0300,//[1] - LNG || 1 SEVERE
-    ,//[2] - LAT ||  
-    ,//[3] - LNG ||
-    ,//[4] - LAT ||
-    ,//[5] - LNG ||
-    ,//[6] - LAT ||
-    ,//[7] - LNG ||
-    ,//[8] - LAT ||
-    ,//[9] - LNG ||
+    0.0379, //[0] - LAT || 1 SEVERE
+    0.0300, //[1] - LNG || 1 SEVERE
+    0.0279, //[2] - LAT || 2 Strong
+    0.0200, //[3] - LNG || 2 Strong
+    0.0179, //[4] - LAT || 3 Moderate
+    0.0100, //[5] - LNG || 3 Moderate
+    0.0089, //[6] - LAT || 4 Light
+    0.0050, //[7] - LNG || 4 Light
+    0.0044, //[8] - LAT || 5 Weak
+    0.0025, //[9] - LNG || 5 Weak
 
 
 ];
@@ -318,8 +320,8 @@ setInterval(function () {
         longitude = userLatLng.lng(); //sets lon to userLatLng lat value
 
         //ROUND VAR
-        latitude = Math.round(latitude * 10000) / 10000; //round lat to 4 decimal places
-        longitude = Math.round(longitude * 10000) / 10000; //round lng to 4 decimal places
+        latitude = Math.round(latitude * fourDPR) / fourDPR; //round lat to 4 decimal places
+        longitude = Math.round(longitude * fourDPR) / fourDPR; //round lng to 4 decimal places
 
         //DEBUG
         console.log(latitude);
@@ -340,7 +342,7 @@ setInterval(function () {
         //    console.log('ALERT: Fire'); //debug
         //}
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
-        if (latitude <= locWLatArray[0] + 0.0379 && latitude >= locWLatArray[0] - 0.0379 && longitude <= locWLngArray[0] + 0.0300 && longitude >= locWLngArray[0] - 0.0300) {
+        if (latitude <= locWLatArray[0] + disasterOffsetArray[0] && latitude >= locWLatArray[0] - disasterOffsetArray[0] && longitude <= locWLngArray[0] + disasterOffsetArray[1] && longitude >= locWLngArray[0] - disasterOffsetArray[1]) {
             document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
             console.log('ALERT: Earthquake'); //debug
         };
