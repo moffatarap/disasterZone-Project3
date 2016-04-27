@@ -1,3 +1,14 @@
+ADDRESS HTML
+file:///D:/Users/Mickmoffat/Documents/GitHub/disasterZone-Project2/Disaster%20Zone/index.html
+
+ADDRESS FIREBASE 
+https://disasterzone.firebaseio.com/
+
+ADDRESS GITHUB
+https://github.com/moffatarap/disasterZone-Project2
+
+http://moffatarap.github.io/disasterZone-Project2/Disaster%20Zone/index.html
+
 /* MARKER LAT LNG VALUE */
 
 PAEKAKARIKI Earthquake

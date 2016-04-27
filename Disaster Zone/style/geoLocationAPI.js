@@ -20,14 +20,28 @@ var locWLatArray = [
 
 ];
 //location warning LNG 
-locWLngArray = [
+var locWLngArray = [
     174.9510,//[0] PAEKAKARIKI EARTHQUAKE
     174.9537,//[1] 36c wellington road FIRE
 ];
 /* 1# = DISASTER LOCATION ARRAYS [END] =*/
 
-/* 2# == DISASTER MARKER LOCATION ARRAYS ==*/
-/* 2# == DISASTER MARKER LOCATION ARRAYS [END] ==*/
+/* 2# == DISASTER OFFSET ARRAY ==*/
+var disasterOffsetArray = [
+    0.0379,//[0] - LAT || 1 SEVERE
+    0.0300,//[1] - LNG || 1 SEVERE
+    ,//[2] - LAT ||  
+    ,//[3] - LNG ||
+    ,//[4] - LAT ||
+    ,//[5] - LNG ||
+    ,//[6] - LAT ||
+    ,//[7] - LNG ||
+    ,//[8] - LAT ||
+    ,//[9] - LNG ||
+
+
+];
+/* 2# == DISASTER OFFSET ARRAY [END] ==*/
 
 /*=/ VARABLES END \=*/
 
