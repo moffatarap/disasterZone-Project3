@@ -425,25 +425,37 @@ setInterval(function () {
         /*BREAK USER LATLNG INTO LAT AND LNG [END] */
         
         /* 6.3# ======--- GEOLOCATION ALERTS ---====== */
-        /* 1# = EARTHQUAKE [STATE HIGHWAY 355-359] = */
-        //if (latitude === locWLatArray[0] && longitude === locWLngArray[0]) {
-        //    document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
-        //    console.log('ALERT: Earthquake'); //debug
-        //}
-        ///* 2# = FIRE [40 WELLINGTON RD] = */
-        //else if (latitude === locWLatArray[1] && longitude === locWLngArray[1]) {
-        //    document.getElementById("errorCantFind").innerHTML = "<p>Warning: Bushfire</p>" + "<br/>";
-        //    console.log('ALERT: Fire'); //debug
-        //}
-        /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
+        //Displays alert if user is within a defined radius of event, the event radius is dependent on the severity of the event.
+        //0# - EARTHQUAKE PAEKAKARIKI || SEVERE
         if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[0] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[0] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[1] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[1]) {
-            document.getElementById("errorCantFind").innerHTML = "<p>Warning: Earthquake</p>" + "<br/>";
+            document.getElementById("errorCantFind").innerHTML = "<p>Warning: EARTHQUAKE</p>" + "<br/>";
             console.log('ALERT: Earthquake'); //debug
         };
-        /* 6.3# ======--- GEOLOCATION ALERTS RE-DO ---====== */
+        //1# - FIRE PAEKAKARIKI || MODERATE
+        if (latitude <= disasterLocLatArray[1] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[1] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[1] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[1] - disasterOffsetArray[5]) {
+            document.getElementById("errorCantFind").innerHTML = "<p>Warning: FIRE</p>" + "<br/>";
+            console.log('ALERT: FIRE'); //debug
+        };
+
+        //2# - FLOOD WELLINGTON || LIGHT
+        if (latitude <= disasterLocLatArray[2] + disasterOffsetArray[6] && latitude >= disasterLocLatArray[2] - disasterOffsetArray[6] && longitude <= disasterLocLngArray[2] + disasterOffsetArray[7] && longitude >= disasterLocLngArray[2] - disasterOffsetArray[7]) {
+            document.getElementById("errorCantFind").innerHTML = "<p>Warning: FLOOD</p>" + "<br/>";
+            console.log('ALERT: FLOOD'); //debug
+        };
+
+        //3# - HURRICANE WELLINGTON || STRONG
+        if (latitude <= disasterLocLatArray[3] + disasterOffsetArray[2] && latitude >= disasterLocLatArray[3] - disasterOffsetArray[2] && longitude <= disasterLocLngArray[3] + disasterOffsetArray[3] && longitude >= disasterLocLngArray[3] - disasterOffsetArray[3]) {
+            document.getElementById("errorCantFind").innerHTML = "<p>Warning: HURRICANE</p>" + "<br/>";
+            console.log('ALERT: HURRICANE'); //debug
+        };
+        //4# - TORNADO WELLINGTON || WEAK
+        if (latitude <= disasterLocLatArray[3] + disasterOffsetArray[2] && latitude >= disasterLocLatArray[3] - disasterOffsetArray[2] && longitude <= disasterLocLngArray[3] + disasterOffsetArray[3] && longitude >= disasterLocLngArray[3] - disasterOffsetArray[3]) {
+            document.getElementById("errorCantFind").innerHTML = "<p>Warning: TORNADO</p>" + "<br/>";
+            console.log('ALERT: TORNADO'); //debug
+        };
+        /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
         
-        /* 6.3# ======--- GEOLOCATION ALERTS RE-DO [END] ---====== */
-        geoRefresh = 2; //reset value to 2
+       geoRefresh = 2; //reset value to 2
         
     }
     //if geoRefresh var = > 10 then add 1 to geoRefresh 
