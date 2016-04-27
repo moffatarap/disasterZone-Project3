@@ -326,6 +326,10 @@ setInterval(function () {
             console.log('ALERT: Fire'); //debug
         }
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
+
+        /* 6.3# ======--- GEOLOCATION ALERTS RE-DO ---====== */
+        if (latitude >= )
+        /* 6.3# ======--- GEOLOCATION ALERTS RE-DO [END] ---====== */
         geoRefresh = 2; //reset value to 2
         
     }
