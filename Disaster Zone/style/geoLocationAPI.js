@@ -55,11 +55,36 @@ var disasterMarkerAY = [
 /* 4# ==== DISASTER ICON ARRAY ==== */
 var iconArray = [
     // 4.0 EARTHQUAKE, Flood , Hurricane, Tornado , Fire
-    './media/img/mapKeys/event/light/earthquakeL.png',  //[0] EARTHQUAKE 
-    './media/img/mapKeys/event/severe/fireS.png',      //[1] PERTH BUSH FIRE AUS
-    './media/img/mapKeys/event/strong/floodST.png',    //[2] CHIANG RAI FLOOD THAILAND
-    './media/img/mapKeys/event/moderate/tornadoM.png', //[3] ILLINOIS TORNADO USA
-    './media/img/mapKeys/event/weak/hurricaneW.png'    //[4]  HURRICANE BRAZIL
+    //Severe Strong Moderate Light Weak
+    './media/img/mapKeys/event/severe/earthquakeS.png',    //[0] SEVERE 
+    './media/img/mapKeys/event/strong/earthquakeST.png',   //[1] STRONG
+    './media/img/mapKeys/event/moderate/earthquakeM.png',  //[2] MODERATE
+    './media/img/mapKeys/event/light/earthquakeL.png',     //[3] LIGHT
+    './media/img/mapKeys/event/weak/earthquakeW.png',      //[4]  WEAK
+    // 4.1 = FLOOD flood =
+    './media/img/mapKeys/event/severe/floodS.png',         //[5] SEVERE 
+    './media/img/mapKeys/event/strong/floodST.png',        //[6] STRONG
+    './media/img/mapKeys/event/moderate/floodM.png',       //[7] MODERATE
+    './media/img/mapKeys/event/light/floodL.png',          //[8] LIGHT
+    './media/img/mapKeys/event/weak/floodW.png',           //[9]  WEAK
+    // 4.2 == HURRICANE ==
+    './media/img/mapKeys/event/severe/hurricaneS.png',    //[10] SEVERE 
+    './media/img/mapKeys/event/strong/hurricaneST.png',   //[11] STRONG
+    './media/img/mapKeys/event/moderate/hurricaneM.png',  //[12] MODERATE
+    './media/img/mapKeys/event/light/hurricaneL.png',     //[13] LIGHT
+    './media/img/mapKeys/event/weak/hurricaneW.png',      //[14]  WEAK
+    // 4.3 === TORNADO ===
+    './media/img/mapKeys/event/severe/tornadoS.png',      //[15] SEVERE 
+    './media/img/mapKeys/event/strong/tornadoST.png',     //[16] STRONG
+    './media/img/mapKeys/event/moderate/tornadoM.png',    //[17] MODERATE
+    './media/img/mapKeys/event/light/tornadoL.png',       //[18] LIGHT
+    './media/img/mapKeys/event/weak/tornadoW.png',        //[19]  WEAK
+    // 4.4 ==== FIRE ====
+    './media/img/mapKeys/event/severe/fireS.png',         //[20] SEVERE 
+    './media/img/mapKeys/event/strong/fireST.png',        //[21] STRONG
+    './media/img/mapKeys/event/moderate/fireM.png',       //[22] MODERATE
+    './media/img/mapKeys/event/light/fireL.png',          //[23] LIGHT
+    './media/img/mapKeys/event/weak/fireW.png',           //[24]  WEAK
 ];
 /* 4# ==== DISASTER ICON ARRAY [END] ==== */
 /*=/ VARABLES END \=*/
