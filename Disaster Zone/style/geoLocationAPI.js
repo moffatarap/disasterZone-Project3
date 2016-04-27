@@ -11,19 +11,23 @@ var latitude; //lat for warning system, based off userLatLng var
 var longitude; //lng for warning system, based off userLatLng var
 
 
-/* DISASTER LOCATION ARRAY */
+/* 1# = DISASTER WARNING LOCATION ARRAYS =*/
 //location warning LAT 
 var locWLatArray = [
-    -40.9804, //[0] 355-359 state highway paekak EARTHQUAKE
+    -40.9881, //[0] PAEKAKARIKI EARTHQUAKE
     -40.9858,//[1] 36c wellington road FIRE
     
 
 ];
 //location warning LNG 
 locWLngArray = [
-    174.9676,//[0] 355-359 state highway paekak EARTHQUAKE
+    174.9510,//[0] PAEKAKARIKI EARTHQUAKE
     174.9537,//[1] 36c wellington road FIRE
 ];
+/* 1# = DISASTER LOCATION ARRAYS [END] =*/
+
+/* 2# == DISASTER MARKER LOCATION ARRAYS ==*/
+/* 2# == DISASTER MARKER LOCATION ARRAYS [END] ==*/
 
 /*=/ VARABLES END \=*/
 
@@ -321,7 +325,7 @@ setInterval(function () {
             document.getElementById("errorCantFind").innerHTML = "<p>Warning: Bushfire</p>" + "<br/>";
             console.log('ALERT: Fire'); //debug
         }
-
+        /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
         geoRefresh = 2; //reset value to 2
         
     }
