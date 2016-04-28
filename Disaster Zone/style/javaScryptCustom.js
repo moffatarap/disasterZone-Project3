@@ -15,7 +15,7 @@ $(document).ready(function () {
     //NAV MAIN HIDE AND SHOW 
 
     $("#nav .grid_1").click(function () {
-    //show nav expand div
+        //show nav expand div
         $("#hamburgerContain").removeClass("hidden");
         //$("#hamburgerContain").slideDown(1000); //sets hight and animates
 
@@ -26,10 +26,10 @@ $(document).ready(function () {
         if (clickHC == 2) {
             $("#hamburgerContain").addClass("hidden");
             //$("#hamburgerContain").slideUp(1000); //sets hight and animates
-            
+
             clickHamburger = true; //sets click yes to true
             clickHC = 0; //resets value
-        }  
+        }
 
     });
 
@@ -139,9 +139,11 @@ $(document).ready(function () {
     });
 
     /* AUDIO PLAY FUNCTION */
-  
+    $(document).ready(function () {
+        $("#BGAudio").get(0).play();
+
+
+    });
+
+
 });
-
-
-
-

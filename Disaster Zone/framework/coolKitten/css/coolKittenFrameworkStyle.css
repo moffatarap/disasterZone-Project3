@@ -496,9 +496,17 @@ td {
     }
 
         /* DISABLED VIDEO */
+#slide1BGVideo { 
+    background-image: url(./media/img/slide1StaticImg.png); /* CANT GET TO WORK WITH LOCAL*/
+    background-image: url(http://i.imgur.com/eOHlQel.png); 
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: cover;
+}
 
-
-
+.fullscreenVideo {
+    display:none;
+}
 
 #aboutConcept {
     padding-top:0;
