@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!--INDEX Disaster Zone MDDN352 P2 [2016] (300317288) [7.4 - START] --->
+<!--INDEX Disaster Zone MDDN352 P2 [2016] (300317288) [9.5 - FINISH] --->
 <head>
     <title>Disaster Zone</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -36,12 +36,12 @@
     <!---=FIREBASE API =--->
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     
-    <!--== GEOLOCATION API []==-->
+    <!--== GEOLOCATION API ==-->
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyAN3Od9I1nMTcdfXtSfkzgC1ZKZuxtlbkA"></script>
     <!--== GEOLOCATION API END ==-->
 
-    <!--= GOOGLE MAPS API CUSTOM [DISABLED]=-->
-    <script src="d./style/geoLocationAPI.js"></script>
+    <!--= GOOGLE MAPS API CUSTOM =-->
+    <script src="./style/geoLocationAPI.js"></script>
     <!--= FIREBASE API =-->
     
     <!-- LIBARY -->
@@ -118,19 +118,19 @@
         <!--+ PAGE 1 +-->
         <div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
             <!--==** BG VIDEO TEST START [DISABLED [slide1BGVideo.mp4]**==-->
-
-            <div id="slide1BGVideo">
-                <video loop muted autoplay poster="./media/video/slide1Still.png" class="fullscreenVideo">
-                    <source src="./media/video/">
-                </video>
-                <!-- AUDIO BACKGROUND [DISABLED [.mp3]-->
-                <audio id="BGAudio" src="./media/sound/backGroundSound" loop="loop"></audio>
-                <!-- AUDIO BACKGROUND END-->
-            </div>
-
+            
+                <div id="slide1BGVideo">
+                    <video loop muted autoplay poster="./media/video/slide1Still.png" class="fullscreenVideo">
+                        <source src="./media/video/">
+                    </video>
+                    <!-- AUDIO BACKGROUND [DISABLED [.mp3]-->
+                    <audio id="BGAudio" src="./media/sound/backGroundSound" loop="loop"></audio>
+                    <!-- AUDIO BACKGROUND END-->
+                </div>
+            
             <!--==** BG VIDEO TEST END **==-->
             <!-- GOOGLE MAPS API
-        <div id="googleAPI"> -->
+            <div id="googleAPI"> -->
             <!-- PAGE 1 CONTAINER -->
             <div class="container clearfix" id="slide1BG">
                 <!-- CONTENT -->
@@ -142,51 +142,58 @@
                     <h2>Real-time disaster reporting</h2>
                 </div>
                 <!-- CONTENT END -->
-                
+                <!--+ DECORATION [API] +-->
+                <div id="decorative" class="grid_12">
+                    <!--<img src="https://i.imgur.com/7e71hk8.jpg"> [REPALCE WITH API]-->
+                </div>
+                <!--+ DECORATION [API] END+-->
             </div>
             <!-- PAGE 1 CONTAINER END -->
         </div>
         <!-- GOOGLE MAPS API END
-    </div> -->
+        </div> -->
         <!--+ PAGE 1 END +-->
-
         <!--++ PAGE 2 ++-->
         <div id="slide2" class="slide" data-slide="2" data-stellar-background-ratio="0.5">
             <!-- PAGE 2 CONTAINER -->
             <div class="container clearfix">
                 <!-- CONTENT -->
                 <div id="content" class="grid_12">
-                    <!-- 5# WANTED OUTCOME END-->
-                    <!-- 6# GEO LOCATION -->
-                    <div id="content" class="grid_12">
-                        <div id="geoLocation" class="slideHeader">
-                            <h2>Disaster Zone Geo-location Alerts</h2>
-                        </div>
-                        <p>
-                            Geo location is a important aspect of proposed concept, a example geo Locator is found bellow.
-                            Works both on mobile and desktop user needs to allow website to access location in order to work.
-                            Wired Desktop is limited to location of ISP its not the actual location of the user, but this will be resolved by log-in sigh-up system using post codes and street addresses.
-                            Wireless Desktop or laptop it pings local networks to get a reading, that can be close but not 100% correct.
-                        </p>
-                        <!-- GOOGLE MAPS API -->
-                        <div id="googleAPI" class="mapSize">
-                        </div>
-                        <!-- MAP ADDRESS [FIX LATER]-->
-                        <div id="mapAddress" class="grid_7">
-
-                        </div>
-                        <!-- ERROR -->
-                        <div id="errorCantFind" class="grid_4">
-                        </div>
-                        <!-- GOOGLE MAPS API END -->
+                    <!--=+ ABOUT DIV COLOR +=-->
+                    <div id="about" class="slideHeader">
+                        <h2>About</h2>
                     </div>
-                    <!-- 6# GEO LOCATION END -->
+                    <!-- 1# CONCEPT DETAILS -->
+                    <div id="#" class="grid_6">
+                        <h3>Concept Details</h3>
+                        <p>
+                            Disaster Zone is a single-page responsive website that brings together information on disasters occurring in the world in real-time to one easy to access website and mobile application. Disaster Zone must scale to all modern devices including desktops, laptops, tablets and mobile devices.
+                            Both the website and the mobile application run in tandem, displaying the same info at all times.<br><br>
+
+                            Users of the website or the mobile application will be notified of disasters near them when required after a sign-up process. Disaster Zone uses GPS location data along with postcodes and city addresses for the alerts process, if a disaster event is near a user. <br><br>
+                            The user is informed by SMS, Email or in-app push notification telling them of event and what to do. Users can post warnings about events in their area via the app or website these event notifications can be seen by other users and staff of Disaster Zone in the Google maps API.
+
+                        </p>
+                    </div>
+                    <!-- 1# CONCEPT DETAILS END -->
+                    <!-- 2# MORE INFO -->
+                    <div id="aboutConcept" class="grid_6 omega">
+                        <p>
+                            All events are quality controlled to make sure they are valid and that the data set is correct and up to date. Disaster Zone acts as an information site to help people in the event of a disaster and to coordinate volunteers in the aftermath of a natural disaster.
+                            The other function of is the Disaster Zone relief fund; user-donated money to support people in a disaster zone. <br><br>
+                            
+                            No profit is taken from donations, all funds go directly to where its’ needed. The website is made for all ages; it is designed with simplicity and user ability in mind.
+                            Someone with very little technical skills needs to be able to use and operate the website easily and effectively in a time of stress. <br><br>
+                            Disaster Zone is a concept by Arapaoa Moffat started in project two of MDDN201 2015, and is going to be carried on in development though the duration of MDDN352 2016.
+
+                        </p>
+                    </div>
+                    <!-- 2# MORE INFO END -->
 
                 </div>
-            </div>
                 <!-- CONTENT END -->
+            </div>
         </div>
-        
         <!-- PAGE 2 CONTAINER END-->
         <!--++ PAGE 2 END ++-->
         <!--+++ PAGE 3 +++-->
@@ -199,7 +206,88 @@
                     <h2>Reported Disasters</h2>
                 </div>
                 <div id="content" class="grid_12">
+                    <!-- 1# DISASTER TYPES -->
+                    <div class="grid_12">
+                        <h3>Disaster Types</h3>
+                        <p>Icons in the table below depict what disaster type they represent, along with the scale in which they are measured. <br>
+                        Icons are used under creative commons by Nicolas Mollet, edited by myself for this project: mapicons.mapsmarker.com.</p>
+                    </div>
+                    <!-- 1# DISASTER TYPES END [FOR GIGGLES http://i.imgur.com/hFb3Aw6.gifv] -->
+                    <!-- 1.2# ICONS AND DISASTER TYPES -->
+                    <div id="#" class="grid_12">
+                        <!-- DISASTER TYPES TABLE START -->
+                        <table>
+                            <!-- ROW 1 -->
+                            <tr>
+                                <td><h4>ICON</h4></td> <td><h4>EVENT</h4></td> <td><h4>SCALE SYSTEM</h4></td>
+                            </tr>
+                            <!-- ROW 2 EARTH QUAKE -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/earthquake.png"></td>
+                                <td><h5>Earthquake</h5></td>
+                                <td><h5>Richter-scale</h5></td>
 
+                            </tr>
+
+                            <!-- ROW 3 FLOOD -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/flood.png"></td>
+                                <td><h5>Flood</h5></td>
+                                <td><h5>Meters of water</h5></td>
+                            </tr>
+
+                            <!-- ROW 4 HURRICANE -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/hurricane.png"></td>
+                                <td><h5>Hurricane</h5></td>
+                                <td><h5>Saffir-Simpson Scale</h5></td>
+                            </tr>
+
+                            <!-- ROW 5 TORNADO -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/tornado.png"></td>
+                                <td><h5>Tornado</h5></td>
+                                <td><h5>Enhanced Fujita Scale</h5></td>
+                            </tr>
+
+                            <!-- ROW 6 FIRE -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/fire.png"></td>
+                                <td><h5>Fire</h5></td>
+                                <td><h5>Fire Danger Rating</h5></td>
+                            </tr>
+
+
+
+                        </table>
+                        <!-- DISASTER TYPES TABLE END -->
+                    </div>
+                    <!-- 1.2# ICONS AND DISASTER TYPES END-->
+                    <!-- 2# SEVERITY SCALE -->
+                    <div class="grid_12">
+                        <div id="severityScale" class="slideHeader">
+                            <h2>Disaster Zone Severity Scale</h2>
+                        </div>
+                    </div>
+                    <!-- 2.2# SEVERITY PT1 -->
+                    <div class="grid_6">
+                        <ol>
+                            <li>Severe level of damage to people and or property, high risk of injury and human casualties. 10,000+ people missing or injured 70% damage to personal property and city infrastructure.</li>
+                            <li>Strong level of damage to people and or property, medium high risk of injury and human casualties. 5,000 to 8,000 people missing or injured 60% damage to personal property and city infrastructure.</li>
+                            <li>Moderate level of damage to people and or property, medium risk of injury and human casualties. 500 to 1,000 people missing or injured 30% damage to personal property and city infrastructure.</li>
+                        </ol>
+                    </div>
+                    <!-- 2.2# SEVERITY PT1 END-->
+                    <!-- 2.3# SEVERITY PT2 -->
+                    <div class="grid_6 omega">
+                        <div id="olSeverityScale2">
+                            <ol start="4">
+                                <li>Light level of damage to people and or property, low risk of injury and human casualties. 0 to 100 people missing or injured 0% to 15% damage to personal property and city infrastructure.</li>
+                                <li>Weak to no damage to people and or property, low to risk of injury and human casualties. 0 people missing or injured 0% to 5% damage to personal property and city infrastructure.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- 2.3# SEVERITY PT2 END -->
                     <!-- 2# SEVERITY SCALE END -->
                 </div>
             </div>
@@ -217,7 +305,50 @@
                     <h2>Reporting Systems</h2>
                 </div>
                 <div id="content" class="grid_12">
-                    
+                    <!-- #1 Alert Types-->
+                    <div id="#" class="grid_6">
+                        <h3>Alert Types</h3>
+                        <p>
+                            Details of Disaster Zone’s alert system can be found below; all these systems must work interchangeably. Users are alerted though any of these methods below in the event of a disaster near their GPS or given location.
+                        </p>
+                        <div id="smsBG" class="slideHeader">
+                            <ul>
+                                <li>-SMS </li>
+                            </ul>
+                        </div>
+                        <p>
+                            Notifications sent via phone-tree an online application system to send SMS to users personal mobile devices from the sign-up process.
+                        </p>
+                        <div id="emailBG" class="slideHeader">
+                            <ul>
+                                <li>- EMAIL</li>
+                            </ul>
+                        </div>
+                            <p>
+                                Notifications sent via Gmail to users personal email address from the sign-up process
+                            </p>
+                        <div id="pushBG" class="slideHeader">
+                            <ul>
+                                <li>- PUSH NOTIFICAION </li>
+                            </ul>
+                        </div>
+                            <p>
+                                If application is installed push notification on user’s device is displayed.
+                            </p>
+                        </div>
+                    <!-- #1 Alert Types END -->
+                    <!-- #2 Reporting Functions-->
+                    <div id="#" class="grid_6 omega">
+                        <h3>Reporting</h3>
+                        <p>
+                            Disaster Zones disaster reporting is done via Google API in website and mobile application.
+                            On the map shows users location, and what type and severity it is, along with ability to volunteer or donate if over a defined threshold on the Disaster Zone Severity Scale.<br><br>
+
+                            Data for disasters are gathered via official weather and disaster API’s and then added to map in real-time. Users can add notes and their own markers on map from events in a Disaster Zone. All of these requests are quality checked to make sure that no one is misusing the system.
+                        </p>
+                    </div>
+                    <!-- #2 Reporting Functions END-->
+                   
                 </div>
             </div>
             <!-- CONTENT END-->
@@ -227,8 +358,118 @@
         <!--+++++ PAGE 5 +++++-->
         <div id="slide5" class="slide" data-slide="5" data-stellar-background-ratio="0.5">
             <!-- PAGE 5 CONTAINER -->
-           
-  </div>
+            <div class="container clearfix">
+                <!-- CONTENT -->
+                <div id="pScope" class="slideHeader">
+                    <h2>Project Scope and Code</h2>
+                </div>
+                <div id="content" class="grid_12">
+                    <!-- 1# CODE -->
+                    <div id="#" class="grid_6">
+                        <h3>Technical Functionality</h3>
+                        <p>
+                            The functionalities of Disaster Zone are very complex, and so is the code. Below is an overview of what code languages will be used and why the change (if any), along with frameworks et cetera.
+                        </p>
+
+                        <ol class="techFLu">
+                            <li>CSS & HTML</li>
+                            <li>jQuery & Java Script</li>
+                            <li>Cool Kittens Framework</li>
+                            <li>Skeleton</li>
+                        </ol>
+                    </div>
+                    <!--1.1# CODE -->
+                    <!-- 2# API -->
+                    <div id="#" class="grid_6 omega">
+                        <h3>API's</h3>
+                        <p>
+                            Due to the nature of the website being real-time, API’s are used to gather information and automatically display on the google maps API creating markers.
+                            The API’s I’m planning to use can be found below for each disaster type, some are global whereas others are localized to New Zealand.
+                        </p>
+                        <!-- API LIST -->
+                        <ol class="apiLu">
+                            <li><a target='_blank' href="http://api.geonet.org.nz/">Earthquakes Geonet API [NZ]</a></li>
+                            <li> <a target='_blank' href="https://lris.scinfo.org.nz/layer/106-fsl-flood-return-interval/webservices/">Flood Iris API [NZ]</a></li>
+                            <li><a target='_blank' href="http://hurricane.terrapin.com/soap_access.html.en">Hurricane Terrapin API [PACIFIC]</a></li>
+                            <li><a target='_blank' href="http://www.aerisweather.com/support/docs/api/reference/endpoints/stormreports/">Tornado Aeris API [World Wide]</a></li>
+                            <li><a target='_blank' href="http://inciweb.nwcg.gov/">Fire Nwcg API [US]</a></li>
+                        </ol>
+                        <!-- API LIST END -->
+                    </div>
+                    <!-- 2# API END-->
+                </div>
+
+
+
+
+                <!-- 5# WANTED OUTCOME -->
+                <div id="content" class="grid_12">
+                    <div id="wOutcome" class="slideHeader">
+                        <h2>Desired Outcome</h2>
+                    </div>
+                    <p>
+                        For the scope of the project I wish to be able to make the map update with real-time information with at least one API, have a working GPS and location based system on both mobile and web.
+                        Web design that allows for responsive scaling on all devices creation of email based warnings for disasters. <br><br>
+                        This will require a lot of code and time to get external weather API’s to function in real-time.
+                        As well as a change the website language from html to asp.net hosted online using Microsoft Azure.
+                        Disaster Zone is not just a website that is just for reporting events, but as a community and a place for people to get help and support when in a time of great stress and peril.
+                    </p>
+                </div>
+                <!-- 5# WANTED OUTCOME END-->
+                <!-- 6# GEO LOCATION -->
+                <div id="content" class="grid_12">
+                    <div id="geoLocation" class="slideHeader">
+                        <h2>Geo Location</h2>
+                    </div>
+                    <p>
+                        Geo location is a important aspect of proposed concept, a example geo Locator is found bellow.
+                        Works both on mobile and desktop user needs to allow website to access location in order to work.
+                        Wired Desktop is limited to location of ISP its not the actual location of the user, but this will be resolved by log-in sigh-up system using post codes and street addresses.
+                        Wireless Desktop or laptop it pings local networks to get a reading, that can be close but not 100% correct.
+                    </p>
+                    <!-- GOOGLE MAPS API -->
+                    <div id="googleAPI" class="mapSize">
+                    </div>
+                    <!-- MAP ADDRESS [FIX LATER]-->
+                    <div id="mapAddress" class="grid_7">
+
+
+                    </div>
+                    <!-- ERROR -->
+                    <div id="errorCantFind" class="grid_4">
+                    </div>
+                    <!-- GOOGLE MAPS API END -->
+
+                </div>
+                <!-- 6# GEO LOCATION END -->
+
+                <!-- 7# CAMERA -->
+                <div id="content" class="grid_12">
+                    <div id="cameraAccess" class="slideHeader">
+                        <h2>Camera Access</h2>
+                    </div>
+                    <p>
+                        Camera photos from users can be uploaded and shared with all users of Disaster Zone are linked to events.
+                        Mobile photos captured directly from camera or saved images, desktop only allows for uploading of images not capturing.
+                    </p>
+                    <!-- 7# CAMERA CONTENT -->
+                    <div id="cameraItems" class="grid_6">
+                        <h3>Photo Capture</h3>
+                        <input type="file" accept="image/*">
+
+                    </div>
+
+                    <div id="cameraItems2" class="grid_5 omega">
+                        <h3>Video Capture</h3>
+                        <input type="file" accept="video/*capture=camcorder" id="submit">
+
+                    </div>
+                    <!-- 7# CAMERA END -->
+                </div>
+                <!-- 7# CAMERA END -->
+            </div>
+
+        </div>
         <!-- CONTENT END-->
         
         <!-- PAGE 5 CONTAINER END -->
