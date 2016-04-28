@@ -64,13 +64,13 @@ Lng: 174.7801
 
 /*==== #3 ====*/
 HURRICANE WELLINGTON SOMES ISLAND [STRONG]
-lat:
-Lng:
+lat: -41.2581
+Lng: 174.8659
 
 /*===== #4 =====*/
 TORNADO WELLINGTON AIRPORT [WEAK]
-lat:
-Lng:
+lat: -41.3275
+Lng: 174.8075
 
 
 
