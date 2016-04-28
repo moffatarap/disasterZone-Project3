@@ -139,13 +139,7 @@ $(document).ready(function () {
     });
 
     /* AUDIO PLAY FUNCTION */
-    $(document).ready(function () {
-        $("#BGAudio").get(0).play();
-        
-
-    });
-
-
+  
 });
 
 
