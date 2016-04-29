@@ -431,6 +431,14 @@ article {
     text-align:center;
 }
 
+#disasterAlertValue0 {
+
+}
+
+#disasterAlertSeverity0 {
+
+}
+
 /* 1# = FIRE = */
 #disasterAlert1 {
     /*      T    R  B   L*/
@@ -444,6 +452,14 @@ article {
     color:#201c1c;
     text-align:center;
     
+}
+
+#disasterAlertValue1 {
+
+}
+
+#disasterAlertSeverity1 {
+
 }
 
 /* 2# == FLOOD == */
@@ -460,6 +476,15 @@ article {
     text-align:center;
 }
 
+
+#disasterAlertValue2 {
+
+}
+
+#disasterAlertSeverity2 {
+
+}
+
 /* 3# === HURRICANE ===*/
 #disasterAlert3 {
     /*      T    R  B   L*/
@@ -473,6 +498,14 @@ article {
     
     color:#201c1c;
     text-align:center;
+}
+
+#disasterAlertValue3 {
+
+}
+
+#disasterAlertSeverity3 {
+
 }
 
 /* 4# ==== TORNADO ====*/

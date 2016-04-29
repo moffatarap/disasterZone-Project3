@@ -462,14 +462,22 @@ setInterval(function () {
         }; */
 
         if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[0] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[0] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[1] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[1]) {
-            document.getElementById("disasterAlert0").textContent = "Warning: EARTHQUAKE";
+            //TEXT CONTENT
+            document.getElementById("disasterAlert0").textContent = "EARTHQUAKE";
+            document.getElementById("disasterAlertValue0").textContent = "6.3";
+
+            //CSS
             $("#disasterAlert0").css({ "visibility": "visible" }); //makes div visible
+            $("#disasterAlertSeverity0").css({ "background-color": "#f8522c" });
             console.log('ALERT: Earthquake'); //debug
         };
 
         //1# - FIRE PAEKAKARIKI || MODERATE
         if  (latitude <= disasterLocLatArray[1] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[1] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[1] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[1] - disasterOffsetArray[5]) {
-            document.getElementById("disasterAlert1").textContent = "Warning: FIRE";
+            //TEXT CONTENT
+            document.getElementById("disasterAlert1").textContent = "FIRE";
+
+            //CSS
             $("#disasterAlert1").css({ "visibility": "visible" }); //makes div visible
             console.log('ALERT: FIRE'); //debug
         };
