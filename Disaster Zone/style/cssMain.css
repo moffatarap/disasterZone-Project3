@@ -419,7 +419,7 @@ article {
 /* 0# EARTHQUAKE */
 #disasterAlert0{
      /*      T    R  B   L*/
-    background-color: #f8522c;/* RED*/
+    
     /* */
     visibility:hidden;
 }
@@ -442,7 +442,7 @@ article {
 /* 1# = FIRE = */
 #disasterAlert1 {
     /*      T    R  B   L*/
-    background-color: #f8f72d; /* YELLOW */
+    
     /**/
     visibility:hidden;
 }
@@ -465,7 +465,7 @@ article {
 /* 2# == FLOOD == */
 #disasterAlert2 {
      /*      T    R  B   L*/
-    background-color: #20a276; /*GREEN*/
+    
     /**/
     visibility:hidden;
 }
@@ -488,7 +488,6 @@ article {
 /* 3# === HURRICANE ===*/
 #disasterAlert3 {
     /*      T    R  B   L*/
-    background-color: #f8b22c; /*ORANGE*/
     /**/
     visibility:hidden;
 }
@@ -511,7 +510,7 @@ article {
 /* 4# ==== TORNADO ====*/
 #disasterAlert4 {
     /*      T    R  B   L*/
-    background-color: #34e6f2; /*BLUE*/
+    
     /**/
     visibility:hidden;
 }
@@ -522,11 +521,19 @@ article {
     text-align:center;
 }
 
+#disasterAlertValue4 {
+
+}
+
+#disasterAlertSeverity4 {
+
+}
+
 
 /* 5# ===== FIRE TE ARO =====*/
 #disasterAlert5 {
     /*      T    R  B   L*/
-    background-color: #34e6f2; /*BLUE*/
+    
     /*
     visibility:hidden; */
 }
@@ -535,6 +542,14 @@ article {
     /**/
     color:#201c1c;
     text-align:center;
+}
+
+#disasterAlertValue5 {
+
+}
+
+#disasterAlertSeverity5 {
+
 }
 /* ======= DISASTER ALERT END ======*/
 
