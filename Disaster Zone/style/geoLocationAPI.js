@@ -98,11 +98,7 @@ var iconArray = [
 /* 5# ===== DISASTER ALERT UI ELEMENT =====*/
 
 /* 5.0# ===== MAIN CONTAIN ALERT BAR =====*/
-function mainContainAlertControl(mainAlertBar, mapObject) {
-    var mainAlertBarUI = document.createElement('div') //create div element
 
-
-};
 /* 5.0# ===== MAIN CONTAIN ALERT BAR [END] =====*/
 
 /* 5# ===== DISASTER ALERT UI ELEMENT [END] =====*/
@@ -223,9 +219,10 @@ window.onload = function () {
     console.log('windowOnLoad'); //debug
     //on first loop create map
     if (mapLoad === 1) {
+        /* = 1# GOOGLE MAP CREATE = */
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
 
-        /*====== DISASTER MARKER CREATION ======*/
+        /*====== 2# DISASTER MARKER CREATION ======*/
 
         /* 1.0# = EARTHQUAKE = */
         disasterMarkerAY[0] = new google.maps.Marker({
@@ -269,8 +266,13 @@ window.onload = function () {
 
         /*====== DISASTER MARKER CREATION [END] ======*/
 
-        //firebase database
+        /* 3# === DISASTER ALERT UI ELEMENTS === */
+        
+        /* 3# === DISASTER ALERT UI ELEMENTS === */
+
+        /* #4 ==== FIREBASE CREATE ==== */
         firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
+        /* #4 ==== FIREBASE CREATE [END] ====*/
     }
 
     
@@ -379,10 +381,6 @@ function geolocationError(positionError) {
     document.getElementById("errorCantFind").innerHTML = "Error: " + positionError.message + "<br />";
 }
 /* 4# ====  GEO LOCATION ERROR [END]==== */
-
-/* 4.1# ====- BREAK USERLATLNG TO TWO VAIRABLES -==== */
-
-/* 4.1# ====- BREAK USERLATLNG TO TWO VAIRABLES [END] -==== */
 
 /* 5# ===== RE DRAW MARKER ===== */
 function reDraw() {
