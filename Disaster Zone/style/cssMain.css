@@ -578,9 +578,11 @@ tr {
     background-color:#c5d7ed;
 }
 
+
 tr:first-child {
     /**/
     background-color:#375d81;
+    
 }
 
 /* API A LINK */

@@ -41,7 +41,7 @@
     <!--== GEOLOCATION API END ==-->
 
     <!--= GOOGLE MAPS API CUSTOM =-->
-    <script src="./style/geoLocationAPI.js"></script>
+    <script src="[DISABLED]/style/geoLocationAPI.js"></script>
     <!--= FIREBASE API =-->
     
     <!-- LIBARY -->
@@ -170,13 +170,14 @@
                             
                         </div>
                        
-                        <table>
+                        <table id="alertscontain">
                             <!-- ROW 1 -->
                             <tr>
                                 <td><h4>Alert</h4></td>
                                 <td><h4>Value</h4></td>
                                 <td><h4>Severity</h4></td>
                             </tr>
+
                             <!-- ROW 2 -->
                             <tr>
                                 <!-- #0 EARTHQUAKE PAEKAKARIKI [SEVERE]-->
@@ -184,52 +185,79 @@
                                     <p id="disasterAlert0"></p>
                                 </td>
                                 <!-- #0 EARTHQUAKE PAEKAKARIKI [VALUE]-->
-                                <td id="disasterAlertValue0"></td>
+                                <td>
+                                    <p id="disasterAlertValue0"></p>
+                                </td>
                                 <!-- #0 EARTHQUAKE PAEKAKARIKI [SEVERITY]-->
                                 <td id="disasterAlertSeverity0"></td>
                             </tr>
+
                             <!-- ROW 3 -->
                             <tr>
                                 <!-- #1 FIRE PAEKAKARIKI CAMPBELL PARK [MODERATE] -->
-                                <td id="disasterAlert1"></td>
+                                <td>
+                                    <p id="disasterAlert1"></p>
+
+                                </td>
                                 <!-- #1 FIRE PAEKAKARIKI CAMPBELL PARK [VALULE] -->
-                                <td id="disasterAlertValue1"></td>
+                                <td>
+                                    <p id="disasterAlertValue1"></p>
+
+                                </td>
                                 <!-- #1 FIRE PAEKAKARIKI CAMPBELL PARK [SEVERITY] -->
                                 <td id="disasterAlertSeverity1"></td>
                             </tr>
+
                             <!-- ROW 4 -->
                             <tr>
                                 <!-- #2 FLOOD WELLINGTON BASIN RESERVE [LIGHT] -->
-                                <td id="disasterAlert2"></td>
+                                <td>
+                                    <p id="disasterAlert2"></p>
+                                </td>
                                 <!-- #2 FLOOD WELLINGTON BASIN RESERVE [VALUE] -->
                                 <td id="disasterAlertValue2"></td>
                                 <!-- #2 FLOOD WELLINGTON BASIN RESERVE [SEVERITY] -->
                                 <td id="disasterAlertSeverity2"></td>
                             </tr>
+
                             <!-- ROW 5-->
                             <tr>
                                 <!-- #3 HURRICANE WELLINGTON SOMES ISLAND [STRONG] -->
-                                <td id="disasterAlert3"></td>
+                                <td>
+                                    <p id="disasterAlert3"></p>
+                                </td>
                                 <!-- #3 HURRICANE WELLINGTON SOMES ISLAND [VALUE] -->
-                                <td id="disasterAlertValue3"></td>
+                                <td>
+                                    <p id="disasterAlertValue3"></p>
+                                </td>
                                 <!-- #3 HURRICANE WELLINGTON SOMES ISLAND [SEVERITY] -->
                                 <td id="disasterAlertSeverity3"></td>
                             </tr>
+
                             <!-- ROW 6-->
                             <tr>
                                 <!-- #4 TORNADO WELLINGTON AIRPORT [WEAK] -->
-                                <td id="disasterAlert4"></td>
+                                <td>
+                                    <p id="disasterAlert4"></p>
+                                </td>
                                 <!-- #4 TORNADO WELLINGTON AIRPORT [VALUE] -->
-                                <td id="disasterAlertValue4"></td>
+                                <td>
+                                    <p id="disasterAlertValue4"></p>
+                                </td>
                                 <!-- #4 TORNADO WELLINGTON AIRPORT [SEVERITY] -->
                                 <td id="disasterAlertSeverity4"></td>
                             </tr>
-                            <!-- ROW 6-->
+
+                            <!-- ROW 7-->
                             <tr>
                                 <!-- #4 FIRE WELLINGTON TE ARO [WEAK] -->
-                                <td id="disasterAlert5"></td>
+                                <td>
+                                    <p id="disasterAlert5"></p>
+                                </td>
                                 <!-- #4 FIRE WELLINGTON TE ARO [VALUE] -->
-                                <td id="disasterAlertValue5"></td>
+                                <td>
+                                    <p id="disasterAlertValue5"></p>
+                                </td>
                                 <!-- #4 FIRE WELLINGTON TE ARO [SEVERITY] -->
                                 <td id="disasterAlertSeverity5"></td>
                             </tr>
