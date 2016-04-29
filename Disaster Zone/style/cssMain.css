@@ -411,6 +411,10 @@ article {
     border: 1px dotted #0fd1a2; 
 }
 
+#disasterAlertUL {
+    display:inline-block;
+}
+
 /* ======= DISASTER ALERT ======*/
 /* 0# EARTHQUAKE */
 #disasterAlert0{
