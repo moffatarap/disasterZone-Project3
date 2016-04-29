@@ -499,6 +499,22 @@ article {
     color:#201c1c;
 }
 
+
+/* 5# ===== FIRE TE ARO =====*/
+#disasterAlert5 {
+    /*      T    R  B   L*/
+    padding: 0.5% 0 0.5% 0;
+    background-color: #34e6f2; /*BLUE*/
+    -webkit-box-shadow: 3px 3px 41px 2px rgba(0,0,0,0.27);
+    -moz-box-shadow: 3px 3px 41px 2px rgba(0,0,0,0.27);
+    box-shadow: 3px 3px 41px 2px rgba(0,0,0,0.27);
+    /**/
+}
+
+#disasterAlert5 p{
+    /**/
+    color:#201c1c;
+}
 /* ======= DISASTER ALERT END ======*/
 
 /* CLASS */

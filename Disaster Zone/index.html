@@ -41,7 +41,7 @@
     <!--== GEOLOCATION API END ==-->
 
     <!--= GOOGLE MAPS API CUSTOM =-->
-    <script src="[DISABLED]./style/geoLocationAPI.js"></script>
+    <script src="./style/geoLocationAPI.js"></script>
     <!--= FIREBASE API =-->
     
     <!-- LIBARY -->
@@ -164,19 +164,13 @@
                         Wireless Desktop or laptop it pings local networks to get a reading, that can be close but not 100% correct.
                     </p>
                     <!-- GOOGLE MAPS API -->
-                    <div id="googleAPI" class="mapSize">
-                    </div>
-                    <!-- MAP ADDRESS -->
-                    <div id="mapAddress" class="grid_7">
-
-                    </div>
-                    <!-- ERROR -->
-                    <div id="errorCantFind" class="grid_4">
-                    </div>
                     <!--===== DISASTER ALERTS =====-->
                     <div class="grid_12">
+                        <div id="geoLocation" class="slideHeader">
+                            <h2>Geolocation Based Alerts</h2>
+                        </div>
                         <!-- #0 EARTHQUAKE PAEKAKARIKI [SEVERE]-->
-                        <div id="disasterAlert0" class="grid_3">
+                        <div id="disasterAlert0" class="grid_2">
                             <p>Warning: EARTHQUAKE</p>
                         </div>
 
@@ -197,9 +191,24 @@
                         <div id="disasterAlert4" class="grid_2">
                             <p>Warning: TORNADO</p>
                         </div>
-                       
+
+                        <!-- #4 FIRE WELLINGTON TE ARO [WEAK] -->
+                        <div id="disasterAlert5" class="grid_2">
+                            <p>Warning: FIRE</p>
+                        </div>
+
                     </div>
                     <!--==== DISASTER ALERTS [END] ====-->
+                    <div id="googleAPI" class="mapSize">
+                    </div>
+                    <!-- MAP ADDRESS -->
+                    <div id="mapAddress" class="grid_7">
+
+                    </div>
+                    <!-- ERROR -->
+                    <div id="errorCantFind" class="grid_4">
+                    </div>
+                    
                     <!-- GOOGLE MAPS API END -->
                 </div>
                 <!-- 2# GEO LOCATION END -->

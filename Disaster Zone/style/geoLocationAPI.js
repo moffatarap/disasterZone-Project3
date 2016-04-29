@@ -20,6 +20,7 @@ var disasterLocLatArray = [
     -41.3000, //[2] WELLINGTON FLOOD BASIN RESERVE
     -41.2581, //[3] WELLINGTON HURRICANE SOMES ISLAND
     -41.3275, //[4] WELLINGTON TORNADO AIRPORT
+    -41.2955, //[5] WELLINGTON FIRE TE ARO 
 ];
 //location warning LNG 
 var disasterLocLngArray = [
@@ -28,6 +29,7 @@ var disasterLocLngArray = [
     174.7801, //[2] WELLINGTON FLOOD BASIN RESERVE
     174.8659, //[3] WELLINGTON HURRICANE SOMES ISLAND
     174.8075, //[4] WELLINGTON TORNADO AIRPORT
+    174.7756, //[5] WELLINGTON FIRE TE ARO 
 ];
 /* 1# = DISASTER LOCATION ARRAYS [END] =*/
 
@@ -56,6 +58,7 @@ var disasterMarkerAY = [
     ,//[2] - FLOOD
     ,//[3] - HURRICANE
     ,//[4] - TORNADO
+    ,//[5] - FIRE TE ARO
 ];
 /* 3# === DISASTER MARKER ARRAY [END] === */
 
@@ -264,6 +267,14 @@ window.onload = function () {
 
         });
 
+        /* 1.5# ===== FIRE TE ARO =====*/
+        disasterMarkerAY[5] = new google.maps.Marker({
+            map: mapObject,
+            position: { lat: disasterLocLatArray[5], lng: disasterLocLngArray[5] }, //WELLINGTON
+            icon: iconArray[24],
+
+        });
+
         /*====== DISASTER MARKER CREATION [END] ======*/
 
         /* 3# === DISASTER ALERT UI ELEMENTS === */
@@ -460,11 +471,19 @@ setInterval(function () {
             document.getElementById("disasterAlert3").innerHTML = "<p>Warning: HURRICANE</p>" + "<br/>";
             console.log('ALERT: HURRICANE'); //debug
         };
+
         //4# - TORNADO WELLINGTON || WEAK
         if (latitude <= disasterLocLatArray[4] + disasterOffsetArray[8] && latitude >= disasterLocLatArray[4] - disasterOffsetArray[8] && longitude <= disasterLocLngArray[4] + disasterOffsetArray[9] && longitude >= disasterLocLngArray[4] - disasterOffsetArray[9]) {
             document.getElementById("disasterAlert4").innerHTML = "<p>Warning: TORNADO</p>" + "<br/>";
             console.log('ALERT: TORNADO'); //debug
         };
+
+        //5# - FIRE WELLINGTON TE ARO || WEAK
+        if (latitude <= disasterLocLatArray[5] + disasterOffsetArray[6] && latitude >= disasterLocLatArray[5] - disasterOffsetArray[6] && longitude <= disasterLocLngArray[5] + disasterOffsetArray[7] && longitude >= disasterLocLngArray[5] - disasterOffsetArray[7]) {
+            document.getElementById("disasterAlert5").innerHTML = "<p>Warning: FIRE</p>" + "<br/>";
+            console.log('ALERT: FIRE'); //debug
+        };
+        
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
         
        geoRefresh = 2; //reset value to 2
