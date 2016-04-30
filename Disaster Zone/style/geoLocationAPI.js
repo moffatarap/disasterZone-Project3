@@ -231,14 +231,15 @@ window.onload = function () {
         /* 1.0# = EARTHQUAKE = */
         disasterMarkerAY[0] = new google.maps.Marker({
             map: mapObject,
+            title: 'Earthquake Paekakariki [SEVERE]',
             position: { lat: disasterLocLatArray[0], lng: disasterLocLngArray[0] }, //PAEKAKARIKI
             icon: iconArray[0],
-
-        });
+       });
 
         /* 1.1# == FIRE ==*/
         disasterMarkerAY[1] = new google.maps.Marker({
             map: mapObject,
+            title: 'Fire Paekakariki [MODERATE]',
             position: { lat: disasterLocLatArray[1], lng: disasterLocLngArray[1] }, //PAEKAKARIKI
             icon: iconArray[22],
 
@@ -247,6 +248,7 @@ window.onload = function () {
         /* 1.2# == FLOOD ==*/
         disasterMarkerAY[2] = new google.maps.Marker({
             map: mapObject,
+            title: 'Flood Wellington [LIGHT]',
             position: { lat: disasterLocLatArray[2], lng: disasterLocLngArray[2] }, //WELLINGTON
             icon: iconArray[8],
 
@@ -255,6 +257,7 @@ window.onload = function () {
         /* 1.3# ===  HURRICANE ===*/
         disasterMarkerAY[3] = new google.maps.Marker({
             map: mapObject,
+            title: 'Hurricane Wellington [STRONG]',
             position: { lat: disasterLocLatArray[3], lng: disasterLocLngArray[3] }, //WELLINGTON
             icon: iconArray[11],
 
@@ -263,6 +266,7 @@ window.onload = function () {
         /* 1.4# ==== TORNADO ====*/
         disasterMarkerAY[4] = new google.maps.Marker({
             map: mapObject,
+            title: 'Tornado Wellington [WEAK]',
             position: { lat: disasterLocLatArray[4], lng: disasterLocLngArray[4] }, //WELLINGTON
             icon: iconArray[19],
 
