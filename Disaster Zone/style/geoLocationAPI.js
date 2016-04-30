@@ -242,7 +242,6 @@ window.onload = function () {
             title: 'Fire Paekakariki [MODERATE]',
             position: { lat: disasterLocLatArray[1], lng: disasterLocLngArray[1] }, //PAEKAKARIKI
             icon: iconArray[22],
-
         });
 
         /* 1.2# == FLOOD ==*/
@@ -251,7 +250,6 @@ window.onload = function () {
             title: 'Flood Wellington [LIGHT]',
             position: { lat: disasterLocLatArray[2], lng: disasterLocLngArray[2] }, //WELLINGTON
             icon: iconArray[8],
-
         });
 
         /* 1.3# ===  HURRICANE ===*/
@@ -260,7 +258,6 @@ window.onload = function () {
             title: 'Hurricane Wellington [STRONG]',
             position: { lat: disasterLocLatArray[3], lng: disasterLocLngArray[3] }, //WELLINGTON
             icon: iconArray[11],
-
         });
 
         /* 1.4# ==== TORNADO ====*/
@@ -269,15 +266,14 @@ window.onload = function () {
             title: 'Tornado Wellington [WEAK]',
             position: { lat: disasterLocLatArray[4], lng: disasterLocLngArray[4] }, //WELLINGTON
             icon: iconArray[19],
-
         });
 
         /* 1.5# ===== FIRE TE ARO =====*/
         disasterMarkerAY[5] = new google.maps.Marker({
             map: mapObject,
+            title: 'Fire Wellington [WEAK]',
             position: { lat: disasterLocLatArray[5], lng: disasterLocLngArray[5] }, //WELLINGTON
             icon: iconArray[24],
-
         });
 
         /*====== DISASTER MARKER CREATION [END] ======*/
