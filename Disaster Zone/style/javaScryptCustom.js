@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     //NAV MAIN HIDE AND SHOW 
 
-    $("#nav .grid_1").click(function () {
+    $("#nav .grid_2").click(function () {
     //show nav expand div
         $("#hamburgerContain").removeClass("hidden");
         //$("#hamburgerContain").slideDown(1000); //sets hight and animates
