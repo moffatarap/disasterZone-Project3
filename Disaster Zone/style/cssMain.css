@@ -424,11 +424,12 @@ article {
     visibility:hidden;
 }
 
-#disasterAlert0 p{
+#disasterAlert0 {
     
-    /**/
+    
     color:#201c1c;
-    text-align:center;
+    /*
+    text-align:center;*/
 }
 
 #disasterAlertValue0 {
@@ -447,15 +448,17 @@ article {
     visibility:hidden;
 }
 
-#disasterAlert1 p{
-    /**/
+#disasterAlert1 {
+    
     color:#201c1c;
-    text-align:center;
+    /*
+    text-align:center; */
     
 }
 
 #disasterAlertValue1 {
-
+    color:#201c1c;
+    text-align:center;
 }
 
 #disasterAlertSeverity1 {
@@ -470,15 +473,17 @@ article {
     visibility:hidden;
 }
 
-#disasterAlert2 p{
-    /**/
+#disasterAlert2{
+    
     color:#201c1c;
-    text-align:center;
+    /*
+    text-align:center;*/
 }
 
 
 #disasterAlertValue2 {
-
+    color:#201c1c;
+    text-align:center;
 }
 
 #disasterAlertSeverity2 {
@@ -492,15 +497,15 @@ article {
     visibility:hidden;
 }
 
-#disasterAlert3 p{
-    /**/
-    
+#disasterAlert3 {
     color:#201c1c;
-    text-align:center;
+    /*
+    text-align:center;*/
 }
 
 #disasterAlertValue3 {
-
+    color:#201c1c;
+    text-align:center;
 }
 
 #disasterAlertSeverity3 {
@@ -515,14 +520,17 @@ article {
     visibility:hidden;
 }
 
-#disasterAlert4 p{
-    /**/
+#disasterAlert4 {
+    
     color:#201c1c;
-    text-align:center;
+    /*
+    text-align:center;*/
+
 }
 
 #disasterAlertValue4 {
-
+    color:#201c1c;
+    text-align:center;
 }
 
 #disasterAlertSeverity4 {
@@ -538,14 +546,16 @@ article {
     visibility:hidden; */
 }
 
-#disasterAlert5 p{
-    /**/
+#disasterAlert5 {
+    
     color:#201c1c;
-    text-align:center;
+    /*
+    text-align:center;*/
 }
 
 #disasterAlertValue5 {
-
+    color:#201c1c;
+    text-align:center;
 }
 
 #disasterAlertSeverity5 {
