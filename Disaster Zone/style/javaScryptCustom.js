@@ -1,4 +1,4 @@
-/* Custom JavaScrypt MDDN352 P2 [2016] (300317288)*/
+/* Custom JavaScrypt MDDN352 P2 [2016] MOFFATARAP (300317288)*/
 
 $(document).ready(function () {
     /**** NAV HIDE AND SHOW PHONE ****/
