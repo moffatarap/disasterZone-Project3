@@ -587,7 +587,7 @@ setInterval(function () {
         if (latitude <= disasterLocLatArray[5] + disasterOffsetArray[6] && latitude >= disasterLocLatArray[5] - disasterOffsetArray[6] && longitude <= disasterLocLngArray[5] + disasterOffsetArray[7] && longitude >= disasterLocLngArray[5] - disasterOffsetArray[7]) {
             //TEXT CONTENT
             document.getElementById("disasterAlert5").textContent = "FIRE";
-            document.getElementById("disasterAlert5").textContent = "9";
+            document.getElementById("disasterAlertValue5").textContent = "9";
 
             //CSS
             $("#disasterAlert5").css({ "visibility": "visible" }); //makes div visible
