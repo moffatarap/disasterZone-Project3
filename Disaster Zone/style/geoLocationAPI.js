@@ -1,4 +1,4 @@
-/* Geolocation API Disaster Zone MDDN352 P2 [2016] MOFFATARAP (300317288)*/
+/* Geolocation API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) & SCHULTZSTEF (300308218)*/
 /*=/ VARABLES \=*/
 var mapMarker; //var for marker
 var mapObject; //var for the google map
