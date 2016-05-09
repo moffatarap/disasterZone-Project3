@@ -251,7 +251,7 @@ window.onload = function () {
             title: 'Flood Wellington [LIGHT]',
             position: { lat: disasterLocLatArray[2], lng: disasterLocLngArray[2] }, //WELLINGTON
             icon: iconArray[8],
-            size: new google.maps.Size(20, 20)
+            
         });
 
         /* 1.3# ===  HURRICANE ===*/
