@@ -9,6 +9,13 @@ https://github.com/moffatarap/disasterZone-Project2
 
 http://moffatarap.github.io/disasterZone-Project2/Disaster%20Zone/index.html
 
+/* Calc LAT LNG to KM Working Section */
+Levin
+Lat: - 40.6222
+Lng: 175.2862
+
+Vivian Street
+
 /* MARKER LAT LNG VALUE */
 
 PAEKAKARIKI Earthquake
