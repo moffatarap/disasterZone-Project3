@@ -11,7 +11,6 @@ var firebaseDB; //creates firebaseDB var
 var latitude; //lat for warning system, based off userLatLng var
 var longitude; //lng for warning system, based off userLatLng var
 var fourDPR = 10000;  //sets rounding var
-var circleRadius; //set circle radius var
 
 
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
@@ -100,13 +99,20 @@ var iconArray = [
 ];
 /* 4# ==== DISASTER ICON ARRAY [END] ==== */
 
-/* 5# ===== DISASTER ALERT UI ELEMENT =====*/
+/* 5# ===== ALERT CIRCLE ARRAY =====*/
+var circleRadiusArray = [
+    new google.maps.Circle({
 
-/* 5.0# ===== MAIN CONTAIN ALERT BAR =====*/
 
-/* 5.0# ===== MAIN CONTAIN ALERT BAR [END] =====*/
+    }),//[0]SEVERE
+    ,//[1]STRONG
+    ,//[2]MODERATE
+    ,//[3]LIGHT
+    ,//[4]WEAK
 
-/* 5# ===== DISASTER ALERT UI ELEMENT [END] =====*/
+];
+
+/* 5# ===== ALERT CIRCLE ARRAY END =====*/
 
 /*=/ VARABLES END \=*/
 
@@ -228,7 +234,7 @@ window.onload = function () {
         /* = 1# GOOGLE MAP CREATE = */
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
 
-        /*====== 2# DISASTER MARKER CREATION ======*/
+        /*====== 2# DISASTER MARKER CREATION AND ALERT CIRCLE ======*/
 
         /* 1.0# = EARTHQUAKE = */
         disasterMarkerAY[0] = new google.maps.Marker({
@@ -236,8 +242,17 @@ window.onload = function () {
             title: 'Earthquake Paekakariki [SEVERE]',
             position: { lat: disasterLocLatArray[0], lng: disasterLocLngArray[0] }, //PAEKAKARIKI
             icon: iconArray[0],
-       });
+        });
 
+        //ALERT CIRCLE MARKER
+        circle = new google.maps.Circle({
+            map: mapObject,
+            radius: 16093,    // 16km in meters
+            fillColor: '#AA0000'
+        });
+
+        circle.bindTo('center', disasterMarkerAY[0], 'position');
+    
         /* 1.1# == FIRE ==*/
         disasterMarkerAY[1] = new google.maps.Marker({
             map: mapObject,
