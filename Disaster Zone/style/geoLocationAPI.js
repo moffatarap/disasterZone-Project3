@@ -11,6 +11,7 @@ var firebaseDB; //creates firebaseDB var
 var latitude; //lat for warning system, based off userLatLng var
 var longitude; //lng for warning system, based off userLatLng var
 var fourDPR = 10000;  //sets rounding var
+var alertCircleStrokeWeight = 2; //sets stroke weight for alert circle
 
 
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
@@ -100,19 +101,34 @@ var iconArray = [
 /* 4# ==== DISASTER ICON ARRAY [END] ==== */
 
 /* 5# ===== ALERT CIRCLE ARRAY =====*/
+//stores circles in array var
 var circleRadiusArray = [
-    new google.maps.Circle({
-
-
-    }),//[0]SEVERE
-    ,//[1]STRONG
-    ,//[2]MODERATE
-    ,//[3]LIGHT
-    ,//[4]WEAK
-
+    ,//[0] - EARTHQUAKE
+    ,//[1] - FIRE
+    ,//[2] - FLOOD
+    ,//[3] - HURRICANE
+    ,//[4] - TORNADO
+    ,//[5] - FIRE TE ARO
 ];
 
 /* 5# ===== ALERT CIRCLE ARRAY END =====*/
+
+/* 6# ====== ALERT CIRCLE COLORS ARRAY ======*/
+var alertCircleColorArray = [
+    '#e52419',//[0] SEVERE 
+    ,//[1] STRONG
+    ,//[2] MODERATE
+    ,//[3] LIGHT
+    ,//[4]  WEAK
+
+];
+/* 6# ====== ALERT CIRCLE COLORS ARRAY [END] ======*/
+
+/* 7# ======= ALERT CIRCLE RADUIS ARRAY =======*/
+var alertCirlceRadiusArray = [
+
+];
+/* 7# ======= ALERT CIRCLE RADUIS [END] =======*/
 
 /*=/ VARABLES END \=*/
 
@@ -247,8 +263,10 @@ window.onload = function () {
         //ALERT CIRCLE MARKER
         circle = new google.maps.Circle({
             map: mapObject,
-            radius: 16093,    // 16km in meters
-            fillColor: '#AA0000'
+            radius: 16093, // 16km in meters
+            fillColor: alertCircleColorArray[0],
+            strokeColor: alertCircleColorArray[0],
+            strokeWeight: alertCircleStrokeWeight,
         });
 
         circle.bindTo('center', disasterMarkerAY[0], 'position');
