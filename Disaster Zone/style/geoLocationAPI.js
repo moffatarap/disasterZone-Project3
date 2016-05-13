@@ -100,9 +100,9 @@ var iconArray = [
 ];
 /* 4# ==== DISASTER ICON ARRAY [END] ==== */
 
-/* 5# ===== ALERT CIRCLE ARRAY =====*/
-//stores circles in array var
-var circleRadiusArray = [
+/* #5.0 ===== CIRCLE ARRAY =====*/
+//stores circles in array
+var alertCircleMarkerArray = [
     ,//[0] - EARTHQUAKE
     ,//[1] - FIRE
     ,//[2] - FLOOD
@@ -111,23 +111,32 @@ var circleRadiusArray = [
     ,//[5] - FIRE TE ARO
 ];
 
+/* 5# ===== ALERT CIRCLE ARRAY [END] =====*/
+//sets radius for each disaster type meters to km
+var alertCirlceRadiusArray = [
+    ,//[0] SEVERE
+    ,//[1] STRONG
+    ,//[2] MODERATE
+    ,//[3] LIGHT
+    ,//[4] WEAK
+];
+
 /* 5# ===== ALERT CIRCLE ARRAY END =====*/
 
 /* 6# ====== ALERT CIRCLE COLORS ARRAY ======*/
 var alertCircleColorArray = [
     '#e52419',//[0] SEVERE 
-    ,//[1] STRONG
-    ,//[2] MODERATE
-    ,//[3] LIGHT
-    ,//[4]  WEAK
+    '#f68824',//[1] STRONG
+    '#f2c92d',//[2] MODERATE
+    '#31c95c',//[3] LIGHT
+    '#4ecbf2',//[4]  WEAK
 
 ];
+
 /* 6# ====== ALERT CIRCLE COLORS ARRAY [END] ======*/
 
 /* 7# ======= ALERT CIRCLE RADUIS ARRAY =======*/
-var alertCirlceRadiusArray = [
 
-];
 /* 7# ======= ALERT CIRCLE RADUIS [END] =======*/
 
 /*=/ VARABLES END \=*/
@@ -261,15 +270,15 @@ window.onload = function () {
         });
 
         //ALERT CIRCLE MARKER
-        circle = new google.maps.Circle({
+        alertCircleMarkerArray[0] = new google.maps.Circle({
             map: mapObject,
             radius: 16093, // 16km in meters
-            fillColor: alertCircleColorArray[0],
-            strokeColor: alertCircleColorArray[0],
-            strokeWeight: alertCircleStrokeWeight,
+            fillColor: alertCircleColorArray[0], //sets color of fill from array
+            strokeColor: alertCircleColorArray[0], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
         });
 
-        circle.bindTo('center', disasterMarkerAY[0], 'position');
+        alertCircleMarkerArray[0].bindTo('center', disasterMarkerAY[0], 'position');
     
         /* 1.1# == FIRE ==*/
         disasterMarkerAY[1] = new google.maps.Marker({
