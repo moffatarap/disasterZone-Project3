@@ -1,4 +1,4 @@
-/**** CSS main style sheet disaster zone MDDN352 P1 [2016] (300317288)****/
+/*= MAIN CSS Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) & SCHULTZSTEF (300308218) =*/
 
 /***** INDEX STYLE *****/
 /**** FONT-SIZE-STYLE ****/
@@ -6,967 +6,617 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
 /*** HEADER ***/
-h1 {
-    font-family:'lato';
-    color:white;
-    font-size:42px;    
-    font-size:2.625em;
-    font-size:3.2vw;
-    padding:1.5%;
+/*+ TEXT SIZE +*/
+
+html {
+    font-family: 'lato';
 }
 
+h1 {
+    font-family: 'lato';
+    font-size: 5em;
+    color: #f9f9f9;
+    margin-bottom: 0.0500em;
+    
+}
+
+
+
 h2 {
-    font-family:'Lato';
-    color:#183152; /* DARK BLUE */
-    font-size:42px;    
-    font-size:2.625em;
-    font-size:2vw;
-    margin:0.1%;
-    padding:0.2%;
+    font-family: 'Lato';
+    font-size: 3.2em;
+    color: #f9f9f9;
+    text-align: center;
+    /*      T  R B L  */
+    padding: 1% 0 1% 0;
+    
 }
- 
+
+
+
+/* SUBHEADER EACH PAGE */
 h3 {
-    font-family:'Lato';
-    color:#183152;
-    font-size:42px;    
-    font-size:2.625em;
-    font-size:1.7vw;
+    font-family: 'Lato';
+    font-size: 2em;
+    color: #378048;
+    text-align: left;
+
+    margin: 0.2% 0 0.2% 0;
+    /**/
 }
+
+
 
 /* ALERT FROM TITLE */
 h6 {
-    font-family:'Lato';
-    color:#201c1c; /* off black*/
-    font-size:20px;
-    font-size:1.1vw;
-    margin:0.5%;
-    padding:0.8%;
-    display:inline-block;
-
+    font-family: 'Lato';
 }
 
- /** MAP KEY ITEMS **/
+/** ICONS PAGE#2 **/
 h4 {
-    font-family:'Lato';
-    color:#183152; /* DARK BLUE*/
-    font-size:1.3vw;
-    margin:0.2%;
-    padding:0.2%;
-
-}
-/* FOR UI KEY HEADER */
-
-h7 {
-    font-family:'Lato';
-    color:#f9f9f9; /* DARK BLUE*/
-    font-size:1.4vw;
-    margin:0.2%;
-    padding:0.2%;
+    font-family: 'Lato';
+    font-weight:bold;
+    font-size: 1.5em;
+    color: #f9f9f9;
+    text-align:center;
 }
 
-#navHExpand h4 {
-    color:#183152; /*DARK BLUE*/
-}
-
+/* DISASTER TYPES DISASTER NAMES TABLE */
 h5 {
-    font-family:'Lato';
-    color:#183152; /* DARK BLUE*/
-    font-size:0.8vw;
-    margin:2%;
-    padding:1.2%;
+    font-family: 'Lato';
+    font-size: 1.3em;
+    color: #1f1b1a;
+    text-align: center;
 }
 
-/** MAP KEY ITEMS END **/
 
 /** PARAGRAPH **/
 p {
-    font-family:'Lato';
-    color:#201c1c; /* off black*/
-    font-size:18px;
-    font-size:1.536em;
-    /*font-size:1.8vh;*/
-    font-size:0.9vw;
-    padding:0.5%;
+    font-family: 'Lato';
+    color: #201c1c; /* off black*/
+    font-size: 1.2em;
+    text-align: left;
+    /**/
+    margin-left: 0.550em;
+    margin-right: 0.550em;
 }
 
-/** LIST ELEMENT **/
-/* UNSORTED */
+/*+ TEXT SIZE END +*/
+
+
+/**= LIST STYLE =**/
+
+/* SEVERITY SCALE */
+ol {
+    color: #1f1b1a;
+    font-size: 1.2em;
+    text-align: left;
+    /**/
+}
+
+    ol li {
+        margin-bottom: 1em;
+    }
+
+
+/* API LI EDIT */
+.apiLu {
+    font-size: 1.2em;
+    color: #201c1b;
+    text-align: left;
+    list-style: none;
+    line-height: 0.590em;
+    /**/
+    
+}
+
+.techFLu {
+    font-size: 1.2em;
+    color: #201c1b;
+    text-align: left;
+    list-style: none;
+    /**/
+    line-height: 1.44em;
+}
+
+
 ul {
-    font-family:'Lato';
-    color:#201c1c; /* off black*/;
-    font-size:18px;
-    font-size:1.536em;
-    /*font-size:1.8vh;*/
-    font-size:0.9vw;
+    padding: 0; /* to offset random +40 padding*/
+    color: #f9f9f9;
+    list-style: none;
 }
 
-li {
-    color:#201c1c; /* off black*/ 
-}
-/* SORTED */
-
-/* A LINK */
-a:link {
-    color:#378148; /* GREEN*/
+/* ALERT TYLES LIST STYLE */
+#slide4 ul li {
+    text-align: left;
+    font-size: 1.1em;
+    margin-left: 0.250em;
+    color: #f9f9f9;
 }
 
-a {
-    color:#378148; /*GREEN*/
-}
+
 
 /**** FONT-SIZE-STYLE-END ****/
 
 /***** BODY *****/
-body {    
-    width:auto;
-    height:100%;
-    overflow:visible;
-    padding:0.2%;
-    margin:auto;
+body {
+    /* */
+    border: 2px solid blue; 
 }
+
+
 
 /***** BODY END *****/
 
 /***** HEADER *****/
 header {
-    width:100%;
-    height:12%;
-    margin:auto;
-    overflow:hidden;
-    
-    /*COLOR*/
-    background-color:#f9f9f9; /*OFF WHITE*/
-}
-
-/*** HEADER CONTENT ***/
-
-/* CLASS */
-.headerLogo {
-    width:74.5%;
-    height:auto;
-    float:left;
-    overflow:hidden;
     /* */
-}
-
-#headerLogoScale {
-    width:60%;
-    margin-left:0.5%;
-    height:auto;
-}
-
-.headerAlert {
-    width:23.84%;
-    height:auto;
-    float:right;
-    margin-right:0.5%;
-    padding:0.5%;
-    display:inline-block;
-
-    /*BORDER*/
-    /*L*/
-    border-top-left-radius:20px;
-    border-top-left-radius:0.6em;
-    border-bottom-left-radius:0.2em;
-    /*R*/
-    border-top-right-radius:20px;
-    border-top-right-radius:0.6em;
-    border-bottom-right-radius:0.2em;
-
-    background-color:#375D81; /* BLUE DARK */
-    overflow:hidden;
-    
-    /* */
+    border: 2px solid orange; 
 }
 
 
-/* ALERT TEXT */
-#altertText {
-    width:27%;
-    height:99%;
-    margin:0.5%;
-    display:inline-block;
-    
-    /**/ 
-}
 
-#alertText {
-display:inline-block;
-}
-
-#imgAlert {
-width:100%;
-height:auto;
-}
-
-#imgAlert1 {
-width:100%;
-height:auto;
-}
-
-#imgAlert2 {
-width:100%;
-height:auto;
-}
-
-#imgAlert3 {
-width:100%;
-height:auto;
-}
-/* HEADER ALERTS */
-/*ALERT ID*/
-#alertID {
-    width:20%;
-    height:99%;
-    margin:0.5%;
-    display:inline-block;
-    /* */
-}
-
-#alertID1 {
-    width:20%;
-    height:99%;
-    margin:0.5%;
-    display:inline-block;
-    /* */
-}
-
-#alertID2 {
-    width:20%;
-    height:99%;
-    margin:0.5%;
-    display:inline-block;
-    /* */
-}
-/* EMAIL */
-.emailAlert {
-    /* */
-}
-
-/* SMS */
-.smsAlert {
- /* */
-}
-
-/* RADIO */
-
-.radioAlert {
-/**/
-}
-
-/* ID */
-
-/* ALERTS SHOW */
-/* alerts div pop up*/
-.alertsPopUpDiv {
-
-    /**/
-}
-/* ID */
-#smsAlertShow {
-    width:23.84%;
-    height:auto;
-    margin-left:75%;
-    margin-top:6%;
-    padding:0.5%;
-    position:absolute;
-    z-index:5;
-    /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-    background-color:#C4D7ED; /* LIGHT BLUE */
-    overflow:hidden;
-    /* */
- }
-
-#emailAlertShow {
-    width:23.84%;
-    height:auto;
-    margin-left:75%;
-    margin-top:6%;
-   padding:0.5%;
-    position:absolute;
-    z-index:5;
-    /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-    overflow:hidden;
-    background-color:#C4D7ED; /* LIGHT BLUE */
-    /* */
-}
-
-#radioAlertShow {
-    width:23.84%;
-    height:auto;
-    margin-left:75%;
-    margin-top:6%;
-    padding:0.5%;
-    position:absolute;
-    z-index:5;
-    /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-    background-color:#C4D7ED; /* LIGHT BLUE */
-    overflow:hidden;
-    /* */
-}
-
-
-#alertsPosition {
-    width:23.34%;
-    height:auto;
-    margin-top:6%;
-    margin-right:5%;
-    margin-left:74.5%;
-    position:absolute;
-    display:inline-block;
-    overflow:hidden;
-    background-color:#ff530d; /* ORANGE */
-    /**/
-}
-
-/* CLASS */
-
-/* ALERTS SHOW END */
-
-/**++ FORM ++**/
-form {
-    display:inline-block;
-}
-/* FORM TEXT SYTLE */
-input[type=text]{
-    width:90%;
-    margin-left:5%;
-    margin-right:5%;
-    margin:0.3%;
-    height:1.3vw;
-}
-
-input[type=submit]{
-font-family:'Lato';
-    font-size:1.1vw;
-}
-    
-/*+ PLACEHOLDER TEXT STYLE +*/
-::-webkit-input-placeholder {
-   font-family:'Lato';
-   font-size:1.1vw;
-   color: grey;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   font-family:'Lato';
-   font-size:1.1vw;
-   color: grey;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   font-family:'Lato';
-   font-size:1.1vw;
-   color: grey;
-}
-
-:-ms-input-placeholder {  
-   font-family:'Lato';
-   font-size:1.1vw;
-   color: grey; 
-}
-
-/*+ PLACEHOLDER TEXT STYLE END +*/
-
-/** INPUT DIV **/
-.inputDivRow1 {
-}
-
-#inputDiv {
-    display:inline-block;
-    overflow:hidden;
-    /* */
-}
-#inputDiv1 {
-    display:inline-block;
-    overflow:hidden;
-    /* */
-}
-#inputDiv2 {
-    display:inline-block;
-    overflow:hidden;
-    /* */
-}
-#inputDiv3 {
-    display:inline-block;
-    overflow:hidden;
-    /* */
-}
-#inputDiv4 {
-    display:inline-block;
-    overflow:hidden;
-    /* */
-}
-
-#inputDiv5 {
-    display:inline-block;
-    overflow:hidden;
-    /* */
-}
-.inputDivRow2 {
-    width:auto;
-    height:auto;
-    position:absolute;
-    /* */
-}
-
-/*** HEADER CONTENT END ***/
-/**** NAV BAR ****/
-
-/*** NAV ID ***/
-#navBar {
-    width:454px;
-    width:23.84%;
-    height:80px;
-    height:85%;
-    margin:0.5%;
-    display:inline-block;
-    /*COLOR*/
-    background-color:#375D81; /* BLUE DARK */
-    /* */
-}
-
-#navBar1 {
-    width:454px;
-    width:23.84%;
-    height:80px;
-    height:85%;
-    margin:0.5%;
-    display:inline-block;
-    /*COLOR*/
-    background-color:#375D81; /* BLUE DARK */
-    /* */
-}
-
-#navBar2 {
-    width:454px;
-    width:23.84%;
-    height:80px;
-    height:85%;
-    margin:0.5%;
-    display:inline-block;
-    /*COLOR*/
-    background-color:#375D81; /* BLUE DARK */
-    /* */
-}
-
-#navBar3 {
-    width:454px;
-    width:23.84%;
-    height:80px;
-    height:85%;
-    margin:0.5%;
-    display:inline-block;
-    /*COLOR*/
-    background-color:#375D81; /* BLUE DARK */
-    /* */
-}
-
-.h1NavHeader {
-    text-align:center;
-}
-/*** NAV ID END ***/
-
-/** NAV CLASS **/
-.navNews {
-    float:left;
-	/*BORDER*/
-    /*L*/
-    border-top-left-radius:20px;
-    border-top-left-radius:0.6em;
-    border-bottom-left-radius:0.2em;
-    /*R*/
-    border-top-right-radius:20px;
-    border-top-right-radius:0.6em;
-    border-bottom-right-radius:0.2em;
-    
-    /* */
-}
-
-.navPrep {
-	/*BORDER*/
-    /*L*/
-    border-top-left-radius:20px;
-    border-top-left-radius:0.6em;
-    border-bottom-left-radius:0.2em;
-    /*R*/
-    border-top-right-radius:20px;
-    border-top-right-radius:0.6em;
-    border-bottom-right-radius:0.2em;
-
-    /* */
-}
-
-.navCommunication {
-	/*BORDER*/
-    /*L*/
-    border-top-left-radius:20px;
-    border-top-left-radius:0.6em;
-    border-bottom-left-radius:0.2em;
-    /*R*/
-    border-top-right-radius:20px;
-    border-top-right-radius:0.6em;
-    border-bottom-right-radius:0.2em;
-}
-
-.navHelpOut {
-    float:right;
-	/*BORDER*/
-    /*L*/
-    border-top-left-radius:20px;
-    border-top-left-radius:0.6em;
-    border-bottom-left-radius:0.2em;
-    /*R*/
-    border-top-right-radius:20px;
-    border-top-right-radius:0.6em;
-    border-bottom-right-radius:0.2em;
-    /* */
-}
-
-/**-+ HIDE +-**/
-/* FOR GIGGLES https://www.youtube.com/watch?v=ONRDwJlCpn4 */
-.moreInfoHide {
-    width:100%;
-    height:15%;
-    overflow:hidden;
-}
-
-/***+++++ NAV EXPAND +++++***/
-/*++ CLASS ++*/
-
-#navNExpand {
-    width:23.84%;
-    /* SETTING CHANGED BY JS*/
-    height:84vh;
-    margin-top:0.2%;
-    margin-left:0.5%;
-    margin-right:0.5%;
-    margin-bottom:0.5%;
-    padding:0.2%;
-    overflow:scroll;
-    float:left;
-
-   /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-    
-   background-color:#C4D7ED; /* LIGHT BLUE */
-
-    /* */
-}
-
-/** NEWS EXPAND CONTENT **/
-.NSCR1 {
-    height:auto;
-    margin-bottom:0.5%;
-    overflow:hidden;
-    /**/
-    border-bottom:0.225em dashed #EAEBFF; /*LIGHT BLUE*/
-}
-
-.NSCR2 {
-   height:auto;
-   margin-bottom:0.5%;
-   /**/
-  border-bottom:0.225em dashed #EAEBFF; /*LIGHT BLUE*/
-}
-
-.NSCR3 {
-   height:auto;
-   margin-bottom:0.5%;
-   /**/
-   border-bottom:0.225em dashed #EAEBFF; /*LIGHT BLUE*/
-}
-
-.NSCR4 {
-   height:auto;
-   margin-bottom:0.5%;
-  /**/
-  border-bottom:0.225em dashed #EAEBFF; /*LIGHT BLUE*/
-}
-
-.NSCR5 {
-   height:auto;
-   margin-bottom:0.5%;
-   /**/
-  border-bottom:0.225em dashed #EAEBFF; /*LIGHT BLUE*/
-}
-
-.NSCR6 {
-   height:auto;
-   margin-bottom:0.5%;
-  /**/
-    border-bottom:0.225em dashed #EAEBFF; /*LIGHT BLUE*/
-}
-
-/**+ HIDDEN ELEMENT CLASS +**/
-#hiddenElement {
-    height:10%;
-    overflow:hidden;
-}
-
-/** NEWS EXPAND CONTENT END **/
-
-#navPExpand {
-    width:23.84%;
-    /* SETTING CHANGED BY JS*/
-    margin-top:0.2%;
-    margin-left:25.24%;
-    padding:0.2%;
-    position:absolute;
-    z-index:4;
-
-   /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-
-    background-color:#C4D7ED; /* LIGHT BLUE */
-    /* */
-}
-
-/** PREP EXPAND CONTENT **/
-.PECR1 {
-   height:auto;
-   margin-bottom:0.5%;
-
-   /* */
-}
-
-/** PREP EXPAND CONTENT END **/
-
-#navComExpand {
-    width:23.84%;
-    /* [Height] SETTING CHANGED BY JS*/
-    margin-top:0.2%;
-    margin-left:50.10%;
-    padding:0.2%;
-    position:absolute;
-    z-index:4;
-
-   /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-
-    
-   background-color:#C4D7ED; /* LIGHT BLUE */
-    
-    /* */
-}
-
-#navHExpand {
-    width:23.84%;
-    /* [Height] SETTING CHANGED BY JS*/
-    margin-top:0.2%;
-    margin-left:75%;
-    padding:0.2%;
-    float:right;
-    position:absolute;
-    z-index:4;
-
-   /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-
-    background-color:#C4D7ED; /* LIGHT BLUE */
-    
-    /* */
-}
-
-/*++ CLASS END ++*/
-
-/***+++++ NAV EXPAND END ***+++++/
-
-/**+++ NAV HIDE ON LOAD +++**/
-.hidden {
-    display:none;
-}
-/**HIDE NEWS ON LOAD*/
-#hidden {
-    display:none;
-}
-
-.show {
-    display:inline-block;
-}
-
-/**+++ NAV HIDE ON LOAD END +++**/
-
-/** NAV CLASS END**/
-
-/*** NAV FINISH **/
-
-/***** HEADER FINISH *****/
-
+/*** HEADER FINISH ***/
 /* HTML */
 html {
-
-/* COLOR */
- background-color:#f9f9f9; /*OFF WHITE*/
+    /* */
+    border: 2px solid red; 
 }
 
 /***** ARTICLE *****/
 article {
-    height:75%;
-    /* colors */
-    background-color:#f9f9f9; /*OFF WHITE*/
+    
+    /* */ 
+    border: 2px solid green;
+}
 
+/****&& DIVS &&****/
+
+/**& CLASS &**/
+.slideHeader {
+    width: 100%;
+    /**/
+    border: 1px solid #c918fc;
+}
+
+.disasterTypesContain {
+    height: 70px;
+    overflow: hidden;
+    /**/
+    border: 1px dashed white; 
+}
+
+/* & ID & */
+#content {
+    background:#f9f9f9;
+    overflow:hidden;
+}
+
+/* AUDIO */
+#BGAudio{
+
+}
+
+/*== ID SLIDES ==*/
+
+#about {
+    background-color: #365c80;
     /* */
 }
 
-/*****++= MAP OVERLAY =++*****/
-.mapKey h4 {
-    font-family:'Lato';
-    color:#f9f9f9; /* off white*/
-    font-size:1.2vw;
-    padding-bottom:0.5%;
+#reportedDisasters {
+    background-color: #365c80;
+    /**/
 }
 
-/***+ EVENT OVERLAY +***/
-.earthquake {
-    width:50px;
-    height:50px;
-    position:absolute;
-    z-index:1;
-    margin-top:27.5%;
-    margin-left:60%;
+#severityScale {
+    background-color: #365c80;
+    /**/
+}
+
+#reportSystems {
+    background-color: #365c80;
+    /**/
+
+}
+
+#pScope {
+    background-color: #365c80;
+    /**/
+}
+
+#wOutcome {
+    background-color: #365c80;
+    /**/
+}
+
+#geoLocation {
+    
+    background-color: #365c80;
+    /**/
+
+}
+
+/* BUTTON */
+
+
+
+/* INPUT STYLE END */
+/* GEO LOCATION GOOGLE API */
+#mapAddress {
+    color:#1f1b1a;
+    margin-top:1%;
+    margin-left:1%;
+
+    /**/
+    border:2px solid #edff05;
+}
+
+#errorCantFind{
+    color:#1f1b1a;
+    margin-top:1%;
+    margin-left:1%;
+    /**/
+    border:2px solid #104cdc;
+}
+
+/* GEO LOCATION GOOGLE API END */
+
+#footerDiv {
+    margin-top:-20px;
+     background-color: #183052;
+     height:7em;
+     overflow:hidden;
+        
+    /**/
+}
+
+#footerDiv p {
+    font-size:1.1em;
+    color:#f9f9f9;
+    padding-left:1%;
+    padding-top:2%;
+    /* */
+}
+/*== ID SLIDES END ==*/
+
+/*== ID  ALERT TYPES ==*/
+#smsBG {
+    background-color: #365c80;
+    /**/
+}
+
+#emailBG {
+    background-color: #365c80;
+    /**/
+}
+
+#pushBG {
+    background-color: #365c80;
+    /**/
+}
+/*== ID  ALERT TYPES END ==*/
+
+
+/* DISASTER TYPES*/
+#iconAlign {
+
+    /**/
+    background-color: green;
+}
+
+.navClick {
+
+}
+
+
+
+/****&& DIVS END &&****/
+
+/*===== GOOGLE MAPS API =====*/
+
+
+/***  FRAMEWORK EDIT  COOL KITTEN ***/
+
+/** NAV **/
+/*=+ CLASS +=*/
+.menu {
+    /**/
+    border: 1px solid green; 
+}
+
+.container {
+    /**/
+    border: 1px solid orange;
+}
+
+.clearfix {
+    /**/
+    border: 1px dotted #808080;
+}
+
+.grid_12 {
+    /**/
+    border: 1px solid #eae612;
+}
+
+.grid_1 {
+    /**/
+    border: 1px solid white; 
+}
+
+.grid_2 {
+    /**/
+    border: 1px solid white;
+}
+
+/*= ID =*/
+#nav {
+    /* */
+    border: 2px solid #201c1b;
+}
+
+
+/** NAV END **/
+
+/*+ PAGE 1 +*/
+/* ID */
+#slide1 {
+    /**/
+    border: 1px dotted #b200ff;
+}
+
+/* VIDEO BACKGROUND */
+
+#slide1BGVideo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -99;
+    /**/
+    border:2px solid white;
+
+}
+
+.fullscreenVideo {
+     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreenVideo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreenVideo {
+    width: auto;
+    height: 100%;
+  }
+}
+/* CLASS */
+
+/*++ PAGE 2++*/
+/* ID */
+#slide2 {
+    /* */
+    border: 1px dotted #0fd1a2; 
+}
+
+#disasterAlertUL {
+    display:inline-block;
+}
+
+/* ======= DISASTER ALERT ======*/
+/* 0# EARTHQUAKE */
+#disasterAlert0{
+     /*      T    R  B   L*/
     
     /* */
+    visibility:hidden;
 }
 
-.flood {
-
-    /* */
+#disasterAlert0 {
+    
+    
+    color:#201c1c;
+    /*
+    text-align:center;*/
 }
 
-.hurricane {
+#disasterAlertValue0 {
 
-    /* */
 }
 
-.tornado {
+#disasterAlertSeverity0 {
 
-    /* */
 }
 
-.fire {
+/* 1# = FIRE = */
+#disasterAlert1 {
+    /*      T    R  B   L*/
+    
+    /**/
+    visibility:hidden;
+}
 
-    /* */
+#disasterAlert1 {
+    
+    color:#201c1c;
+    /*
+    text-align:center; */
+    
+}
+
+#disasterAlertValue1 {
+    color:#201c1c;
+    text-align:center;
+}
+
+#disasterAlertSeverity1 {
+
+}
+
+/* 2# == FLOOD == */
+#disasterAlert2 {
+     /*      T    R  B   L*/
+    
+    /**/
+    visibility:hidden;
+}
+
+#disasterAlert2{
+    
+    color:#201c1c;
+    /*
+    text-align:center;*/
 }
 
 
-/***+ EVENT OVERLAY END +***/
+#disasterAlertValue2 {
+    color:#201c1c;
+    text-align:center;
+}
 
-/**** MAP KEY ****/
+#disasterAlertSeverity2 {
 
-/*** MAP KEY TABLE ***/
+}
 
+/* 3# === HURRICANE ===*/
+#disasterAlert3 {
+    /*      T    R  B   L*/
+    /**/
+    visibility:hidden;
+}
+
+#disasterAlert3 {
+    color:#201c1c;
+    /*
+    text-align:center;*/
+}
+
+#disasterAlertValue3 {
+    color:#201c1c;
+    text-align:center;
+}
+
+#disasterAlertSeverity3 {
+
+}
+
+/* 4# ==== TORNADO ====*/
+#disasterAlert4 {
+    /*      T    R  B   L*/
+    
+    /**/
+    visibility:hidden;
+}
+
+#disasterAlert4 {
+    
+    color:#201c1c;
+    /*
+    text-align:center;*/
+
+}
+
+#disasterAlertValue4 {
+    color:#201c1c;
+    text-align:center;
+}
+
+#disasterAlertSeverity4 {
+
+}
+
+
+/* 5# ===== FIRE TE ARO =====*/
+#disasterAlert5 {
+    /*      T    R  B   L*/
+    
+    /*
+    visibility:hidden; */
+}
+
+#disasterAlert5 {
+    
+    color:#201c1c;
+    /*
+    text-align:center;*/
+}
+
+#disasterAlertValue5 {
+    color:#201c1c;
+    text-align:center;
+}
+
+#disasterAlertSeverity5 {
+
+}
+/* ======= DISASTER ALERT END ======*/
+
+/* CLASS */
+
+
+
+/***  FRAMEWORK EDIT  COOL KITTEN END***/
+/*= NAV =*/
+/* ADDING AND REMOVING CONTENT DEPENDING ON SCREEN SIZE */
+
+/*= NAV CONTENT END =*/
+
+/* PAGE 3 TABLE */
 table {
-    margin:0.2%;
-    padding:0.2%;
     width:100%;
-
-    /* */
+    height:auto;
+    display:table;
+    /**/
+    border: 2px solid white;
 }
+
 
 tr {
-
-   /* */
-   
+    /**/
+    background-color:#c5d7ed;
 }
 
-td {
+
+tr:first-child {
+    /**/
+    background-color:#375d81;
     
- }
-
-/* IMG KEY */
-.imgKeyColor {
-    margin-left:2vw;
-    margin-left:30%;
 }
 
-/* IMAGE ID FOR COLORS SIZING [NEEDS TO BE MADE RESPONCIVE P3]*/
-#imgColorSize {
-    height:40px;
-    height:2vw;
+/* API A LINK */
+.apiLu a:link {
+    color: #1f1b1a;
 }
 
-/* IMAGE CLASS FOR DISASTERS */
-.imgKeyDisasterCode {
-    margin-left:3vw;
-    margin-left:30%;
+.apiLu a:hover {
+    color: #f8af22;
 }
-
-/* DISASTER EVENT IMG SIZE */
-#imgDisasterEvent {
-    height:auto;
-    width:2.5vw;
+.apiLu a:visited {
+    color: #378048;
 }
 
 
-/* IMG KEY END */
-/* DANGER LEVEL */
-.mapKeysEvents {
-    height:auto;
-    width:100%;
-    margin-top:0.5%;
-    display:inline-block;
-    overflow:hidden;
-
-    /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-
-    background-color:#C4D7ED; /*LIGHT BLUE*/
-    
-    /* */
-}
-
-/**** MAP KEY END ****/
-
-/*****++= MAP OVERLAY END =++*****/
 
 
-/**** GOOGLE API ****/
-/** ID **/
-
-#mainContainerApi {
-    width:auto;
-    height:100%;
-   /* */
-}
-
-#googleAPI {
-   
-    margin-left:0.2%;
-    margin-right:0.2%;
-    height: 83.2vh; /* % DOES NOT WORK*/
-    overflow:hidden;
-    /* */
-}
-
-/*** ID END ***/
-
-/** CLASS **/
-.googleContainer {
-    overflow:hidden;
-    width:auto;
-    height:100%;
-    /* */
-}
-
-/** CLASS END **/
-
-/**** GOOGLE API END ****/
-
-/** CLASS **/
-
-.container-fluid {
-/* overflow:hidden;*/
-padding:0.2%;
-/**/
-}
-
-/** CLASS END **/
-/*** BOOTSTRAP EDIT END ***/
+          
 /***** ARTICLE END *****/
 
 /***** FOOTER *****/
-footer {
-    width:99.7%;
-    height:auto;
-    margin:auto;
-
-   /*BORDER*/
-    /*L*/
-    border-bottom-left-radius:0.6em;
-    border-top-left-radius:0.2em;
-    /*R*/
-    border-bottom-right-radius:0.6em;
-    border-top-right-radius:0.2em;
-	background-color:#183152; /*DARK BLUE */
-   /**/
-}
-
-footer p {
-  text-align:right;
-  margin-top:1%;
-  color:#f9f9f9;
-}
-
-/*** ID ***/
-#footerDiv {
-    width:100%;
-    height:6vw;
-    margin:inherit;
-   /**/
-}
-
-/*** ID END ***/
-/***** FOOTER END *****/
 
 
-/*** INDEX STYLE END ***/
 
-/*** GOOGLE MAPS API STYLE ***/
-/* ID */
 
-/* CLASS */
-.taumarunuiContentText {
-width:400px;
-background-color:orange;
-}
-
-.placeholderDiv {
-position:absolute;
-margin-top:10%;
-margin-left:40%;
-height:auto;
-background-color:white;
-z-index:4;
-}
-
-.popupIMGStyle {
-width:20%;
-height:auto;
-display:inline-block;
-}
 
 /* MANY CSS MUCH CODE */

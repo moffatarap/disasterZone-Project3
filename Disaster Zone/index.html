@@ -1,424 +1,432 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!--INDEX Disaster Zone MDDN352 P1 [2016] (300317288) -->
-<!-- HEADER -->
+<!--INDEX Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) & SCHULTZSTEF (300308218) [10.4 - start] --->
 <head>
     <title>Disaster Zone</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="UTF-8">
-    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+
+
     <!-- -==== FAV ICON ====- -->
     <link rel="shortcut icon" href="./media/img/favIcon.png"> <!-- REPLACE -->
-
     <!-- -==== External Style sheets load ====- -->
-    <!-- -=== bootstrapFrameWork Import ===- -->
+    <!-- -=== coolKittenFramework ===- -->
+    <!-- CSS Normalize -->
+    <link rel="stylesheet" type="text/css" href="./framework/coolKitten/css/normalize.css" media="screen">
+    <!-- - CSS GRID - -->
+    <link rel="stylesheet" type="text/css" href="./framework/coolKitten/css/grid.css" media="screen">
+    <!-- CSS Style -->
+    <link rel="stylesheet" type="text/css" href="./framework/coolKitten/css/coolKittenFrameworkStyle.css" media="screen">
 
-    <!-- - bootstrap min - -->
-    <link rel="stylesheet" type="text/css" href="./framework/bootstrap/css/bootstrapMin.css">
-    <!-- - bootstrap theme min - -->
-    <link rel="stylesheet" type="text/css" href="./framework/bootstrapMin/css/bootstrapThemeMin.css">
-
+    <!-- -=== coolKittenFramework END ===- -->
     <!-- - Custom CSS [ENABLED]- -->
     <link rel="stylesheet" type="text/css" href="./style/cssMain.css">
-
 
     <!-- -==== External and internal fonts load ====- -->
     <!--=== Google fonts ===-->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-
-    <!--= CUSTOM FONTS =-->
     
-
     <!-- -==== JavaScrypt ====- -->
+        
     <!--+==== PLUGINS jQuery ====+-->
-    <!--=== smoothScrollPlugin [DISABLED]===-->
-    <script src="./framework/smoothScroll/mooToolsMore.js"></script> 
-    <!-- Tiny Scroll -->
-    <script src="./framework/tinyScroll/jquery.tinyscrollbar.min.js"></script>
     
-
-    
-    <!-- -= External Google =- -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <!-- -==== External JS load && import ====- -->
-    <!-- -=== Bootstrap JS Import ===- -->
-    <!-- - BootstrapMin - -->
-    <script src="./framework/bootstrap/js/bootstrapMin.js"></script>
     <!--==+ CUSTOM JS +==-->
-    <script src="./style/javaScryptCustom.js"></script>
+    <!--= PUNNUB API =-->
+    <script src="http://cdn.pubnub.com/pubnub-3.7.1.min.js"></script>
+    <!---=FIREBASE API =--->
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    
+    <!--== GEOLOCATION API ==-->
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyAN3Od9I1nMTcdfXtSfkzgC1ZKZuxtlbkA"></script>
+    <!--== GEOLOCATION API END ==-->
 
-    <!-- -===== JQuery Plug-in Load =====- -->
-    <!--== GOOGLE API CUSTOM SETTINGS ==-->
-
-    <!--= GOOGLE API KEY =-->
-    <script defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtKo2P7hgtRk1NUTlPjg_LDwC4EtKXgUo&amp;callback=initMap">
-    </script>
-    <script src="./style/googleMapsAPI.js"></script>
+    <!--= GOOGLE MAPS API CUSTOM =-->
+    <script src="./style/geoLocationAPI.js"></script>
+    <!--= FIREBASE API =-->
+    
+    <!-- LIBARY -->
+    
+    <!-- FIREBASE SCRYPT [TEMP] -->
+   
+    <!-- FIRE BASE SCRYPT END -->
+    <!--= FIREBASE API END =-->
+    
+    
 </head>
-
 <!-- HEADER FINISH -->
 <!-- BODY START -->
 <body>
-    <!-- HEADER -->
-    <header>
-       
-        <!-- CONTAIN -->
-        <div class="container-fluid">
 
-            <!--LOGO-->
-            <div class="headerLogo">
-                <img src="./media/img/headerLogo.png" id="headerLogoScale" alt="DISASTER ZONE">
+    <!--++= NAV BAR DESKTOP #0 =++-->
+    <div class="menu">
+        <div class="contianer clearfix">
+            <div id="nav" class="grid_12">
+                <!--#0-->
+                <div class="grid_2">
+                    <ul>
+                        <li><img id="navIcon" src="./media/img/img_nav.png"> </li>
+                    </ul>
+                </div>
+                <!-- HAMBURGER CONTAIN START -->
+                <div class="hidden" id="hamburgerContain">
+
+                     
+                    <!--#1-->
+                    <div class="grid_3">
+                        <ul id="navHome" class="navigation">
+                            <li data-slide="1">Home</li>
+                        </ul>
+                    </div>
+                    <!--#2-->
+                    <div class="grid_3">
+                        <ul id="navAbout" class="navigation">
+                            <li data-slide="2">Geo Alerts</li>
+                        </ul>
+                    </div>
+                    <!--#3-->
+                    <div class="grid_3">
+                        <ul id="navDisaster" class="navigation">
+                            <li data-slide="3">Disaster Types</li>
+                            <li data-slide="3">Disasters</li>
+
+                        </ul>
+                    </div>
+                    <!--#4
+                    <div class="grid_2">
+                        <ul id="navSystems" class="navigation">
+                            <li data-slide="4"></li>
+                            <li data-slide="4"></li>
+                        </ul>
+                    </div>
+                    #5
+                    <div class="grid_2">
+                        <ul id="navScope" class="navigation">
+                            <li data-slide="5"></li>
+                            <li data-slide="5"></li>
+                        </ul>
+                    </div>
+                    <!--#6-->
+                    <!-- HAMBURGER CONTAIN END -->
+                </div>
             </div>
-
-            <!-- CONTAIN END -->
-
-            <!-- ALERT CONTAIN -->
-            <div class="headerAlert">
-                <div id="altertText" class="">
-                    <img id="imgAlert" src="./media/img/alerts/alertsText.png" alt="Alerts">
-                </div>
-                <!-- SMS ALERT -->
-                <div id="alertID" class="smsAlert">
-                    <img id="imgAlert1" src="./media/img/alerts/sms.png" alt="SMS">
-                </div>
-                <!-- EMAIL ALERT -->
-                <div id="alertID1" class="emailAlert">
-                    <img id="imgAlert2" src="./media/img/alerts/email.png" alt="EMAIL">
-                </div>
-                <!-- RADIO ALERT -->
-                <div id="alertID2" class="radioAlert">
-                    <img id="imgAlert3" src="./media/img/alerts/radio.png" alt="RADIO">
-                </div>
-
-            </div>
-
-            <!-- ALERT CONTAIN END -->
-            <!-- ALERTS SHOW -->
-            <!--+ SMS ALERT +-->
-            <div id="smsAlertShow" class="hidden">
-                <p>Sign up for disaster zone alerts get notified of disasters in your area directly to your phone.</p>
-                <!--SMS FORM TITLES-->
-                <!-- SMS FORM CONTAIN -->
-                <div class="container-fluid">
-                    <div id="inputDiv" class="inputDivRow1">
-                        <h6>Phone:</h6>
-                        <br>
-                        <h6>Country:</h6>
-                        <br>
-                        <h6>Town:</h6>
-                        <br>
-                        <h6>Post Code:</h6>
-                    </div>
-                    <!--SMS FORM TITLES END-->
-                    <!--SMS FORM -->
-                    <!-- INPUT DIV 2 -->
-                    <div id="inputDiv1" class="inputDivRow2">
-                        <form>
-                            <!--PHONE NUMBER -->
-                            <!--SET VALUE TO NUMBER [P3]-->
-                            <input type="text" placeholder="027 4689 4531" name="SMS" maxlength="11" required>
-                            <!--COUNTRY-->
-                            <input type="text" placeholder="New Zealand" name="Country" required>
-                            <!--TOWN -->
-                            <input type="text" placeholder="Kapiti" name="Town" required>
-                            <!--POST CODE--> <!--SET VALUE TO NUMBER [P3]-->
-                            <input type="text" placeholder="5026" name="Post Code" maxlength="5" required>
-                        </form>
-                        <!-- INPUT DIV 2 END -->
-                    </div>
-                    <!-- SMS FORM CONTAIN END-->
-                </div>
-                <!--TERMS OF SERVICE FORM-->
-                <form>
-                    <p>By ticking this box you agree to, our terms of service and to receive automated alerts to your phone number. Disaster Zone will only send alerts that you choose to receive in the event of a disaster.</p>
-                    <input type="radio" name="agree" value="Yes"><h6>Yes</h6>
-                    <input type="radio" name="agree" value="No" checked><h6>No</h6>
-                    <!-- SUBMIT -->
-                    <input type="submit" value="Submit">
-                </form>
-                <!--SMS FORM END -->
-
-            </div>
-
-            <!--++ EMAIL ALERT ++-->
-            <div id="emailAlertShow" class="hidden">
-                <p>Sign up for disaster zone alerts get notified of disasters in your area directly to your email.</p>
-                <!--EMAIL FORM TITLES-->
-                <!-- EMAIL FORM CONTAIN -->
-                <div class="container-fluid">
-                    <div id="inputDiv2" class="inputDivRow1">
-                        <h6>Email:</h6>
-                        <br>
-                        <h6>Country:</h6>
-                        <br>
-                        <h6>Town:</h6>
-                        <br>
-                        <h6>Post Code:</h6>
-                    </div>
-                    <!--EMAIL FORM TITLES END-->
-                    <!--EMAIL FORM -->
-                    <!-- INPUT DIV 2 -->
-                    <div id="inputDiv3" class="inputDivRow2">
-                        <form>
-                            <!--EMAIL ADDRESS -->
-                            <input type="text" placeholder="yourname@gmail.com" name="EMAIL" required>
-                            <!--COUNTRY-->
-                            <input type="text" placeholder="New Zealand" name="Country" required>
-                            <!--TOWN -->
-                            <input type="text" placeholder="Kapiti" name="Town" required>
-                            <!--POST CODE-->
-                            <input type="text" placeholder="5026" name="Post Code" maxlength="5" required>
-                        </form>
-                        <!-- INPUT DIV 2 END -->
-                    </div>
-                    <!-- EMAIL FORM CONTAIN END-->
-                </div>
-                <!--TERMS OF SERVICE FORM]-->
-                <form>
-                    <p>By ticking this box you agree to, our terms of service and to receive automated alerts to your email address above. Disaster Zone will only send alerts that you choose to receive in the event of a disaster.</p>
-                    <input type="radio" name="agree" value="Yes"><h6>Yes</h6>
-                    <input type="radio" name="agree" value="No" checked><h6>No</h6>
-                    <!-- SUBMIT -->
-                    <input type="submit" value="Submit">
-                </form>
-                <!--EMAIL FORM END -->
-            </div>
-
-            <!--+++ RADIO ALERT +++-->
-            <div id="radioAlertShow" class="hidden">
-                <p>Emergency radio frequencies [NZ ONLY] tune in to the frequency&#39;s below to, keep up to date in a disaster Radio New Zealand National.</p>
-
-                <!--RADIO FEQUENCY TITLES-->
-                <div class="container-fluid">
-                    <div id="inputDiv4" class="inputDivRow1">
-                        <h6>Auckland:</h6>
-                        <br>
-                        <h6>Christchurch:</h6>
-                        <br>
-                        <h6>Dunedin:</h6>
-                        <br>
-                        <h6>Gisborne:</h6>
-                        <br>
-                        <h6>Kapiti:</h6>
-                        <br>
-                        <h6>Napier:</h6>
-                        <br>
-                        <h6>Queenstown:</h6>
-                        <br>
-                        <h6>Taupo:</h6>
-                        <br>
-                        <h6>Wellington:</h6>
-                        <br>
-                        <h6>Whangarei:</h6>
-                    </div>
-                    <!--RADIO FORM TITLES END-->
-                    <!-- INPUT DIV 2 [RADIO FREQUENCYS]-->
-                    <div id="inputDiv5" class="inputDivRow2">
-                        <!-- Auckland -->
-                        <h6>101.4 FM, 837 AM</h6>
-                        <!-- Christchurch -->
-                        <h6>101.7 FM, 675 AM</h6>
-                        <!-- Dunedin -->
-                        <h6>101.4 FM , 810 AM</h6>
-                        <!-- Gisborne -->
-                        <h6>101.3 FM, 1314 AM</h6>
-                        <!-- Kapiti -->
-                        <h6>101.5 FM, 567 AM</h6>
-                        <!-- Napier -->
-                        <h6>101.5 FM, 630 AM</h6>
-                        <!-- Queenstown -->
-                        <h6>101.6 FM, 1134 AM</h6>
-                        <!-- Taupo -->
-                        <h6>101.6 FM</h6>
-                        <!-- Wellington -->
-                        <h6>101.3 FM, 567 AM</h6>
-                        <!-- Whangarei -->
-                        <h6>104.4 FM, 837 AM </h6>
-                        <!-- INPUT DIV 2 END -->
-                    </div>
-
-                </div>
-                <!--OTHER RADIO FREQUENCYS]-->
-                <br>
-                <p>For a complete emergency radio frequency list please visit this <a href="http://www.radionz.co.nz/assets/cms_uploads/000/000/063/Radio_NZ_Frequency_List.pdf" target="_blank">link.</a></p>
-                <!--RADIO FORM END -->
-            </div>
-
-            <!--++== ALERTS POP UP DIV END ==++-->
-            <!-- HEADER CONTAIN -->
         </div>
-        <!-- CONTAIN END -->
-        <!-- HEADER ALERTS END -->
-        <!--++== ALERTS POP UP DIV ==++-->
-        <div class="moreInfoHide">
-            <!--++++ NEWS ++++-->
-            <div class="navNews" id="navBar">
-                <h1 class="h1NavHeader">News</h1>
-            </div>
-
-            <!--++ PREPARE  ++-->
-            <div class="navPrep" id="navBar1">
-                <h1 class="h1NavHeader">Prepare</h1>
-            </div>
-
-            <!--+ COMMUNICATION +-->
-            <div class="navCommunication" id="navBar2">
-                <h1 class="h1NavHeader">Communication</h1>
-            </div>
-
-            <!--+++ HELP OUT +++-->
-            <div class="navHelpOut" id="navBar3">
-                <h1 class="h1NavHeader">Help Out</h1>
-            </div>
-            <!-- MORE INFO HIDE -->
-            <!-- ALERTS SHOW END -->
-        </div>
-    </header>
-    <!-- HEADER END -->
-
-    <!--+++++== NAV EXPAND ==++++-->
-    <!--++++ NEWS [NOW A GOOGLE API UI ELEMENT]++++-->
-    
-    <!--++ Prepare ++-->
-    <div class="hidden" id="navPExpand">
-        <!-- PREP CONTENT ROW 1 -->
-        <div class="PECR1">
-            <h2>Disaster Kit:</h2>
-            <p>
-                In the event of a disaster having a disaster kit will greatly help you manage to support yourself and family.
-                Below are some recommended items for your own personal disaster kit.
-                Your kit should have the supplies needed for up-to three days.
-            </p>
-
-            <!--SURVIAL ITEMS -->
-            <h2>Survival Items:</h2>
-
-            <ul>
-                <li>Battery powered torch, with spare battery&#39;s or self-charging.</li>
-                <li>Portable radio</li>
-                <li>First aid kit and any prescription meds</li>
-                <li>Blankets and sleeping bags</li>
-                <li>Pet supply&#39;s</li>
-                <li>Toilet paper and rubbish bags</li>
-                <li>Lighter or matches</li>
-                <li>Cooking gas</li>
-            </ul>
-
-            <!--FOOD AND WATER -->
-            <h2>Food and Water:</h2>
-
-            <ul>
-                <li>Canned food</li>
-                <li>Dried food</li>
-                <li>Water three liters per person per day</li>
-                <li>Water for washing and cooking</li>
-                <li>Portable cooker gas powered</li>
-                <li>Can opener </li>
-            </ul>
-
-            <!-- ENDING NOTE -->
-            <p>Store all items in a cool dark place, and check the supplies every 12 months.</p>
-        </div>
-        <!-- PREP CONTENT ROW 1 END -->
     </div>
+    <!--+= NAV BAR END DESKTOP #0 =+-->
 
-    <!--+ COMMUNICATION +-->
-    <div class="hidden" id="navComExpand">
-
-        <h2>Need Help?</h2>
-        <p>
-            Emergency contact details are below, friend or family member missing? Report missing persons below.
-        </p>
-
-        <!-- EMERGENCY CONTACT LIST -->
-        <h2>Emergency Contacts:</h2>
-        <h4>NZ: 111</h4>
-        <h4>AUS: 0</h4>
-        <h4>USA & CANDA: 911</h4>
-        <h4>EUROPE & RUSSA : 112</h4>
-        <h4>UK: 999</h4>
-        <p>For country&#39;s not yet listed please visit <a href="https://chartsbin.com/view/1983" target="_blank">World Wide Emergency Phone Numbers.</a></p>
-
-        <!-- CIVIL DEFENCE [WARNING USING THIS LINK, IF YOU DONT HAVE EMAIL CLIENT SET UP RIGHT WILL CRASH THINGS] -->
-        <h2>Civil Defense [NZ only]:</h2>
-        <p>In a effected area need support? Find your local Civil Defense numbers and addresses at this <a href="https://civildefence.govt.nz/find-your-civil-defence-group" target="_blank">link.</a></p>
-
-        <!-- REPORT DISASTER [WARNING USING THIS LINK, IF YOU DONT HAVE EMAIL CLIENT SET UP RIGHT WILL CRASH THINGS] -->
-        <h2>Report A Disaster</h2>
-        <p>Event about to unfold in your area? Let us know on this email <a href="mailto:reportdisaster@disasterzone.com">reportdisaster@disasterzone.com</a>   </p>
-
-        <h2>Update A Disaster</h2>
-        <p>In a Disaster Zone? Keep the world updated send us images videos or any useful information to <a href="mailto:updates@disasterzone.com">updates@disasterzone.com</a> </p>
-
-        <!-- MISSING PERSONS REPORT -->
-        <h2>Missing Persons</h2>
-        <p>Coming soon website still under construction</p>
-        <!--+& MISSING persons not done due to its complexity and time constraints&+-->
-     </div>
-
-    <!--+++ HELP OUT +++-->
-    <div class="hidden" id="navHExpand">
-        <!-- HELP OUT HEADER -->
-        <p>
-            In an area of disaster? Want to help out with clean up and support use the dedicated contact links below.
-        </p>
-
-        <!-- Volunteer-->
-        <h2>Volunteer In Your Area</h2>
-        <p>
-            Able bodied and keen to help out? Volunteer in your area when a disaster is declared, you will be called upon to help out and coordinate the clean-up and support of your community.
-            (0800 3427 8372)
-        </p>
-
-        <!-- DONATE-->
-        <h2>Donate</h2>
-        <p>
-            Support areas of disaster though this tough time, donate to the relief fund sponsored by Disaster Zone every donation you make will go directly to where it&#39;s needed.
-            Here at Disaster Zone we take no commission but only act as a middle man, with coordinating with local
-            families and authorities to get your donations directly to where they are needed most.
-        </p>
-
-        <h4>Disaster Zone Relief Fund</h4>
-        <br>
-        <!-- DONATE BUTTON -->
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" style=" width:4vw; height:auto;">
-            <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
-
-        <!-- DONATE BUTTON END -->
-    </div>
-
-    <!--+++++== NAV EXPAND END ==++++-->
     <!-- ARTICLE STARTS -->
     <article>
-        <!--+ MAIN CONTAINER +-->
-        <div class="container-fluid" id="mainContainerApi">
-                <!-- GOOGLE MAP API -->
-                <div id="googleAPI">
-                    <!-- GOOGLE MAP API IS DISPLAYED IN THIS DIV VIA JAVA [GOOGLEMAPSAPI.JS]-->
+        <!--+ PAGE 1 +-->
+        <div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+
+            <!-- PAGE 1 CONTAINER -->
+            <div class="container clearfix" id="slide1BG">
+                <!-- CONTENT -->
+                <div id="#" class="grid_12">
+                    <div id="underlineH1">
+                        <h1>Disaster Zone</h1>
+
+                    </div>
+                    <h2>Real-time disaster reporting</h2>
+                </div>
+                <!-- CONTENT END -->
+               
+            </div>
+            <!-- PAGE 1 CONTAINER END -->
+        </div>
+        <!-- GOOGLE MAPS API END
+        </div> -->
+        <!--+ PAGE 1 END +-->
+        <!--++ PAGE 2 ++-->
+        <div id="slide2" class="slide" data-slide="2" data-stellar-background-ratio="0.5">
+            <!-- PAGE 2 CONTAINER -->
+            <div class="container clearfix">
+                <!-- 2# GEO LOCATION -->
+                <div id="content" class="grid_12">
+                    <div id="geoLocation" class="slideHeader">
+                        <h2>Geo Location Based Alerts</h2>
+                    </div>
+                    <p>
+                        Geo-location is a major function of Disaster Zone in the example below is a example of geolocation based alerts. Disasters have been created and placed on the map if a user is close to a disaster based on Lat Lng values an alert will be displayed. The radius that a user is alerted is dependent on the severity of each event, severe has the largest radius while weak has the smallest. The alert radius is set up to warn users of disasters in their area before it puts them in danger or trouble.
+                    </p>
+                    <div id="geoLocation" class="slideHeader">
+                        <h2>Severity Colors</h2>
+                    </div>
+                    <p>The severity of each disaster can be quickly checked depending on the colour of the severity alert box. The order of severity and colour is as follows.</p>
+                    <p>1. Blue Weak || 2. Green Light || 3. Yellow Moderate || 4. Orange Strong || 5. Red Severe</p>
+                    
+                    <p>For more detailed information on severity scale reported disasters page	</p>
+                    <!-- GOOGLE MAPS API -->
+                    <!--===== DISASTER ALERTS =====-->
+                    <div class="grid_12">
+                        <div id="geoLocation" class="slideHeader">
+                            
+                        </div>
+                       
+                        <table id="alertscontain">
+                            <!-- ROW 1 -->
+                            <tr>
+                                <td><h4>Alert</h4></td>
+                                <td><h4>Value</h4></td>
+                                <td><h4>Severity</h4></td>
+                            </tr>
+
+                            <!-- ROW 2 -->
+                            <tr>
+                                <!-- #0 EARTHQUAKE PAEKAKARIKI [SEVERE]-->
+                                <td>
+                                    <p id="disasterAlert0"></p>
+                                </td>
+                                <!-- #0 EARTHQUAKE PAEKAKARIKI [VALUE]-->
+                                <td>
+                                    <p id="disasterAlertValue0"></p>
+                                </td>
+                                <!-- #0 EARTHQUAKE PAEKAKARIKI [SEVERITY]-->
+                                <td id="disasterAlertSeverity0"></td>
+                            </tr>
+
+                            <!-- ROW 3 -->
+                            <tr>
+                                <!-- #1 FIRE PAEKAKARIKI CAMPBELL PARK [MODERATE] -->
+                                <td>
+                                    <p id="disasterAlert1"></p>
+
+                                </td>
+                                <!-- #1 FIRE PAEKAKARIKI CAMPBELL PARK [VALULE] -->
+                                <td>
+                                    <p id="disasterAlertValue1"></p>
+
+                                </td>
+                                <!-- #1 FIRE PAEKAKARIKI CAMPBELL PARK [SEVERITY] -->
+                                <td id="disasterAlertSeverity1"></td>
+                            </tr>
+
+                            <!-- ROW 4 -->
+                            <tr>
+                                <!-- #2 FLOOD WELLINGTON BASIN RESERVE [LIGHT] -->
+                                <td>
+                                    <p id="disasterAlert2"></p>
+                                </td>
+                                <!-- #2 FLOOD WELLINGTON BASIN RESERVE [VALUE] -->
+                                <td id="disasterAlertValue2"></td>
+                                <!-- #2 FLOOD WELLINGTON BASIN RESERVE [SEVERITY] -->
+                                <td id="disasterAlertSeverity2"></td>
+                            </tr>
+
+                            <!-- ROW 5-->
+                            <tr>
+                                <!-- #3 HURRICANE WELLINGTON SOMES ISLAND [STRONG] -->
+                                <td>
+                                    <p id="disasterAlert3"></p>
+                                </td>
+                                <!-- #3 HURRICANE WELLINGTON SOMES ISLAND [VALUE] -->
+                                <td>
+                                    <p id="disasterAlertValue3"></p>
+                                </td>
+                                <!-- #3 HURRICANE WELLINGTON SOMES ISLAND [SEVERITY] -->
+                                <td id="disasterAlertSeverity3"></td>
+                            </tr>
+
+                            <!-- ROW 6-->
+                            <tr>
+                                <!-- #4 TORNADO WELLINGTON AIRPORT [WEAK] -->
+                                <td>
+                                    <p id="disasterAlert4"></p>
+                                </td>
+                                <!-- #4 TORNADO WELLINGTON AIRPORT [VALUE] -->
+                                <td>
+                                    <p id="disasterAlertValue4"></p>
+                                </td>
+                                <!-- #4 TORNADO WELLINGTON AIRPORT [SEVERITY] -->
+                                <td id="disasterAlertSeverity4"></td>
+                            </tr>
+
+                            <!-- ROW 7-->
+                            <tr>
+                                <!-- #4 FIRE WELLINGTON TE ARO [WEAK] -->
+                                <td>
+                                    <p id="disasterAlert5"></p>
+                                </td>
+                                <!-- #4 FIRE WELLINGTON TE ARO [VALUE] -->
+                                <td>
+                                    <p id="disasterAlertValue5"></p>
+                                </td>
+                                <!-- #4 FIRE WELLINGTON TE ARO [SEVERITY] -->
+                                <td id="disasterAlertSeverity5"></td>
+                            </tr>
+                        </table>
+
+                  </div>
+                    
+                    <!--==== DISASTER ALERTS [END] ====-->
+                    <div id="googleAPI" class="mapSize">
+                    </div>
+                    <!-- MAP ADDRESS -->
+                    <div id="mapAddress" class="grid_7">
+                        <p></p>
+
+                    </div>
+                    <!-- ERROR -->
+                    <div id="errorCantFind" class="grid_4">
+                    </div>
+                    
+                    <!-- GOOGLE MAPS API END -->
+                </div>
+                <!-- 2# GEO LOCATION END -->
+            </div>
+        </div>
+        <!-- PAGE 2 CONTAINER END-->
+        <!--++ PAGE 2 END ++-->
+        <!--+++ PAGE 3 +++-->
+
+        <div id="slide3" class="slide" data-slide="3" data-stellar-background-ratio="0.5">
+            <!-- PAGE 3 CONTAINER -->
+            <div class="container clearfix">
+                <!-- CONTENT -->
+                <div id="reportedDisasters" class="slideHeader">
+                    <h2>Reported Disasters</h2>
+                </div>
+                <div id="content" class="grid_12">
+                    <!-- 1# DISASTER TYPES -->
+                    <div class="grid_12">
+                        <h3>Disaster Types</h3>
+                        <p>
+                            Icons in the table below depict what disaster type they represent, along with the scale in which they are measured. <br>
+                            Icons are used under creative commons by Nicolas Mollet, edited by myself for this project: mapicons.mapsmarker.com.
+                        </p>
+                    </div>
+                    <!-- 1# DISASTER TYPES END [FOR GIGGLES http://i.imgur.com/hFb3Aw6.gifv] -->
+                    <!-- 1.2# ICONS AND DISASTER TYPES -->
+                    <div id="#" class="grid_12">
+                        <!-- DISASTER TYPES TABLE START -->
+                        <table>
+                            <!-- ROW 1 -->
+                            <tr>
+                                <td><h4>ICON</h4></td>
+                                <td><h4>EVENT</h4></td>
+                                <td><h4>SCALE SYSTEM</h4></td>
+                            </tr>
+                            <!-- ROW 2 EARTH QUAKE -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/earthquake.png"></td>
+                                <td><h5>Earthquake</h5></td>
+                                <td><h5>Richter-scale</h5></td>
+
+                            </tr>
+
+                            <!-- ROW 3 FLOOD -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/flood.png"></td>
+                                <td><h5>Flood</h5></td>
+                                <td><h5>Meters of water</h5></td>
+                            </tr>
+
+                            <!-- ROW 4 HURRICANE -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/hurricane.png"></td>
+                                <td><h5>Hurricane</h5></td>
+                                <td><h5>Saffir-Simpson Scale</h5></td>
+                            </tr>
+
+                            <!-- ROW 5 TORNADO -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/tornado.png"></td>
+                                <td><h5>Tornado</h5></td>
+                                <td><h5>Enhanced Fujita Scale</h5></td>
+                            </tr>
+
+                            <!-- ROW 6 FIRE -->
+                            <tr>
+                                <td><img class="iconTypes" src="./media/img/mapKeys/key/fire.png"></td>
+                                <td><h5>Fire</h5></td>
+                                <td><h5>Fire Danger Rating</h5></td>
+                            </tr>
+
+
+
+                        </table>
+                        <!-- DISASTER TYPES TABLE END -->
+                    </div>
+                    <!-- 1.2# ICONS AND DISASTER TYPES END-->
+                    <!-- 2# SEVERITY SCALE -->
+                    <div class="grid_12">
+                        <div id="severityScale" class="slideHeader">
+                            <h2>Disaster Zone Severity Scale</h2>
+                        </div>
+                    </div>
+                    <!-- 2.2# SEVERITY PT1 -->
+                    <div class="grid_6">
+                        <ol>
+                            <li>Severe level of damage to people and or property, high risk of injury and human casualties. 10,000+ people missing or injured 70% damage to personal property and city infrastructure.</li>
+                            <li>Strong level of damage to people and or property, medium high risk of injury and human casualties. 5,000 to 8,000 people missing or injured 60% damage to personal property and city infrastructure.</li>
+                            <li>Moderate level of damage to people and or property, medium risk of injury and human casualties. 500 to 1,000 people missing or injured 30% damage to personal property and city infrastructure.</li>
+                        </ol>
+                    </div>
+                    <!-- 2.2# SEVERITY PT1 END-->
+                    <!-- 2.3# SEVERITY PT2 -->
+                    <div class="grid_6 omega">
+                        <div id="olSeverityScale2">
+                            <ol start="4">
+                                <li>Light level of damage to people and or property, low risk of injury and human casualties. 0 to 100 people missing or injured 0% to 15% damage to personal property and city infrastructure.</li>
+                                <li>Weak to no damage to people and or property, low to risk of injury and human casualties. 0 people missing or injured 0% to 5% damage to personal property and city infrastructure.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- 2.3# SEVERITY PT2 END -->
+                    <!-- 2# SEVERITY SCALE END -->
                 </div>
             </div>
-             <!-- GOOGLE MAP API ENDS -->
-        <!--+- MAIN CONTAINER END -+-->
-    </article>
-    <!-- ARTICLE FINISH -->
-    <!-- FOOTERSTART -->
-    <footer>
-        <!--+FOOTER DIV MAIN+-->
-        <div class="container-fluid" id="footerDiv">
+
+            <!-- CONTENT END -->
+        </div>
+        <!-- PAGE 3 CONTAINER END -->
+        <!--+++ PAGE 3 END +++-->
+        <!--++++ PAGE 4 [DISABLED]
+        <div id="slide4" class="slide" data-slide="4" data-stellar-background-ratio="0.5">
+        </div> ++++-->
+             <!-- PAGE 4 CONTAINER -->
+           
+            <!-- CONTENT END-->
+        
+        <!-- PAGE 4 CONTAINER END-->
+        <!--++++ PAGE 4 END++++-->
+        <!--+++++ PAGE 5 
+        <div id="slide5" class="slide" data-slide="5" data-stellar-background-ratio="0.5">
+        </div> +++++-->
+            <!-- PAGE 5 CONTAINER -->
+            
+        
+        <!-- CONTENT END-->
+        
+        <!-- PAGE 5 CONTAINER END -->
+        <!--+++++ PAGE 5 END +++++-->
+
+        <!-- FOOTER START -->
+        <div id="footerDiv" class="slideHeader">
             <p>
-            Disaster Zone&copy; (2015)
+                Disaster Zone&copy; (2016)
             </p>
         </div>
-        <!--+FOOTER DIV MAIN END+-->
-    </footer>
-    <!-- FOOTER END -->
+        <!-- FOOTER END -->
+    </article>
+    <!-- ARTICLE FINISH -->
+    
+    <!--**** FRAME WORK JS ****-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <!-- -=== coolKittenFramework JS [WORKING] ===- -->
+    <!-- STELLAR -->
+    <script type="text/javascript" src="./framework/coolKitten/js/jquery.stellar.min.js"></script>
+    <!-- WAYPOINTS -->
+    <script type="text/javascript" src="./framework/coolKitten/js/waypoints.min.js"></script>
+    <!-- EASING -->
+    <script type="text/javascript" src="./framework/coolKitten/js/jquery.easing.1.3.js"></script>
+
+    <!-- SCRYPTS -->
+    <script type="text/javascript" src="./framework/coolKitten/js/scripts.js"></script>
+    <!-- CUSTOM SCRYPTS -->
+    <script src="./style/javaScryptCustom.js"></script>
+
+
+    <!-- -=== coolKittenFramework JS END ===- -->
 </body>
 <!-- BODY ENDS -->
 </html>
