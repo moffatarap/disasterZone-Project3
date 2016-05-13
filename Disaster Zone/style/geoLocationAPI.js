@@ -20,8 +20,8 @@ var disasterLocLatArray = [
     -40.9881, //[0] PAEKAKARIKI EARTHQUAKE
     -40.9800, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
     -41.3000, //[2] WELLINGTON FLOOD BASIN RESERVE
-    -41.2581, //[3] WELLINGTON HURRICANE SOMES ISLAND
-    -41.3275, //[4] WELLINGTON TORNADO AIRPORT
+    -36.8485, //[3] AUCKLAND HURRICANE
+    -39.0556, //[4] NEW PLYMOUTH TORNADO
     -41.2955, //[5] WELLINGTON FIRE TE ARO 
 ];
 //location warning LNG 
@@ -29,8 +29,8 @@ var disasterLocLngArray = [
     174.9510, //[0] PAEKAKARIKI EARTHQUAKE
     174.9560, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
     174.7801, //[2] WELLINGTON FLOOD BASIN RESERVE
-    174.8659, //[3] WELLINGTON HURRICANE SOMES ISLAND
-    174.8075, //[4] WELLINGTON TORNADO AIRPORT
+    174.7633, //[3] AUCKLAND HURRICANE
+    174.0752, //[4] NEW PLYMOUTH TORNADO
     174.7756, //[5] WELLINGTON FIRE TE ARO 
 ];
 /* 1# = DISASTER LOCATION ARRAYS [END] =*/
@@ -274,7 +274,7 @@ window.onload = function () {
 
         /*====== 2# DISASTER MARKER CREATION AND ALERT CIRCLE ======*/
 
-        /* 1.0# = EARTHQUAKE = */
+        /* 1.0# = EARTHQUAKE [SEVERE] = */
         disasterMarkerAY[0] = new google.maps.Marker({
             map: mapObject,
             title: disasterMarkerTitleArray[0],
@@ -293,7 +293,7 @@ window.onload = function () {
 
         alertCircleMarkerArray[0].bindTo('center', disasterMarkerAY[0], 'position'); //binds circle to location of marker
     
-        /* 1.1# == FIRE ==*/
+        /* 1.1# == FIRE [MODERATE] ==*/
         disasterMarkerAY[1] = new google.maps.Marker({
             map: mapObject,
             title: disasterMarkerTitleArray[1],
@@ -312,7 +312,7 @@ window.onload = function () {
 
         alertCircleMarkerArray[1].bindTo('center', disasterMarkerAY[1], 'position'); //binds circle to location of marker
 
-        /* 1.2# == FLOOD ==*/
+        /* 1.2# == FLOOD [LIGHT] ==*/
         disasterMarkerAY[2] = new google.maps.Marker({
             map: mapObject,
             title: disasterMarkerTitleArray[2],
@@ -332,7 +332,7 @@ window.onload = function () {
 
         alertCircleMarkerArray[2].bindTo('center', disasterMarkerAY[2], 'position'); //binds circle to location of marker
 
-        /* 1.3# ===  HURRICANE ===*/
+        /* 1.3# ===  HURRICANE [STRONG] ===*/
         disasterMarkerAY[3] = new google.maps.Marker({
             map: mapObject,
             title: disasterMarkerTitleArray[3],
@@ -352,7 +352,7 @@ window.onload = function () {
         alertCircleMarkerArray[3].bindTo('center', disasterMarkerAY[3], 'position'); //binds circle to location of marker
 
 
-        /* 1.4# ==== TORNADO ====*/
+        /* 1.4# ==== TORNADO [WEAK] ====*/
         disasterMarkerAY[4] = new google.maps.Marker({
             map: mapObject,
             title: disasterMarkerTitleArray[4],
@@ -371,7 +371,7 @@ window.onload = function () {
 
         alertCircleMarkerArray[4].bindTo('center', disasterMarkerAY[4], 'position'); //binds circle to location of marker
 
-        /* 1.5# ===== FIRE TE ARO =====*/
+        /* 1.5# ===== FIRE TE ARO [WEAK] =====*/
         disasterMarkerAY[5] = new google.maps.Marker({
             map: mapObject,
             title: disasterMarkerTitleArray[5],
