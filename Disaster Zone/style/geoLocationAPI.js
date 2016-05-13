@@ -1,6 +1,6 @@
 /* Geolocation API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) & SCHULTZSTEF (300308218)*/
 /*=/ VARABLES \=*/
-var mapMarker; //var for marker
+var mapUserMarker; //var for marker
 var mapObject; //var for the google map
 var userLatLng; //latLng of user
 var accuracyDraw; //circle for measuring accuracy
@@ -160,14 +160,14 @@ var mapOptions = {
     draggable: true, //disable drag
     zoomControl: true, //disable or enable zoom
     zoomControlOptions: {
-    position: google.maps.ControlPosition.RIGHT_TOP
+        position: google.maps.ControlPosition.RIGHT_TOP
     },
     disableDoubleClickZoom: true, //disables zoom
     scrollwheel: false, //disables scroll wheel
     disableDefaultUI: true, //disables UI
     center: userLatLng, //center map
-        
-    /* STYLE SETTINGS */    
+
+    /* STYLE SETTINGS */
     styles: [{
         //WATER
         "featureType": "water",
@@ -257,7 +257,7 @@ var mapOptions = {
     }, {
     }],
     /* STYLE SETTINGS */
-        
+
 };
 
 
@@ -292,7 +292,7 @@ window.onload = function () {
         });
 
         alertCircleMarkerArray[0].bindTo('center', disasterMarkerAY[0], 'position'); //binds circle to location of marker
-    
+
         /* 1.1# == FIRE [MODERATE] ==*/
         disasterMarkerAY[1] = new google.maps.Marker({
             map: mapObject,
@@ -318,7 +318,7 @@ window.onload = function () {
             title: disasterMarkerTitleArray[2],
             position: { lat: disasterLocLatArray[2], lng: disasterLocLngArray[2] }, //WELLINGTON
             icon: iconArray[8],
-            
+
         });
 
         // 1.2# ALERT CIRCLE MARKER
@@ -393,7 +393,7 @@ window.onload = function () {
         /*====== DISASTER MARKER CREATION [END] ======*/
 
         /* 3# === DISASTER ALERT UI ELEMENTS === */
-        
+
         /* 3# === DISASTER ALERT UI ELEMENTS === */
 
         /* #4 ==== FIREBASE CREATE ==== */
@@ -401,7 +401,7 @@ window.onload = function () {
         /* #4 ==== FIREBASE CREATE [END] ====*/
     }
 
-    
+
 }
 
 /* 1# = ON LOAD SET STYLE MAP AND STARTING LOCATION [END] =*/
@@ -435,7 +435,7 @@ function writeAddressName(latLng) {
             //formatted address from latLng
             document.getElementById("mapAddress").innerHTML = results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
-            
+
         }
 
         else
@@ -447,17 +447,17 @@ function writeAddressName(latLng) {
     if (mapLoad === 1) {
         //create map marker
         console.log('mapMarkerSetPositonInital'); //debug
-        mapMarker = new google.maps.Marker({
+        mapUserMarker = new google.maps.Marker({
             map: mapObject,
             position: userLatLng,
         })
 
-}
-    //change marker position to new user LatLng
+    }
+        //change marker position to new user LatLng
     else {
         console.log('mapMarkerSetPositon'); //debug
-        mapMarker.setPosition(userLatLng); //mapMarker LatLng
-        
+        mapUserMarker.setPosition(userLatLng); //mapUserMarker LatLng
+
     }
     /* [accuracyDraw DISABLED]   mapObject.fitBounds(accuracyDraw.getBounds()); */
 }
@@ -469,7 +469,7 @@ function geoLocateUser() {
     pubs();
     //add 1 to mapLoad varable
     mapLoad += 1;
- 
+
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         console.log('geoLocateUser'); //debug
@@ -479,13 +479,13 @@ function geoLocateUser() {
 
         };
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
-        
+
     }
     else {
         console.log('doesNotSupport'); //debug
         document.getElementById("errorCantFind").innerHTML = "<p>Your browser doesn't support location</p>";
     }
-    
+
 }
 /* 2# == GEO LOCATE USER END ==*/
 
@@ -510,7 +510,7 @@ function geolocationError(positionError) {
 /* 5# ===== RE DRAW MARKER ===== */
 function reDraw() {
     /*DISPLAY WARNING IF USER IS NEAR DISASTER */
-    
+
     /* DEBUG SECTION */
 
     console.log('reDraw');//writes to debug redraw
@@ -546,7 +546,7 @@ setInterval(function () {
             alertHUR: document.getElementById("disasterAlert3").innerHTML, //ALERT HURRICANE
             alertTOR: document.getElementById("disasterAlert4").innerHTML, //ALERT TORNADO
             alertFIT: document.getElementById("disasterAlert5").innerHTML, //ALERT FIRE TE ARO
-           
+
         });
 
         /* 6.2# ======-- BREAK USER LATLNG INTO LAT AND LNG --====== */
@@ -564,7 +564,7 @@ setInterval(function () {
         //DEBUG END
 
         /*BREAK USER LATLNG INTO LAT AND LNG [END] */
-        
+
         /* 6.3# ======--- GEOLOCATION ALERTS ---====== [DISABLED]
         //Displays alert if user is within a defined radius of event, the event radius is dependent on the severity of the event.
 
@@ -739,11 +739,11 @@ setInterval(function () {
         });
 
         /* 6.3# ======--- GEOLOCATION ALERTS v2 [END] ---====== */
-        
-       geoRefresh = 2; //reset value to 2
-        
+
+        geoRefresh = 2; //reset value to 2
+
     }
-    //if geoRefresh var = > 10 then add 1 to geoRefresh 
+        //if geoRefresh var = > 10 then add 1 to geoRefresh 
     else {
         geoRefresh += 1;
         console.log('ALERT: None'); //debug
@@ -751,7 +751,7 @@ setInterval(function () {
         /* IF NO DISASTERS ALERTS SET ALL TO NONE */
 
     }
-    
+
     //geoLocateUser();
 
 }, 3300); //33000
