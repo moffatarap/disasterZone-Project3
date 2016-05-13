@@ -90,8 +90,8 @@ alertCirlceRadiusArray
     50000,//[0] SEVERE   || 50km
     40000,//[1] STRONG   || 40km
     20000,//[2] MODERATE || 20km
-    5000,//[3] LIGHT     || 5km
-    1500,//[4] WEAK      || 1.5km
+    5000, //[3] LIGHT    || 5km
+    1500, //[4] WEAK     || 1.5km
 /* CIRCLE ALERT RADIUS END */
 
 /* TESTING MARKER CIRCLE RADIUS AS AN FORM OF ALERT */

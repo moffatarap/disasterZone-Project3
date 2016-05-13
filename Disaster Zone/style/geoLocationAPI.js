@@ -725,6 +725,20 @@ setInterval(function () {
 
 
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
+
+        /* 6.3# ======--- GEOLOCATION ALERTS v2 ---====== */
+        //Trying using radius of circle to alert to events
+        var dragable_marker = new google.maps.Marker({
+            position: new google.maps.LatLng(-33.868625, 151.210274),
+            map: mapObject,
+            draggable: true
+        });
+
+        google.maps.event.addListener(dragable_marker, 'dragend', function (e) {
+            alert(alertCircleMarkerArray[0].getBounds().contains(dragable_marker.getPosition()));
+        });
+
+        /* 6.3# ======--- GEOLOCATION ALERTS v2 [END] ---====== */
         
        geoRefresh = 2; //reset value to 2
         
