@@ -127,11 +127,11 @@ var alertCircleMarkerArray = [
 /* 5# ===== ALERT CIRCLE ARRAY [END] =====*/
 //sets radius for each disaster type meters to km 1km = 1000 meters
 var alertCirlceRadiusArray = [
-    20000,//[0] SEVERE || 20km
-    ,//[1] STRONG || km
-    ,//[2] MODERATE || km
-    ,//[3] LIGHT || km
-    ,//[4] WEAK || km
+    50000,//[0] SEVERE   || 50km
+    40000,//[1] STRONG   || 40km
+    20000,//[2] MODERATE || 20km
+    5000,//[3] LIGHT     || 5km
+    1500,//[4] WEAK      || 1.5km
 ];
 
 /* 5# ===== ALERT CIRCLE ARRAY END =====*/
@@ -156,7 +156,7 @@ var alertCircleColorArray = [
 
 var mapOptions = {
     //MAP OPTIONS
-    zoom: 15, //sets zoom level
+    zoom: 10, //sets zoom level
     draggable: true, //disable drag
     zoomControl: true, //disable or enable zoom
     zoomControlOptions: {
@@ -282,7 +282,7 @@ window.onload = function () {
             icon: iconArray[0],
         });
 
-        //ALERT CIRCLE MARKER
+        // 1.0# ALERT CIRCLE MARKER
         alertCircleMarkerArray[0] = new google.maps.Circle({
             map: mapObject,
             radius: alertCirlceRadiusArray[0], // sets alert radius from array 
@@ -291,7 +291,7 @@ window.onload = function () {
             strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
         });
 
-        alertCircleMarkerArray[0].bindTo('center', disasterMarkerAY[0], 'position');
+        alertCircleMarkerArray[0].bindTo('center', disasterMarkerAY[0], 'position'); //binds circle to location of marker
     
         /* 1.1# == FIRE ==*/
         disasterMarkerAY[1] = new google.maps.Marker({
@@ -300,6 +300,17 @@ window.onload = function () {
             position: { lat: disasterLocLatArray[1], lng: disasterLocLngArray[1] }, //PAEKAKARIKI
             icon: iconArray[22],
         });
+
+        // 1.1# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[1] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[2], // sets alert radius from array 
+            fillColor: alertCircleColorArray[2], //sets color of fill from array
+            strokeColor: alertCircleColorArray[2], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[1].bindTo('center', disasterMarkerAY[1], 'position'); //binds circle to location of marker
 
         /* 1.2# == FLOOD ==*/
         disasterMarkerAY[2] = new google.maps.Marker({
@@ -310,6 +321,17 @@ window.onload = function () {
             
         });
 
+        // 1.2# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[2] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[3], // sets alert radius from array 
+            fillColor: alertCircleColorArray[3], //sets color of fill from array
+            strokeColor: alertCircleColorArray[3], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[2].bindTo('center', disasterMarkerAY[2], 'position'); //binds circle to location of marker
+
         /* 1.3# ===  HURRICANE ===*/
         disasterMarkerAY[3] = new google.maps.Marker({
             map: mapObject,
@@ -317,6 +339,18 @@ window.onload = function () {
             position: { lat: disasterLocLatArray[3], lng: disasterLocLngArray[3] }, //WELLINGTON
             icon: iconArray[11],
         });
+
+        // 1.3# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[3] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[1], // sets alert radius from array 
+            fillColor: alertCircleColorArray[1], //sets color of fill from array
+            strokeColor: alertCircleColorArray[1], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[3].bindTo('center', disasterMarkerAY[3], 'position'); //binds circle to location of marker
+
 
         /* 1.4# ==== TORNADO ====*/
         disasterMarkerAY[4] = new google.maps.Marker({
@@ -326,6 +360,17 @@ window.onload = function () {
             icon: iconArray[19],
         });
 
+        // 1.4# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[4] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[4], // sets alert radius from array 
+            fillColor: alertCircleColorArray[4], //sets color of fill from array
+            strokeColor: alertCircleColorArray[4], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[4].bindTo('center', disasterMarkerAY[4], 'position'); //binds circle to location of marker
+
         /* 1.5# ===== FIRE TE ARO =====*/
         disasterMarkerAY[5] = new google.maps.Marker({
             map: mapObject,
@@ -333,6 +378,17 @@ window.onload = function () {
             position: { lat: disasterLocLatArray[5], lng: disasterLocLngArray[5] }, //WELLINGTON
             icon: iconArray[24],
         });
+
+        // 1.5# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[5] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[4], // sets alert radius from array 
+            fillColor: alertCircleColorArray[4], //sets color of fill from array
+            strokeColor: alertCircleColorArray[4], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[5].bindTo('center', disasterMarkerAY[5], 'position'); //binds circle to location of marker
 
         /*====== DISASTER MARKER CREATION [END] ======*/
 
@@ -462,7 +518,7 @@ function reDraw() {
 
     /* DEBUG SECTION END */
 
-    //sets center of map*/
+    /* sets center of map [DISABED]*/
     mapObject.setCenter(userLatLng)
 
 }

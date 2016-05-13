@@ -85,8 +85,14 @@ FIRE WELLINGTON TE ARO WEAK
 lat: -41.2955
 Lng: 174.7756
 
-
-
+/* CIRCLE ALERT RADIUS */
+alertCirlceRadiusArray
+    50000,//[0] SEVERE   || 50km
+    40000,//[1] STRONG   || 40km
+    20000,//[2] MODERATE || 20km
+    5000,//[3] LIGHT     || 5km
+    1500,//[4] WEAK      || 1.5km
+/* CIRCLE ALERT RADIUS END */
 
 
 /* WOLF METHOD */
