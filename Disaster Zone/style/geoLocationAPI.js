@@ -727,7 +727,7 @@ setInterval(function () {
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
 
         /* 6.3# ======--- GEOLOCATION ALERTS v2 ---====== */
-        //Trying using radius of circle to alert to events
+        //Trying using radius of circle to alert to events works on draggable marker
         var dragable_marker = new google.maps.Marker({
             position: new google.maps.LatLng(-33.868625, 151.210274),
             map: mapObject,
