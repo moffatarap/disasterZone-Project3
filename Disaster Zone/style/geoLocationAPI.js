@@ -17,23 +17,56 @@ var alertCircleStrokeWeight = 2; //sets stroke weight for alert circle
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
 //location warning LAT 
 var disasterLocLatArray = [
-    -40.9881, //[0] PAEKAKARIKI EARTHQUAKE
-    -40.9800, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
-    -41.3000, //[2] WELLINGTON FLOOD BASIN RESERVE
-    -36.8485, //[3] AUCKLAND HURRICANE
-    -39.0556, //[4] NEW PLYMOUTH TORNADO
-    -41.2955, //[5] WELLINGTON FIRE TE ARO 
+    -40.9881, //[0] - LAT || PAEKAKARIKI EARTHQUAKE
+    -40.9800, //[1] - LAT || PAEKAKARIKI FIRE CAMPBELL PARK
+    -41.3000, //[2] - LAT || WELLINGTON FLOOD BASIN RESERVE
+    -36.8485, //[3] - LAT || AUCKLAND HURRICANE
+    -39.0556, //[4] - LAT || NEW PLYMOUTH TORNADO
+    -41.2955, //[5] - LAT || WELLINGTON FIRE TE ARO 
 ];
 //location warning LNG 
 var disasterLocLngArray = [
-    174.9510, //[0] PAEKAKARIKI EARTHQUAKE
-    174.9560, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
-    174.7801, //[2] WELLINGTON FLOOD BASIN RESERVE
-    174.7633, //[3] AUCKLAND HURRICANE
-    174.0752, //[4] NEW PLYMOUTH TORNADO
-    174.7756, //[5] WELLINGTON FIRE TE ARO 
+    174.9510, //[0] - LNG || PAEKAKARIKI EARTHQUAKE
+    174.9560, //[1] - LNG || PAEKAKARIKI FIRE CAMPBELL PARK
+    174.7801, //[2] - LNG || WELLINGTON FLOOD BASIN RESERVE
+    174.7633, //[3] - LNG || AUCKLAND HURRICANE
+    174.0752, //[4] - LNG || NEW PLYMOUTH TORNADO
+    174.7756, //[5] - LNG || WELLINGTON FIRE TE ARO 
 ];
 /* 1# = DISASTER LOCATION ARRAYS [END] =*/
+
+/* 1.1# VOLCANO WARNING LOCATION ARRAYS */
+var volcanoWarningLatArray = [
+    , //[0] - LAT || MOUNT RUAPEHU
+    , //[1]
+    , //[2]
+    , //[3]
+    , //[4]
+    , //[5]
+    , //[6]
+    , //[7]
+    , //[8]
+    , //[9]
+    , //[10]
+    , //[11]
+];
+
+var volcanoWarningLngArray = [
+    , //[0]
+    , //[1]
+    , //[2]
+    , //[3]
+    , //[4]
+    , //[5]
+    , //[6]
+    , //[7]
+    , //[8]
+    , //[9]
+    , //[10]
+    , //[11]
+
+];
+/* 1.1# VOLCANO WARNING LOCATION ARRAYS [END]*/
 
 /* 2# == DISASTER OFFSET ARRAY ==*/
 //sets offset depending on severity of the disaster, this offset will alert users with in the defined range to a disaster
@@ -121,12 +154,12 @@ var iconArray = [
 
 /* 4.1# ==== DISASTER ICON STANDARD ARRAY ==== */
 var disasterIconStandardArray = [
-    './media/img/mapKeys/key/earthquake.png',//[0] EARTHQUAKE
-    './media/img/mapKeys/key/fire.png',//[1] FIRE
-    './media/img/mapKeys/key/flood.png',//[2] FLOOD
-    './media/img/mapKeys/key/hurricane.png',//[3] HURRICANE
-    './media/img/mapKeys/key/tornado.png',//[4] TORNADO
-    './media/img/mapKeys/key/volcano.png',//[5] VOLCANO
+    './media/img/mapKeys/key/earthquake.png', //[0] EARTHQUAKE
+    './media/img/mapKeys/key/fire.png',       //[1] FIRE
+    './media/img/mapKeys/key/flood.png',      //[2] FLOOD
+    './media/img/mapKeys/key/hurricane.png',  //[3] HURRICANE
+    './media/img/mapKeys/key/tornado.png',    //[4] TORNADO
+    './media/img/mapKeys/key/volcano.png',    //[5] VOLCANO
 
 
 ];
