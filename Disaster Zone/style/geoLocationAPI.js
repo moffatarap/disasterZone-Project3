@@ -64,6 +64,19 @@ var disasterMarkerAY = [
 ];
 /* 3# === DISASTER MARKER ARRAY [END] === */
 
+/* 3.1# ===- DISASTER MARKER TITLE ARRAY -=== */
+//stores titles for each event in an array
+var disasterMarkerTitleArray = [
+    'Earthquake Paekakariki [SEVERE]',//[0] - EARTHQUAKE PAEK
+    'Fire Paekakariki [MODERATE]',//[1] - FIRE PAEK
+    'Flood Wellington [LIGHT]',//[2] - FLOOD WELL
+    'Hurricane Wellington [STRONG]',//[3] - HURRICANE WELL
+    'Tornado Wellington [WEAK]',//[4] - TORNADO WELL
+    'Fire Wellington [WEAK]',//[5] - FIRE TE ARO WELL
+
+];
+/* 3.1# ===- DISASTER MARKER TITLE ARRAY [END] -=== */
+
 /* 4# ==== DISASTER ICON ARRAY ==== */
 var iconArray = [
     // 4.0 EARTHQUAKE, Flood , Hurricane, Tornado , Fire
@@ -112,13 +125,13 @@ var alertCircleMarkerArray = [
 ];
 
 /* 5# ===== ALERT CIRCLE ARRAY [END] =====*/
-//sets radius for each disaster type meters to km
+//sets radius for each disaster type meters to km 1km = 1000 meters
 var alertCirlceRadiusArray = [
-    ,//[0] SEVERE
-    ,//[1] STRONG
-    ,//[2] MODERATE
-    ,//[3] LIGHT
-    ,//[4] WEAK
+    20000,//[0] SEVERE || 20km
+    ,//[1] STRONG || km
+    ,//[2] MODERATE || km
+    ,//[3] LIGHT || km
+    ,//[4] WEAK || km
 ];
 
 /* 5# ===== ALERT CIRCLE ARRAY END =====*/
@@ -264,7 +277,7 @@ window.onload = function () {
         /* 1.0# = EARTHQUAKE = */
         disasterMarkerAY[0] = new google.maps.Marker({
             map: mapObject,
-            title: 'Earthquake Paekakariki [SEVERE]',
+            title: disasterMarkerTitleArray[0],
             position: { lat: disasterLocLatArray[0], lng: disasterLocLngArray[0] }, //PAEKAKARIKI
             icon: iconArray[0],
         });
@@ -272,7 +285,7 @@ window.onload = function () {
         //ALERT CIRCLE MARKER
         alertCircleMarkerArray[0] = new google.maps.Circle({
             map: mapObject,
-            radius: 16093, // 16km in meters
+            radius: alertCirlceRadiusArray[0], // sets alert radius from array 
             fillColor: alertCircleColorArray[0], //sets color of fill from array
             strokeColor: alertCircleColorArray[0], //sets stroke color from array
             strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
@@ -283,7 +296,7 @@ window.onload = function () {
         /* 1.1# == FIRE ==*/
         disasterMarkerAY[1] = new google.maps.Marker({
             map: mapObject,
-            title: 'Fire Paekakariki [MODERATE]',
+            title: disasterMarkerTitleArray[1],
             position: { lat: disasterLocLatArray[1], lng: disasterLocLngArray[1] }, //PAEKAKARIKI
             icon: iconArray[22],
         });
@@ -291,7 +304,7 @@ window.onload = function () {
         /* 1.2# == FLOOD ==*/
         disasterMarkerAY[2] = new google.maps.Marker({
             map: mapObject,
-            title: 'Flood Wellington [LIGHT]',
+            title: disasterMarkerTitleArray[2],
             position: { lat: disasterLocLatArray[2], lng: disasterLocLngArray[2] }, //WELLINGTON
             icon: iconArray[8],
             
@@ -300,7 +313,7 @@ window.onload = function () {
         /* 1.3# ===  HURRICANE ===*/
         disasterMarkerAY[3] = new google.maps.Marker({
             map: mapObject,
-            title: 'Hurricane Wellington [STRONG]',
+            title: disasterMarkerTitleArray[3],
             position: { lat: disasterLocLatArray[3], lng: disasterLocLngArray[3] }, //WELLINGTON
             icon: iconArray[11],
         });
@@ -308,7 +321,7 @@ window.onload = function () {
         /* 1.4# ==== TORNADO ====*/
         disasterMarkerAY[4] = new google.maps.Marker({
             map: mapObject,
-            title: 'Tornado Wellington [WEAK]',
+            title: disasterMarkerTitleArray[4],
             position: { lat: disasterLocLatArray[4], lng: disasterLocLngArray[4] }, //WELLINGTON
             icon: iconArray[19],
         });
@@ -316,7 +329,7 @@ window.onload = function () {
         /* 1.5# ===== FIRE TE ARO =====*/
         disasterMarkerAY[5] = new google.maps.Marker({
             map: mapObject,
-            title: 'Fire Wellington [WEAK]',
+            title: disasterMarkerTitleArray[5],
             position: { lat: disasterLocLatArray[5], lng: disasterLocLngArray[5] }, //WELLINGTON
             icon: iconArray[24],
         });
