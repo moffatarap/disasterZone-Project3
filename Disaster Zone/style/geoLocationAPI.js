@@ -1,6 +1,6 @@
-/* Geolocation API Disaster Zone MDDN352 P2 [2016] MOFFATARAP (300317288)*/
+/* Geolocation API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) & SCHULTZSTEF (300308218)*/
 /*=/ VARABLES \=*/
-var mapMarker; //var for marker
+var mapUserMarker; //var for marker
 var mapObject; //var for the google map
 var userLatLng; //latLng of user
 var accuracyDraw; //circle for measuring accuracy
@@ -11,6 +11,7 @@ var firebaseDB; //creates firebaseDB var
 var latitude; //lat for warning system, based off userLatLng var
 var longitude; //lng for warning system, based off userLatLng var
 var fourDPR = 10000;  //sets rounding var
+var alertCircleStrokeWeight = 2; //sets stroke weight for alert circle
 
 
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
@@ -19,8 +20,8 @@ var disasterLocLatArray = [
     -40.9881, //[0] PAEKAKARIKI EARTHQUAKE
     -40.9800, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
     -41.3000, //[2] WELLINGTON FLOOD BASIN RESERVE
-    -41.2581, //[3] WELLINGTON HURRICANE SOMES ISLAND
-    -41.3275, //[4] WELLINGTON TORNADO AIRPORT
+    -36.8485, //[3] AUCKLAND HURRICANE
+    -39.0556, //[4] NEW PLYMOUTH TORNADO
     -41.2955, //[5] WELLINGTON FIRE TE ARO 
 ];
 //location warning LNG 
@@ -28,8 +29,8 @@ var disasterLocLngArray = [
     174.9510, //[0] PAEKAKARIKI EARTHQUAKE
     174.9560, //[1] PAEKAKARIKI FIRE CAMPBELL PARK
     174.7801, //[2] WELLINGTON FLOOD BASIN RESERVE
-    174.8659, //[3] WELLINGTON HURRICANE SOMES ISLAND
-    174.8075, //[4] WELLINGTON TORNADO AIRPORT
+    174.7633, //[3] AUCKLAND HURRICANE
+    174.0752, //[4] NEW PLYMOUTH TORNADO
     174.7756, //[5] WELLINGTON FIRE TE ARO 
 ];
 /* 1# = DISASTER LOCATION ARRAYS [END] =*/
@@ -62,6 +63,19 @@ var disasterMarkerAY = [
     ,//[5] - FIRE TE ARO
 ];
 /* 3# === DISASTER MARKER ARRAY [END] === */
+
+/* 3.1# ===- DISASTER MARKER TITLE ARRAY -=== */
+//stores titles for each event in an array
+var disasterMarkerTitleArray = [
+    'Earthquake Paekakariki [SEVERE]',//[0] - EARTHQUAKE PAEK
+    'Fire Paekakariki [MODERATE]',//[1] - FIRE PAEK
+    'Flood Wellington [LIGHT]',//[2] - FLOOD WELL
+    'Hurricane Wellington [STRONG]',//[3] - HURRICANE WELL
+    'Tornado Wellington [WEAK]',//[4] - TORNADO WELL
+    'Fire Wellington [WEAK]',//[5] - FIRE TE ARO WELL
+
+];
+/* 3.1# ===- DISASTER MARKER TITLE ARRAY [END] -=== */
 
 /* 4# ==== DISASTER ICON ARRAY ==== */
 var iconArray = [
@@ -99,30 +113,61 @@ var iconArray = [
 ];
 /* 4# ==== DISASTER ICON ARRAY [END] ==== */
 
-/* 5# ===== DISASTER ALERT UI ELEMENT =====*/
+/* #5.0 ===== CIRCLE ARRAY =====*/
+//stores circles in array
+var alertCircleMarkerArray = [
+    ,//[0] - EARTHQUAKE
+    ,//[1] - FIRE
+    ,//[2] - FLOOD
+    ,//[3] - HURRICANE
+    ,//[4] - TORNADO
+    ,//[5] - FIRE TE ARO
+];
 
-/* 5.0# ===== MAIN CONTAIN ALERT BAR =====*/
+/* 5# ===== ALERT CIRCLE ARRAY [END] =====*/
+//sets radius for each disaster type meters to km 1km = 1000 meters
+var alertCirlceRadiusArray = [
+    50000,//[0] SEVERE   || 50km
+    40000,//[1] STRONG   || 40km
+    20000,//[2] MODERATE || 20km
+    5000,//[3] LIGHT     || 5km
+    1500,//[4] WEAK      || 1.5km
+];
 
-/* 5.0# ===== MAIN CONTAIN ALERT BAR [END] =====*/
+/* 5# ===== ALERT CIRCLE ARRAY END =====*/
 
-/* 5# ===== DISASTER ALERT UI ELEMENT [END] =====*/
+/* 6# ====== ALERT CIRCLE COLORS ARRAY ======*/
+var alertCircleColorArray = [
+    '#e52419',//[0] SEVERE 
+    '#f68824',//[1] STRONG
+    '#f2c92d',//[2] MODERATE
+    '#31c95c',//[3] LIGHT
+    '#4ecbf2',//[4]  WEAK
+
+];
+
+/* 6# ====== ALERT CIRCLE COLORS ARRAY [END] ======*/
+
+/* 7# ======= ALERT CIRCLE RADUIS ARRAY =======*/
+
+/* 7# ======= ALERT CIRCLE RADUIS [END] =======*/
 
 /*=/ VARABLES END \=*/
 
 var mapOptions = {
     //MAP OPTIONS
-    zoom: 15, //sets zoom level
+    zoom: 10, //sets zoom level
     draggable: true, //disable drag
     zoomControl: true, //disable or enable zoom
     zoomControlOptions: {
-    position: google.maps.ControlPosition.RIGHT_TOP
+        position: google.maps.ControlPosition.RIGHT_TOP
     },
     disableDoubleClickZoom: true, //disables zoom
     scrollwheel: false, //disables scroll wheel
     disableDefaultUI: true, //disables UI
     center: userLatLng, //center map
-        
-    /* STYLE SETTINGS */    
+
+    /* STYLE SETTINGS */
     styles: [{
         //WATER
         "featureType": "water",
@@ -212,7 +257,7 @@ var mapOptions = {
     }, {
     }],
     /* STYLE SETTINGS */
-        
+
 };
 
 
@@ -227,60 +272,128 @@ window.onload = function () {
         /* = 1# GOOGLE MAP CREATE = */
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
 
-        /*====== 2# DISASTER MARKER CREATION ======*/
+        /*====== 2# DISASTER MARKER CREATION AND ALERT CIRCLE ======*/
 
-        /* 1.0# = EARTHQUAKE = */
+        /* 1.0# = EARTHQUAKE [SEVERE] = */
         disasterMarkerAY[0] = new google.maps.Marker({
             map: mapObject,
-            title: 'Earthquake Paekakariki [SEVERE]',
+            title: disasterMarkerTitleArray[0],
             position: { lat: disasterLocLatArray[0], lng: disasterLocLngArray[0] }, //PAEKAKARIKI
             icon: iconArray[0],
-       });
+        });
 
-        /* 1.1# == FIRE ==*/
+        // 1.0# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[0] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[0], // sets alert radius from array 
+            fillColor: alertCircleColorArray[0], //sets color of fill from array
+            strokeColor: alertCircleColorArray[0], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[0].bindTo('center', disasterMarkerAY[0], 'position'); //binds circle to location of marker
+
+        /* 1.1# == FIRE [MODERATE] ==*/
         disasterMarkerAY[1] = new google.maps.Marker({
             map: mapObject,
-            title: 'Fire Paekakariki [MODERATE]',
+            title: disasterMarkerTitleArray[1],
             position: { lat: disasterLocLatArray[1], lng: disasterLocLngArray[1] }, //PAEKAKARIKI
             icon: iconArray[22],
         });
 
-        /* 1.2# == FLOOD ==*/
-        disasterMarkerAY[2] = new google.maps.Marker({
+        // 1.1# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[1] = new google.maps.Circle({
             map: mapObject,
-            title: 'Flood Wellington [LIGHT]',
-            position: { lat: disasterLocLatArray[2], lng: disasterLocLngArray[2] }, //WELLINGTON
-            icon: iconArray[8],
+            radius: alertCirlceRadiusArray[2], // sets alert radius from array 
+            fillColor: alertCircleColorArray[2], //sets color of fill from array
+            strokeColor: alertCircleColorArray[2], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
         });
 
-        /* 1.3# ===  HURRICANE ===*/
+        alertCircleMarkerArray[1].bindTo('center', disasterMarkerAY[1], 'position'); //binds circle to location of marker
+
+        /* 1.2# == FLOOD [LIGHT] ==*/
+        disasterMarkerAY[2] = new google.maps.Marker({
+            map: mapObject,
+            title: disasterMarkerTitleArray[2],
+            position: { lat: disasterLocLatArray[2], lng: disasterLocLngArray[2] }, //WELLINGTON
+            icon: iconArray[8],
+
+        });
+
+        // 1.2# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[2] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[3], // sets alert radius from array 
+            fillColor: alertCircleColorArray[3], //sets color of fill from array
+            strokeColor: alertCircleColorArray[3], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[2].bindTo('center', disasterMarkerAY[2], 'position'); //binds circle to location of marker
+
+        /* 1.3# ===  HURRICANE [STRONG] ===*/
         disasterMarkerAY[3] = new google.maps.Marker({
             map: mapObject,
-            title: 'Hurricane Wellington [STRONG]',
+            title: disasterMarkerTitleArray[3],
             position: { lat: disasterLocLatArray[3], lng: disasterLocLngArray[3] }, //WELLINGTON
             icon: iconArray[11],
         });
 
-        /* 1.4# ==== TORNADO ====*/
+        // 1.3# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[3] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[1], // sets alert radius from array 
+            fillColor: alertCircleColorArray[1], //sets color of fill from array
+            strokeColor: alertCircleColorArray[1], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[3].bindTo('center', disasterMarkerAY[3], 'position'); //binds circle to location of marker
+
+
+        /* 1.4# ==== TORNADO [WEAK] ====*/
         disasterMarkerAY[4] = new google.maps.Marker({
             map: mapObject,
-            title: 'Tornado Wellington [WEAK]',
+            title: disasterMarkerTitleArray[4],
             position: { lat: disasterLocLatArray[4], lng: disasterLocLngArray[4] }, //WELLINGTON
             icon: iconArray[19],
         });
 
-        /* 1.5# ===== FIRE TE ARO =====*/
+        // 1.4# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[4] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[4], // sets alert radius from array 
+            fillColor: alertCircleColorArray[4], //sets color of fill from array
+            strokeColor: alertCircleColorArray[4], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[4].bindTo('center', disasterMarkerAY[4], 'position'); //binds circle to location of marker
+
+        /* 1.5# ===== FIRE TE ARO [WEAK] =====*/
         disasterMarkerAY[5] = new google.maps.Marker({
             map: mapObject,
-            title: 'Fire Wellington [WEAK]',
+            title: disasterMarkerTitleArray[5],
             position: { lat: disasterLocLatArray[5], lng: disasterLocLngArray[5] }, //WELLINGTON
             icon: iconArray[24],
         });
 
+        // 1.5# ALERT CIRCLE MARKER
+        alertCircleMarkerArray[5] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[4], // sets alert radius from array 
+            fillColor: alertCircleColorArray[4], //sets color of fill from array
+            strokeColor: alertCircleColorArray[4], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        alertCircleMarkerArray[5].bindTo('center', disasterMarkerAY[5], 'position'); //binds circle to location of marker
+
         /*====== DISASTER MARKER CREATION [END] ======*/
 
         /* 3# === DISASTER ALERT UI ELEMENTS === */
-        
+
         /* 3# === DISASTER ALERT UI ELEMENTS === */
 
         /* #4 ==== FIREBASE CREATE ==== */
@@ -288,7 +401,7 @@ window.onload = function () {
         /* #4 ==== FIREBASE CREATE [END] ====*/
     }
 
-    
+
 }
 
 /* 1# = ON LOAD SET STYLE MAP AND STARTING LOCATION [END] =*/
@@ -322,7 +435,7 @@ function writeAddressName(latLng) {
             //formatted address from latLng
             document.getElementById("mapAddress").innerHTML = results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
-            
+
         }
 
         else
@@ -334,17 +447,17 @@ function writeAddressName(latLng) {
     if (mapLoad === 1) {
         //create map marker
         console.log('mapMarkerSetPositonInital'); //debug
-        mapMarker = new google.maps.Marker({
+        mapUserMarker = new google.maps.Marker({
             map: mapObject,
             position: userLatLng,
         })
 
-}
-    //change marker position to new user LatLng
+    }
+        //change marker position to new user LatLng
     else {
         console.log('mapMarkerSetPositon'); //debug
-        mapMarker.setPosition(userLatLng); //mapMarker LatLng
-        
+        mapUserMarker.setPosition(userLatLng); //mapUserMarker LatLng
+
     }
     /* [accuracyDraw DISABLED]   mapObject.fitBounds(accuracyDraw.getBounds()); */
 }
@@ -356,7 +469,7 @@ function geoLocateUser() {
     pubs();
     //add 1 to mapLoad varable
     mapLoad += 1;
- 
+
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         console.log('geoLocateUser'); //debug
@@ -366,13 +479,13 @@ function geoLocateUser() {
 
         };
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
-        
+
     }
     else {
         console.log('doesNotSupport'); //debug
         document.getElementById("errorCantFind").innerHTML = "<p>Your browser doesn't support location</p>";
     }
-    
+
 }
 /* 2# == GEO LOCATE USER END ==*/
 
@@ -397,7 +510,7 @@ function geolocationError(positionError) {
 /* 5# ===== RE DRAW MARKER ===== */
 function reDraw() {
     /*DISPLAY WARNING IF USER IS NEAR DISASTER */
-    
+
     /* DEBUG SECTION */
 
     console.log('reDraw');//writes to debug redraw
@@ -405,7 +518,7 @@ function reDraw() {
 
     /* DEBUG SECTION END */
 
-    //sets center of map*/
+    /* sets center of map [DISABED]*/
     mapObject.setCenter(userLatLng)
 
 }
@@ -433,7 +546,7 @@ setInterval(function () {
             alertHUR: document.getElementById("disasterAlert3").innerHTML, //ALERT HURRICANE
             alertTOR: document.getElementById("disasterAlert4").innerHTML, //ALERT TORNADO
             alertFIT: document.getElementById("disasterAlert5").innerHTML, //ALERT FIRE TE ARO
-           
+
         });
 
         /* 6.2# ======-- BREAK USER LATLNG INTO LAT AND LNG --====== */
@@ -451,8 +564,8 @@ setInterval(function () {
         //DEBUG END
 
         /*BREAK USER LATLNG INTO LAT AND LNG [END] */
-        
-        /* 6.3# ======--- GEOLOCATION ALERTS ---====== */
+
+        /* 6.3# ======--- GEOLOCATION ALERTS ---====== [DISABLED]
         //Displays alert if user is within a defined radius of event, the event radius is dependent on the severity of the event.
 
         //0# - EARTHQUAKE PAEKAKARIKI || SEVERE
@@ -612,11 +725,25 @@ setInterval(function () {
 
 
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
-        
-       geoRefresh = 2; //reset value to 2
-        
+
+        /* 6.3# ======--- GEOLOCATION ALERTS v2 ---====== */
+        //Trying using radius of circle to alert to events works on draggable marker
+        var dragable_marker = new google.maps.Marker({
+            position: new google.maps.LatLng(-33.868625, 151.210274),
+            map: mapObject,
+            draggable: true
+        });
+
+        google.maps.event.addListener(dragable_marker, 'dragend', function (e) {
+            alert(alertCircleMarkerArray[0].getBounds().contains(dragable_marker.getPosition()));
+        });
+
+        /* 6.3# ======--- GEOLOCATION ALERTS v2 [END] ---====== */
+
+        geoRefresh = 2; //reset value to 2
+
     }
-    //if geoRefresh var = > 10 then add 1 to geoRefresh 
+        //if geoRefresh var = > 10 then add 1 to geoRefresh 
     else {
         geoRefresh += 1;
         console.log('ALERT: None'); //debug
@@ -624,7 +751,7 @@ setInterval(function () {
         /* IF NO DISASTERS ALERTS SET ALL TO NONE */
 
     }
-    
+
     //geoLocateUser();
 
 }, 3300); //33000

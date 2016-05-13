@@ -1,4 +1,4 @@
-/* Custom JavaScrypt MDDN352 P2 [2016] MOFFATARAP (300317288)*/
+/* Custom JavaScrypt MDDN352 P3 [2016] MOFFATARAP (300317288) & SCHULTZSTEF (300308218)*/
 
 $(document).ready(function () {
     /**** NAV HIDE AND SHOW PHONE ****/
@@ -137,14 +137,6 @@ $(document).ready(function () {
         }
 
     });
-
-    /* AUDIO PLAY FUNCTION */
-    $(document).ready(function () {
-        $("#BGAudio").get(0).play();
-        
-
-    });
-
 
 });
 

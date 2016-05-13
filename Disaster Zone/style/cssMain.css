@@ -1,4 +1,4 @@
-/*= MAIN CSS Disaster Zone MDDN352 P2 [2016] MOFFATARAP (300317288) =*/
+/*= MAIN CSS Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) & SCHULTZSTEF (300308218) =*/
 
 /***** INDEX STYLE *****/
 /**** FONT-SIZE-STYLE ****/
@@ -140,8 +140,8 @@ ul {
 
 /***** BODY *****/
 body {
-    /* 
-    border: 2px solid blue; */
+    /* */
+    border: 2px solid blue; 
 }
 
 
@@ -150,8 +150,8 @@ body {
 
 /***** HEADER *****/
 header {
-    /* 
-    border: 2px solid orange; */
+    /* */
+    border: 2px solid orange; 
 }
 
 
@@ -159,15 +159,15 @@ header {
 /*** HEADER FINISH ***/
 /* HTML */
 html {
-    /* 
-    border: 2px solid red; */
+    /* */
+    border: 2px solid red; 
 }
 
 /***** ARTICLE *****/
 article {
     
-    /* 
-    border: 2px solid green;*/ 
+    /* */ 
+    border: 2px solid green;
 }
 
 /****&& DIVS &&****/
@@ -175,15 +175,15 @@ article {
 /**& CLASS &**/
 .slideHeader {
     width: 100%;
-    /*
-    border: 1px solid #c918fc;*/
+    /**/
+    border: 1px solid #c918fc;
 }
 
 .disasterTypesContain {
     height: 70px;
     overflow: hidden;
-    /*
-    border: 1px dashed white; */
+    /**/
+    border: 1px dashed white; 
 }
 
 /* & ID & */
@@ -248,16 +248,16 @@ article {
     margin-top:1%;
     margin-left:1%;
 
-    /*
-    border:2px solid #edff05;*/
+    /**/
+    border:2px solid #edff05;
 }
 
 #errorCantFind{
     color:#1f1b1a;
     margin-top:1%;
     margin-left:1%;
-    /*
-    border:2px solid #104cdc;*/
+    /**/
+    border:2px solid #104cdc;
 }
 
 /* GEO LOCATION GOOGLE API END */
@@ -321,39 +321,39 @@ article {
 /** NAV **/
 /*=+ CLASS +=*/
 .menu {
-    /*
-    border: 1px solid green; */
+    /**/
+    border: 1px solid green; 
 }
 
 .container {
-    /*
-    border: 1px solid orange;*/
+    /**/
+    border: 1px solid orange;
 }
 
 .clearfix {
-    /*
-    border: 1px dotted #808080;*/
+    /**/
+    border: 1px dotted #808080;
 }
 
 .grid_12 {
-    /*
-    border: 1px solid #eae612;*/
+    /**/
+    border: 1px solid #eae612;
 }
 
 .grid_1 {
-    /*
-    border: 1px solid white; */
+    /**/
+    border: 1px solid white; 
 }
 
 .grid_2 {
-    /*
-    border: 1px solid white;*/
+    /**/
+    border: 1px solid white;
 }
 
 /*= ID =*/
 #nav {
-    /* 
-    border: 2px solid #201c1b;*/
+    /* */
+    border: 2px solid #201c1b;
 }
 
 
@@ -362,8 +362,8 @@ article {
 /*+ PAGE 1 +*/
 /* ID */
 #slide1 {
-    /*
-    border: 1px dotted #b200ff;*/
+    /**/
+    border: 1px dotted #b200ff;
 }
 
 /* VIDEO BACKGROUND */
@@ -376,8 +376,8 @@ article {
     left: 0;
     overflow: hidden;
     z-index: -99;
-    /*
-    border:2px solid white;*/
+    /**/
+    border:2px solid white;
 
 }
 
@@ -407,8 +407,8 @@ article {
 /*++ PAGE 2++*/
 /* ID */
 #slide2 {
-    /* 
-    border: 1px dotted #0fd1a2; */
+    /* */
+    border: 1px dotted #0fd1a2; 
 }
 
 #disasterAlertUL {
@@ -578,8 +578,8 @@ table {
     width:100%;
     height:auto;
     display:table;
-    /*
-    border: 2px solid white;*/
+    /**/
+    border: 2px solid white;
 }
 
 
