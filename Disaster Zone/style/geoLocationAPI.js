@@ -79,7 +79,7 @@ var disasterMarkerTitleArray = [
 
 /* 4# ==== DISASTER ICON ARRAY ==== */
 var iconArray = [
-    // 4.0 EARTHQUAKE, Flood , Hurricane, Tornado , Fire
+    // 4.0 EARTHQUAKE, Flood , Hurricane, Tornado , Fire , Volcano
     //Severe Strong Moderate Light Weak
     './media/img/mapKeys/event/severe/earthquakeS.png',    //[0] SEVERE 
     './media/img/mapKeys/event/strong/earthquakeST.png',   //[1] STRONG
@@ -110,8 +110,28 @@ var iconArray = [
     './media/img/mapKeys/event/moderate/fireM.png',       //[22] MODERATE
     './media/img/mapKeys/event/light/fireL.png',          //[23] LIGHT
     './media/img/mapKeys/event/weak/fireW.png',           //[24]  WEAK
+    // 4.5 ===== VOLCANO =====
+    './media/img/mapKeys/event/severe/volcanoS.png',      //[25] SEVERE 
+    './media/img/mapKeys/event/strong/volcanoST.png',     //[26] STRONG
+    './media/img/mapKeys/event/moderate/volcanoM.png',    //[27] MODERATE
+    './media/img/mapKeys/event/light/volcanoL.png',       //[28] LIGHT
+    './media/img/mapKeys/event/weak/volcanoW.png',
 ];
 /* 4# ==== DISASTER ICON ARRAY [END] ==== */
+
+/* 4.1# ==== DISASTER ICON STANDARD ARRAY ==== */
+var disasterIconStandardArray = [
+    './media/img/mapKeys/key/earthquake.png',//[0] EARTHQUAKE
+    './media/img/mapKeys/key/fire.png',//[1] FIRE
+    './media/img/mapKeys/key/flood.png',//[2] FLOOD
+    './media/img/mapKeys/key/hurricane.png',//[3] HURRICANE
+    './media/img/mapKeys/key/tornado.png',//[4] TORNADO
+    './media/img/mapKeys/key/volcano.png',//[5] VOLCANO
+
+
+];
+
+/* 4.1# ==== DISASTER ICON STANDARD ARRAY [END] ==== */
 
 /* #5.0 ===== CIRCLE ARRAY =====*/
 //stores circles in array
@@ -565,7 +585,7 @@ setInterval(function () {
 
         /*BREAK USER LATLNG INTO LAT AND LNG [END] */
 
-        /* 6.3# ======--- GEOLOCATION ALERTS ---====== [DISABLED]
+        /* 6.3# ======--- GEOLOCATION ALERTS ---====== [DISABLED] */
         //Displays alert if user is within a defined radius of event, the event radius is dependent on the severity of the event.
 
         //0# - EARTHQUAKE PAEKAKARIKI || SEVERE
@@ -726,8 +746,8 @@ setInterval(function () {
 
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
 
-        /* 6.3# ======--- GEOLOCATION ALERTS v2 ---====== */
-        //Trying using radius of circle to alert to events works on draggable marker
+        /* 6.3# ======--- GEOLOCATION ALERTS v2 ---====== [DISABLED]
+        //Trying using radius of circle to alert to events works on draggable marker 
         var dragable_marker = new google.maps.Marker({
             position: new google.maps.LatLng(-33.868625, 151.210274),
             map: mapObject,
@@ -736,7 +756,7 @@ setInterval(function () {
 
         google.maps.event.addListener(dragable_marker, 'dragend', function (e) {
             alert(alertCircleMarkerArray[0].getBounds().contains(dragable_marker.getPosition()));
-        });
+        }); 
 
         /* 6.3# ======--- GEOLOCATION ALERTS v2 [END] ---====== */
 
