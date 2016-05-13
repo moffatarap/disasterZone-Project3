@@ -565,7 +565,7 @@ setInterval(function () {
 
         /*BREAK USER LATLNG INTO LAT AND LNG [END] */
         
-        /* 6.3# ======--- GEOLOCATION ALERTS ---====== */
+        /* 6.3# ======--- GEOLOCATION ALERTS ---====== [DISABLED]
         //Displays alert if user is within a defined radius of event, the event radius is dependent on the severity of the event.
 
         //0# - EARTHQUAKE PAEKAKARIKI || SEVERE
