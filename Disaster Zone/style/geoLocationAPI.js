@@ -37,33 +37,31 @@ var disasterLocLngArray = [
 
 /* 1.1# VOLCANO WARNING LOCATION ARRAYS */
 var volcanoWarningLatArray = [
-    , //[0] - LAT || MOUNT RUAPEHU
-    , //[1]
-    , //[2]
-    , //[3]
-    , //[4]
-    , //[5]
-    , //[6]
-    , //[7]
-    , //[8]
-    , //[9]
-    , //[10]
-    , //[11]
+    -39.2817,  //[0] - LAT || MOUNT RUAPEHU
+    -37.5226,  //[1] - LAT || WHITE ISLAND
+    -37.2862,  //[2] - LAT || MAYOR ISLAND
+    -38.2267,  //[3] - LAT || OKATAINA AKA MOUNT TARAWERA
+    -38.0800,  //[4] - LAT || ROTORUA AKA UTUHINA
+    -36.8485,  //[5] - LAT || AUCKLAND VOLCANIC FIELD
+    -39.2968,  //[6] - LAT || TARANAKI
+    -39.1569,  //[7] - LAT || NAGAURUHOE
+    -39.2727,  //[8] - LAT || TONGARIRO
+    -38.4825,  //[9] - LAT || TAUPO
+    -29.2667, //[10] - LAT || KERMADEC ISLANDS
 ];
 
 var volcanoWarningLngArray = [
-    , //[0]
-    , //[1]
-    , //[2]
-    , //[3]
-    , //[4]
-    , //[5]
-    , //[6]
-    , //[7]
-    , //[8]
-    , //[9]
-    , //[10]
-    , //[11]
+    175.5685,  //[0] - LNG || MOUNT RUAPEHU
+    177.1797,  //[1] - LNG || WHITE ISLAND
+    176.2514,  //[2] - LNG || MAYOR ISLAND
+    176.5067,  //[3] - LNG || OKATAINA AKA MOUNT TARAWERA
+    176.2700,  //[4] - LNG || ROTORUA AKA UTUHINA
+    174.7633,  //[5] - LNG || AUCKLAND VOLCANIC FIELD
+    174.0634,  //[6] - LNG || TARANAKI
+    175.6321,  //[7] - LNG || NAGAURUHOE
+    175.5802,  //[8] - LNG || TONGARIRO
+    175.5428,  //[9] - LNG || TAUPO
+    177.9167, //[10] - LNG || KERMADEC ISLANDS
 
 ];
 /* 1.1# VOLCANO WARNING LOCATION ARRAYS [END]*/
