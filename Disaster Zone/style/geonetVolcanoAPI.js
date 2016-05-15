@@ -1,11 +1,12 @@
 /* Geonet Volcano API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) */
 /*=/ VARABLES \=*/
+var geonetVolcano = "http://api.geonet.org.nz/volcano/val&format=js"; //saves metserivice url as var
 
 /*== ARRAYS ==*/
 
 $(function () {
-    //gets JSON from defined locaiton [LOCAL]
-    $.getJSON('./json/geoNetVolcanoVal.json', function (data) {
+    //gets JSON from defined locaiton [LOCAL './json/geoNetVolcanoVal.json']
+    $.getJSON(geonetVolcano, function (data) {
         //each data features array is looped for its length
         $.each(data.features, function (i, f) {
             //data id displayed in table row || this one is volcano title
