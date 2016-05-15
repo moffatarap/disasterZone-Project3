@@ -30,6 +30,11 @@ var volcanoLevelArray = [
 
 ];
 
+//stores activtiy array
+var activityArray = [
+
+];
+
 var tblRow = 0;
 /* SAVING ALL ROWS TO ARRAYS */
 $(function () {
@@ -45,8 +50,9 @@ $(function () {
 
         $.each(data.features, function (i, f) {
             //data id displayed in table row || this one is volcano title
-            volcanoTitleArray[i++] = f.properties.volcanoTitle
-             "<td>" + f.properties.level + "</td>" + "<td>" + f.properties.activity + "</td>" + "<td>" + f.properties.hazards + "</td>" + "</tr>"
+            volcanoTitleArray[i++] = f.properties.volcanoTitle;
+            volcanoLevelArray[i++] = f.properties.level;
+             + f.properties.activity + "</td>" + "<td>" + f.properties.hazards + "</td>" + "</tr>"
             $(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
         });
 
@@ -54,6 +60,9 @@ $(function () {
         //volcanoTitleArray === tblRow;
         console.log('#1')
         console.log(volcanoTitleArray)
+        console.log('#2')
+        console.log(volcanoLevelArray)
+        console.log('#3')
     });
 
 });
