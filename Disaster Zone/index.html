@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!--INDEX Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) & SCHULTZSTEF (300308218) [10.4 - start] --->
 <head>
@@ -36,8 +36,15 @@
     <!---=FIREBASE API =--->
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     
-    <!--=- GEONET VOLCANO API -=-->
-    <script src="./style/geonetVolcanoAPI.js"></script>
+    <!--=- GEONET VOLCANO API [DISABLED]
+    <script src="./style/geonetVolcanoAPI.js"></script> -=-->
+    <script>
+        $(document).ready(function () {
+            $.getJSON('https://api.geonet.org.nz/volcano/val'), function (volResults) {
+                document.write(volResults.type);
+            }
+        })
+    </script>
     <!--=- GEONET VOLCANO API [END]-=-->
     <!--== GEOLOCATION API ==-->
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyAN3Od9I1nMTcdfXtSfkzgC1ZKZuxtlbkA"></script>
