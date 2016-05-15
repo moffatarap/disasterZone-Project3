@@ -24,14 +24,17 @@ var volTitleLength = 12; //does not work want to get length limited
 /* STORES VOLCANO TITLE IN ARRAY */
 var volcanoTitleArray = [
 ];
-
-//stores level in array
 var volcanoLevelArray = [
 
 ];
 
+//stores level in array
+var volcanoActivityArray = [
+
+];
+
 //stores activtiy array
-var activityArray = [
+var volcanoHazardsArray = [
 
 ];
 
@@ -50,9 +53,12 @@ $(function () {
 
         $.each(data.features, function (i, f) {
             //data id displayed in table row || this one is volcano title
-            volcanoTitleArray[i++] = f.properties.volcanoTitle;
-            volcanoLevelArray[i++] = f.properties.level;
-             + f.properties.activity + "</td>" + "<td>" + f.properties.hazards + "</td>" + "</tr>"
+            
+            volcanoTitleArray[i] = f.properties.volcanoTitle;
+            volcanoLevelArray[i] = f.properties.level;
+            volcanoActivityArray[i] = f.properties.activity;
+            volcanoHazardsArray[i] = f.properties.hazards;
+            i++; //adds 1 to counter for arrays
             $(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
         });
 
@@ -61,8 +67,9 @@ $(function () {
         console.log('#1')
         console.log(volcanoTitleArray)
         console.log('#2')
-        console.log(volcanoLevelArray)
+        console.log(volcanoActivityArray)
         console.log('#3')
+        console.log(volcanoHazardsArray)
     });
 
 });
