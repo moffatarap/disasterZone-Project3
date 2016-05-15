@@ -24,6 +24,7 @@ var volTitleLength = 12; //does not work want to get length limited
 /* STORES VOLCANO TITLE IN ARRAY */
 var volcanoTitleArray = [
 ];
+//stores volcano level to array
 var volcanoLevelArray = [
 
 ];
@@ -67,8 +68,10 @@ $(function () {
         console.log('#1')
         console.log(volcanoTitleArray)
         console.log('#2')
-        console.log(volcanoActivityArray)
+        console.log(volcanoLevelArray)
         console.log('#3')
+        console.log(volcanoActivityArray)
+        console.log('#4')
         console.log(volcanoHazardsArray)
     });
 
