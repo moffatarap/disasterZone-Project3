@@ -131,6 +131,12 @@ var volcanoWarningLngArray = [
 
 ];
 
+JSON REFRENCE
+http://api.geonet.org.nz/volcano/val
+http://info.geonet.org.nz/display/appdata/Simple+Queries
+http://www.geonet.org.nz/quakes/services/felt.json
+http://api.geonet.org.nz/
+
 
 /* WOLF METHOD */
   if (latitude <= locWLatArray[0] + 0.0379 && latitude >= locWLatArray[0] - 0.0379 && longitude <= locWLngArray[0] + 0.0300 && longitude >= locWLngArray[0] - 0.0300) {
