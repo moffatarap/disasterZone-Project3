@@ -1,9 +1,11 @@
 /* Geonet Volcano API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) */
 /*=/ VARABLES \=*/
+var tblRow = 0; //TEMP
 var geonetVolcano = "./json/geoNetVolcanoVal.json"; //saves metserivice url as var
-var volTitleLength = 12;
+var volTitleLength = 12; //sets array length
 /*== ARRAYS ==*/
 
+/* 1.1# VOLCANO VARABLE ARRAYS */
 //volcano titles
 var volcanoTitleArray = [
 ];
@@ -15,83 +17,27 @@ var volcanoActivityArray = [
 ];
 
 //stores activtiy array
-var volcanoHazardsArray = [
+var volcanoHazardsArray = [ //11
 
 ];
-/* WORKS AND DISPLAYS IN WEBPAGES
-$(function () {
-    //gets JSON from defined locaiton [LOCAL './json/geoNetVolcanoVal.json' REMOTE 'http://api.geonet.org.nz/volcano/val']
-    $.getJSON(geonetVolcano, function (data) {
-        //each data features array is looped for its length
-        $.each(data.features, function (i, f) {
-            //data id displayed in table row || this one is volcano title
-            var tblRow = "<tr>" + "<td>" + f.properties.volcanoTitle + "</td>" + 
-             "<td>" + f.properties.level + "</td>" + "<td>" + f.properties.activity + "</td>" + "<td>" + f.properties.hazards + "</td>" + "</tr>"
-            $(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
-        });
-
-    });
-
-}); */
+/* 1.1# VOLCANO VARABLE ARRAY [END]*/
 
 
-
-var tblRow = 0;
-/* SAVING ALL ROWS TO ARRAYS */
-//$(function () {
-//    //gets JSON from defined locaiton [LOCAL './json/geoNetVolcanoVal.json' REMOTE 'http://api.geonet.org.nz/volcano/val']
-//    $.getJSON(geonetVolcano, function (data) {
-//        //each data features array is looped for its length
-//        $.each(data.features, function (i, f) {
-//            //data id displayed in table row || this one is volcano title
-//            tblRow = "<tr>" + "<td>" + f.properties.volcanoTitle + "</td>" +
-//             "<td>" + f.properties.level + "</td>" + "<td>" + f.properties.activity + "</td>" + "<td>" + f.properties.hazards + "</td>" + "</tr>"
-//            $(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
-//        });
-
-//        $.each(data.features, function (i, f) {
-//            //data id displayed in table row || this one is volcano title
-//            if (i < volTitleLength) {
-//            volcanoTitleArray[i] = f.properties.volcanoTitle;
-//            volcanoLevelArray[i] = f.properties.level;
-//            volcanoActivityArray[i] = f.properties.activity;
-//            volcanoHazardsArray[i] = f.properties.hazards;
-//            i++;
-//            }
-//            else {
-//                //adds 1 to counter for arrays
-//                $(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
-//            }
-             
-//        });
-
-//        //save var tblRow to equal volcanoTitleArray
-//        //volcanoTitleArray === tblRow;
-//        console.log('#1')
-//        console.log(volcanoTitleArray)
-//        console.log('#2')
-//        console.log(volcanoLevelArray)
-//        console.log('#3')
-//        console.log(volcanoActivityArray)
-//        console.log('#4')
-//        console.log(volcanoHazardsArray)
-//    });
-
-//});
 window.onload = function () {
     volJSON();
 }
-
+// VOL JSON is called as a function in geolocationAPI
 function volJSON() {
     //gets JSON from defined locaiton [LOCAL './json/geoNetVolcanoVal.json' REMOTE 'http://api.geonet.org.nz/volcano/val']
     $.getJSON(geonetVolcano, function (data) {
-        //    //each data features array is looped for its length
-        //    $.each(data.features, function (i, f) {
-        //        //data id displayed in table row || this one is volcano title
-        //        tblRow = "<tr>" + "<td>" + f.properties.volcanoTitle + "</td>" +
-        //         "<td>" + f.properties.level + "</td>" + "<td>" + f.properties.activity + "</td>" + "<td>" + f.properties.hazards + "</td>" + "</tr>"
-        //        $(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
-        //    });
+        /* [USED TO DISPLAY IN TEST PAGE FOR DEBUG]
+        //each data features array is looped for its length
+            $.each(data.features, function (i, f) {
+                //data id displayed in table row || this one is volcano title
+                tblRow = "<tr>" + "<td>" + f.properties.volcanoTitle + "</td>" +
+                 "<td>" + f.properties.level + "</td>" + "<td>" + f.properties.activity + "</td>" + "<td>" + f.properties.hazards + "</td>" + "</tr>"
+                $(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
+            }); */
 
         $.each(data.features, function (i, f) {
             //data id displayed in table row || this one is volcano title
@@ -103,21 +49,20 @@ function volJSON() {
                 i++;
             }
             else {
-                ////adds 1 to counter for arrays
-                //$(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
+                //doNothing
             }
 
         });
 
-        //save var tblRow to equal volcanoTitleArray
+        /* DEBUGGING */
         console.log('#1')
-        console.log(volcanoTitleArray)
+        console.log(volcanoTitleArray) //display value of title array
         console.log('#2')
-        console.log(volcanoLevelArray)
+        console.log(volcanoLevelArray) //display value of level array
         console.log('#3')
-        console.log(volcanoActivityArray)
+        console.log(volcanoActivityArray) //display value of activity array
         console.log('#4')
-        console.log(volcanoHazardsArray)
+        console.log(volcanoHazardsArray) //display value of hazard array
     });
 
 

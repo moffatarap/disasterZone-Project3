@@ -13,8 +13,7 @@ var latitude; //lat for warning system, based off userLatLng var
 var longitude; //lng for warning system, based off userLatLng var
 var fourDPR = 10000;  //sets rounding var
 var alertCircleStrokeWeight = 2; //sets stroke weight for alert circle
-var volTitleLength = 12; //sets length of array for loop var
-var geonetVolcano = "./json/geoNetVolcanoVal.json"; //saves geonet url as var [LOCAL]
+
 
 
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
@@ -103,22 +102,7 @@ var volcanoMarkerTitleArray = [
 
 /* 1.3# VOLCANO MARKER TITLE ARRAY [END]*/
 
-/* 1.4# VOLCANO VARABLE ARRAYS */
-//volcano titles
-var volcanoTitleArray = [
-];
-//volcano levels
-var volcanoLevelArray = [
-];
-//volcano activity
-var volcanoActivityArray = [
-];
 
-//stores activtiy array
-var volcanoHazardsArray = [
-
-];
-/* 1.4# VOLCANO VARABLE ARRAY [END]*/
 
 /* 2# == DISASTER OFFSET ARRAY ==*/
 //sets offset depending on severity of the disaster, this offset will alert users with in the defined range to a disaster
@@ -200,7 +184,15 @@ var iconArray = [
     './media/img/mapKeys/event/strong/volcanoST.png',     //[26] STRONG
     './media/img/mapKeys/event/moderate/volcanoM.png',    //[27] MODERATE
     './media/img/mapKeys/event/light/volcanoL.png',       //[28] LIGHT
-    './media/img/mapKeys/event/weak/volcanoW.png',
+    './media/img/mapKeys/event/weak/volcanoW.png',        //[29] WEAK
+];
+var iconVolcanoArray = [
+    // 4.5 ===== VOLCANO =====
+    './media/img/mapKeys/event/severe/volcanoS.png',      //[0] SEVERE 
+    './media/img/mapKeys/event/strong/volcanoST.png',     //[1] STRONG
+    './media/img/mapKeys/event/moderate/volcanoM.png',    //[2] MODERATE
+    './media/img/mapKeys/event/light/volcanoL.png',       //[3] LIGHT
+    './media/img/mapKeys/event/weak/volcanoW.png',        //[4] WEAK
 ];
 /* 4# ==== DISASTER ICON ARRAY [END] ==== */
 
@@ -377,7 +369,7 @@ var mapOptions = {
 window.onload = function () {
     console.log('windowOnLoad'); //debug
     geoLocateUser();
-    volJSON();
+    volJSON(); //Loads JSON Data volcanos geonet
 
     //on first loop create map
     if (mapLoad === 1) {
@@ -505,7 +497,31 @@ window.onload = function () {
         /*====== 2# DISASTER MARKER CREATION [END] ======*/
 
         /* 3# === VOLCANO MARKERS CREATE === */
+        //NEEDS WORK
+        var test = 0;
+        var test2 = 2;
+        var volcanoLevel2Array = [];
+        volcanoLevel2Array = volcanoLevelArray;
+        //3.0 MOUNT RUAPEHU 
+        if (volcanoLevel2Array[11] > test) {
+            volcanoMarkerArray[0] = new google.maps.Marker({
+                map: mapObject,
+                title: volcanoMarkerTitleArray[0],
+                position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
+                icon: iconVolcanoArray[0],
+            });
+        }
 
+        else {
+            volcanoMarkerArray[0] = new google.maps.Marker({
+                map: mapObject,
+                title: volcanoMarkerTitleArray[0],
+                position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
+                icon: disasterIconStandardArray[5],
+            });
+
+        }
+        /* TEMP DISABLED
         //3.0 MOUNT RUAPEHU 
         volcanoMarkerArray[0] = new google.maps.Marker({
             map: mapObject,
@@ -513,6 +529,7 @@ window.onload = function () {
             position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
             icon: disasterIconStandardArray[5],
         });
+        
 
         //3.1 WHITE ISLAND
         volcanoMarkerArray[1] = new google.maps.Marker({
@@ -597,7 +614,7 @@ window.onload = function () {
             icon: disasterIconStandardArray[5],
         });
 
-
+        */
 
 
         /* 3# === VOLCANO MARKERS CREATE [END] === */
