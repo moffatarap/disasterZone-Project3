@@ -54,13 +54,18 @@ $(function () {
 
         $.each(data.features, function (i, f) {
             //data id displayed in table row || this one is volcano title
-            
+            if (i < 12) { 
             volcanoTitleArray[i] = f.properties.volcanoTitle;
             volcanoLevelArray[i] = f.properties.level;
             volcanoActivityArray[i] = f.properties.activity;
             volcanoHazardsArray[i] = f.properties.hazards;
-            i++; //adds 1 to counter for arrays
-            $(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
+            i++;
+            }
+            else {
+                //adds 1 to counter for arrays
+                $(tblRow).appendTo("#userdata tbody"); //appends all user data to userdata id under tbody
+            }
+             
         });
 
         //save var tblRow to equal volcanoTitleArray
