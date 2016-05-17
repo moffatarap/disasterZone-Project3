@@ -365,6 +365,27 @@ var mapOptions = {
 
 };
 
+/* 0# == VOLCANO JSON READ == */
+$(function())
+$.getJSON(geonetVolcano, function (data) {
+    $.each(data.features, function (i, f) {
+        //data id displayed in table row || this one is volcano title
+        if (i < volTitleLength) {
+            volcanoTitleArray[i] = f.properties.volcanoTitle;
+            volcanoLevelArray[i] = f.properties.level;
+            volcanoActivityArray[i] = f.properties.activity;
+            volcanoHazardsArray[i] = f.properties.hazards;
+            i++;
+        }
+        else {
+            //doNothing
+        }
+               
+    });
+}
+  
+
+    /* 0 == VOLCANO JSON READ [END]== */
 
 
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
@@ -495,7 +516,7 @@ window.onload = function () {
 
         alertCircleMarkerArray[5].bindTo('center', disasterMarkerAY[5], 'position'); //binds circle to location of marker
 
-        /*====== DISASTER MARKER CREATION [END] ======*/
+        /*====== 2# DISASTER MARKER CREATION [END] ======*/
 
         /* 3# === VOLCANO MARKERS CREATE === */
 
