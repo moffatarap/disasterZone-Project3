@@ -1,4 +1,5 @@
-/* Geolocation API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288)
+/* Geolocation API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) */
+
 /*=/ VARABLES \=*/
 var mapUserMarker; //var for marker
 var mapObject; //var for the google map
@@ -12,6 +13,8 @@ var latitude; //lat for warning system, based off userLatLng var
 var longitude; //lng for warning system, based off userLatLng var
 var fourDPR = 10000;  //sets rounding var
 var alertCircleStrokeWeight = 2; //sets stroke weight for alert circle
+var volTitleLength = 12; //sets length of array for loop var
+var geonetVolcano = "./json/geoNetVolcanoVal.json"; //saves geonet url as var [LOCAL]
 
 
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
@@ -99,6 +102,23 @@ var volcanoMarkerTitleArray = [
 ];
 
 /* 1.3# VOLCANO MARKER TITLE ARRAY [END]*/
+
+/* 1.4# VOLCANO VARABLE ARRAYS */
+//volcano titles
+var volcanoTitleArray = [
+];
+//volcano levels
+var volcanoLevelArray = [
+];
+//volcano activity
+var volcanoActivityArray = [
+];
+
+//stores activtiy array
+var volcanoHazardsArray = [
+
+];
+/* 1.4# VOLCANO VARABLE ARRAY [END]*/
 
 /* 2# == DISASTER OFFSET ARRAY ==*/
 //sets offset depending on severity of the disaster, this offset will alert users with in the defined range to a disaster

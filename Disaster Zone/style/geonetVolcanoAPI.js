@@ -54,7 +54,7 @@ $(function () {
 
         $.each(data.features, function (i, f) {
             //data id displayed in table row || this one is volcano title
-            if (i < 12) { 
+            if (i < volTitleLength) {
             volcanoTitleArray[i] = f.properties.volcanoTitle;
             volcanoLevelArray[i] = f.properties.level;
             volcanoActivityArray[i] = f.properties.activity;
