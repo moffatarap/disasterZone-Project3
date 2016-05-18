@@ -624,7 +624,7 @@ window.onload = function () {
         /* 4# === DISASTER ALERT UI ELEMENTS === */
 
         /* 5# ==== FIREBASE CREATE ==== */
-        firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
+     firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>"); 
         /* 5# ==== FIREBASE CREATE [END] ====*/
     }
 
@@ -763,6 +763,7 @@ setInterval(function () {
 
         /* 6.1# ======- PUSH DATA TO FIREBASE -====== */
         //savesUserLatLng to firebase
+        //firebaseAPI(); //load PB function firebaseAPI scrypt
         firebaseDB.push({
             latLngUser: userLatLng.toString(), //latLng to db
             addressUser: document.getElementById("mapAddress").innerHTML, //formatted address to db from html
