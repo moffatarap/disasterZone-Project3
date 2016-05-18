@@ -8,7 +8,7 @@ var accuracyDraw; //circle for measuring accuracy
 var geocoder; //geocode to address
 var mapLoad = 0; //sets mapLoad to [0]
 var geoRefresh = 1; //sets geoRefresh function
-var firebaseDB; //creates firebaseDB var
+// var firebaseDB; creates firebaseDB var [DISABLED]
 var latitude; //lat for warning system, based off userLatLng var
 var longitude; //lng for warning system, based off userLatLng var
 var fourDPR = 10000;  //sets rounding var
