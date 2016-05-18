@@ -8,7 +8,6 @@ var accuracyDraw; //circle for measuring accuracy
 var geocoder; //geocode to address
 var mapLoad = 0; //sets mapLoad to [0]
 var geoRefresh = 1; //sets geoRefresh function
-// var firebaseDB; creates firebaseDB var [DISABLED]
 var latitude; //lat for warning system, based off userLatLng var
 var longitude; //lng for warning system, based off userLatLng var
 var fourDPR = 10000;  //sets rounding var
@@ -102,8 +101,6 @@ var volcanoMarkerTitleArray = [
 
 /* 1.3# VOLCANO MARKER TITLE ARRAY [END]*/
 
-
-
 /* 2# == DISASTER OFFSET ARRAY ==*/
 //sets offset depending on severity of the disaster, this offset will alert users with in the defined range to a disaster
 var disasterOffsetArray = [
@@ -117,9 +114,8 @@ var disasterOffsetArray = [
     0.0050, //[7] - LNG || 4 Light
     0.0044, //[8] - LAT || 5 Weak
     0.0025, //[9] - LNG || 5 Weak
-
-
 ];
+
 /* 2# == DISASTER OFFSET ARRAY [END] ==*/
 
 /* 3# === DISASTER MARKER ARRAY === */
@@ -623,9 +619,7 @@ window.onload = function () {
 
         /* 4# === DISASTER ALERT UI ELEMENTS === */
 
-        /* 5# ==== FIREBASE CREATE ==== */
-        firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
-        /* 5# ==== FIREBASE CREATE [END] ====*/
+
     }
 
 
@@ -761,20 +755,11 @@ setInterval(function () {
         geoLocateUser();
         console.log('geoLocateUser'); //writes to debug geoLocateUser
 
-        /* 6.1# ======- PUSH DATA TO FIREBASE -====== */
-        //savesUserLatLng to firebase
-        firebaseDB.push({
-            latLngUser: userLatLng.toString(), //latLng to db
-            addressUser: document.getElementById("mapAddress").innerHTML, //formatted address to db from html
-            geoLocateFail: document.getElementById("errorCantFind").innerHTML, //if fail save to db
-            alertEQ: document.getElementById("disasterAlert0").innerHTML, //ALERT EARTHQUAKE
-            alertFI: document.getElementById("disasterAlert1").innerHTML, //ALERT FIRE
-            alertFL: document.getElementById("disasterAlert2").innerHTML, //ALERT FLOOD
-            alertHUR: document.getElementById("disasterAlert3").innerHTML, //ALERT HURRICANE
-            alertTOR: document.getElementById("disasterAlert4").innerHTML, //ALERT TORNADO
-            alertFIT: document.getElementById("disasterAlert5").innerHTML, //ALERT FIRE TE ARO
-
-        });
+        
+        
+        /* 6.1# ======- PUSH DATA TO FIREBASE -====== [DISABLED]*/
+         
+        firebaseAPI(); //firebase function call from firebaseAPI scrypt
 
         /* 6.2# ======-- BREAK USER LATLNG INTO LAT AND LNG --====== */
         //SET VAR
