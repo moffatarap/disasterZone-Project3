@@ -204,6 +204,22 @@ var alertCircleMarkerArray = [
     ,//[5] - FIRE TE ARO
 ];
 
+//for volcanos
+var volcanoAlertCircleMarkerArray = [
+    , //[0]  || AUCKLAND VOLCANIC FIELD
+    , //[1]  || KERMADEC ISLANDS
+    , //[2]  || MAYOR ISLAND
+    , //[3]  || NGAURUHOE
+    , //[4]  || NORTHLAND
+    , //[5]  || OKATAINA AKA MOUNT TARAWERA
+    , //[6]  || ROTORUA
+    , //[7]  || TAUPO
+    , //[8]  || TONGARIRO
+    , //[9]  || TARANAKI/EGMONT
+    , //[10] || WHITE ISLAND
+    , //[11] || RUAPEHU
+];
+
 /* 5# ===== ALERT CIRCLE ARRAY [END] =====*/
 //sets radius for each disaster type meters to km 1km = 1000 meters
 var alertCirlceRadiusArray = [
