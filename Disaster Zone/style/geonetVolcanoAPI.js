@@ -1,6 +1,6 @@
 /* Geonet Volcano API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) */
 /*=/ VARABLES \=*/
-var geonetVolcano = "./json/geoNetVolcanoVal.json"; //saves geonet url as var "https://json.ey.nz/api.geonet.org.nz/volcano/val"
+var geonetVolcano = "https://json.ey.nz/api.geonet.org.nz/volcano/val"; //saves geonet url as var "./json/geoNetVolcanoVal.json"
 var volTitleLength = 12; //sets array length
 var volRadiusMulti = 5;
 /*== ARRAYS ==*/
@@ -121,12 +121,162 @@ function volJSON() {
 
 /* 3# === VOLCANO MARKERS CREATE === */
     function volcanoMarkerCreate() {
+        /* 0# AUCKLAND VOLCANIC FIELD */
+        /* 0# AUCKLAND VOLCANIC FIELD [END] */
+        /* 1# =  KERMADEC ISLANDS = */
+        /* 1# =   [END]= */
+        /* 2# ==  MAYOR ISLAND == */
+        /* 2# ==  MAYOR ISLAND [END]== */
+        /* 3# ===  NGAURUHOE === */
+        /* 3# ===  NGAURUHOE [END]=== */
+        /* 4# ====  NORTHLAND ==== */
+        /* 4# ====  NORTHLAND [END]==== */
+        /* 5# =====  OKATAINA AKA MOUNT TARAWERA ===== */
+        /* 5# =====  OKATAINA AKA MOUNT TARAWERA [END]===== */
+        /* 6# ======  ROTORUA ====== */
+        /* 6# ======  ROTORUA [END]====== */
+        /* 7# ======= TAUPO ======= */
+        /* 7# ======= TAUPO [END]======= */
 
-/* 10# ========  WHITE ISLAND ======== */
 
-/*10# ========  WHITE ISLAND [END] ======== */
+/* 8# ======== TONGARIRO ======== */
+/* 8# ======== TONGARIRO [END]======== */
 
-/* 11# =========  RUAPEHU ========= */
+/* 9# ==========  TARANAKI/EGMONT ========== */
+/* 9# ==========  TARANAKI/EGMONT [END] ========== */
+
+/* 10# ==========  WHITE ISLAND ========== */
+        if (volcanoLevelArray[10] > 0) {
+            //IF volcano alert level is larger than 0
+
+
+            /* 10# Alert Level 1 */
+            if (volcanoLevelArray[10] === 1) {
+                volcanoMarkerArray[10] = new google.maps.Marker({
+                    //create marker
+                    map: mapObject,
+                    title: volcanoMarkerTitleArray[10],
+                    position: { lat: volcanoWarningLatArray[10], lng: volcanoWarningLngArray[10] },
+                    icon: iconVolcanoArray[4],
+                });
+
+                // circle alert create
+                volcanoAlertCircleMarkerArray[10] = new google.maps.Circle({
+                    map: mapObject,
+                    radius: alertCirlceRadiusArray[4] * volRadiusMulti, // sets alert radius from array 
+                    fillColor: alertCircleColorArray[4], //sets color of fill from array
+                    strokeColor: alertCircleColorArray[4], //sets stroke color from array
+                    strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                });
+                volcanoAlertCircleMarkerArray[10].bindTo('center', volcanoMarkerArray[10], 'position'); //binds circle to location of marker
+            }
+
+            /* 10# Alert Level 2 */
+            if (volcanoLevelArray[10] === 2) {
+                volcanoMarkerArray[10] = new google.maps.Marker({
+                    //create marker
+                    map: mapObject,
+                    title: volcanoMarkerTitleArray[10],
+                    position: { lat: volcanoWarningLatArray[10], lng: volcanoWarningLngArray[10] },
+                    icon: iconVolcanoArray[3],
+                });
+
+                // circle alert create
+                volcanoAlertCircleMarkerArray[10] = new google.maps.Circle({
+                    map: mapObject,
+                    radius: alertCirlceRadiusArray[3] * volRadiusMulti, // sets alert radius from array 
+                    fillColor: alertCircleColorArray[3], //sets color of fill from array
+                    strokeColor: alertCircleColorArray[3], //sets stroke color from array
+                    strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                });
+                volcanoAlertCircleMarkerArray[10].bindTo('center', volcanoMarkerArray[10], 'position'); //binds circle to location of marker
+            }
+
+            /* 10# Alert Level 3 */
+            if (volcanoLevelArray[10] === 3) {
+                volcanoMarkerArray[10] = new google.maps.Marker({
+                    //create marker
+                    map: mapObject,
+                    title: volcanoMarkerTitleArray[10],
+                    position: { lat: volcanoWarningLatArray[10], lng: volcanoWarningLngArray[10] },
+                    icon: iconVolcanoArray[2],
+                });
+
+                // circle alert create
+                volcanoAlertCircleMarkerArray[10] = new google.maps.Circle({
+                    map: mapObject,
+                    radius: alertCirlceRadiusArray[2] * volRadiusMulti, // sets alert radius from array 
+                    fillColor: alertCircleColorArray[2], //sets color of fill from array
+                    strokeColor: alertCircleColorArray[2], //sets stroke color from array
+                    strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                });
+                volcanoAlertCircleMarkerArray[10].bindTo('center', volcanoMarkerArray[10], 'position'); //binds circle to location of marker
+
+            }
+
+            /* 10# Alert Level 4 */
+            if (volcanoLevelArray[10] === 4) {
+                volcanoMarkerArray[10] = new google.maps.Marker({
+                    //create marker
+                    map: mapObject,
+                    title: volcanoMarkerTitleArray[10],
+                    position: { lat: volcanoWarningLatArray[10], lng: volcanoWarningLngArray[10] },
+                    icon: iconVolcanoArray[1],
+                });
+
+                // circle alert create
+                volcanoAlertCircleMarkerArray[10] = new google.maps.Circle({
+                    map: mapObject,
+                    radius: alertCirlceRadiusArray[1] * volRadiusMulti, // sets alert radius from array 
+                    fillColor: alertCircleColorArray[1], //sets color of fill from array
+                    strokeColor: alertCircleColorArray[1], //sets stroke color from array
+                    strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                });
+                volcanoAlertCircleMarkerArray[10].bindTo('center', volcanoMarkerArray[10], 'position'); //binds circle to location of marker
+            }
+
+            /* 10# Alert Level 5 */
+            if (volcanoLevelArray[10] === 5) {
+                volcanoMarkerArray[10] = new google.maps.Marker({
+                    //create marker
+                    map: mapObject,
+                    title: volcanoMarkerTitleArray[10],
+                    position: { lat: volcanoWarningLatArray[10], lng: volcanoWarningLngArray[10] },
+                    icon: iconVolcanoArray[0],
+                });
+
+                // circle alert create
+                volcanoAlertCircleMarkerArray[10] = new google.maps.Circle({
+                    map: mapObject,
+                    radius: alertCirlceRadiusArray[0] * volRadiusMulti, // sets alert radius from array 
+                    fillColor: alertCircleColorArray[0], //sets color of fill from array
+                    strokeColor: alertCircleColorArray[0], //sets stroke color from array
+                    strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                });
+                volcanoAlertCircleMarkerArray[10].bindTo('center', volcanoMarkerArray[10], 'position'); //binds circle to location of marker
+            }
+
+
+
+            /* IF VOLCANO LEVEL IS 0 */
+
+        }
+
+            /* 10# Alert Level 0 [SHOW STANDARD ICON]*/
+        else {
+            volcanoMarkerArray[10] = new google.maps.Marker({
+                //create marker
+                map: mapObject,
+                title: volcanoMarkerTitleArray[10],
+                position: { lat: volcanoWarningLatArray[10], lng: volcanoWarningLngArray[10] },
+                icon: disasterIconStandardArray[5],
+            });
+
+        }
+
+/*10# ==========  WHITE ISLAND [END] ========== */
+
+/* 11# ============  RUAPEHU ============ */
 
         if (volcanoLevelArray[11] > 0) {
             //IF volcano alert level is larger than 0
@@ -256,7 +406,7 @@ function volJSON() {
 
         }
 
-/* 11# ========= RUAPEHU [END] ========= */
+/* 11# =========== RUAPEHU [END] =========== */
 
    }
 }

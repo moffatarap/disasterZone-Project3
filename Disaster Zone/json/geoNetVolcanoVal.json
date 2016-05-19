@@ -152,7 +152,7 @@
         "properties": {
             "volcanoID": "ruapehu",
             "volcanoTitle": "Ruapehu",
-            "level": 4,
+            "level": 2,
             "activity": "Moderate to heightened volcanic unrest.",
             "hazards": "Volcanic unrest hazards, potential for eruption hazards."
         }
