@@ -493,11 +493,12 @@ window.onload = function () {
         /*====== 2# DISASTER MARKER CREATION [END] ======*/
 
         /* 3# === VOLCANO MARKERS CREATE === */
-        //NEEDS WORK
+        //NEEDS WORK FIX THIS
         var test = 0;
         var test2 = 2;
         var volcanoLevel2Array = [];
         volcanoLevel2Array = volcanoLevelArray;
+
         //3.0 MOUNT RUAPEHU 
         if (volcanoLevel2Array[11] > test) {
             volcanoMarkerArray[0] = new google.maps.Marker({
