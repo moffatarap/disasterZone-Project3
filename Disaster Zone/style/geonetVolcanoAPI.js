@@ -64,10 +64,22 @@ function volJSON() {
         console.log(volcanoActivityArray); //display value of activity array
         console.log('#4');
         console.log(volcanoHazardsArray); //display value of hazard array
-
         document.getElementById("errorCantFind").innerHTML = volcanoLevelArray.length;
+        
+        volcanoMarkerCreate(); //calls volcano marker function
     });
-   
+
+/* 3# === VOLCANO MARKERS CREATE === */
+   function volcanoMarkerCreate() {
+    if (volcanoLevelArray[11] > 0) {
+        volcanoMarkerArray[0] = new google.maps.Marker({
+            map: mapObject,
+            title: volcanoMarkerTitleArray[0],
+            position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
+            icon: iconVolcanoArray[3],
+        });
+    }
 
 
+   }
 }
