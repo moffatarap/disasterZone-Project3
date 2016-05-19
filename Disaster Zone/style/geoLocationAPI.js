@@ -49,6 +49,7 @@ var volcanoWarningLatArray = [
     -39.2727,  //[8] - LAT || TONGARIRO
     -38.4825,  //[9] - LAT || TAUPO
     -29.2667, //[10] - LAT || KERMADEC ISLANDS
+    , //[11] - LAT || 
 ];
 
 var volcanoWarningLngArray = [
@@ -63,23 +64,25 @@ var volcanoWarningLngArray = [
     175.5802,  //[8] - LNG || TONGARIRO
     175.5428,  //[9] - LNG || TAUPO
     177.9167, //[10] - LNG || KERMADEC ISLANDS
+    , //[11] - LNG || 
 
 ];
 /* 1.1# VOLCANO WARNING LOCATION ARRAYS [END]*/
 
 /* 1.2# VOLCANO MARKER VAR ARRAY */
 var volcanoMarkerArray = [
-    , //[0]
-    , //[1]
-    , //[2]
-    , //[3]
-    , //[4]
-    , //[5]
-    , //[6]
-    , //[7]
-    , //[8]
-    , //[9]
-    , //[10]
+    , //[0]  || Auckland Volcanic Field
+    , //[1]  || Kermadec Islands
+    , //[2]  || Mayor Island
+    , //[3]  || Ngauruhoe
+    , //[4]  || Northland
+    , //[5]  || Okataina AKA MOUNT TARAWERA
+    , //[6]  || Rotorua
+    , //[7]  || Taupo
+    , //[8]  || Tongariro
+    , //[9]  || Taranaki/Egmont
+    , //[10] || White Island
+    , //[11] || Ruapehu
 ];
 
 /* 1.2# VOLCANO MARKER VAR ARRAY [END] */

@@ -72,7 +72,7 @@ function volJSON() {
 /* 3# === VOLCANO MARKERS CREATE === */
    function volcanoMarkerCreate() {
     if (volcanoLevelArray[11] > 0) {
-        volcanoMarkerArray[0] = new google.maps.Marker({
+        volcanoMarkerArray[11] = new google.maps.Marker({
             map: mapObject,
             title: volcanoMarkerTitleArray[0],
             position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
