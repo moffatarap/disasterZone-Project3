@@ -1,6 +1,6 @@
 /* Geonet Volcano API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) */
 /*=/ VARABLES \=*/
-var geonetVolcano = "./json/geoNetVolcanoVal.json"; //saves geonet url as var "https://json.ey.nz/api.geonet.org.nz/volcano/val"
+var geonetVolcano = "https://json.ey.nz/api.geonet.org.nz/volcano/val"; //saves geonet url as var "./json/geoNetVolcanoVal.json"
 var volTitleLength = 12; //sets array length
 var volRadiusMulti = 5;
 /*== ARRAYS ==*/
@@ -121,7 +121,8 @@ function volJSON() {
 
 /* 3# === VOLCANO MARKERS CREATE === */
     function volcanoMarkerCreate() {
-        /* 0# AUCKLAND VOLCANIC FIELD */
+
+/* 0# AUCKLAND VOLCANIC FIELD */
         if (volcanoLevelArray[0] > 0) {
             //IF volcano alert level is larger than 0
 
@@ -240,18 +241,18 @@ function volJSON() {
 
             /* 0# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[0] = new google.maps.Marker({
+            /* volcanoMarkerArray[0] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[0],
                 position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
-        /* 0# AUCKLAND VOLCANIC FIELD [END] */
+/* 0# AUCKLAND VOLCANIC FIELD [END] */
 
-        /* 1# =  KERMADEC ISLANDS = */
+/* 1# =  KERMADEC ISLANDS = */
         if (volcanoLevelArray[1] > 0) {
             //IF volcano alert level is larger than 0
 
@@ -370,18 +371,18 @@ function volJSON() {
 
             /* 1# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[1] = new google.maps.Marker({
+           /* volcanoMarkerArray[1] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[1],
                 position: { lat: volcanoWarningLatArray[1], lng: volcanoWarningLngArray[1] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
-        /* 1# =   [END]= */
+/* 1# =   KERMADEC ISLANDS [END]= */
 
-        /* 2# ==  MAYOR ISLAND == */
+/* 2# ==  MAYOR ISLAND == */
         if (volcanoLevelArray[2] > 0) {
             //IF volcano alert level is larger than 0
 
@@ -500,18 +501,18 @@ function volJSON() {
 
             /* 2# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[2] = new google.maps.Marker({
+            /* volcanoMarkerArray[2] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[2],
                 position: { lat: volcanoWarningLatArray[2], lng: volcanoWarningLngArray[2] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
-        /* 2# ==  MAYOR ISLAND [END]== */
+/* 2# ==  MAYOR ISLAND [END]== */
 
-        /* 3# ===  NGAURUHOE === */
+/* 3# ===  NGAURUHOE === */
         if (volcanoLevelArray[3] > 0) {
             //IF volcano alert level is larger than 0
 
@@ -630,18 +631,18 @@ function volJSON() {
 
             /* 3# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[3] = new google.maps.Marker({
+            /* volcanoMarkerArray[3] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[3],
                 position: { lat: volcanoWarningLatArray[3], lng: volcanoWarningLngArray[3] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
-        /* 3# ===  NGAURUHOE [END]=== */
+/* 3# ===  NGAURUHOE [END]=== */
 
-        /* 4# ====  NORTHLAND ==== */
+/* 4# ====  NORTHLAND ==== */
         if (volcanoLevelArray[4] > 0) {
             //IF volcano alert level is larger than 0
 
@@ -732,7 +733,7 @@ function volJSON() {
             }
 
             /* 4# Alert Level 5 */
-            if (volcanoLevelArray[4] === 5) {
+            if (volcanoLevelArray[4] === 4) {
                 volcanoMarkerArray[4] = new google.maps.Marker({
                     //create marker
                     map: mapObject,
@@ -760,18 +761,18 @@ function volJSON() {
 
             /* 4# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[4] = new google.maps.Marker({
+            /* volcanoMarkerArray[4] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[4],
                 position: { lat: volcanoWarningLatArray[4], lng: volcanoWarningLngArray[4] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
-        /* 4# ====  NORTHLAND [END]==== */
+/* 4# ====  NORTHLAND [END]==== */
 
-        /* 5# =====  OKATAINA AKA MOUNT TARAWERA ===== */
+/* 5# =====  OKATAINA AKA MOUNT TARAWERA ===== */
         if (volcanoLevelArray[5] > 0) {
             //IF volcano alert level is larger than 0
 
@@ -890,18 +891,18 @@ function volJSON() {
 
             /* 5# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[5] = new google.maps.Marker({
+            /* volcanoMarkerArray[5] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[5],
                 position: { lat: volcanoWarningLatArray[5], lng: volcanoWarningLngArray[5] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
-        /* 5# =====  OKATAINA AKA MOUNT TARAWERA [END]===== */
+/* 5# =====  OKATAINA AKA MOUNT TARAWERA [END]===== */
 
-        /* 6# ======  ROTORUA ====== */
+/* 6# ======  ROTORUA ====== */
         if (volcanoLevelArray[6] > 0) {
             //IF volcano alert level is larger than 0
 
@@ -1020,18 +1021,18 @@ function volJSON() {
 
             /* 6# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[6] = new google.maps.Marker({
+            /* volcanoMarkerArray[6] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[6],
                 position: { lat: volcanoWarningLatArray[6], lng: volcanoWarningLngArray[6] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
-        /* 6# ======  ROTORUA [END]====== */
+/* 6# ======  ROTORUA [END]====== */
 
-        /* 7# ======= TAUPO ======= */
+/* 7# ======= TAUPO ======= */
         if (volcanoLevelArray[7] > 0) {
             //IF volcano alert level is larger than 0
 
@@ -1150,19 +1151,19 @@ function volJSON() {
 
             /* 7# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[7] = new google.maps.Marker({
+            /* volcanoMarkerArray[7] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[7],
                 position: { lat: volcanoWarningLatArray[7], lng: volcanoWarningLngArray[7] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
-        /* 7# ======= TAUPO [END]======= */
+/* 7# ======= TAUPO [END]======= */
 
 
-        /* 8# ======== TONGARIRO ======== */
+/* 8# ======== TONGARIRO ======== */
         if (volcanoLevelArray[8] > 0) {
             //IF volcano alert level is larger than 0
 
@@ -1281,13 +1282,13 @@ function volJSON() {
 
             /* 8# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[8] = new google.maps.Marker({
+            /* volcanoMarkerArray[8] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[8],
                 position: { lat: volcanoWarningLatArray[8], lng: volcanoWarningLngArray[8] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
 /* 8# ======== TONGARIRO [END]======== */
@@ -1411,13 +1412,13 @@ function volJSON() {
 
             /* 9# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[9] = new google.maps.Marker({
+            /* volcanoMarkerArray[9] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[9],
                 position: { lat: volcanoWarningLatArray[9], lng: volcanoWarningLngArray[9] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
 /* 9# ==========  TARANAKI/EGMONT [END] ========== */
@@ -1541,13 +1542,13 @@ function volJSON() {
 
             /* 10# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[10] = new google.maps.Marker({
+            /* volcanoMarkerArray[10] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[10],
                 position: { lat: volcanoWarningLatArray[10], lng: volcanoWarningLngArray[10] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
 
@@ -1673,13 +1674,13 @@ function volJSON() {
 
         /* 11# Alert Level 0 [SHOW STANDARD ICON]*/
         else {
-            volcanoMarkerArray[11] = new google.maps.Marker({
+            /* volcanoMarkerArray[11] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
                 title: volcanoMarkerTitleArray[11],
                 position: { lat: volcanoWarningLatArray[11], lng: volcanoWarningLngArray[11] },
                 icon: disasterIconStandardArray[5],
-            });
+            }); */
 
         }
 
