@@ -101,6 +101,42 @@ Lng:174.7837
 
 /* TESTING MARKER CIRCLE RADIUS AS AN FORM OF ALERT [END]*/
 
+/* === VOLCANO PERMINATE === */
+var volcanoWarningLatArray = [
+    -39.2817,  //[0] - LAT || MOUNT RUAPEHU
+    -37.5226,  //[1] - LAT || WHITE ISLAND
+    -37.2862,  //[2] - LAT || MAYOR ISLAND
+    -38.2267,  //[3] - LAT || OKATAINA AKA MOUNT TARAWERA
+    -38.0800,  //[4] - LAT || ROTORUA AKA UTUHINA
+    -36.8485,  //[5] - LAT || AUCKLAND VOLCANIC FIELD
+    -39.2968,  //[6] - LAT || TARANAKI
+    -39.1569,  //[7] - LAT || NAGAURUHOE
+    -39.2727,  //[8] - LAT || TONGARIRO
+    -38.4825,  //[9] - LAT || TAUPO
+    -29.2667, //[10] - LAT || KERMADEC ISLANDS
+];
+
+var volcanoWarningLngArray = [
+    175.5685,  //[0] - LNG || MOUNT RUAPEHU
+    177.1797,  //[1] - LNG || WHITE ISLAND
+    176.2514,  //[2] - LNG || MAYOR ISLAND
+    176.5067,  //[3] - LNG || OKATAINA AKA MOUNT TARAWERA
+    176.2700,  //[4] - LNG || ROTORUA AKA UTUHINA
+    174.7633,  //[5] - LNG || AUCKLAND VOLCANIC FIELD
+    174.0634,  //[6] - LNG || TARANAKI
+    175.6321,  //[7] - LNG || NAGAURUHOE
+    175.5802,  //[8] - LNG || TONGARIRO
+    175.5428,  //[9] - LNG || TAUPO
+    177.9167, //[10] - LNG || KERMADEC ISLANDS
+
+];
+
+JSON REFRENCE
+http://api.geonet.org.nz/volcano/val
+http://info.geonet.org.nz/display/appdata/Simple+Queries
+http://www.geonet.org.nz/quakes/services/felt.json
+http://api.geonet.org.nz/
+
 
 /* WOLF METHOD */
   if (latitude <= locWLatArray[0] + 0.0379 && latitude >= locWLatArray[0] - 0.0379 && longitude <= locWLngArray[0] + 0.0300 && longitude >= locWLngArray[0] - 0.0300) {
