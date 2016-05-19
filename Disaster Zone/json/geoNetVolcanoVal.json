@@ -9,7 +9,7 @@
         "properties": {
             "volcanoID": "aucklandvolcanicfield",
             "volcanoTitle": "Auckland Volcanic Field",
-            "level": 0,
+            "level": 5,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
@@ -22,7 +22,7 @@
         "properties": {
             "volcanoID": "kermadecislands",
             "volcanoTitle": "Kermadec Islands",
-            "level": 0,
+            "level": 2,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
@@ -35,7 +35,7 @@
         "properties": {
             "volcanoID": "mayorisland",
             "volcanoTitle": "Mayor Island",
-            "level": 0,
+            "level": 3,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
@@ -48,7 +48,7 @@
         "properties": {
             "volcanoID": "ngauruhoe",
             "volcanoTitle": "Ngauruhoe",
-            "level": 0,
+            "level": 1,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
@@ -61,7 +61,7 @@
         "properties": {
             "volcanoID": "northland",
             "volcanoTitle": "Northland",
-            "level": 0,
+            "level": 4,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
@@ -74,7 +74,7 @@
         "properties": {
             "volcanoID": "okataina",
             "volcanoTitle": "Okataina",
-            "level": 0,
+            "level": 5,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
@@ -87,7 +87,7 @@
         "properties": {
             "volcanoID": "rotorua",
             "volcanoTitle": "Rotorua",
-            "level": 0,
+            "level": 2,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
@@ -100,7 +100,7 @@
         "properties": {
             "volcanoID": "taupo",
             "volcanoTitle": "Taupo",
-            "level": 0,
+            "level": 2,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
@@ -113,7 +113,7 @@
         "properties": {
             "volcanoID": "tongariro",
             "volcanoTitle": "Tongariro",
-            "level": 0,
+            "level": 1,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
@@ -126,7 +126,7 @@
         "properties": {
             "volcanoID": "taranakiegmont",
             "volcanoTitle": "Taranaki/Egmont",
-            "level": 0,
+            "level": 5,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
