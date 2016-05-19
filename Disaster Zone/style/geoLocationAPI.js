@@ -88,23 +88,6 @@ var volcanoMarkerArray = [
 
 /* 1.2# VOLCANO MARKER VAR ARRAY [END] */
 
-/* 1.3# VOLCANO MARKER TITLE ARRAY */
-var volcanoMarkerTitleArray = [
-    'Mount Ruapehu',            //[0] MOUNT RUAPEHU
-    'White Island',             //[1] WHITE ISLAND
-    'Mayor Island',             //[2] MAYOR ISLAND
-    'Mount Tarawera',           //[3] OKATAINA AKA MOUNT TARAWERA
-    'Utuhina Caldera',          //[4] ROTORUA AKA UTUHINA
-    'Auckland Volcanic Field',  //[5] AUCKLAND VOLCANIC FIELD
-    'Mount Taranaki',           //[6] TARANAKI
-    'Mount Ngauruhoe',          //[7] NAGAURUHOE
-    'Mount Tongariro',          //[8] TONGARIRO
-    'Taupo Caldera',            //[9] TAUPO
-    'Kermadec Islands',        //[10] KERMADEC ISLANDS
-];
-
-/* 1.3# VOLCANO MARKER TITLE ARRAY [END]*/
-
 /* 2# == DISASTER OFFSET ARRAY ==*/
 //sets offset depending on severity of the disaster, this offset will alert users with in the defined range to a disaster
 var disasterOffsetArray = [
