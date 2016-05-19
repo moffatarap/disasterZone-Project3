@@ -1,6 +1,6 @@
 /* Geonet Earthquake API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) */
 /*=/ VARABLES \=*/
-var geonetEarthQuake = "http://www.geonet.org.nz/quakes/services/felt.json"; //saves goenet url as var
+var geonetEarthQuake = "https://json.ey.nz/www.geonet.org.nz/quakes/services/felt.json"; //saves goenet url as var
 
 /*== ARRAYS ==*/
 
