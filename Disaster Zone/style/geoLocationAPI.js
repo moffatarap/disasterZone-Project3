@@ -243,13 +243,14 @@ var alertCircleColorArray = [
 
 /* 7# ======= ALERT CIRCLE RADUIS ARRAY =======*/
 
+
 /* 7# ======= ALERT CIRCLE RADUIS [END] =======*/
 
 /*=/ VARABLES END \=*/
 
 var mapOptions = {
     //MAP OPTIONS
-    zoom: 10, //sets zoom level
+    zoom: 6, //sets zoom level
     draggable: true, //disable drag
     zoomControl: true, //disable or enable zoom
     zoomControlOptions: {
@@ -491,32 +492,21 @@ window.onload = function () {
         alertCircleMarkerArray[5].bindTo('center', disasterMarkerAY[5], 'position'); //binds circle to location of marker
 
         /*====== 2# DISASTER MARKER CREATION [END] ======*/
-
+        var volcanoLevelDisplayArray = (volcanoLevelArray);
+        
         /* 3# === VOLCANO MARKERS CREATE === */
-        //NEEDS WORK
-        var test = 0;
-        var test2 = 2;
-        var volcanoLevel2Array = [];
-        volcanoLevel2Array = volcanoLevelArray;
         //3.0 MOUNT RUAPEHU 
-        if (volcanoLevel2Array[11] > test) {
-            volcanoMarkerArray[0] = new google.maps.Marker({
-                map: mapObject,
-                title: volcanoMarkerTitleArray[0],
-                position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
-                icon: iconVolcanoArray[0],
-            });
-        }
-
-        else {
+        if (volcanoLevelArray[0] === 0) {
             volcanoMarkerArray[0] = new google.maps.Marker({
                 map: mapObject,
                 title: volcanoMarkerTitleArray[0],
                 position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
                 icon: disasterIconStandardArray[5],
             });
-
         }
+        document.getElementById("errorCantFind").innerHTML = volcanoLevelDisplayArray.length;
+        
+        
         /* TEMP DISABLED
         //3.0 MOUNT RUAPEHU 
         volcanoMarkerArray[0] = new google.maps.Marker({
