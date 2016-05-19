@@ -479,19 +479,19 @@ window.onload = function () {
         alertCircleMarkerArray[5].bindTo('center', disasterMarkerAY[5], 'position'); //binds circle to location of marker
 
         /*====== 2# DISASTER MARKER CREATION [END] ======*/
-        var volcanoLevelDisplayArray = (volcanoLevelArray);
+        
         
         /* 3# === VOLCANO MARKERS CREATE === */
         //3.0 MOUNT RUAPEHU 
-        if (volcanoLevelArray[0] === 0) {
-            volcanoMarkerArray[0] = new google.maps.Marker({
-                map: mapObject,
-                title: volcanoMarkerTitleArray[0],
-                position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
-                icon: disasterIconStandardArray[5],
-            });
-        }
-        document.getElementById("errorCantFind").innerHTML = volcanoLevelDisplayArray.length;
+        //if (volcanoLevelArray[0] === 0) {
+        //    volcanoMarkerArray[0] = new google.maps.Marker({
+        //        map: mapObject,
+        //        title: volcanoMarkerTitleArray[0],
+        //        position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
+        //        icon: disasterIconStandardArray[5],
+        //    });
+        //}
+        //document.getElementById("errorCantFind").innerHTML = volcanoLevelDisplayArray.length;
         
         
         /* TEMP DISABLED
@@ -734,7 +734,7 @@ setInterval(function () {
 
         
         
-        /* 6.1# ======- PUSH DATA TO FIREBASE -====== [DISABLED]*/
+        /* 6.1# ======- PUSH DATA TO FIREBASE -====== [REMOTE]*/
          
         firebaseAPI(); //firebase function call from firebaseAPI scrypt
 
