@@ -3,11 +3,12 @@
 
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
-firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
+firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
 /** ARRAYS **/
 
 /*** FUNCTION ***/
 function firebaseAPI() {
+
     firebaseDB.push({
         latLngUser: userLatLng.toString(), //latLng to db
         addressUser: document.getElementById("mapAddress").innerHTML, //formatted address to db from html
