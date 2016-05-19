@@ -38,68 +38,55 @@ var disasterLocLngArray = [
 
 /* 1.1# VOLCANO WARNING LOCATION ARRAYS */
 var volcanoWarningLatArray = [
-    -39.2817,  //[0] - LAT || MOUNT RUAPEHU
-    -37.5226,  //[1] - LAT || WHITE ISLAND
-    -37.2862,  //[2] - LAT || MAYOR ISLAND
-    -38.2267,  //[3] - LAT || OKATAINA AKA MOUNT TARAWERA
-    -38.0800,  //[4] - LAT || ROTORUA AKA UTUHINA
-    -36.8485,  //[5] - LAT || AUCKLAND VOLCANIC FIELD
-    -39.2968,  //[6] - LAT || TARANAKI
-    -39.1569,  //[7] - LAT || NAGAURUHOE
-    -39.2727,  //[8] - LAT || TONGARIRO
-    -38.4825,  //[9] - LAT || TAUPO
-    -29.2667, //[10] - LAT || KERMADEC ISLANDS
+    -36.9850, //[0]  - LAT || AUCKLAND VOLCANIC FIELD
+    -29.2540, //[1]  - LAT || KERMADEC ISLANDS
+    -37.2860, //[2]  - LAT || MAYOR ISLAND
+    -39.1560, //[3]  - LAT || NGAURUHOE
+    -35.3950, //[4]  - LAT || NORTHLAND
+    -38.1190, //[5]  - LAT || OKATAINA AKA MOUNT TARAWERA
+    -38.0930, //[6]  - LAT || ROTORUA
+    -38.7840, //[7]  - LAT || TAUPO
+    -39.1333, //[8]  - LAT || TONGARIRO
+    -39.2980, //[9]  - LAT || TARANAKI/EGMONT
+    -37.5210, //[10] - LAT || WHITE ISLAND
+    -39.2810, //[11] - LAT || RUAPEHU
 ];
 
 var volcanoWarningLngArray = [
-    175.5685,  //[0] - LNG || MOUNT RUAPEHU
-    177.1797,  //[1] - LNG || WHITE ISLAND
-    176.2514,  //[2] - LNG || MAYOR ISLAND
-    176.5067,  //[3] - LNG || OKATAINA AKA MOUNT TARAWERA
-    176.2700,  //[4] - LNG || ROTORUA AKA UTUHINA
-    174.7633,  //[5] - LNG || AUCKLAND VOLCANIC FIELD
-    174.0634,  //[6] - LNG || TARANAKI
-    175.6321,  //[7] - LNG || NAGAURUHOE
-    175.5802,  //[8] - LNG || TONGARIRO
-    175.5428,  //[9] - LNG || TAUPO
-    177.9167, //[10] - LNG || KERMADEC ISLANDS
+    174.7700, //[0]  - LNG || AUCKLAND VOLCANIC FIELD
+    177.9167, //[1]  - LNG || KERMADEC ISLANDS
+    176.2510, //[2]  - LNG || MAYOR ISLAND
+    175.6320, //[3]  - LNG || NGAURUHOE
+    173.6300, //[4]  - LNG || NORTHLAND
+    176.5010, //[5]  - LNG || OKATAINA AKA MOUNT TARAWERA
+    176.2810, //[6]  - LNG || ROTORUA
+    175.8960, //[7]  - LNG || TAUPO
+    175.6417, //[8]  - LNG || TONGARIRO
+    174.0610, //[9]  - LNG || TARANAKI/EGMONT
+    177.1830, //[10] - LNG || WHITE ISLAND
+    175.5630, //[11] - LNG || RUAPEHU
 
 ];
 /* 1.1# VOLCANO WARNING LOCATION ARRAYS [END]*/
 
 /* 1.2# VOLCANO MARKER VAR ARRAY */
 var volcanoMarkerArray = [
-    , //[0]
-    , //[1]
-    , //[2]
-    , //[3]
-    , //[4]
-    , //[5]
-    , //[6]
-    , //[7]
-    , //[8]
-    , //[9]
-    , //[10]
+    , //[0]  || AUCKLAND VOLCANIC FIELD
+    , //[1]  || KERMADEC ISLANDS
+    , //[2]  || MAYOR ISLAND
+    , //[3]  || NGAURUHOE
+    , //[4]  || NORTHLAND
+    , //[5]  || OKATAINA AKA MOUNT TARAWERA
+    , //[6]  || ROTORUA
+    , //[7]  || TAUPO
+    , //[8]  || TONGARIRO
+    , //[9]  || TARANAKI/EGMONT
+    , //[10] || WHITE ISLAND
+    , //[11] || RUAPEHU
+
 ];
 
 /* 1.2# VOLCANO MARKER VAR ARRAY [END] */
-
-/* 1.3# VOLCANO MARKER TITLE ARRAY */
-var volcanoMarkerTitleArray = [
-    'Mount Ruapehu',            //[0] MOUNT RUAPEHU
-    'White Island',             //[1] WHITE ISLAND
-    'Mayor Island',             //[2] MAYOR ISLAND
-    'Mount Tarawera',           //[3] OKATAINA AKA MOUNT TARAWERA
-    'Utuhina Caldera',          //[4] ROTORUA AKA UTUHINA
-    'Auckland Volcanic Field',  //[5] AUCKLAND VOLCANIC FIELD
-    'Mount Taranaki',           //[6] TARANAKI
-    'Mount Ngauruhoe',          //[7] NAGAURUHOE
-    'Mount Tongariro',          //[8] TONGARIRO
-    'Taupo Caldera',            //[9] TAUPO
-    'Kermadec Islands',        //[10] KERMADEC ISLANDS
-];
-
-/* 1.3# VOLCANO MARKER TITLE ARRAY [END]*/
 
 /* 2# == DISASTER OFFSET ARRAY ==*/
 //sets offset depending on severity of the disaster, this offset will alert users with in the defined range to a disaster
@@ -217,6 +204,22 @@ var alertCircleMarkerArray = [
     ,//[5] - FIRE TE ARO
 ];
 
+//for volcanos
+var volcanoAlertCircleMarkerArray = [
+    , //[0]  || AUCKLAND VOLCANIC FIELD
+    , //[1]  || KERMADEC ISLANDS
+    , //[2]  || MAYOR ISLAND
+    , //[3]  || NGAURUHOE
+    , //[4]  || NORTHLAND
+    , //[5]  || OKATAINA AKA MOUNT TARAWERA
+    , //[6]  || ROTORUA
+    , //[7]  || TAUPO
+    , //[8]  || TONGARIRO
+    , //[9]  || TARANAKI/EGMONT
+    , //[10] || WHITE ISLAND
+    , //[11] || RUAPEHU
+];
+
 /* 5# ===== ALERT CIRCLE ARRAY [END] =====*/
 //sets radius for each disaster type meters to km 1km = 1000 meters
 var alertCirlceRadiusArray = [
@@ -243,13 +246,14 @@ var alertCircleColorArray = [
 
 /* 7# ======= ALERT CIRCLE RADUIS ARRAY =======*/
 
+
 /* 7# ======= ALERT CIRCLE RADUIS [END] =======*/
 
 /*=/ VARABLES END \=*/
 
 var mapOptions = {
     //MAP OPTIONS
-    zoom: 10, //sets zoom level
+    zoom: 6, //sets zoom level
     draggable: true, //disable drag
     zoomControl: true, //disable or enable zoom
     zoomControlOptions: {
@@ -491,33 +495,21 @@ window.onload = function () {
         alertCircleMarkerArray[5].bindTo('center', disasterMarkerAY[5], 'position'); //binds circle to location of marker
 
         /*====== 2# DISASTER MARKER CREATION [END] ======*/
-
+        
+        
         /* 3# === VOLCANO MARKERS CREATE === */
-        //NEEDS WORK FIX THIS
-        var test = 0;
-        var test2 = 2;
-        var volcanoLevel2Array = [];
-        volcanoLevel2Array = volcanoLevelArray;
-
         //3.0 MOUNT RUAPEHU 
-        if (volcanoLevel2Array[11] > test) {
-            volcanoMarkerArray[0] = new google.maps.Marker({
-                map: mapObject,
-                title: volcanoMarkerTitleArray[0],
-                position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
-                icon: iconVolcanoArray[0],
-            });
-        }
-
-        else {
-            volcanoMarkerArray[0] = new google.maps.Marker({
-                map: mapObject,
-                title: volcanoMarkerTitleArray[0],
-                position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
-                icon: disasterIconStandardArray[5],
-            });
-
-        }
+        //if (volcanoLevelArray[0] === 0) {
+        //    volcanoMarkerArray[0] = new google.maps.Marker({
+        //        map: mapObject,
+        //        title: volcanoMarkerTitleArray[0],
+        //        position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
+        //        icon: disasterIconStandardArray[5],
+        //    });
+        //}
+        //document.getElementById("errorCantFind").innerHTML = volcanoLevelDisplayArray.length;
+        
+        
         /* TEMP DISABLED
         //3.0 MOUNT RUAPEHU 
         volcanoMarkerArray[0] = new google.maps.Marker({
@@ -758,7 +750,7 @@ setInterval(function () {
 
         
         
-        /* 6.1# ======- PUSH DATA TO FIREBASE -====== [DISABLED]*/
+        /* 6.1# ======- PUSH DATA TO FIREBASE -====== [REMOTE]*/
          
         firebaseAPI(); //firebase function call from firebaseAPI scrypt
 
