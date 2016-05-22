@@ -119,6 +119,16 @@ function volJSON() {
         volcanoMarkerCreate(); //calls volcano marker function
     });
 
+    /* 2.1 # ==- VOLCANO MARKER LOOP -== */
+    //VOL LOOP VAR
+    var volcanoLevelVar = volcanoLevelArray[i];
+    var volPositionVarLat = volcanoWarningLatArray[i];
+    var volPositionVarLng = volcanoWarningLngArray[i];
+    function volcanoMarkerCreateLoop() {
+
+
+    }
+    /* 2.1 # ==- VOLCANO MARKER LOOP END -== */
 /* 3# === VOLCANO MARKERS CREATE === */
     function volcanoMarkerCreate() {
 
