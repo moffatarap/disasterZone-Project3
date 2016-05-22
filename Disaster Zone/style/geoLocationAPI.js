@@ -369,13 +369,13 @@ var mapOptions = {
 window.onload = function () {
     console.log('windowOnLoad'); //debug
     geoLocateUser();
-    volJSON(); //Loads JSON Data volcanos geonet
+    //volJSON(); //Loads JSON Data volcanos geonet
 
     //on first loop create map
     if (mapLoad === 1) {
         /* = 1# GOOGLE MAP CREATE = */
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
-
+        volJSON(); //Loads JSON Data volcanos geonet
         /*====== 2# DISASTER MARKER CREATION AND ALERT CIRCLE ======*/
 
         /* 1.0# = EARTHQUAKE [SEVERE] = */
