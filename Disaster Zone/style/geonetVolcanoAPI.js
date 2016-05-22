@@ -1,6 +1,6 @@
 /* Geonet Volcano API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) */
 /*=/ VARABLES \=*/
-var geonetVolcano = "https://json.ey.nz/api.geonet.org.nz/volcano/val"; //saves geonet url as var "./json/geoNetVolcanoVal.json"
+var geonetVolcano = "https://json.ey.nz/api.geonet.org.nz/volcano/val"; //saves geonet url as var "./json/geoNetVolcanoVal.json "
 var volTitleLength = 12; //sets array length
 var volRadiusMulti = 10; //sets volcano alert radius to be multiplyed by this number original [5]
 /*== ARRAYS ==*/
@@ -103,7 +103,7 @@ function volJSON() {
         console.log(volcanoActivityArray); //display value of activity array
         console.log('#4');
         console.log(volcanoHazardsArray); //display value of hazard array
-        document.getElementById("errorCantFind").innerHTML = volcanoLevelArray[11];
+        //[DEBUG DISPLAY]document.getElementById("errorCantFind").innerHTML = volcanoLevelArray[11];
 
         volcanoMarkerCreateLoop(); //calls vol marker loop
     });
@@ -162,9 +162,6 @@ function volcanoMarkerCreateLoop() {
                 
                 }
                     
-                    
-                
-
                 //VOL ALERT = 2
                 if (volcanoLevelArray[i] === 2) {
                     volcanoMarkerArray[i] = new google.maps.Marker({
@@ -264,8 +261,9 @@ function volcanoMarkerCreateLoop() {
 
            }
 
-            /* VOL ALERT = 0 Display Normal Icon
-            else {
+            /* VOL ALERT = 0 Display Normal Icon*/
+            //if show inactive vol = 0 then show inactive volcanos
+            if (showInactiveVol === 1){
                 volcanoMarkerArray[i] = new google.maps.Marker({
                     //create marker
                     map: mapObject,
@@ -276,7 +274,7 @@ function volcanoMarkerCreateLoop() {
                 
                 //DEBUG Log Active Volcano
                 console.log(volcanoMarkerTitleArray[i]);
-            }*/
+            }
                         
         }
 
