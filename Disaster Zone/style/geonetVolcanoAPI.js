@@ -119,11 +119,25 @@ function volJSON() {
         volcanoMarkerCreate(); //calls volcano marker function
     });
 
+    var i = 0; //sets loop var to 0
+
     /* 2.1 # ==- VOLCANO MARKER LOOP -== */
     //VOL LOOP VAR
-    var volcanoLevelVar = volcanoLevelArray[i];
-    var volPositionVarLat = volcanoWarningLatArray[i];
-    var volPositionVarLng = volcanoWarningLngArray[i];
+    var volcanoLevelVar = volcanoLevelArray[i]; //vol level
+    var volTitleVar = volcanoMarkerTitleArray[i]; //vol title
+    var volPositionVarLat = volcanoWarningLatArray[i]; //vol position Lat
+    var volPositionVarLng = volcanoWarningLngArray[i]; //vol position Lng
+    var volIconVar = iconVolcanoArray[i]; //vol icon
+
+    //MARKER CREATE
+    volcanoMarkerArray[i] = new google.maps.Marker({
+        map: mapObject,
+        title: volTitleVar,
+        position: { lat: volPositionVarLat, lng: volPositionVarLng },
+        icon: volIconVar,
+
+    });
+    
     function volcanoMarkerCreateLoop() {
 
 
