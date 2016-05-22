@@ -122,7 +122,7 @@ function volJSON() {
 
 }
 
-/* 2.0 PUSH ACTIVE VOLCANO DATA TO ARRAY */
+/* 2.0# PUSH ACTIVE VOLCANO DATA TO ARRAY */
 function pushToArray() {
     //Add active volcano to array
     volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
@@ -131,10 +131,16 @@ function pushToArray() {
     console.log(volcanoMarkerTitleArray[i]);
     console.log(volActiveArray);
 }
+/* 2.0# PUSH ACTIVE VOLCANO DATA TO ARRAY [END] */
 
-/* 2.0 PUSH ACTIVE VOLCANO DATA TO ARRAY [END] */
+/* 2.1# BIND CIRCLE TO MIDDLE MARKER */
+function bindCircle() {
+    volcanoAlertCircleMarkerArray[i].bindTo('center', volcanoMarkerArray[i], 'position'); //binds circle to location of marker
+}
 
-/* 2.1 # ==- VOLCANO MARKER LOOP -== */
+/* 2.1# BIND CIRCLE TO MIDDLE MARKER [END]*/
+
+/* 2.2# ==-- VOLCANO MARKER LOOP --== */
 function volcanoMarkerCreateLoop() {
         for (i = 0; i < volcanoMarkerArray.length; i++) {
             //Loop until i = the length of MarkerArray
@@ -153,18 +159,18 @@ function volcanoMarkerCreateLoop() {
                         icon: iconVolcanoArray[4],
                     });
 
-                    pushToArray();
+                    pushToArray(); //pushes active volcanos to array
 
                     // circle alert create
-                    // circle alert create
-                    volcanoAlertCircleMarkerArray[0] = new google.maps.Circle({
+                    volcanoAlertCircleMarkerArray[i] = new google.maps.Circle({
                         map: mapObject,
-                        radius: alertCirlceRadiusArray[0] * volRadiusMulti, // sets alert radius from array 
-                        fillColor: alertCircleColorArray[0], //sets color of fill from array
-                        strokeColor: alertCircleColorArray[0], //sets stroke color from array
+                        radius: alertCirlceRadiusArray[4] * volRadiusMulti, // sets alert radius from array 
+                        fillColor: alertCircleColorArray[4], //sets color of fill from array
+                        strokeColor: alertCircleColorArray[4], //sets stroke color from array
                         strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
                     });
-                    volcanoAlertCircleMarkerArray[0].bindTo('center', volcanoMarkerArray[i], 'position'); //binds circle to location of marker
+
+                    bindCircle(); //binds circle to marker
                 
                 }
                     
@@ -181,7 +187,18 @@ function volcanoMarkerCreateLoop() {
                         icon: iconVolcanoArray[3],
                     });
 
-                    pushToArray();
+                    pushToArray(); //pushes active volcanos to array
+
+                    // circle alert create
+                    volcanoAlertCircleMarkerArray[i] = new google.maps.Circle({
+                        map: mapObject,
+                        radius: alertCirlceRadiusArray[3] * volRadiusMulti, // sets alert radius from array 
+                        fillColor: alertCircleColorArray[3], //sets color of fill from array
+                        strokeColor: alertCircleColorArray[3], //sets stroke color from array
+                        strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                    });
+
+                    bindCircle(); //binds circle to marker
 
                 }
 
@@ -195,7 +212,18 @@ function volcanoMarkerCreateLoop() {
                         icon: iconVolcanoArray[2],
                     });
 
-                    pushToArray();
+                    pushToArray(); //pushes active volcanos to array
+
+                    // circle alert create
+                    volcanoAlertCircleMarkerArray[i] = new google.maps.Circle({
+                        map: mapObject,
+                        radius: alertCirlceRadiusArray[2] * volRadiusMulti, // sets alert radius from array 
+                        fillColor: alertCircleColorArray[2], //sets color of fill from array
+                        strokeColor: alertCircleColorArray[2], //sets stroke color from array
+                        strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                    });
+
+                    bindCircle(); //binds circle to marker
                 }
 
                 //VOL ALERT = 4
@@ -208,7 +236,18 @@ function volcanoMarkerCreateLoop() {
                         icon: iconVolcanoArray[1],
                     });
 
-                    pushToArray();
+                    pushToArray(); //pushes active volcanos to array
+
+                    // circle alert create
+                    volcanoAlertCircleMarkerArray[i] = new google.maps.Circle({
+                        map: mapObject,
+                        radius: alertCirlceRadiusArray[1] * volRadiusMulti, // sets alert radius from array 
+                        fillColor: alertCircleColorArray[1], //sets color of fill from array
+                        strokeColor: alertCircleColorArray[1], //sets stroke color from array
+                        strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                    });
+
+                    bindCircle(); //binds circle to marker
                 }
 
                 //VOL ALERT = 5
@@ -221,7 +260,18 @@ function volcanoMarkerCreateLoop() {
                         icon: iconVolcanoArray[0],
                     });
 
-                    pushToArray();
+                    pushToArray(); //pushes active volcanos to array
+
+                    // circle alert create
+                    volcanoAlertCircleMarkerArray[i] = new google.maps.Circle({
+                        map: mapObject,
+                        radius: alertCirlceRadiusArray[0] * volRadiusMulti, // sets alert radius from array 
+                        fillColor: alertCircleColorArray[0], //sets color of fill from array
+                        strokeColor: alertCircleColorArray[0], //sets stroke color from array
+                        strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                    });
+
+                    bindCircle(); //binds circle to marker
                 }
 
            }
@@ -244,7 +294,8 @@ function volcanoMarkerCreateLoop() {
 
     };
 
-    /* 2.1 # ==- VOLCANO MARKER LOOP END -== */
+/* 2.2 # ==-- VOLCANO MARKER LOOP [END] --== */
+
 ///* 3# === VOLCANO MARKERS CREATE === */
 //    function volcanoMarkerCreate() {
 
