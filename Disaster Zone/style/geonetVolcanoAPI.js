@@ -69,6 +69,24 @@ var volcanoHazardsArray = [
     , //[11] || RUAPEHU
 
 ];
+
+/* 1.1# VOLCANO WARNING LOCATION ARRAYS */
+var volWarningLatLngArray = [
+    new google.maps.LatLng(-36.9850, 174.7700), //[0]  - LAT || AUCKLAND VOLCANIC FIELD
+    new google.maps.LatLng(-29.2540, 177.9167), //[1]  - LAT || KERMADEC ISLANDS
+    new google.maps.LatLng(-37.2860, 176.2510), //[2]  - LAT || MAYOR ISLAND
+    new google.maps.LatLng(-39.1560, 175.6320), //[3]  - LAT || NGAURUHOE
+    new google.maps.LatLng(-35.3950, 173.6300), //[4]  - LAT || NORTHLAND
+    new google.maps.LatLng(-38.1190, 176.5010), //[5]  - LAT || OKATAINA AKA MOUNT TARAWERA
+    new google.maps.LatLng(-38.0930, 176.2810), //[6]  - LAT || ROTORUA
+    new google.maps.LatLng(-38.7840, 175.8960), //[7]  - LAT || TAUPO
+    new google.maps.LatLng(-39.1333, 175.6417), //[8]  - LAT || TONGARIRO
+    new google.maps.LatLng(-39.2980, 174.0610), //[9]  - LAT || TARANAKI/EGMONT
+    new google.maps.LatLng(-37.5210, 177.1830), //[10] - LAT || WHITE ISLAND
+    new google.maps.LatLng(-39.2810), 175.5630, //[11] - LAT || RUAPEHU
+];
+
+
 /* 1.1# VOLCANO VARABLE ARRAY [END]*/
 
 
@@ -120,30 +138,17 @@ function volJSON() {
         volcanoMarkerCreateLoop(); //calls vol marker loop
     });
 
+}
 
-    /* 2.1 # ==- VOLCANO MARKER LOOP -== */
-    var i = 0; //sets loop var to 0
-    setInterval(function () {
-        //VOL LOOP VAR
-        var volMarkerVar = volcanoMarkerArray[i]
-        var volLevelVar = volcanoLevelArray[i]; //vol level
-        var volTitleVar = volcanoMarkerTitleArray[i]; //vol title
-        var volPositionVarLat = volcanoWarningLatArray[i]; //vol position Lat
-        var volPositionVarLng = volcanoWarningLngArray[i]; //vol position Lng
-        var volIconVar = iconVolcanoArray[i]; //vol icon
+/* 2.1 # ==- VOLCANO MARKER LOOP -== */
+//var i = 0; //sets loop var to 0
 
-        volMarkerVar = new google.maps.Marker({
-            map: mapObject, //sets map var to mapObject
-            title: volTitleVar, //sets title = to array
-            position: { lat: volPositionVarLat, lng: volPositionVarLng },
-            icon: volIconVar, //sets icon to = array
-            animation: google.maps.Animation.DROP, //sets animation
-        });
-
-        i++;
-    });
-
-
+//VOL LOOP VAR
+var volMarkerVar = volcanoMarkerArray[i]
+var volLevelVar = volcanoLevelArray[i]; //vol level
+var volTitleVar = volcanoMarkerTitleArray[i]; //vol title
+var volPositionLatLngVar = volWarningLatLngArray[i]; //vol position LatLng
+var volIconVar = iconVolcanoArray[i]; //vol icon
 
 
 
@@ -151,13 +156,36 @@ function volJSON() {
 
 
     function volcanoMarkerCreateLoop() {
-        setInterval();//calls interval function
-        if (i === volcanoMarkerArray.length) {
-            clearInterval(interval);
+        for (i = 0; i < volcanoMarkerArray.length; i++) {
+            console.log('markerCreate');
+
+            //volMarkerVar = new google.maps.Marker({
+            //    map: mapObject, //sets map var to mapObject
+            //    title: volTitleVar, //sets title = to array
+            //    position: volPositionLatLngVar,
+            //    icon: volIconVar, //sets icon to = array
+            //    animation: google.maps.Animation.DROP, //sets animation
+                
+            //});
+
+            if (volcanoLevelArray[i] > 0) {
+                //IF volcano alert level is larger than 0
+                volcanoMarkerArray[i] = new google.maps.Marker({
+                    //create marker
+                    map: mapObject,
+                    title: volcanoMarkerTitleArray[i],
+                    position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
+                    icon: iconVolcanoArray[4],
+                    });
+
+            }
+
+            console.log("i=");
+            console.log(i);
         }
 
     };
-}
+
     /* 2.1 # ==- VOLCANO MARKER LOOP END -== */
 ///* 3# === VOLCANO MARKERS CREATE === */
 //    function volcanoMarkerCreate() {

@@ -67,6 +67,8 @@ var volcanoWarningLngArray = [
     175.5630, //[11] - LNG || RUAPEHU
 
 ];
+
+
 /* 1.1# VOLCANO WARNING LOCATION ARRAYS [END]*/
 
 /* 1.2# VOLCANO MARKER VAR ARRAY */
@@ -645,7 +647,7 @@ function writeAddressName(latLng) {
     },
     function (results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
-            console.log('geoLocationOK'); //debug
+            // console.log('geoLocationOK'); debug
             //formatted address from latLng
             document.getElementById("mapAddress").innerHTML = results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
@@ -660,7 +662,7 @@ function writeAddressName(latLng) {
     //set marker creation on load of map
     if (mapLoad === 1) {
         //create map marker
-        console.log('mapMarkerSetPositonInital'); //debug
+        // console.log('mapMarkerSetPositonInital'); debug
         mapUserMarker = new google.maps.Marker({
             map: mapObject,
             position: userLatLng,
@@ -669,7 +671,7 @@ function writeAddressName(latLng) {
     }
         //change marker position to new user LatLng
     else {
-        console.log('mapMarkerSetPositon'); //debug
+        //console.log('mapMarkerSetPositon'); debug
         mapUserMarker.setPosition(userLatLng); //mapUserMarker LatLng
 
     }
@@ -686,7 +688,7 @@ function geoLocateUser() {
 
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
-        console.log('geoLocateUser'); //debug
+        //console.log('geoLocateUser'); debug
         var positionOptions = {
             enableHighAccuracy: true, //accuracy 
             timeout: 10 * 2000 // 10 seconds
@@ -696,7 +698,7 @@ function geoLocateUser() {
 
     }
     else {
-        console.log('doesNotSupport'); //debug
+        //console.log('doesNotSupport'); debug
         document.getElementById("errorCantFind").innerHTML = "<p>Your browser doesn't support location</p>";
     }
 
@@ -706,7 +708,7 @@ function geoLocateUser() {
 /* 3# === SUCCESS LOCATION OF USER === */
 function geolocationSuccess(position) {
     userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    console.log('mapPositionSucess'); //debug
+    //console.log('mapPositionSucess'); debug
     // Write the formatted address
     writeAddressName(userLatLng);
     center: userLatLng; //centers map position to that of user latLng
@@ -727,8 +729,8 @@ function reDraw() {
 
     /* DEBUG SECTION */
 
-    console.log('reDraw');//writes to debug redraw
-    console.log(geoRefresh); //checks value of geoRefresh
+    //console.log('reDraw');writes to debug redraw
+    //console.log(geoRefresh); checks value of geoRefresh
 
     /* DEBUG SECTION END */
 
@@ -746,7 +748,7 @@ setInterval(function () {
     //if geoRefresh var = 10, then run geolocation function and reset geoRefresh to 1
     if (geoRefresh === 10) {
         geoLocateUser();
-        console.log('geoLocateUser'); //writes to debug geoLocateUser
+        //console.log('geoLocateUser');writes to debug geoLocateUser
 
         
         
@@ -782,7 +784,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert0").css({ "visibility": "visible" }); //makes div visible
             $("#disasterAlertSeverity0").css({ "background-color": "#f8522c" }); //sets bg color to that of severity of event
-            console.log('ALERT: Earthquake'); //debug
+            //console.log('ALERT: Earthquake'); debug
 
         }
 
@@ -795,7 +797,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert0").css({ "visibility": "hidden" }); //makes div visible
             $("#disasterAlertSeverity0").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
-            console.log('ALERT: Earthquake RESET'); //debug
+            //console.log('ALERT: Earthquake RESET');debug
 
         };
 
@@ -809,7 +811,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert1").css({ "visibility": "visible" }); //makes div visible
             $("#disasterAlertSeverity1").css({ "background-color": "#f8f72d" }); //sets bg color to that of severity of event
-            console.log('ALERT: FIRE'); //debug
+            //console.log('ALERT: FIRE'); debug
         }
 
         //1# - FIRE PAEKAKARIKI || MODERATE
@@ -821,7 +823,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert1").css({ "visibility": "hidden" }); //makes div visible
             $("#disasterAlertSeverity1").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
-            console.log('ALERT: FIRE RESET'); //debug
+            //console.log('ALERT: FIRE RESET'); debug
 
         };
 
@@ -834,7 +836,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert2").css({ "visibility": "visible" }); //makes div visible
             $("#disasterAlertSeverity2").css({ "background-color": "#20a276" }); //sets bg color to that of severity of event
-            console.log('ALERT: FLOOD'); //debug
+            //console.log('ALERT: FLOOD'); debug
         }
 
         //2# - FLOOD WELLINGTON || LIGHT
@@ -846,7 +848,7 @@ setInterval(function () {
         //CSS
         $("#disasterAlert2").css({ "visibility": "hidden" }); //makes div visible
         $("#disasterAlertSeverity2").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
-        console.log('ALERT: FLOOD RESET'); //debug
+            //console.log('ALERT: FLOOD RESET'); debug
 
     };
 
@@ -859,7 +861,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert3").css({ "visibility": "visible" }); //makes div visible
             $("#disasterAlertSeverity3").css({ "background-color": "#f8b22c" }); //sets bg color to that of severity of event
-            console.log('ALERT: HURRICANE'); //debug
+            //console.log('ALERT: HURRICANE'); debug
         }
 
         //3# - HURRICANE WELLINGTON || STRONG
@@ -871,7 +873,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert3").css({ "visibility": "hidden" }); //makes div visible
             $("#disasterAlertSeverity3").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
-            console.log('ALERT: HURRICANE RESET'); //debug
+            //console.log('ALERT: HURRICANE RESET'); debug
 
         };
 
@@ -884,7 +886,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert4").css({ "visibility": "visible" }); //makes div visible
             $("#disasterAlertSeverity4").css({ "background-color": "#34e6f2" }); //sets bg color to that of severity of event
-            console.log('ALERT: TORNADO'); //debug
+            //console.log('ALERT: TORNADO'); debug
         }
 
         //4# - TORNADO WELLINGTON || WEAK
@@ -896,7 +898,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert4").css({ "visibility": "hidden" }); //makes div visible
             $("#disasterAlertSeverity4").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
-            console.log('ALERT: TORNADO RESET'); //debug
+            //console.log('ALERT: TORNADO RESET'); debug
 
         };
 
@@ -911,7 +913,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert5").css({ "visibility": "visible" }); //makes div visible
             $("#disasterAlertSeverity5").css({ "background-color": "#34e6f2" }); //sets bg color to that of severity of event
-            console.log('ALERT: FIRE'); //debug
+            //console.log('ALERT: FIRE'); debug
         }
 
         //5# - FIRE WELLINGTON TE ARO || WEAK
@@ -923,7 +925,7 @@ setInterval(function () {
             //CSS
             $("#disasterAlert5").css({ "visibility": "hidden" }); //makes div visible
             $("#disasterAlertSeverity5").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
-            console.log('ALERT: FIRE RESET'); //debug
+            //console.log('ALERT: FIRE RESET'); debug
 
         };
 
@@ -951,7 +953,7 @@ setInterval(function () {
         //if geoRefresh var = > 10 then add 1 to geoRefresh 
     else {
         geoRefresh += 1;
-        console.log('ALERT: None'); //debug
+        //console.log('ALERT: None'); debug
 
         /* IF NO DISASTERS ALERTS SET ALL TO NONE */
 
