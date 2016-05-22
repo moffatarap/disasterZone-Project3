@@ -122,6 +122,18 @@ function volJSON() {
 
 }
 
+/* 2.0 PUSH ACTIVE VOLCANO DATA TO ARRAY */
+function pushToArray() {
+    //Add active volcano to array
+    volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
+
+    //DEBUG Log Active Volcano
+    console.log(volcanoMarkerTitleArray[i]);
+    console.log(volActiveArray);
+}
+
+/* 2.0 PUSH ACTIVE VOLCANO DATA TO ARRAY [END] */
+
 /* 2.1 # ==- VOLCANO MARKER LOOP -== */
 function volcanoMarkerCreateLoop() {
         for (i = 0; i < volcanoMarkerArray.length; i++) {
@@ -141,15 +153,23 @@ function volcanoMarkerCreateLoop() {
                         icon: iconVolcanoArray[4],
                     });
 
-                    //Add active volcano to array
-                    volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
-                    //DEBUG Log Active Volcano
-                    console.log(volcanoMarkerTitleArray[i]);
-                    console.log(volActiveArray[0]);
-                    
-                    
+                    pushToArray();
 
+                    // circle alert create
+                    // circle alert create
+                    volcanoAlertCircleMarkerArray[0] = new google.maps.Circle({
+                        map: mapObject,
+                        radius: alertCirlceRadiusArray[0] * volRadiusMulti, // sets alert radius from array 
+                        fillColor: alertCircleColorArray[0], //sets color of fill from array
+                        strokeColor: alertCircleColorArray[0], //sets stroke color from array
+                        strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+                    });
+                    volcanoAlertCircleMarkerArray[0].bindTo('center', volcanoMarkerArray[i], 'position'); //binds circle to location of marker
+                
                 }
+                    
+                    
+                
 
                 //VOL ALERT = 2
                 if (volcanoLevelArray[i] === 2) {
@@ -160,12 +180,8 @@ function volcanoMarkerCreateLoop() {
                         position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
                         icon: iconVolcanoArray[3],
                     });
-                    //Add active volcano to array
-                    volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
 
-                    //DEBUG Log Active Volcano
-                    console.log(volcanoMarkerTitleArray[i]);
-                    console.log(volActiveArray[1]);
+                    pushToArray();
 
                 }
 
@@ -179,8 +195,7 @@ function volcanoMarkerCreateLoop() {
                         icon: iconVolcanoArray[2],
                     });
 
-                    //DEBUG Log Active Volcano
-                    console.log(volcanoMarkerTitleArray[i]);
+                    pushToArray();
                 }
 
                 //VOL ALERT = 4
@@ -193,8 +208,7 @@ function volcanoMarkerCreateLoop() {
                         icon: iconVolcanoArray[1],
                     });
 
-                    //DEBUG Log Active Volcano
-                    console.log(volcanoMarkerTitleArray[i]);
+                    pushToArray();
                 }
 
                 //VOL ALERT = 5
@@ -207,8 +221,7 @@ function volcanoMarkerCreateLoop() {
                         icon: iconVolcanoArray[0],
                     });
 
-                    //DEBUG Log Active Volcano
-                    console.log(volcanoMarkerTitleArray[i]);
+                    pushToArray();
                 }
 
            }
