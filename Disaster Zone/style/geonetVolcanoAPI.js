@@ -1,4 +1,4 @@
-/* Geonet Volcano API Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) */
+/* Geonet Volcano API Disaster Zone MDDN352 P3 12.7 - [2016] MOFFATARAP (300317288) */
 /*=/ VARABLES \=*/
 var geonetVolcano = "https://json.ey.nz/api.geonet.org.nz/volcano/val"; //saves geonet url as var "./json/geoNetVolcanoVal.json "
 var volTitleLength = 12; //sets array length
