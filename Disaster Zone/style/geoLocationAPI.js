@@ -88,6 +88,10 @@ var volcanoMarkerArray = [
 
 ];
 
+//STORES ACTIVE VOLCANOS || from lv 1 to 5
+var volActiveArray = [
+];
+
 /* 1.2# VOLCANO MARKER VAR ARRAY [END] */
 
 /* 2# == DISASTER OFFSET ARRAY ==*/

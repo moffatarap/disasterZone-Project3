@@ -69,24 +69,6 @@ var volcanoHazardsArray = [
     , //[11] || RUAPEHU
 
 ];
-
-/* 1.1# VOLCANO WARNING LOCATION ARRAYS */
-var volWarningLatLngArray = [
-    new google.maps.LatLng(-36.9850, 174.7700), //[0]  - LAT || AUCKLAND VOLCANIC FIELD
-    new google.maps.LatLng(-29.2540, 177.9167), //[1]  - LAT || KERMADEC ISLANDS
-    new google.maps.LatLng(-37.2860, 176.2510), //[2]  - LAT || MAYOR ISLAND
-    new google.maps.LatLng(-39.1560, 175.6320), //[3]  - LAT || NGAURUHOE
-    new google.maps.LatLng(-35.3950, 173.6300), //[4]  - LAT || NORTHLAND
-    new google.maps.LatLng(-38.1190, 176.5010), //[5]  - LAT || OKATAINA AKA MOUNT TARAWERA
-    new google.maps.LatLng(-38.0930, 176.2810), //[6]  - LAT || ROTORUA
-    new google.maps.LatLng(-38.7840, 175.8960), //[7]  - LAT || TAUPO
-    new google.maps.LatLng(-39.1333, 175.6417), //[8]  - LAT || TONGARIRO
-    new google.maps.LatLng(-39.2980, 174.0610), //[9]  - LAT || TARANAKI/EGMONT
-    new google.maps.LatLng(-37.5210, 177.1830), //[10] - LAT || WHITE ISLAND
-    new google.maps.LatLng(-39.2810), 175.5630, //[11] - LAT || RUAPEHU
-];
-
-
 /* 1.1# VOLCANO VARABLE ARRAY [END]*/
 
 
@@ -141,47 +123,110 @@ function volJSON() {
 }
 
 /* 2.1 # ==- VOLCANO MARKER LOOP -== */
-//var i = 0; //sets loop var to 0
-
-//VOL LOOP VAR
-var volMarkerVar = volcanoMarkerArray[i]
-var volLevelVar = volcanoLevelArray[i]; //vol level
-var volTitleVar = volcanoMarkerTitleArray[i]; //vol title
-var volPositionLatLngVar = volWarningLatLngArray[i]; //vol position LatLng
-var volIconVar = iconVolcanoArray[i]; //vol icon
-
-
-
-    //MARKER CREATE
-
-
-    function volcanoMarkerCreateLoop() {
+function volcanoMarkerCreateLoop() {
         for (i = 0; i < volcanoMarkerArray.length; i++) {
+            //Loop until i = the length of MarkerArray
             console.log('markerCreate');
 
-            //volMarkerVar = new google.maps.Marker({
-            //    map: mapObject, //sets map var to mapObject
-            //    title: volTitleVar, //sets title = to array
-            //    position: volPositionLatLngVar,
-            //    icon: volIconVar, //sets icon to = array
-            //    animation: google.maps.Animation.DROP, //sets animation
-                
-            //});
-
             if (volcanoLevelArray[i] > 0) {
-                //IF volcano alert level is larger than 0
+                //IF volcano alert level is larger than 0 make markers
+
+                //VOL ALERT = 1
+                if (volcanoLevelArray[i] === 1) {
+                    volcanoMarkerArray[i] = new google.maps.Marker({
+                        //create marker
+                        map: mapObject,
+                        title: volcanoMarkerTitleArray[i],
+                        position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
+                        icon: iconVolcanoArray[4],
+                    });
+
+                    //Add active volcano to array
+                    volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
+                    //DEBUG Log Active Volcano
+                    console.log(volcanoMarkerTitleArray[i]);
+                    console.log(volActiveArray[0]);
+                    
+                    
+
+                }
+
+                //VOL ALERT = 2
+                if (volcanoLevelArray[i] === 2) {
+                    volcanoMarkerArray[i] = new google.maps.Marker({
+                        //create marker
+                        map: mapObject,
+                        title: volcanoMarkerTitleArray[i],
+                        position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
+                        icon: iconVolcanoArray[3],
+                    });
+                    //Add active volcano to array
+                    volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
+
+                    //DEBUG Log Active Volcano
+                    console.log(volcanoMarkerTitleArray[i]);
+                    console.log(volActiveArray[1]);
+
+                }
+
+                //VOL ALERT = 3
+                if (volcanoLevelArray[i] === 3) {
+                    volcanoMarkerArray[i] = new google.maps.Marker({
+                        //create marker
+                        map: mapObject,
+                        title: volcanoMarkerTitleArray[i],
+                        position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
+                        icon: iconVolcanoArray[2],
+                    });
+
+                    //DEBUG Log Active Volcano
+                    console.log(volcanoMarkerTitleArray[i]);
+                }
+
+                //VOL ALERT = 4
+                if (volcanoLevelArray[i] === 4) {
+                    volcanoMarkerArray[i] = new google.maps.Marker({
+                        //create marker
+                        map: mapObject,
+                        title: volcanoMarkerTitleArray[i],
+                        position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
+                        icon: iconVolcanoArray[1],
+                    });
+
+                    //DEBUG Log Active Volcano
+                    console.log(volcanoMarkerTitleArray[i]);
+                }
+
+                //VOL ALERT = 5
+                if (volcanoLevelArray[i] === 5) {
+                    volcanoMarkerArray[i] = new google.maps.Marker({
+                        //create marker
+                        map: mapObject,
+                        title: volcanoMarkerTitleArray[i],
+                        position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
+                        icon: iconVolcanoArray[0],
+                    });
+
+                    //DEBUG Log Active Volcano
+                    console.log(volcanoMarkerTitleArray[i]);
+                }
+
+           }
+
+            /* VOL ALERT = 0 Display Normal Icon
+            else {
                 volcanoMarkerArray[i] = new google.maps.Marker({
                     //create marker
                     map: mapObject,
                     title: volcanoMarkerTitleArray[i],
                     position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
-                    icon: iconVolcanoArray[4],
-                    });
-
-            }
-
-            console.log("i=");
-            console.log(i);
+                    icon: disasterIconStandardArray[5],
+                }); 
+                
+                //DEBUG Log Active Volcano
+                console.log(volcanoMarkerTitleArray[i]);
+            }*/
+                        
         }
 
     };
