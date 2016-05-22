@@ -22,20 +22,35 @@ var earthQLatLngArray = [
 //Earthquake ID || Geonets name for the event
 var earthQIDNameArray = [
 ];
+
+//Earthequake Depth 
+var earthQDepthArray = [
+];
+
+//Earthquake Time
+var earthQTimeArray = [
+];
+
+/* TEMP FUNCTION FOR TESTING */
 window.onload = function () {
     earthJSON();
 };
+
 /* 1# EARTHQUAKE VARABLE ARRAYS [END]*/
 function earthJSON() {
     $.getJSON(geonetEarthQuakeLocal, function (data) {
-        $.each(data.features, function (i2, eq) {
+        $.each(data.features, function (i, eq) {
             //data id displayed in table row || this one is volcano title
-            if (i2 < earthQEventLength) {
-                earthQIntesityArray[i2] = eq.properties.intensity;
-                earthQMagnitudeArray[i2] = eq.properties.magnitude;
-                earthQLatLngArray[i2] = eq.geometry.coordinates;
-                earthQIDNameArray[i2] = eq.id;
-                i2++;
+            if (i < earthQEventLength) {
+                earthQIntesityArray[i] = eq.properties.intensity;
+                earthQMagnitudeArray[i] = eq.properties.magnitude;
+                earthQLatLngArray[i] = eq.geometry.coordinates[0];
+                earthQDepthArray[i] = eq.properties.depth;
+                earthQTimeArray[i] = eq.properties.origintime;
+                earthQIDNameArray[i] = eq.id;
+                
+
+                i++;
             }
             else {
                 //doNothing
@@ -51,7 +66,12 @@ function earthJSON() {
         console.log('#3');
         console.log(earthQLatLngArray); //display value of activity array
         console.log('#4');
-        console.log(earthQIDNameArray); //display value of hazard array
+        console.log(earthQDepthArray); //display value of depth array
+        console.log('5');
+        console.log(earthQTimeArray); //display value of time array
+        console.log('6')
+        console.log(earthQIDNameArray); //display value of name array
+        
         //[DEBUG DISPLAY]document.getElementById("errorCantFind").innerHTML = volcanoLevelArray[11];
 
         //volcanoMarkerCreateLoop(); //calls vol marker loop
