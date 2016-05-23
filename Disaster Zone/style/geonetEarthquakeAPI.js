@@ -16,7 +16,10 @@ var earthQMagnitudeArray = [
 ];
 
 //Earthquake coordinates || LAT LNG
-var earthQLatLngArray = [
+var earthQLatArray = [
+];
+
+var earthQLngArray = [
 ];
 
 //Earthquake ID || Geonets name for the event
@@ -37,6 +40,8 @@ window.onload = function () {
 };
 
 /* 1# EARTHQUAKE VARABLE ARRAYS [END]*/
+
+/* 2# EARTHQUAKE FUNCTION */
 function earthJSON() {
     $.getJSON(geonetEarthQuakeLocal, function (data) {
         $.each(data.features, function (i, eq) {
@@ -44,7 +49,8 @@ function earthJSON() {
             if (i < earthQEventLength) {
                 earthQIntesityArray[i] = eq.properties.intensity;
                 earthQMagnitudeArray[i] = eq.properties.magnitude;
-                earthQLatLngArray[i] = eq.geometry.coordinates[0];
+                earthQLatArray[i] = eq.geometry.coordinates[1]; //access first element
+                earthQLngArray[i] = eq.geometry.coordinates[0]; //access second element
                 earthQDepthArray[i] = eq.properties.depth;
                 earthQTimeArray[i] = eq.properties.origintime;
                 earthQIDNameArray[i] = eq.id;
@@ -63,13 +69,14 @@ function earthJSON() {
         console.log(earthQIntesityArray); //display value of title array
         console.log('#2 Magitude');
         console.log(earthQMagnitudeArray); //display value of level array
-        console.log('#3');
-        console.log(earthQLatLngArray); //display value of activity array
-        console.log('#4');
+        console.log('#3 LAT LNG');
+        console.log(earthQLatArray); //display value of activity array
+        console.log(earthQLngArray); //display value of activity array
+        console.log('#4 Depth');
         console.log(earthQDepthArray); //display value of depth array
-        console.log('5');
+        console.log('5 Time');
         console.log(earthQTimeArray); //display value of time array
-        console.log('6')
+        console.log('6 ID')
         console.log(earthQIDNameArray); //display value of name array
         
         //[DEBUG DISPLAY]document.getElementById("errorCantFind").innerHTML = volcanoLevelArray[11];
@@ -78,3 +85,15 @@ function earthJSON() {
     });
 
 }
+/* 2# EARTHQUAKE FUNCTION [END]*/
+
+/* 3# BIND CIRCLE TO MIDDLE MARKER */
+function bindCircle() {
+    alertCircleMarkerArray[i].bindTo('center', disasterMarkerAY[i], 'position'); //binds circle to location of marker
+}
+
+/* 3# BIND CIRCLE TO MIDDLE MARKER [END]*/
+
+/* 4# ==== EARTHQUAKE MARKER LOOP ==== */
+
+/* 4# ==== EARTHQUAKE MARKER LOOP [END]==== */
