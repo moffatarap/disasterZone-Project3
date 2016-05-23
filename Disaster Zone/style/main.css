@@ -54,7 +54,7 @@ body {
     
     z-index: 5;
     
-    background-image: url(./media/img/arrow.svg);
+    background-image: url(./media/img/arrow.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -72,7 +72,7 @@ body {
     margin-top: -58px;
     z-index: 4;
     
-    background-image: url(./media/img/infoIcon-01.svg);
+    background-image: url(./media/img/infoIcon.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -97,7 +97,7 @@ body {
     background-color: rgba(167,192,204,1);
     color: rgba(10,10,10,1);
     text-align: center;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 5px 0;
     position: absolute;
     z-index: 5;
@@ -121,7 +121,7 @@ body {
     background-color: rgba(167,192,204,1);
     color: rgba(10,10,10,1);
     text-align: center;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 5px 5px;
     position: absolute;
     z-index: 5;
@@ -430,14 +430,20 @@ body {
 
 #infoWhat {
     display: block;
+    margin-top: 80px;
+    width: 100%;
 }
 
 #infoHow {
     display: none;
+    margin-top: 80px;
+    width: 100%;
 }
 
 #infoWho {
     display: none;
+    margin-top: 80px;
+    width: 100%;
 }
 
 /* TABLET STYLING */
