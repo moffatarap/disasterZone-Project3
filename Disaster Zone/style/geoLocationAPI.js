@@ -942,6 +942,6 @@ setInterval(function () {
 
     //geoLocateUser();
 
-}, 3300); //33000
+}, 33000); //33000
 
 /* 6# ====== REFRESH MARKER LOCATION [END] ====== */
