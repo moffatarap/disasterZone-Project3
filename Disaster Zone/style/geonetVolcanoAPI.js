@@ -79,13 +79,13 @@ var volcanoHazardsArray = [
 // VOL JSON is called as a function in geolocationAPI
 function volJSON() {
    $.getJSON(geonetVolcano, function (data) {
-       $.each(data.features, function (i, f) {
+       $.each(data.features, function (i, vol) {
             //data id displayed in table row || this one is volcano title
             if (i < volTitleLength) {
-                volcanoMarkerTitleArray[i] = f.properties.volcanoTitle;
-                volcanoLevelArray[i] = f.properties.level;
-                volcanoActivityArray[i] = f.properties.activity;
-                volcanoHazardsArray[i] = f.properties.hazards;
+                volcanoMarkerTitleArray[i] = vol.properties.volcanoTitle;
+                volcanoLevelArray[i] = vol.properties.level;
+                volcanoActivityArray[i] = vol.properties.activity;
+                volcanoHazardsArray[i] = vol.properties.hazards;
                 i++;
             }
             else {

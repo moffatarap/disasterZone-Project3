@@ -590,118 +590,6 @@ window.onload = function () {
         alertCircleMarkerArray[5].bindTo('center', disasterMarkerAY[5], 'position'); //binds circle to location of marker
 
         /*====== 2# DISASTER MARKER CREATION [END] ======*/
-        
-        
-        /* 3# === VOLCANO MARKERS CREATE === */
-        //3.0 MOUNT RUAPEHU 
-        //if (volcanoLevelArray[0] === 0) {
-        //    volcanoMarkerArray[0] = new google.maps.Marker({
-        //        map: mapObject,
-        //        title: volcanoMarkerTitleArray[0],
-        //        position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
-        //        icon: disasterIconStandardArray[5],
-        //    });
-        //}
-        //document.getElementById("errorCantFind").innerHTML = volcanoLevelDisplayArray.length;
-        
-        
-        /* TEMP DISABLED
-        //3.0 MOUNT RUAPEHU 
-        volcanoMarkerArray[0] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[0],
-            position: { lat: volcanoWarningLatArray[0], lng: volcanoWarningLngArray[0] },
-            icon: disasterIconStandardArray[5],
-        });
-        
-
-        //3.1 WHITE ISLAND
-        volcanoMarkerArray[1] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[1],
-            position: { lat: volcanoWarningLatArray[1], lng: volcanoWarningLngArray[1] },
-            icon: disasterIconStandardArray[5],
-        });
-
-        //3.2 MAYOR ISLAND
-        volcanoMarkerArray[2] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[2],
-            position: { lat: volcanoWarningLatArray[2], lng: volcanoWarningLngArray[2] },
-            icon: disasterIconStandardArray[5],
-        });
-
-        //3.3 OKATAINA AKA MOUNT TARAWERA
-        volcanoMarkerArray[3] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[3],
-            position: { lat: volcanoWarningLatArray[3], lng: volcanoWarningLngArray[3] },
-            icon: disasterIconStandardArray[5],
-        });
-
-        //3.4 ROTORUA AKA UTUHINA
-        volcanoMarkerArray[4] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[4],
-            position: { lat: volcanoWarningLatArray[4], lng: volcanoWarningLngArray[4] },
-            icon: disasterIconStandardArray[5],
-        });
-
-        //3.5 AUCKLAND VOLCANIC FIELD
-        volcanoMarkerArray[5] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[5],
-            position: { lat: volcanoWarningLatArray[5], lng: volcanoWarningLngArray[5] },
-            icon: disasterIconStandardArray[5],
-        });
-
-
-        //3.6 TARANAKI
-        volcanoMarkerArray[6] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[6],
-            position: { lat: volcanoWarningLatArray[6], lng: volcanoWarningLngArray[6] },
-            icon: disasterIconStandardArray[5],
-        });
-
-        //3.7 NAGAURUHOE
-        volcanoMarkerArray[7] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[7],
-            position: { lat: volcanoWarningLatArray[7], lng: volcanoWarningLngArray[7] },
-            icon: disasterIconStandardArray[5],
-        });
-
-        //3.8 TONGARIRO
-        volcanoMarkerArray[8] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[8],
-            position: { lat: volcanoWarningLatArray[8], lng: volcanoWarningLngArray[8] },
-            icon: disasterIconStandardArray[5],
-        });
-
-
-        //3.9 TAUPO
-        volcanoMarkerArray[9] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[9],
-            position: { lat: volcanoWarningLatArray[9], lng: volcanoWarningLngArray[9] },
-            icon: disasterIconStandardArray[5],
-        });
-
-
-        //3.10 KERMADEC ISLANDS
-        volcanoMarkerArray[10] = new google.maps.Marker({
-            map: mapObject,
-            title: volcanoMarkerTitleArray[10],
-            position: { lat: volcanoWarningLatArray[10], lng: volcanoWarningLngArray[10] },
-            icon: disasterIconStandardArray[5],
-        });
-
-        */
-
-
-        /* 3# === VOLCANO MARKERS CREATE [END] === */
 
         /* 4# === DISASTER ALERT UI ELEMENTS === */
 
@@ -827,7 +715,7 @@ function reDraw() {
 
     /* DEBUG SECTION END */
 
-    /* sets center of map [DISABED]*/
+    /* sets center of map [ENABLED]*/
     mapObject.setCenter(userLatLng)
 
 }

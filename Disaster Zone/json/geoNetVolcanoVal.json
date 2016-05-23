@@ -22,7 +22,7 @@
         "properties": {
             "volcanoID": "kermadecislands",
             "volcanoTitle": "Kermadec Islands",
-            "level": 2,
+            "level": 5,
             "activity": "No volcanic unrest.",
             "hazards": "Volcanic environment hazards."
         }
