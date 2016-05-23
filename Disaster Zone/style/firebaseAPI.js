@@ -1,11 +1,11 @@
 ﻿/*Firebase API Disaster Zone MDDN352 P3 [2016] ZELLERPHOE */
 //loaded into geoLocationAPI
 //TEMP DB loaded
-//ACTUAL DB: https://disasterzone.firebaseio.com
+//ACTUAL DB: https://pbwoooo.firebaseio.com
 
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
-firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
+firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
 /** ARRAYS **/
 
 /*** FUNCTION ***/
