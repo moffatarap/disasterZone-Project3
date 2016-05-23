@@ -31,6 +31,72 @@ $(document).ready(function () {
             clickHC = 0; //resets value
         }  
 
+    });   
+
+            $(function () {
+            var slideout = $('.eventsList');
+            $("#nav-discloseSidebar").toggle(function () {
+                slideout.animate({
+                    right: '0px'
+                }, {
+                    queue: false,
+                    duration: 300
+                });
+            }, function () {      
+                slideout.animate({
+                    right: '-400px'
+                }, {
+                    queue: false,
+                    duration: 300
+                });
+            });
+        });
+    
+    $("#dummyEvent").click(function() {
+        $("#detailCard").css("display", "block");
+        $("#detail-backgroundDim").css("display", "block");
+        $("#dummyEvent").css("background-color", "rgba(0,0,0,0.5)");
+    });
+    
+    $("#detailCard-close").click(function() {
+        $("#detailCard").css("display", "none");
+        $("#detail-backgroundDim").css("display", "none");
+        $("#dummyEvent").css("background-color", "rgba(0,0,0,0)");
+    });
+    
+    $("#nav-info").click(function() {
+       $(".infoContainer").css("display", "block");
+    });
+    
+    $("#infoClose").click(function(){
+        $(".infoContainer").css("display", "none");
+    });
+    
+    //INFO WINDOW INNARDS
+    
+    $("#who").click(function(){
+        $("#infoWho").css("display", "block");
+        $("#infoWhat").css("display", "none");
+        $("#infoHow").css("display", "none");
+        $("#who").addClass("infoSelected");
+        $("#what").removeClass("infoSelected");
+        $("#how").removeClass("infoSelected");
+    });
+    $("#what").click(function(){
+        $("#infoWho").css("display", "none");
+        $("#infoWhat").css("display", "block");
+        $("#infoHow").css("display", "none");
+        $("#who").removeClass("infoSelected");
+        $("#what").addClass("infoSelected");
+        $("#how").removeClass("infoSelected");
+    });
+    $("#how").click(function(){
+        $("#infoWho").css("display", "none");
+        $("#infoWhat").css("display", "none");
+        $("#infoHow").css("display", "block");
+        $("#who").removeClass("infoSelected");
+        $("#what").removeClass("infoSelected");
+        $("#how").addClass("infoSelected");
     });
 
     //#0 NAV HOME
