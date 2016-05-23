@@ -1,440 +1,136 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<!--INDEX Disaster Zone MDDN352 P3 [2016] MOFFATARAP (300317288) & SCHULTZSTEF (300308218) [10.4 - start] --->
+<!DOCTYPE html>
+<!---
+    DISASTER ZONE - MDDN 352 Project 3 - 2016 - Arapaoa Moffat, Stefan Schultz, & Phoebe Zeller
+-->
+
 <head>
     <title>Disaster Zone</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
-
-
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <!-- -==== FAV ICON ====- -->
     <link rel="shortcut icon" href="./media/img/favIcon.png"> <!-- REPLACE -->
-    <!-- -==== External Style sheets load ====- -->
-    <!-- -=== coolKittenFramework ===- -->
-    <!-- CSS Normalize -->
-    <link rel="stylesheet" type="text/css" href="./framework/coolKitten/css/normalize.css" media="screen">
-    <!-- - CSS GRID - -->
-    <link rel="stylesheet" type="text/css" href="./framework/coolKitten/css/grid.css" media="screen">
-    <!-- CSS Style -->
-    <link rel="stylesheet" type="text/css" href="./framework/coolKitten/css/coolKittenFrameworkStyle.css" media="screen">
 
-    <!-- -=== coolKittenFramework END ===- -->
-    <!-- - Custom CSS [ENABLED]- -->
-    <link rel="stylesheet" type="text/css" href="./style/cssMain.css">
-
+    <!-- Load new stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./style/main.css">
+    
     <!-- -==== External and internal fonts load ====- -->
     <!--=== Google fonts ===-->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
     
     <!-- -==== JavaScrypt ====- -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="./style/javaScryptCustom.js"></script>
+    <script src="./style/stefanJS.js"></script>
         
     <!--+==== PLUGINS jQuery ====+-->
     
     <!--==+ CUSTOM JS +==-->
-    <!--= PUNNUB API =-->
+    <!--= 1# PUNNUB API =-->
     <script src="http://cdn.pubnub.com/pubnub-3.7.1.min.js"></script>
-    <!---=FIREBASE API =--->
+    <!---= 2# FIREBASE API =--->
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     
-    <!--=- GEONET VOLCANO API [ENABLED]-=-->
+    <!--=- 3# GEONET VOLCANO API [ENABLED]-=-->
     <script src="./style/geonetVolcanoAPI.js"></script> 
-    <!--=- GEONET VOLCANO API [END]-=-->
+    <!--=- 3# GEONET VOLCANO API [END]-=-->
 
-    <!--== FIREBASE API PB==-->
+    <!--=-- 4# GEONET EARTHQUAKE API [DISABLED]
+    <script src="./style/geonetEarthquakeAPI.js"></script>
+    <!--=-- 4# GEONET EARTHQUAKE API [END] --=-->
+
+    <!--== 5# FIREBASE API PB==-->
     <script src="./style/firebaseAPI.js"></script> 
-    <!--== FIREBASE API PB==-->
+    <!--== 5# FIREBASE API PB==-->
 
-    <!--== GEOLOCATION API ==-->
+    <!--== 6# GEOLOCATION API ==-->
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyAN3Od9I1nMTcdfXtSfkzgC1ZKZuxtlbkA"></script>
-    <!--== GEOLOCATION API END ==-->
+    <!--== 6# GEOLOCATION API END ==-->
 
-    <!--= GOOGLE MAPS API CUSTOM =-->
+    <!--= 7# GOOGLE MAPS API CUSTOM =-->
     <script src="./style/geoLocationAPI.js"></script>
-    <!--= FIREBASE API =-->
-    
-    <!-- LIBARY -->
-    
-    <!-- FIREBASE SCRYPT [TEMP] -->
-   
-    <!-- FIRE BASE SCRYPT END -->
-    <!--= FIREBASE API END =-->
-    
+       
     
 </head>
-<!-- HEADER FINISH -->
-<!-- BODY START -->
+
 <body>
-
-    <!--++= NAV BAR DESKTOP #0 =++-->
-    <div class="menu">
-        <div class="contianer clearfix">
-            <div id="nav" class="grid_12">
-                <!--#0-->
-                <div class="grid_2">
-                    <ul>
-                        <li><img id="navIcon" src="./media/img/img_nav.png"> </li>
-                    </ul>
+    <!-- Full content container -->
+    <div class="container">
+        
+        <!-- Navigation Bar -->
+        <div class="navBar">
+            <img id="navLogo" src="./media/img/favIcon.png">
+            <h3 class="navTitle">Disaster Zone</h3>
+            <div id="nav-discloseSidebar" class="tooltip">
+                <span class="tooltip-text">Show and hide the list of recent events.</span>
+            </div>
+            <div id="nav-info" class="info-tooltip">
+                <span class="info-tooltip-text">Get information and help with Disaster Zone</span>
+            </div>
+        </div>
+        
+        <!-- Page Body -->
+        
+        <div id="googleAPI">
+        </div>
+        
+        <div id="mapAddress">
+        </div>
+        
+        <!--<div id="errorCantFind">
+        </div>-->
+        
+        <!-- Event detail card template -->
+        <div id="detail-backgroundDim"></div>
+        <div id= "detailCard">
+            <div id="detailCard-header">
+                <h4 id="detailCard-header-severity">LIGHT</h4>
+                <img id="detailCard-close" src="./media/img/closeIcon.png">
+            </div>
+            <img id="detailCard-eventIcon" src="./media/img/mapKeys/event/light/floodL.png">
+            <h3 id="detailCard-eventType">Flood</h3>
+            <h5 id="detailCard-eventLocation">Wellington, NZ</h5>
+        </div>
+        
+        <!-- Recent Events List -->
+        <div class="eventsList">
+            <h4 class="eventsList-title">RECENT EVENTS</h4>
+            <div id="dummyEvent">
+                <img id="eventIcon" src="./media/img/mapKeys/event/light/floodL.png">
+                <h4 class="eventType">Flood</h4>
+                <h6 class="eventLocation">Wellington, NZ</h6>
+                <h6 class="eventRating">Light surface flooding.</h6>
+                <h6 class="eventTime">4:03 PM, Thu 19 May</h6>
+                <div id="gradientL"></div>
+            </div>
+        </div>
+        
+        <div class="infoContainer">
+            <div class="infoWindow">
+                <div id="infoHeader">
+                    <h3 id="infoTitle">Disaster Zone - Help & Support</h3>
+                    <img id="infoClose" src="./media/img/closeIcon.png">
                 </div>
-                <!-- HAMBURGER CONTAIN START -->
-                <div class="hidden" id="hamburgerContain">
-
-                     
-                    <!--#1-->
-                    <div class="grid_3">
-                        <ul id="navHome" class="navigation">
-                            <li data-slide="1">Home</li>
-                        </ul>
-                    </div>
-                    <!--#2-->
-                    <div class="grid_3">
-                        <ul id="navAbout" class="navigation">
-                            <li data-slide="2">Geo Alerts</li>
-                        </ul>
-                    </div>
-                    <!--#3-->
-                    <div class="grid_3">
-                        <ul id="navDisaster" class="navigation">
-                            <li data-slide="3">Disaster Types</li>
-                            <li data-slide="3">Disasters</li>
-
-                        </ul>
-                    </div>
-                    <!--#4
-                    <div class="grid_2">
-                        <ul id="navSystems" class="navigation">
-                            <li data-slide="4"></li>
-                            <li data-slide="4"></li>
-                        </ul>
-                    </div>
-                    #5
-                    <div class="grid_2">
-                        <ul id="navScope" class="navigation">
-                            <li data-slide="5"></li>
-                            <li data-slide="5"></li>
-                        </ul>
-                    </div>
-                    <!--#6-->
-                    <!-- HAMBURGER CONTAIN END -->
+                <div id="infoSelect">
+                    <div id="what" class="infoSelected">What?</div>
+                    <div id="how">How?</div>
+                    <div id="who">Who?</div>
+                </div>
+                <div id="infoWhat">
+                
+                </div>
+                
+                <div id="infoHow">
+                
+                </div>
+                
+                <div id="infoWho">
+                    <h1 class="blame">ARAPAOA!!!</h1>
+                    <h1 class="blame">STEFAN!!!</h1>
+                    <h1 class="blame">PHOEBE!!!</h1>
                 </div>
             </div>
         </div>
+        
     </div>
-    <!--+= NAV BAR END DESKTOP #0 =+-->
-
-    <!-- ARTICLE STARTS -->
-    <article>
-        <!--+ PAGE 1 +-->
-        <div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
-
-            <!-- PAGE 1 CONTAINER -->
-            <div class="container clearfix" id="slide1BG">
-                <!-- CONTENT -->
-                <div id="#" class="grid_12">
-                    <div id="underlineH1">
-                        <h1>Disaster Zone</h1>
-
-                    </div>
-                    <h2>Real-time disaster reporting</h2>
-                </div>
-                <!-- CONTENT END -->
-               
-            </div>
-            <!-- PAGE 1 CONTAINER END -->
-        </div>
-        <!-- GOOGLE MAPS API END
-        </div> -->
-        <!--+ PAGE 1 END +-->
-        <!--++ PAGE 2 ++-->
-        <div id="slide2" class="slide" data-slide="2" data-stellar-background-ratio="0.5">
-            <!-- PAGE 2 CONTAINER -->
-            <div class="container clearfix">
-                <!-- 2# GEO LOCATION -->
-                <div id="content" class="grid_12">
-                    <div id="geoLocation" class="slideHeader">
-                        <h2>Geo Location Based Alerts</h2>
-                    </div>
-                    <p>
-                        Geo-location is a major function of Disaster Zone in the example below is a example of geolocation based alerts. Disasters have been created and placed on the map if a user is close to a disaster based on Lat Lng values an alert will be displayed. The radius that a user is alerted is dependent on the severity of each event, severe has the largest radius while weak has the smallest. The alert radius is set up to warn users of disasters in their area before it puts them in danger or trouble.
-                    </p>
-                    <div id="geoLocation" class="slideHeader">
-                        <h2>Severity Colors</h2>
-                    </div>
-                    <p>The severity of each disaster can be quickly checked depending on the colour of the severity alert box. The order of severity and colour is as follows.</p>
-                    <p>1. Blue Weak || 2. Green Light || 3. Yellow Moderate || 4. Orange Strong || 5. Red Severe</p>
-                    
-                    <p>For more detailed information on severity scale reported disasters page	</p>
-                    <!-- GOOGLE MAPS API -->
-                    <!--===== DISASTER ALERTS =====-->
-                    <div class="grid_12">
-                        <div id="geoLocation" class="slideHeader">
-                            
-                        </div>
-                       
-                        <table id="alertscontain">
-                            <!-- ROW 1 -->
-                            <tr>
-                                <td><h4>Alert</h4></td>
-                                <td><h4>Value</h4></td>
-                                <td><h4>Severity</h4></td>
-                            </tr>
-
-                            <!-- ROW 2 -->
-                            <tr>
-                                <!-- #0 EARTHQUAKE PAEKAKARIKI [SEVERE]-->
-                                <td>
-                                    <p id="disasterAlert0"></p>
-                                </td>
-                                <!-- #0 EARTHQUAKE PAEKAKARIKI [VALUE]-->
-                                <td>
-                                    <p id="disasterAlertValue0"></p>
-                                </td>
-                                <!-- #0 EARTHQUAKE PAEKAKARIKI [SEVERITY]-->
-                                <td id="disasterAlertSeverity0"></td>
-                            </tr>
-
-                            <!-- ROW 3 -->
-                            <tr>
-                                <!-- #1 FIRE PAEKAKARIKI CAMPBELL PARK [MODERATE] -->
-                                <td>
-                                    <p id="disasterAlert1"></p>
-
-                                </td>
-                                <!-- #1 FIRE PAEKAKARIKI CAMPBELL PARK [VALULE] -->
-                                <td>
-                                    <p id="disasterAlertValue1"></p>
-
-                                </td>
-                                <!-- #1 FIRE PAEKAKARIKI CAMPBELL PARK [SEVERITY] -->
-                                <td id="disasterAlertSeverity1"></td>
-                            </tr>
-
-                            <!-- ROW 4 -->
-                            <tr>
-                                <!-- #2 FLOOD WELLINGTON BASIN RESERVE [LIGHT] -->
-                                <td>
-                                    <p id="disasterAlert2"></p>
-                                </td>
-                                <!-- #2 FLOOD WELLINGTON BASIN RESERVE [VALUE] -->
-                                <td id="disasterAlertValue2"></td>
-                                <!-- #2 FLOOD WELLINGTON BASIN RESERVE [SEVERITY] -->
-                                <td id="disasterAlertSeverity2"></td>
-                            </tr>
-
-                            <!-- ROW 5-->
-                            <tr>
-                                <!-- #3 HURRICANE WELLINGTON SOMES ISLAND [STRONG] -->
-                                <td>
-                                    <p id="disasterAlert3"></p>
-                                </td>
-                                <!-- #3 HURRICANE WELLINGTON SOMES ISLAND [VALUE] -->
-                                <td>
-                                    <p id="disasterAlertValue3"></p>
-                                </td>
-                                <!-- #3 HURRICANE WELLINGTON SOMES ISLAND [SEVERITY] -->
-                                <td id="disasterAlertSeverity3"></td>
-                            </tr>
-
-                            <!-- ROW 6-->
-                            <tr>
-                                <!-- #4 TORNADO WELLINGTON AIRPORT [WEAK] -->
-                                <td>
-                                    <p id="disasterAlert4"></p>
-                                </td>
-                                <!-- #4 TORNADO WELLINGTON AIRPORT [VALUE] -->
-                                <td>
-                                    <p id="disasterAlertValue4"></p>
-                                </td>
-                                <!-- #4 TORNADO WELLINGTON AIRPORT [SEVERITY] -->
-                                <td id="disasterAlertSeverity4"></td>
-                            </tr>
-
-                            <!-- ROW 7-->
-                            <tr>
-                                <!-- #4 FIRE WELLINGTON TE ARO [WEAK] -->
-                                <td>
-                                    <p id="disasterAlert5"></p>
-                                </td>
-                                <!-- #4 FIRE WELLINGTON TE ARO [VALUE] -->
-                                <td>
-                                    <p id="disasterAlertValue5"></p>
-                                </td>
-                                <!-- #4 FIRE WELLINGTON TE ARO [SEVERITY] -->
-                                <td id="disasterAlertSeverity5"></td>
-                            </tr>
-                        </table>
-
-                  </div>
-                    
-                    <!--==== DISASTER ALERTS [END] ====-->
-                    <div id="googleAPI" class="mapSize">
-                    </div>
-                    <!-- MAP ADDRESS -->
-                    <div id="mapAddress" class="grid_7">
-                        <p></p>
-
-                    </div>
-                    <!-- ERROR -->
-                    <div id="errorCantFind" class="grid_4">
-                    </div>
-                    
-                    <!-- GOOGLE MAPS API END -->
-                </div>
-                <!-- 2# GEO LOCATION END -->
-            </div>
-        </div>
-        <!-- PAGE 2 CONTAINER END-->
-        <!--++ PAGE 2 END ++-->
-        <!--+++ PAGE 3 +++-->
-
-        <div id="slide3" class="slide" data-slide="3" data-stellar-background-ratio="0.5">
-            <!-- PAGE 3 CONTAINER -->
-            <div class="container clearfix">
-                <!-- CONTENT -->
-                <div id="reportedDisasters" class="slideHeader">
-                    <h2>Reported Disasters</h2>
-                </div>
-                <div id="content" class="grid_12">
-                    <!-- 1# DISASTER TYPES -->
-                    <div class="grid_12">
-                        <h3>Disaster Types</h3>
-                        <p>
-                            Icons in the table below depict what disaster type they represent, along with the scale in which they are measured. <br>
-                            Icons are used under creative commons by Nicolas Mollet, edited by myself for this project: mapicons.mapsmarker.com.
-                        </p>
-                    </div>
-                    <!-- 1# DISASTER TYPES END [FOR GIGGLES http://i.imgur.com/hFb3Aw6.gifv] -->
-                    <!-- 1.2# ICONS AND DISASTER TYPES -->
-                    <div id="#" class="grid_12">
-                        <!-- DISASTER TYPES TABLE START -->
-                        <table>
-                            <!-- ROW 1 -->
-                            <tr>
-                                <td><h4>ICON</h4></td>
-                                <td><h4>EVENT</h4></td>
-                                <td><h4>SCALE SYSTEM</h4></td>
-                            </tr>
-                            <!-- ROW 2 EARTH QUAKE -->
-                            <tr>
-                                <td><img class="iconTypes" src="./media/img/mapKeys/key/earthquake.png"></td>
-                                <td><h5>Earthquake</h5></td>
-                                <td><h5>Richter-scale</h5></td>
-
-                            </tr>
-
-                            <!-- ROW 3 FLOOD -->
-                            <tr>
-                                <td><img class="iconTypes" src="./media/img/mapKeys/key/flood.png"></td>
-                                <td><h5>Flood</h5></td>
-                                <td><h5>Meters of water</h5></td>
-                            </tr>
-
-                            <!-- ROW 4 HURRICANE -->
-                            <tr>
-                                <td><img class="iconTypes" src="./media/img/mapKeys/key/hurricane.png"></td>
-                                <td><h5>Hurricane</h5></td>
-                                <td><h5>Saffir-Simpson Scale</h5></td>
-                            </tr>
-
-                            <!-- ROW 5 TORNADO -->
-                            <tr>
-                                <td><img class="iconTypes" src="./media/img/mapKeys/key/tornado.png"></td>
-                                <td><h5>Tornado</h5></td>
-                                <td><h5>Enhanced Fujita Scale</h5></td>
-                            </tr>
-
-                            <!-- ROW 6 FIRE -->
-                            <tr>
-                                <td><img class="iconTypes" src="./media/img/mapKeys/key/fire.png"></td>
-                                <td><h5>Fire</h5></td>
-                                <td><h5>Fire Danger Rating</h5></td>
-                            </tr>
-
-
-
-                        </table>
-                        <!-- DISASTER TYPES TABLE END -->
-                    </div>
-                    <!-- 1.2# ICONS AND DISASTER TYPES END-->
-                    <!-- 2# SEVERITY SCALE -->
-                    <div class="grid_12">
-                        <div id="severityScale" class="slideHeader">
-                            <h2>Disaster Zone Severity Scale</h2>
-                        </div>
-                    </div>
-                    <!-- 2.2# SEVERITY PT1 -->
-                    <div class="grid_6">
-                        <ol>
-                            <li>Severe level of damage to people and or property, high risk of injury and human casualties. 10,000+ people missing or injured 70% damage to personal property and city infrastructure.</li>
-                            <li>Strong level of damage to people and or property, medium high risk of injury and human casualties. 5,000 to 8,000 people missing or injured 60% damage to personal property and city infrastructure.</li>
-                            <li>Moderate level of damage to people and or property, medium risk of injury and human casualties. 500 to 1,000 people missing or injured 30% damage to personal property and city infrastructure.</li>
-                        </ol>
-                    </div>
-                    <!-- 2.2# SEVERITY PT1 END-->
-                    <!-- 2.3# SEVERITY PT2 -->
-                    <div class="grid_6 omega">
-                        <div id="olSeverityScale2">
-                            <ol start="4">
-                                <li>Light level of damage to people and or property, low risk of injury and human casualties. 0 to 100 people missing or injured 0% to 15% damage to personal property and city infrastructure.</li>
-                                <li>Weak to no damage to people and or property, low to risk of injury and human casualties. 0 people missing or injured 0% to 5% damage to personal property and city infrastructure.</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <!-- 2.3# SEVERITY PT2 END -->
-                    <!-- 2# SEVERITY SCALE END -->
-                </div>
-            </div>
-
-            <!-- CONTENT END -->
-        </div>
-        <!-- PAGE 3 CONTAINER END -->
-        <!--+++ PAGE 3 END +++-->
-        <!--++++ PAGE 4 [DISABLED]
-        <div id="slide4" class="slide" data-slide="4" data-stellar-background-ratio="0.5">
-        </div> ++++-->
-             <!-- PAGE 4 CONTAINER -->
-           
-            <!-- CONTENT END-->
-        
-        <!-- PAGE 4 CONTAINER END-->
-        <!--++++ PAGE 4 END++++-->
-        <!--+++++ PAGE 5 
-        <div id="slide5" class="slide" data-slide="5" data-stellar-background-ratio="0.5">
-        </div> +++++-->
-            <!-- PAGE 5 CONTAINER -->
-            
-        
-        <!-- CONTENT END-->
-        
-        <!-- PAGE 5 CONTAINER END -->
-        <!--+++++ PAGE 5 END +++++-->
-
-        <!-- FOOTER START -->
-        <div id="footerDiv" class="slideHeader">
-            <p>
-                Disaster Zone&copy; (2016)
-            </p>
-        </div>
-        <!-- FOOTER END -->
-    </article>
-    <!-- ARTICLE FINISH -->
-    
-    <!--**** FRAME WORK JS ****-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <!-- -=== coolKittenFramework JS [WORKING] ===- -->
-    <!-- STELLAR -->
-    <script type="text/javascript" src="./framework/coolKitten/js/jquery.stellar.min.js"></script>
-    <!-- WAYPOINTS -->
-    <script type="text/javascript" src="./framework/coolKitten/js/waypoints.min.js"></script>
-    <!-- EASING -->
-    <script type="text/javascript" src="./framework/coolKitten/js/jquery.easing.1.3.js"></script>
-
-    <!-- SCRYPTS -->
-    <script type="text/javascript" src="./framework/coolKitten/js/scripts.js"></script>
-    <!-- CUSTOM SCRYPTS -->
-    <script src="./style/javaScryptCustom.js"></script>
-
-
-    <!-- -=== coolKittenFramework JS END ===- -->
 </body>
-<!-- BODY ENDS -->
-</html>
