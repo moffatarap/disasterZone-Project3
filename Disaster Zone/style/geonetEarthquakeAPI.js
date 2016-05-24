@@ -79,7 +79,7 @@ function earthJSON() {
         
         //[DEBUG DISPLAY]document.getElementById("errorCantFind").innerHTML = volcanoLevelArray[11];
 
-        //volcanoMarkerCreateLoop(); //calls vol marker loop
+        earthQuakeMarkerCreateLoop(); //calls earthquake marker loop
     });
 
 }
@@ -97,9 +97,20 @@ function earthQuakeMarkerCreateLoop() {
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
 
-        if (earthQIntesityArray[i])
-
+        //EARTHQUAKE SEVERITY BETWEEN 1 && 3 
+        if (earthQMagnitudeArray[i] <= earthquakeSeverityArray[1]) {
+            earthquakeMarkerArray[i] = new google.maps.Marker({
+                //create marker
+                map: mapObject,
+                title:earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+                position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+                icon: iconArray[4],
+            });
+            console.log('work')
+        }
+        console.log(earthQMagnitudeArray);
 
     }
 }
 /* 4# ==== EARTHQUAKE MARKER LOOP [END]==== */
+//if (latitude <= locWLatArray[0] + 0.0379 && latitude >= locWLatArray[0] - 0.0379 && longitude <= locWLngArray[0] + 0.0300 && longitude >= locWLngArray[0] - 0.0300) {
