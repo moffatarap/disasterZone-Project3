@@ -93,5 +93,13 @@ function bindCircle() {
 /* 3# BIND CIRCLE TO MIDDLE MARKER [END]*/
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
+function earthQuakeMarkerCreateLoop() {
+    for (i = 0; i < earthQEventLength; i++) {
+        //loop until i = earthQEventLength Var
 
+        if (earthQIntesityArray[i])
+
+
+    }
+}
 /* 4# ==== EARTHQUAKE MARKER LOOP [END]==== */

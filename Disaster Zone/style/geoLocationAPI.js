@@ -95,6 +95,33 @@ var volActiveArray = [
 
 /* 1.2# VOLCANO MARKER VAR ARRAY [END] */
 
+/* 1.3# EARTHQUAKE MARKER ARRAY */
+var earthquakeMarkerArray = [
+];
+/* 1.3# EARTHQUAKE MARKER ARRAY [END] */
+
+/* 1.4# EARTHQUAKE SEVERITY ARRAY */
+var earthquakeSeverityArray = [
+    1.0,//[0] || WEAK LOW
+    3.0,//[1] || WEAK HIGH
+    3.1,//[2] || LIGHT LOW
+    3.9,//[3] || LIGHT HIGH
+    4.0,//[4] || MODERATE LOW
+    4.9,//[5] || MODERATE HIGH
+    5.0,//[6] || STRONG LOW
+    5.9,//[7] || STRONG HIGH
+    6.0,//[8] || SEVERE +
+];
+/* 1.4# EARTHQUAKE SEVERITY ARRAY [END] */
+6.0 +
+//[1] STRONG
+5.0 - 5.9
+//[2] MODERATE
+4.0 - 4.9
+//[3] 
+3.0 - 3.9
+//[4] 
+1.0 - 3.0
 /* 2# == DISASTER OFFSET ARRAY ==*/
 //sets offset depending on severity of the disaster, this offset will alert users with in the defined range to a disaster
 var disasterOffsetArray = [
