@@ -34,10 +34,10 @@ var earthQDepthArray = [
 var earthQTimeArray = [
 ];
 
-/* TEMP FUNCTION FOR TESTING */
+/* TEMP FUNCTION FOR TESTING 
 window.onload = function () {
     earthJSON();
-};
+}; */
 
 /* 1# EARTHQUAKE VARABLE ARRAYS [END]*/
 
@@ -54,8 +54,6 @@ function earthJSON() {
                 earthQDepthArray[i] = eq.properties.depth;
                 earthQTimeArray[i] = eq.properties.origintime;
                 earthQIDNameArray[i] = eq.id;
-                
-
                 i++;
             }
             else {
@@ -87,10 +85,10 @@ function earthJSON() {
 }
 /* 2# EARTHQUAKE FUNCTION [END]*/
 
-/* 3# BIND CIRCLE TO MIDDLE MARKER */
+/* 3# BIND CIRCLE TO MIDDLE MARKER 
 function bindCircle() {
     alertCircleMarkerArray[i].bindTo('center', disasterMarkerAY[i], 'position'); //binds circle to location of marker
-}
+} */
 
 /* 3# BIND CIRCLE TO MIDDLE MARKER [END]*/
 

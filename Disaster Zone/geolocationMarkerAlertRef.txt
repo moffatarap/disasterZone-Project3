@@ -136,7 +136,7 @@ http://api.geonet.org.nz/volcano/val
 http://info.geonet.org.nz/display/appdata/Simple+Queries
 http://www.geonet.org.nz/quakes/services/felt.json
 http://api.geonet.org.nz/
-
+http://info.geonet.org.nz/display/quake/Shaking+Intensity
 http://json.ey.nz/
 
 

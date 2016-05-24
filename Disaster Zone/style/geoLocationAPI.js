@@ -471,6 +471,7 @@ window.onload = function () {
         /* = 1# GOOGLE MAP CREATE = */
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
         volJSON(); //Loads JSON Data volcanos geonet
+        earthJSON(); //Loads JSON data earthquakes goenet
         /*====== 2# DISASTER MARKER CREATION AND ALERT CIRCLE ======*/
 
         /* 1.0# = EARTHQUAKE [SEVERE] = */
