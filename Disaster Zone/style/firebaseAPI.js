@@ -3,13 +3,13 @@
 
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
-firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
+firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/things/>");
 /** ARRAYS **/
 
 /*** FUNCTION ***/
 function firebaseAPI() {
 
-    firebaseDB.push({
+   /** firebaseDB.push({
         latLngUser: userLatLng.toString(), //latLng to db
         addressUser: document.getElementById("mapAddress").innerHTML, //formatted address to db from html
         geoLocateFail: document.getElementById("errorCantFind").innerHTML, //if fail save to db
@@ -20,5 +20,16 @@ function firebaseAPI() {
         alertTOR: document.getElementById("disasterAlert4").innerHTML, //ALERT TORNADO
         alertFIT: document.getElementById("disasterAlert5").innerHTML, //ALERT FIRE TE ARO
 
+    }); **/
+
+    firebaseDB.set({
+  PBwootwoot:{
+
+  	isitworking: "hope it is",
+  	maybe:"maybeNot",
+  }
     });
+
+
+    
 }
