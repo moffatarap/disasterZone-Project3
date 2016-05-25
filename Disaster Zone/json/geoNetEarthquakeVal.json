@@ -228,8 +228,8 @@
             "publicid": "2016p359572",
             "origintime": "2016-05-13 01:00:32.018000",
             "depth": 11.09375,
-            "magnitude": 2.8776534,
-            "intensity": "light",
+            "magnitude": 6,
+            "intensity": "severe",
             "status": "automatic",
             "agency": "WEL(GNS_Primary)",
             "updatetime": "2016-05-13 01:03:06.676000"
