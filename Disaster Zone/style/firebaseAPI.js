@@ -3,7 +3,7 @@
 
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
-firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/things/>");
+firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/Events/>");
 /** ARRAYS **/
 
 /*** FUNCTION ***/
@@ -23,11 +23,29 @@ function firebaseAPI() {
     }); **/
 
     firebaseDB.set({
-  PBwootwoot:{
+     Events:{
+EARTHQUAKE:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+},
+FIRE:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+},
+        FLOOD:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+},
+HURRICANE:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+},
+        TORNADO:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+}
+}
 
-  	isitworking: "hope it is",
-  	maybe:"maybeNot",
-  }
     });
 
 
