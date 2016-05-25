@@ -154,7 +154,7 @@ function volcanoMarkerCreateLoop() {
                     volcanoMarkerArray[i] = new google.maps.Marker({
                         //create marker
                         map: mapObject,
-                        title: volcanoMarkerTitleArray[i],
+                        title: volcanoMarkerTitleArray[i] + ' Alert Level ' + volcanoLevelArray[i],
                         position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
                         icon: iconVolcanoArray[4],
                     });
@@ -179,7 +179,7 @@ function volcanoMarkerCreateLoop() {
                     volcanoMarkerArray[i] = new google.maps.Marker({
                         //create marker
                         map: mapObject,
-                        title: volcanoMarkerTitleArray[i],
+                        title: volcanoMarkerTitleArray[i] + ' Alert Level ' + volcanoLevelArray[i],
                         position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
                         icon: iconVolcanoArray[3],
                     });
@@ -204,7 +204,7 @@ function volcanoMarkerCreateLoop() {
                     volcanoMarkerArray[i] = new google.maps.Marker({
                         //create marker
                         map: mapObject,
-                        title: volcanoMarkerTitleArray[i],
+                        title: volcanoMarkerTitleArray[i] + ' Alert Level ' + volcanoLevelArray[i],
                         position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
                         icon: iconVolcanoArray[2],
                     });
@@ -228,7 +228,7 @@ function volcanoMarkerCreateLoop() {
                     volcanoMarkerArray[i] = new google.maps.Marker({
                         //create marker
                         map: mapObject,
-                        title: volcanoMarkerTitleArray[i],
+                        title: volcanoMarkerTitleArray[i] + ' Alert Level ' + volcanoLevelArray[i],
                         position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
                         icon: iconVolcanoArray[1],
                     });
@@ -252,7 +252,7 @@ function volcanoMarkerCreateLoop() {
                     volcanoMarkerArray[i] = new google.maps.Marker({
                         //create marker
                         map: mapObject,
-                        title: volcanoMarkerTitleArray[i],
+                        title: volcanoMarkerTitleArray[i] + ' Alert Level ' + volcanoLevelArray[i],
                         position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
                         icon: iconVolcanoArray[0],
                     });
@@ -279,7 +279,7 @@ function volcanoMarkerCreateLoop() {
                 volcanoMarkerArray[i] = new google.maps.Marker({
                     //create marker
                     map: mapObject,
-                    title: volcanoMarkerTitleArray[i],
+                    title: volcanoMarkerTitleArray[i] + ' Alert Level ' + volcanoLevelArray[i],
                     position: { lat: volcanoWarningLatArray[i], lng: volcanoWarningLngArray[i] },
                     icon: disasterIconStandardArray[5],
                 }); 
