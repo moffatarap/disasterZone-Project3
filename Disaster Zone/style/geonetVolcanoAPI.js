@@ -1,6 +1,6 @@
 /* Geonet Volcano API Disaster Zone MDDN352 P3 12.7 - [2016] MOFFATARAP (300317288) */
 /*=/ VARABLES \=*/
-var geonetVolcano = "https://json.ey.nz/api.geonet.org.nz/volcano/val"; //saves geonet url as var "./json/geoNetVolcanoVal.json "
+var geonetVolcano = "https://json.ey.nz/api.geonet.org.nz/volcano/val"; //saves geonet url as var " ./json/geoNetVolcanoVal.json"
 var volTitleLength = 12; //sets array length
 var volRadiusMulti = 10; //sets volcano alert radius to be multiplyed by this number original [5]
 /*== ARRAYS ==*/
@@ -94,7 +94,7 @@ function volJSON() {
 
         });
 
-        /* DEBUGGING */
+        /* DEBUGGING 
         console.log('#1');
         console.log(volcanoMarkerTitleArray); //display value of title array
         console.log('#2');
@@ -102,7 +102,7 @@ function volJSON() {
         console.log('#3');
         console.log(volcanoActivityArray); //display value of activity array
         console.log('#4');
-        console.log(volcanoHazardsArray); //display value of hazard array
+        console.log(volcanoHazardsArray); //display value of hazard array*/
         //[DEBUG DISPLAY]document.getElementById("errorCantFind").innerHTML = volcanoLevelArray[11];
 
         volcanoMarkerCreateLoop(); //calls vol marker loop
@@ -132,7 +132,7 @@ function bindCircle() {
 function volcanoMarkerCreateLoop() {
         for (i = 0; i < volcanoMarkerArray.length; i++) {
             //Loop until i = the length of MarkerArray
-            console.log('markerCreate');
+            //console.log('markerCreate');
 
             if (volcanoLevelArray[i] > 0) {
                 //IF volcano alert level is larger than 0 make markers
