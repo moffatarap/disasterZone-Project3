@@ -213,8 +213,7 @@ var disasterIconStandardArray = [
     './media/img/mapKeys/key/hurricane.png',  //[3] HURRICANE
     './media/img/mapKeys/key/tornado.png',    //[4] TORNADO
     './media/img/mapKeys/key/volcano.png',    //[5] VOLCANO
-
-
+    './media/img/mapKeys/key/user2.png',       //[6] USER
 ];
 
 /* 4.1# ==== DISASTER ICON STANDARD ARRAY [END] ==== */
@@ -259,7 +258,7 @@ var alertCirlceRadiusArray = [
     20000,//[2] MODERATE || 20km
     5000,//[3] LIGHT     || 5km
     1500,//[4] WEAK      || 1.5km
-];
+]; 
 
 /* 5# ===== ALERT CIRCLE ARRAY END =====*/
 
@@ -488,7 +487,7 @@ var mapOptions = {
 window.onload = function () {
     console.log('windowOnLoad'); //debug
     geoLocateUser();
-    //volJSON(); //Loads JSON Data volcanos geonet
+    
 
     //on first loop create map
     if (mapLoad === 1) {
@@ -673,6 +672,7 @@ function writeAddressName(latLng) {
         mapUserMarker = new google.maps.Marker({
             map: mapObject,
             position: userLatLng,
+            icon: disasterIconStandardArray[6], //SIZE IS ISSUE
         })
 
     }
