@@ -34,10 +34,10 @@ var earthQDepthArray = [
 var earthQTimeArray = [
 ];
 
-/* TEMP FUNCTION FOR TESTING */
+/* TEMP FUNCTION FOR TESTING 
 window.onload = function () {
     earthJSON();
-};
+}; */
 
 /* 1# EARTHQUAKE VARABLE ARRAYS [END]*/
 
@@ -54,8 +54,6 @@ function earthJSON() {
                 earthQDepthArray[i] = eq.properties.depth;
                 earthQTimeArray[i] = eq.properties.origintime;
                 earthQIDNameArray[i] = eq.id;
-                
-
                 i++;
             }
             else {
@@ -81,19 +79,108 @@ function earthJSON() {
         
         //[DEBUG DISPLAY]document.getElementById("errorCantFind").innerHTML = volcanoLevelArray[11];
 
-        //volcanoMarkerCreateLoop(); //calls vol marker loop
+        earthQuakeMarkerCreateLoop(); //calls earthquake marker loop
     });
 
 }
 /* 2# EARTHQUAKE FUNCTION [END]*/
 
-/* 3# BIND CIRCLE TO MIDDLE MARKER */
+/* 3# BIND CIRCLE TO MIDDLE MARKER 
 function bindCircle() {
     alertCircleMarkerArray[i].bindTo('center', disasterMarkerAY[i], 'position'); //binds circle to location of marker
-}
+} */
 
 /* 3# BIND CIRCLE TO MIDDLE MARKER [END]*/
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
+function earthQuakeMarkerCreateLoop() {
+    parseFloat(earthQMagnitudeArray);
+    parseFloat(earthquakeSeverityArray);
+    for (i = 0; i < earthQEventLength; i++) {
+        //loop until i = earthQEventLength Var
 
+        ////EARTHQUAKE SEVERITY BETWEEN 1 && 3 
+        //if (earthQMagnitudeArray[i] > earthquakeSeverityArray[0] && earthQMagnitudeArray[i] < earthquakeSeverityArray[0]) {
+        //    earthquakeMarkerArray[i] = new google.maps.Marker({
+        //        //create marker
+        //        map: mapObject,
+        //        title:earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+        //        position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+        //        icon: iconArray[4],
+        //    });
+            
+        //}
+
+        ////EARTHQUAKE SEVERITY BETWEEN 3.1 && 3.9 
+        //if (earthQMagnitudeArray[i] > earthquakeSeverityArray[2] && earthQMagnitudeArray[i] < earthquakeSeverityArray[3]) {
+        //    earthquakeMarkerArray[i] = new google.maps.Marker({
+        //        //create marker
+        //        map: mapObject,
+        //        title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+        //        position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+        //        icon: iconArray[3],
+        //    });
+        //    console.log('3.1 - 3.9')
+        //    console.log(earthquakeMarkerArray);
+        //}
+
+        //EARTHQUAKE SEVERITY WEAK
+        if (earthQIntesityArray[i] === 'weak') {
+            earthquakeMarkerArray[i] = new google.maps.Marker({
+               //create marker
+                map: mapObject,
+                title:earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+                position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+                icon: iconArray[4],
+                });
+        }
+
+        //EARTHQUAKE SEVERITY LIGHT
+        if (earthQIntesityArray[i] === 'light') {
+            earthquakeMarkerArray[i] = new google.maps.Marker({
+                //create marker
+                map: mapObject,
+                title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+                position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+                icon: iconArray[3],
+            });
+        }
+
+        //EARTHQUAKE SEVERITY MODERATE
+        if (earthQIntesityArray[i] === 'moderate') {
+            earthquakeMarkerArray[i] = new google.maps.Marker({
+                //create marker
+                map: mapObject,
+                title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+                position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+                icon: iconArray[2],
+            });
+        }
+
+        //EARTHQUAKE SEVERITY STRONG
+        if (earthQIntesityArray[i] === 'strong') {
+            earthquakeMarkerArray[i] = new google.maps.Marker({
+                //create marker
+                map: mapObject,
+                title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+                position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+                icon: iconArray[1],
+            });
+        }
+
+
+        //EARTHQUAKE SEVERITY SEVERE
+        if (earthQIntesityArray[i] === 'severe') {
+            earthquakeMarkerArray[i] = new google.maps.Marker({
+                //create marker
+                map: mapObject,
+                title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+                position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+                icon: iconArray[0],
+            });
+        }
+
+    }
+}
 /* 4# ==== EARTHQUAKE MARKER LOOP [END]==== */
+//if (latitude <= locWLatArray[0] + 0.0379 && latitude >= locWLatArray[0] - 0.0379 && longitude <= locWLngArray[0] + 0.0300 && longitude >= locWLngArray[0] - 0.0300) {

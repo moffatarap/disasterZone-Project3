@@ -54,7 +54,7 @@ body {
     
     z-index: 5;
     
-    background-image: url(./media/img/arrow.svg);
+    background-image: url("./media/img/arrow.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -72,7 +72,7 @@ body {
     margin-top: -58px;
     z-index: 4;
     
-    background-image: url(./media/img/infoIcon-01.svg);
+    background-image: url("./media/img/infoIcon.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -97,7 +97,7 @@ body {
     background-color: rgba(167,192,204,1);
     color: rgba(10,10,10,1);
     text-align: center;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 5px 0;
     position: absolute;
     z-index: 5;
@@ -121,7 +121,7 @@ body {
     background-color: rgba(167,192,204,1);
     color: rgba(10,10,10,1);
     text-align: center;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 5px 5px;
     position: absolute;
     z-index: 5;
@@ -174,11 +174,26 @@ body {
 
 #errorCantFind {
     position: absolute;
-    left: 0;
-    right: 350px;
-    top: 0;
-    bottom: 0;
-    background-color: crimson;
+    height: auto;
+    width: 350px;
+    bottom: 20px;
+    margin-left: 175px;
+    z-index: 1;
+    
+    padding: 5px;
+    
+    background-color: rgba(25,25,25,0.75);
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    
+    text-align: center;
+    color: rgba(255,255,255,0.75);
+    font-weight: 600;
+    font-size: 9pt;
+    letter-spacing: 0.025em;
+    
+    transition: 0.2s;
 }
 
 .eventsList {
@@ -430,14 +445,20 @@ body {
 
 #infoWhat {
     display: block;
+    margin-top: 80px;
+    width: 100%;
 }
 
 #infoHow {
     display: none;
+    margin-top: 80px;
+    width: 100%;
 }
 
 #infoWho {
     display: none;
+    margin-top: 80px;
+    width: 100%;
 }
 
 /* TABLET STYLING */
