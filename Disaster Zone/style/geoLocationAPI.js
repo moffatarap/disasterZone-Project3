@@ -246,6 +246,11 @@ var volcanoAlertCircleMarkerArray = [
     , //[11] || RUAPEHU
 ];
 
+//for earthquakes
+var earthQAlertCircleMarkerArray = [
+
+];
+
 /* 5# ===== ALERT CIRCLE ARRAY [END] =====*/
 //sets radius for each disaster type meters to km 1km = 1000 meters
 var alertCirlceRadiusArray = [

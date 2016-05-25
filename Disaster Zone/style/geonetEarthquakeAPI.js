@@ -3,7 +3,8 @@
 var geonetEarthQuake = "https://json.ey.nz/www.geonet.org.nz/quakes/services/felt.json"; //saves goenet url as var
 var geonetEarthQuakeLocal = "./json/geoNetEarthquakeVal.json"
 var earthQEventLength = 8; //sets earthquake array max events
-var earthQRadiusMulti = 2; //sets earthquake alert radius to be multiplyed by
+var earthQRadiusMulti = 4; //sets earthquake alert radius to be multiplyed by
+var earthQRadiusDivide = 2; //sets earthquake alert radius division
 /*== ARRAYS ==*/
 
 /* 1# EARTHQUAKE VARABLE ARRAYS */
@@ -85,17 +86,17 @@ function earthJSON() {
 }
 /* 2# EARTHQUAKE FUNCTION [END]*/
 
-/* 3# BIND CIRCLE TO MIDDLE MARKER 
-function bindCircle() {
-    alertCircleMarkerArray[i].bindTo('center', disasterMarkerAY[i], 'position'); //binds circle to location of marker
-} */
+/* 3# BIND CIRCLE TO MIDDLE MARKER */
+function bindCircleEq() {
+    earthQAlertCircleMarkerArray[i].bindTo('center', earthquakeMarkerArray[i], 'position'); //binds circle to location of marker
+} 
 
 /* 3# BIND CIRCLE TO MIDDLE MARKER [END]*/
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
 function earthQuakeMarkerCreateLoop() {
-    parseFloat(earthQMagnitudeArray);
-    parseFloat(earthquakeSeverityArray);
+   
+   
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
 
@@ -107,7 +108,18 @@ function earthQuakeMarkerCreateLoop() {
                 title:earthQIntesityArray[i] + "." + earthQIDNameArray[i],
                 position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
                 icon: iconArray[4],
-                });
+            });
+
+            // circle alert create
+            earthQAlertCircleMarkerArray[i] = new google.maps.Circle({
+                map: mapObject,
+                radius: alertCirlceRadiusArray[4] * earthQRadiusMulti, // sets alert radius from array 
+                fillColor: alertCircleColorArray[4], //sets color of fill from array
+                strokeColor: alertCircleColorArray[4], //sets stroke color from array
+                strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+            });
+
+            bindCircleEq(); //binds circle to marker
         }
 
         //EARTHQUAKE SEVERITY LIGHT
@@ -119,6 +131,17 @@ function earthQuakeMarkerCreateLoop() {
                 position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
                 icon: iconArray[3],
             });
+
+            // circle alert create
+            earthQAlertCircleMarkerArray[i] = new google.maps.Circle({
+                map: mapObject,
+                radius: alertCirlceRadiusArray[3] * earthQRadiusMulti, // sets alert radius from array 
+                fillColor: alertCircleColorArray[3], //sets color of fill from array
+                strokeColor: alertCircleColorArray[3], //sets stroke color from array
+                strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+            });
+
+            bindCircleEq(); //binds circle to marker
         }
 
         //EARTHQUAKE SEVERITY MODERATE
@@ -130,6 +153,17 @@ function earthQuakeMarkerCreateLoop() {
                 position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
                 icon: iconArray[2],
             });
+
+            // circle alert create
+            earthQAlertCircleMarkerArray[i] = new google.maps.Circle({
+                map: mapObject,
+                radius: alertCirlceRadiusArray[2] * earthQRadiusMulti / earthQRadiusDivide, // sets alert radius from array 
+                fillColor: alertCircleColorArray[2], //sets color of fill from array
+                strokeColor: alertCircleColorArray[2], //sets stroke color from array
+                strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+            });
+
+            bindCircleEq(); //binds circle to marker
         }
 
         //EARTHQUAKE SEVERITY STRONG
@@ -141,6 +175,17 @@ function earthQuakeMarkerCreateLoop() {
                 position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
                 icon: iconArray[1],
             });
+
+            // circle alert create
+            earthQAlertCircleMarkerArray[i] = new google.maps.Circle({
+                map: mapObject,
+                radius: alertCirlceRadiusArray[1] * earthQRadiusMulti / earthQRadiusDivide, // sets alert radius from array 
+                fillColor: alertCircleColorArray[1], //sets color of fill from array
+                strokeColor: alertCircleColorArray[1], //sets stroke color from array
+                strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+            });
+
+            bindCircleEq(); //binds circle to marker
         }
 
 
@@ -153,6 +198,17 @@ function earthQuakeMarkerCreateLoop() {
                 position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
                 icon: iconArray[0],
             });
+
+            // circle alert create
+            earthQAlertCircleMarkerArray[i] = new google.maps.Circle({
+                map: mapObject,
+                radius: alertCirlceRadiusArray[0] * earthQRadiusMulti / earthQRadiusDivide, // sets alert radius from array 
+                fillColor: alertCircleColorArray[0], //sets color of fill from array
+                strokeColor: alertCircleColorArray[0], //sets stroke color from array
+                strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+            });
+
+            bindCircleEq(); //binds circle to marker
         }
 
     }
