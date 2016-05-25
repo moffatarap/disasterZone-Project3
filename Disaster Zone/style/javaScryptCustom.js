@@ -98,6 +98,14 @@ $(document).ready(function () {
         $("#what").removeClass("infoSelected");
         $("#how").addClass("infoSelected");
     });
+    
+    var volcanoes = volActiveArray;
+    for (var v in volcanoes) {
+        var newElement = document.createElement('div');
+        newElement.id = cars[c]; newElement.className = "car";
+        newElement.innerHTML = cars[c];
+        document.body.appendChild(".eventsList");
+    }
 
     //#0 NAV HOME
 
