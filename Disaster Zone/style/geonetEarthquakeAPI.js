@@ -99,32 +99,7 @@ function earthQuakeMarkerCreateLoop() {
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
 
-        ////EARTHQUAKE SEVERITY BETWEEN 1 && 3 
-        //if (earthQMagnitudeArray[i] > earthquakeSeverityArray[0] && earthQMagnitudeArray[i] < earthquakeSeverityArray[0]) {
-        //    earthquakeMarkerArray[i] = new google.maps.Marker({
-        //        //create marker
-        //        map: mapObject,
-        //        title:earthQIntesityArray[i] + "." + earthQIDNameArray[i],
-        //        position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
-        //        icon: iconArray[4],
-        //    });
-            
-        //}
-
-        ////EARTHQUAKE SEVERITY BETWEEN 3.1 && 3.9 
-        //if (earthQMagnitudeArray[i] > earthquakeSeverityArray[2] && earthQMagnitudeArray[i] < earthquakeSeverityArray[3]) {
-        //    earthquakeMarkerArray[i] = new google.maps.Marker({
-        //        //create marker
-        //        map: mapObject,
-        //        title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
-        //        position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
-        //        icon: iconArray[3],
-        //    });
-        //    console.log('3.1 - 3.9')
-        //    console.log(earthquakeMarkerArray);
-        //}
-
-        //EARTHQUAKE SEVERITY WEAK
+       //EARTHQUAKE SEVERITY WEAK
         if (earthQIntesityArray[i] === 'weak') {
             earthquakeMarkerArray[i] = new google.maps.Marker({
                //create marker
