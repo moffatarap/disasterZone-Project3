@@ -5,12 +5,13 @@
 
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
-firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
+firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/Events/>");
 /** ARRAYS **/
 
 /*** FUNCTION ***/
 function firebaseAPI() {
-    firebaseDB.push({
+
+   /** firebaseDB.push({
         latLngUser: userLatLng.toString(), //latLng to db
         addressUser: document.getElementById("mapAddress").innerHTML, //formatted address to db from html
         geoLocateFail: document.getElementById("errorCantFind").innerHTML, //if fail save to db
@@ -21,5 +22,34 @@ function firebaseAPI() {
         alertTOR: document.getElementById("disasterAlert4").innerHTML, //ALERT TORNADO
         alertFIT: document.getElementById("disasterAlert5").innerHTML, //ALERT FIRE TE ARO
 
+    }); **/
+
+    firebaseDB.set({
+     Events:{
+EARTHQUAKE:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+},
+FIRE:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+},
+        FLOOD:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+},
+HURRICANE:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+},
+        TORNADO:{
+latLngUser: userLatLng.toString(),
+addressUser: document.getElementById("mapAddress").innerHTML
+}
+}
+
     });
+
+
+    
 }
