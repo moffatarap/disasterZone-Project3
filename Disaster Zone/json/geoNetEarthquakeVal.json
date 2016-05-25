@@ -67,7 +67,7 @@
             "origintime": "2016-05-14 11:21:27.481000",
             "depth": 24.453125,
             "magnitude": 5.6245656,
-            "intensity": "weak",
+            "intensity": "moderate",
             "status": "automatic",
             "agency": "WEL(GNS_Primary)",
             "updatetime": "2016-05-14 11:23:34.835000"
@@ -85,7 +85,7 @@
             "origintime": "2016-05-14 09:43:19.360000",
             "depth": 58.4375,
             "magnitude": 1,
-            "intensity": "weak",
+            "intensity": "strong",
             "status": "automatic",
             "agency": "WEL(GNS_Primary)",
             "updatetime": "2016-05-14 10:22:01.062000"
@@ -103,7 +103,7 @@
             "origintime": "2016-05-14 08:28:22.876000",
             "depth": 9.921875,
             "magnitude": 4.6400044,
-            "intensity": "light",
+            "intensity": "severe",
             "status": "automatic",
             "agency": "WEL(GNS_Primary)",
             "updatetime": "2016-05-14 08:31:53.405000"

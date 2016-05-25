@@ -94,23 +94,49 @@ function bindCircle() {
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
 function earthQuakeMarkerCreateLoop() {
+    parseFloat(earthQMagnitudeArray);
+    parseFloat(earthquakeSeverityArray);
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
 
-        //EARTHQUAKE SEVERITY BETWEEN 1 && 3 
-        if (earthQMagnitudeArray[i] < earthquakeSeverityArray[0] && earthQMagnitudeArray[i] > earthquakeSeverityArray[0]) {
+        ////EARTHQUAKE SEVERITY BETWEEN 1 && 3 
+        //if (earthQMagnitudeArray[i] > earthquakeSeverityArray[0] && earthQMagnitudeArray[i] < earthquakeSeverityArray[0]) {
+        //    earthquakeMarkerArray[i] = new google.maps.Marker({
+        //        //create marker
+        //        map: mapObject,
+        //        title:earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+        //        position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+        //        icon: iconArray[4],
+        //    });
+            
+        //}
+
+        ////EARTHQUAKE SEVERITY BETWEEN 3.1 && 3.9 
+        //if (earthQMagnitudeArray[i] > earthquakeSeverityArray[2] && earthQMagnitudeArray[i] < earthquakeSeverityArray[3]) {
+        //    earthquakeMarkerArray[i] = new google.maps.Marker({
+        //        //create marker
+        //        map: mapObject,
+        //        title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+        //        position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+        //        icon: iconArray[3],
+        //    });
+        //    console.log('3.1 - 3.9')
+        //    console.log(earthquakeMarkerArray);
+        //}
+
+        //EARTHQUAKE SEVERITY WEAK
+        if (earthQIntesityArray[i] === 'weak') {
             earthquakeMarkerArray[i] = new google.maps.Marker({
-                //create marker
+               //create marker
                 map: mapObject,
                 title:earthQIntesityArray[i] + "." + earthQIDNameArray[i],
                 position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
                 icon: iconArray[4],
-            });
-            
+                });
         }
 
-        //EARTHQUAKE SEVERITY BETWEEN 3.1 && 3.9 
-        if (earthQMagnitudeArray[i] > earthquakeSeverityArray[2] && earthQMagnitudeArray[i] < earthquakeSeverityArray[3]) {
+        //EARTHQUAKE SEVERITY LIGHT
+        if (earthQIntesityArray[i] === 'light') {
             earthquakeMarkerArray[i] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
@@ -118,10 +144,41 @@ function earthQuakeMarkerCreateLoop() {
                 position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
                 icon: iconArray[3],
             });
-            console.log('3.1 - 3.9')
-            console.log(earthquakeMarkerArray);
         }
-        
+
+        //EARTHQUAKE SEVERITY MODERATE
+        if (earthQIntesityArray[i] === 'moderate') {
+            earthquakeMarkerArray[i] = new google.maps.Marker({
+                //create marker
+                map: mapObject,
+                title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+                position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+                icon: iconArray[2],
+            });
+        }
+
+        //EARTHQUAKE SEVERITY STRONG
+        if (earthQIntesityArray[i] === 'strong') {
+            earthquakeMarkerArray[i] = new google.maps.Marker({
+                //create marker
+                map: mapObject,
+                title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+                position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+                icon: iconArray[1],
+            });
+        }
+
+
+        //EARTHQUAKE SEVERITY SEVERE
+        if (earthQIntesityArray[i] === 'severe') {
+            earthquakeMarkerArray[i] = new google.maps.Marker({
+                //create marker
+                map: mapObject,
+                title: earthQIntesityArray[i] + "." + earthQIDNameArray[i],
+                position: { lat: earthQLatArray[i], lng: earthQLngArray[i] },
+                icon: iconArray[0],
+            });
+        }
 
     }
 }
