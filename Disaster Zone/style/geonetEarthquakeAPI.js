@@ -27,7 +27,7 @@ var earthQLngArray = [
 var earthQIDNameArray = [
 ];
 
-//Earthequake Depth 
+//Earthquake Depth 
 var earthQDepthArray = [
 ];
 
@@ -63,7 +63,7 @@ function earthJSON() {
 
         });
 
-        /* DEBUGGING */
+        /* DEBUGGING 
         console.log('#1 Intensity');
         console.log(earthQIntesityArray); //display value of title array
         console.log('#2 Magitude');
@@ -76,7 +76,7 @@ function earthJSON() {
         console.log('5 Time');
         console.log(earthQTimeArray); //display value of time array
         console.log('6 ID')
-        console.log(earthQIDNameArray); //display value of name array
+        console.log(earthQIDNameArray); //display value of name array */
         
         //[DEBUG DISPLAY]document.getElementById("errorCantFind").innerHTML = volcanoLevelArray[11];
 

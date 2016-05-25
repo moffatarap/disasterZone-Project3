@@ -121,9 +121,9 @@ function pushToArray() {
     //Add active volcano to array
     volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
 
-    //DEBUG Log Active Volcano
+    /*DEBUG Log Active Volcano
     console.log(volcanoMarkerTitleArray[i]);
-    console.log(volActiveArray);
+    console.log(volActiveArray); */
 }
 /* 2.0# PUSH ACTIVE VOLCANO DATA TO ARRAY [END] */
 
@@ -143,7 +143,7 @@ function volcanoMarkerCreateLoop() {
             //VOL AlERT = 0 
             if (volcanoLevelArray[i] === 0) {
                 volcanoInactiveArray.push(volcanoMarkerTitleArray[i]);
-                console.log(volcanoInactiveArray);
+               // console.log(volcanoInactiveArray);
 
             }
             if (volcanoLevelArray[i] > 0) {

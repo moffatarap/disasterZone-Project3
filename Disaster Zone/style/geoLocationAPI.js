@@ -627,7 +627,7 @@ window.onload = function () {
 }
 
 /* 1# = ON LOAD SET STYLE MAP AND STARTING LOCATION [END] =*/
-/* 1.1# =- PUBNUB REALTIME STORE INFO -= */
+/* 1.1# =- PUBNUB REALTIME STORE INFO -= 
 function pubs() {
     pubnub = PUBNUB.init({
         publish_key: 'pub-c-afe941da-29b9-4d8c-a2a5-b79cd7aa797b',
@@ -642,7 +642,7 @@ function pubs() {
         },
 
     })
-}
+} */
 /* 1.1# =- PUBNUB REALTIME STORE INFO -= */
 
 /* 1.2# =-- CONVERT LatLng TO ADDRESS --= */
@@ -672,7 +672,7 @@ function writeAddressName(latLng) {
         mapUserMarker = new google.maps.Marker({
             map: mapObject,
             position: userLatLng,
-            icon: disasterIconStandardArray[6], //SIZE IS ISSUE
+            //icon: disasterIconStandardArray[6], //SIZE IS ISSUE
         })
 
     }
@@ -689,7 +689,7 @@ function writeAddressName(latLng) {
 /* 2# == GEO LOCATE USER == */
 function geoLocateUser() {
     //loadPubNub Realtime GEOLOCATION API FUNCTION
-    pubs();
+    //pubs();
     //add 1 to mapLoad varable
     mapLoad += 1;
 
