@@ -120,7 +120,7 @@ function volJSON() {
 function pushToArray() {
     //Add active volcano to array
     volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
-
+    
     /*DEBUG Log Active Volcano
     console.log(volcanoMarkerTitleArray[i]);
     console.log(volActiveArray); */
