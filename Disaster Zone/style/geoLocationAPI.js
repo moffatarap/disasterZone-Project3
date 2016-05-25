@@ -955,7 +955,10 @@ setInterval(function () {
         /* 6.3# ======--- GEOLOCATION ALERTS v2 [END] ---====== */
 
         geoRefresh = 2; //reset value to 2
+        
+        /* ADD IN REAL-TIME CHECKING OF EARTH AND VOL DATA */
 
+        /* ADD IN REAL-TIME CHECKING OF EARTH AND VOL DATA [END]*/
     }
         //if geoRefresh var = > 10 then add 1 to geoRefresh 
     else {
