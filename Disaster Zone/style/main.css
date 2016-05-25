@@ -54,7 +54,8 @@ body {
     
     z-index: 5;
     
-    background-image: url("./media/img/arrow.png");
+    /*background-image: url("./media/img/arrow.png");*/
+    background-image: url("http://i.imgur.com/1QOnQeN.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -72,7 +73,8 @@ body {
     margin-top: -58px;
     z-index: 4;
     
-    background-image: url("./media/img/infoIcon.png");
+    /*background-image: url("./media/img/infoIcon.png");*/
+    background-image:url("http://i.imgur.com/SgDJ0vp.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

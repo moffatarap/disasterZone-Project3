@@ -1,6 +1,7 @@
 /* Geonet Volcano API Disaster Zone MDDN352 P3 12.7 - [2016] MOFFATARAP (300317288) */
 /*=/ VARABLES \=*/
 var geonetVolcano = "https://json.ey.nz/api.geonet.org.nz/volcano/val"; //saves geonet url as var " ./json/geoNetVolcanoVal.json"
+var goenetVolcanoLocal = "./json/geoNetVolcanoVal.json";
 var volTitleLength = 12; //sets array length
 var volRadiusMulti = 10; //sets volcano alert radius to be multiplyed by this number original [5]
 /*== ARRAYS ==*/
@@ -53,6 +54,11 @@ var volcanoActivityArray = [
     , //[11] || RUAPEHU
 ];
 
+//volcano inactvity
+var volcanoInactiveArray = [
+
+];
+
 //stores activtiy array
 var volcanoHazardsArray = [
     , //[0]  || AUCKLAND VOLCANIC FIELD
@@ -78,7 +84,7 @@ var volcanoHazardsArray = [
 
 // VOL JSON is called as a function in geolocationAPI
 function volJSON() {
-   $.getJSON(geonetVolcano, function (data) {
+    $.getJSON(geonetVolcano, function (data) {
        $.each(data.features, function (i, vol) {
             //data id displayed in table row || this one is volcano title
             if (i < volTitleLength) {
@@ -115,9 +121,9 @@ function pushToArray() {
     //Add active volcano to array
     volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
 
-    //DEBUG Log Active Volcano
+    /*DEBUG Log Active Volcano
     console.log(volcanoMarkerTitleArray[i]);
-    console.log(volActiveArray);
+    console.log(volActiveArray); */
 }
 /* 2.0# PUSH ACTIVE VOLCANO DATA TO ARRAY [END] */
 
@@ -132,11 +138,17 @@ function bindCircle() {
 function volcanoMarkerCreateLoop() {
         for (i = 0; i < volcanoMarkerArray.length; i++) {
             //Loop until i = the length of MarkerArray
-            //console.log('markerCreate');
+            //console.log('markerCreate
 
+            //VOL AlERT = 0 
+            if (volcanoLevelArray[i] === 0) {
+                volcanoInactiveArray.push(volcanoMarkerTitleArray[i]);
+               // console.log(volcanoInactiveArray);
+
+            }
             if (volcanoLevelArray[i] > 0) {
                 //IF volcano alert level is larger than 0 make markers
-
+               
                 //VOL ALERT = 1
                 if (volcanoLevelArray[i] === 1) {
                     volcanoMarkerArray[i] = new google.maps.Marker({
