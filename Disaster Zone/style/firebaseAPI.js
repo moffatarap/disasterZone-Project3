@@ -5,7 +5,7 @@
 
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
-firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/Events/>");
+firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/VolcanWHAT/>");
 /** ARRAYS **/
 
 /*** FUNCTION ***/
@@ -24,7 +24,7 @@ function firebaseAPI() {
 
     }); **/
 
-    firebaseDB.set({
+  /**  firebaseDB.set({
      Events:{
 EARTHQUAKE:{
 latLngUser: userLatLng.toString(),
@@ -48,8 +48,16 @@ addressUser: document.getElementById("mapAddress").innerHTML
 }
 }
 
-    });
+    }); **/
+
+firebaseDB.set({
+
+Volcando:{ volActiveArray
 
 
+}
+
+
+});
     
 }
