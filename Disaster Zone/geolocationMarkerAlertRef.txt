@@ -136,9 +136,23 @@ http://api.geonet.org.nz/volcano/val
 http://info.geonet.org.nz/display/appdata/Simple+Queries
 http://www.geonet.org.nz/quakes/services/felt.json
 http://api.geonet.org.nz/
-
+http://info.geonet.org.nz/display/quake/Shaking+Intensity
 http://json.ey.nz/
 
+/*** EARTHQUAKE REF MAG ***/
+//[0] SEVERE
+6.0+
+//[1] STRONG
+5.0 - 5.9
+//[2] MODERATE
+4.0 - 4.9
+//[3] LIGHT
+3.0 - 3.9
+//[4] WEAK
+1.0 - 3.0
+
+
+/*** EARTHQUAKE REF MAG [END] ***/
 
 /* WOLF METHOD */
   if (latitude <= locWLatArray[0] + 0.0379 && latitude >= locWLatArray[0] - 0.0379 && longitude <= locWLngArray[0] + 0.0300 && longitude >= locWLngArray[0] - 0.0300) {
