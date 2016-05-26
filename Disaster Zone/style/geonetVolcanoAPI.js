@@ -172,31 +172,31 @@ function bindCircle() {
 /* 2.1# BIND CIRCLE TO MIDDLE MARKER [END]*/
 var idCount = 0;
 console.log(idCount);
+
 /* 2.1# ID FUNCTION */
+//Currently is broken and annoying
+
 function idFunction() {
     
     if (volLoad === 1) {
 
-        while (idCount < 6) {
-        textContentArray[i] = document.createElement('div');
-        $(textContentArray[i]).addClass("dummyEvent");
+        while (idCount < 2) {
+            textContentArray[idCount] = document.createElement('div');
+            $(textContentArray[idCount]).addClass("dummyEvent");
 
         if (idCount === 0) {
-            textContentArray[i].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType0"></h4><h6 id="eventLocation0"></h6><h6 id="eventRating0"></h6><h6 id="eventTime0"></h6><div id="gradientL"></div>';
+            textContentArray[idCount].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType0"></h4><h6 id="eventLocation0"></h6><h6 id="eventRating0"></h6><h6 id="eventTime0"></h6><div id="gradientL"></div>';
             //
         }
 
         if (idCount === 1) {
-            textContentArray[i].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/light/volcanoL.png"> <h4 id="eventType1"></h4><h6 id="eventLocation1"></h6><h6 id="eventRating1"></h6><h6 id="eventTime1"></h6><div id="gradientL"></div>';
+            textContentArray[idCount].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/light/volcanoL.png"> <h4 id="eventType1"></h4><h6 id="eventLocation1"></h6><h6 id="eventRating1"></h6><h6 id="eventTime1"></h6><div id="gradientL"></div>';
         }
 
-
-        
-        idCount++;
         console.log(idCount);
-        
+        idCount++;
 
-        if (idCount === 6 ) {
+        if (idCount === 1) {
             $(".eventsList").prepend(textContentArray[i]);
             /* 1.0# SET CONTENT */
             //SET EVENT TITLE
@@ -220,6 +220,8 @@ function idFunction() {
     
     
 }
+
+/* 2.1# ID FUNCTION [END]*/
 
 
 /* 2.2# ==-- VOLCANO MARKER LOOP --== */
@@ -263,7 +265,7 @@ function volcanoMarkerCreateLoop() {
                     
 
                     /* 1# DISPLAY IN UI */
-                    idFunction();
+                    //idFunction();
                     
                     //var textContent = document.createElement('div');
                     //$(textContent).addClass("dummyEvent");
@@ -320,7 +322,7 @@ function volcanoMarkerCreateLoop() {
 
                     bindCircle(); //binds circle to marker
 
-                    idFunction(); //Calls ID function
+                    //idFunction(); //Calls ID function
                     /* 2.0# DISPLAY IN UI 
 
                     textContentArray[i] = document.createElement('div');
