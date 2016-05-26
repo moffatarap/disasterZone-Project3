@@ -85,6 +85,9 @@ var textContentArray = [
 ];
 /* 1.1# VOLCANO VARABLE ARRAY [END]*/
 
+/* 2.0# ==- CSS VARABLE ARRAYS -== */
+
+/* 2.0# ==- CSS VARABLE ARRAYS [END]-== */
 
 //window.onload = function () {
 //    volJSON();
@@ -92,7 +95,7 @@ var textContentArray = [
 
 // VOL JSON is called as a function in geolocationAPI
 function volJSON() {
-    $.getJSON(geonetVolcano, function (data) {
+    $.getJSON(goenetVolcanoLocal, function (data) {
        $.each(data.features, function (i, vol) {
             //data id displayed in table row || this one is volcano title
             if (i < volTitleLength) {
@@ -239,15 +242,16 @@ function volcanoMarkerCreateLoop() {
 
                     bindCircle(); //binds circle to marker
 
-                    /* 2.0# */
+                    /* 2.0# DISPLAY IN UI */
                     textContentArray[i] = document.createElement('div');
                     $(textContentArray[i]).addClass("dummyEvent");
                     textContentArray[i].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/light/volcanoL.png"> <h4 id="eventType2"></h4><h6 id="eventLocation2"></h6><h6 id="eventRating2"></h6><h6 id="eventTime2"></h6><div id="gradientL"></div>';
 
                     $(".eventsList").prepend(textContentArray[i]);
 
+
                     /* 2.0# SET CONTENT */
-                    //SET EVENT TITLE
+                   //SET EVENT TITLE
                     document.getElementById("eventType2").textContent = volUIVar;
                     //SET EVENT LOCATION
                     document.getElementById("eventLocation2").textContent = volcanoMarkerTitleArray[i];
@@ -255,7 +259,7 @@ function volcanoMarkerCreateLoop() {
                     document.getElementById("eventRating2").textContent = volAlertLevelText + volcanoLevelArray[i] + " " + volcanoActivityArray[i];
                     //SET LAST CHECKED EVENT
                     document.getElementById("eventTime2").textContent = date.toUTCString();
-                    /*  1.0# SET CONTENT */
+                    /*  2.0# SET CONTENT */
 
 
                 }
@@ -282,6 +286,27 @@ function volcanoMarkerCreateLoop() {
                     });
 
                     bindCircle(); //binds circle to marker
+
+                    /* 3.0# DISPLAY IN UI */
+                    textContentArray[i] = document.createElement('div');
+                    $(textContentArray[i]).addClass("dummyEvent");
+                    textContentArray[i].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/light/volcanoL.png"> <h4 id="eventType2"></h4><h6 id="eventLocation2"></h6><h6 id="eventRating2"></h6><h6 id="eventTime2"></h6><div id="gradientL"></div>';
+
+                    $(".eventsList").prepend(textContentArray[i]);
+
+
+                    /* 3.0# SET CONTENT */
+                    //SET EVENT TITLE
+                    document.getElementById("eventType2").textContent = volUIVar;
+                    //SET EVENT LOCATION
+                    document.getElementById("eventLocation2").textContent = volcanoMarkerTitleArray[i];
+                    //SET EVENT HAZARDS
+                    document.getElementById("eventRating2").textContent = volAlertLevelText + volcanoLevelArray[i] + " " + volcanoActivityArray[i];
+                    //SET LAST CHECKED EVENT
+                    document.getElementById("eventTime2").textContent = date.toUTCString();
+                    /*  3.0# SET CONTENT */
+
+                    /* 3.0# DISPLAY IN UI [END]*/
                 }
 
                 //VOL ALERT = 4
