@@ -61,8 +61,7 @@ addressUser: document.getElementById("mapAddress").innerHTML
 /*testing just the earthquake things*/
 
 	for (var i = earthQIDNameArray.length - 1; i >= 0; i--) {
-		earthquakeID = earthQIDNameArray[i];
-		earthquakeID:{
+		earthquakeID = earthQIDNameArray[i];		
 			currentLat = earthQLatArray[i];
 			currentLong = earthQLngArray[i];
 			currentMag = earthQMagnitudeArray[i];
@@ -70,7 +69,11 @@ addressUser: document.getElementById("mapAddress").innerHTML
 		}
 EarthquakeDB.set({
  test:{
- 	earthQDepthArray
+ 	earthquakeID
+ 	currentDepth,
+ 	currentMag,
+ 	currentLong,
+ 	currentLat
  }
 
 });
