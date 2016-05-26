@@ -176,6 +176,7 @@ function idFunction() {
     //if (i === )
     
     if (idCount < 1) {
+        for (i2 = 0; i2 < volActiveArray.length; i2++){
     textContentArray[i] = document.createElement('div');
     $(textContentArray[i]).addClass("dummyEvent");
     textContentArray[i].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType0"></h4><h6 id="eventLocation0"></h6><h6 id="eventRating0"></h6><h6 id="eventTime0"></h6><div id="gradientL"></div>';
@@ -193,9 +194,11 @@ function idFunction() {
     document.getElementById("eventTime0").textContent = date.toUTCString();
     /*  1.0# SET CONTENT */
     console.log(idCount);
-    idCount++;
+    
     console.log(idCount);
+        }
     }
+    idCount++;
 }
 /* 2.1# ID FUNCTION [END]*/
 
