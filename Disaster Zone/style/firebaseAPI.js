@@ -5,7 +5,7 @@
 
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
-firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/VolcanWHAT/>");
+firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
 /** ARRAYS **/
 
 /*** FUNCTION ***/
@@ -52,9 +52,16 @@ addressUser: document.getElementById("mapAddress").innerHTML
 
 firebaseDB.set({
 
-Volcando:{ volActiveArray
+Volcando:{ 
+	volActiveArray
 
-
+}, 
+EarthBeQuaking: {
+	earthQLatArray,
+	earthQLngArray,
+	earthQMagnitudeArray,
+	earthQDepthArray,
+	earthQIDNameArray
 }
 
 
