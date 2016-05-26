@@ -150,7 +150,7 @@ var eventTimeArray = [
 
 // VOL JSON is called as a function in geolocationAPI
 function volJSON() {
-    $.getJSON(goenetVolcanoLocal, function (data) {
+    $.getJSON(geonetVolcano, function (data) {
        $.each(data.features, function (i, vol) {
             //data id displayed in table row || this one is volcano title
             if (i < volTitleLength) {
@@ -406,6 +406,25 @@ function volcanoMarkerCreateLoop() {
                     });
 
                     bindCircle(); //binds circle to marker
+
+                    /* 4# DISPLAY IN UI */
+                    //idFunction();
+                    textContentArray[i] = document.createElement('div');
+                    $(textContentArray[i]).addClass("dummyEvent");
+                    textContentArray[i].innerHTML = textInnerHtmlArray[3];
+
+                    $(".eventsList").prepend(textContentArray[i]);
+
+                    // 4.0# SET CONTENT
+                    //SET EVENT TITLE
+                    document.getElementById(eventTypeArray[3]).textContent = volUIVar;
+                    //SET EVENT LOCATION
+                    document.getElementById(eventLocationArray[3]).textContent = volcanoMarkerTitleArray[i];
+                    //SET EVENT HAZARDS
+                    document.getElementById(eventRatingArray[3]).textContent = volAlertLevelText + volcanoLevelArray[i] + " " + volcanoActivityArray[i];
+                    //SET LAST CHECKED EVENT
+                    document.getElementById(eventTimeArray[3]).textContent = date.toUTCString();
+                    /* 4# DISPLAY IN UI [END] */
                 }
 
                 //VOL ALERT = 5
@@ -430,6 +449,25 @@ function volcanoMarkerCreateLoop() {
                     });
 
                     bindCircle(); //binds circle to marker
+
+                    /* 5# DISPLAY IN UI */
+                    //idFunction();
+                    textContentArray[i] = document.createElement('div');
+                    $(textContentArray[i]).addClass("dummyEvent");
+                    textContentArray[i].innerHTML = textInnerHtmlArray[4];
+
+                    $(".eventsList").prepend(textContentArray[i]);
+
+                    // 5.0# SET CONTENT
+                    //SET EVENT TITLE
+                    document.getElementById(eventTypeArray[4]).textContent = volUIVar;
+                    //SET EVENT LOCATION
+                    document.getElementById(eventLocationArray[4]).textContent = volcanoMarkerTitleArray[i];
+                    //SET EVENT HAZARDS
+                    document.getElementById(eventRatingArray[4]).textContent = volAlertLevelText + volcanoLevelArray[i] + " " + volcanoActivityArray[i];
+                    //SET LAST CHECKED EVENT
+                    document.getElementById(eventTimeArray[4]).textContent = date.toUTCString();
+                    /* 5# DISPLAY IN UI [END] */
                 }
 
            }
