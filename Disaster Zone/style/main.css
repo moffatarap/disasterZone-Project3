@@ -254,7 +254,7 @@ body {
 }
 
 /* ALERT LEVEl 1*/
-#eventType {
+#eventType0 {
     position: absolute;
     margin-top: 10px;
     margin-left: 60px;
@@ -263,20 +263,20 @@ body {
     font-size: 16pt;
 }
 
-#eventLocation {
+#eventLocation0 {
     margin-top: 35px;
 }
 
-#eventRating {
+#eventRating0 {
     margin-top: 50px;
 }
 
-#eventTime {
+#eventTime0 {
     margin-top: 68px;
 }
 
 /* ALERT LEVEl 2*/
-#eventType2 {
+#eventType1 {
     position: absolute;
     margin-top: 10px;
     margin-left: 60px;
@@ -285,15 +285,15 @@ body {
     font-size: 16pt;
 }
 
-#eventLocation2 {
+#eventLocation1 {
     margin-top: 35px;
 }
 
-#eventRating2 {
+#eventRating1 {
     margin-top: 50px;
 }
 
-#eventTime2 {
+#eventTime1 {
     margin-top: 68px;
 }
 
