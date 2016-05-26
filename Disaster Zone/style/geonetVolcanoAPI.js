@@ -179,11 +179,11 @@ console.log(idCount);
 function idFunction() {
     
     if (volLoad === 1) {
-
-        while (idCount < 2) {
+        
+        for (idCount < 2; idCount++;) {
             textContentArray[idCount] = document.createElement('div');
             $(textContentArray[idCount]).addClass("dummyEvent");
-
+            
         if (idCount === 0) {
             textContentArray[idCount].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType0"></h4><h6 id="eventLocation0"></h6><h6 id="eventRating0"></h6><h6 id="eventTime0"></h6><div id="gradientL"></div>';
             //
@@ -194,7 +194,7 @@ function idFunction() {
         }
 
         console.log(idCount);
-        idCount++;
+        
 
         if (idCount === 1) {
             $(".eventsList").prepend(textContentArray[i]);
