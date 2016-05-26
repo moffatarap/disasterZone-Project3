@@ -100,7 +100,7 @@ function volJSON() {
 
         });
 
-        /* DEBUGGING 
+        /* DEBUGGING  */
         console.log('#1');
         console.log(volcanoMarkerTitleArray); //display value of title array
         console.log('#2');
@@ -108,9 +108,9 @@ function volJSON() {
         console.log('#3');
         console.log(volcanoActivityArray); //display value of activity array
         console.log('#4');
-        console.log(volcanoHazardsArray); //display value of hazard array*/
+        console.log(volcanoHazardsArray); //display value of hazard array
         //[DEBUG DISPLAY]document.getElementById("errorCantFind").innerHTML = volcanoLevelArray[11];
-
+        /* DEBUGGING [END] */
         volcanoMarkerCreateLoop(); //calls vol marker loop
     });
 
@@ -121,9 +121,9 @@ function pushToArray() {
     //Add active volcano to array
     volActiveArray.push('Alert Level ' + volcanoLevelArray[i] + ' ' + volcanoMarkerTitleArray[i]);
     
-    /*DEBUG Log Active Volcano
+    /*DEBUG Log Active Volcano*/
     console.log(volcanoMarkerTitleArray[i]);
-    console.log(volActiveArray); */
+    console.log(volActiveArray); 
 }
 /* 2.0# PUSH ACTIVE VOLCANO DATA TO ARRAY [END] */
 
