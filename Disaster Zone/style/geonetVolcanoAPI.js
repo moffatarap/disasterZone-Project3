@@ -4,6 +4,8 @@ var geonetVolcano = "https://json.ey.nz/api.geonet.org.nz/volcano/val"; //saves 
 var goenetVolcanoLocal = "./json/geoNetVolcanoVal.json";
 var volTitleLength = 12; //sets array length
 var volRadiusMulti = 10; //sets volcano alert radius to be multiplyed by this number original [5]
+var volUIVar = "Volcano"; //sets volcano title for UI
+var volAlertLevelText = "Alert Level "; //alert level var
 /*== ARRAYS ==*/
 
 /* 1.1# VOLCANO VARABLE ARRAYS */
@@ -171,6 +173,16 @@ function volcanoMarkerCreateLoop() {
                     });
 
                     bindCircle(); //binds circle to marker
+
+                    /* 1# DISPLAY IN UI */
+                    //SET EVENT TITLE
+                    document.getElementById("eventType").textContent = volUIVar;
+                    //SET EVENT LOCATION
+                    document.getElementById("eventLocation").textContent = volcanoMarkerTitleArray[i];
+                    //SET EVENT HAZARDS
+                    document.getElementById("eventRating").textContent = volAlertLevelText + volcanoLevelArray[i] + " " + volcanoActivityArray[i];
+                    /* DISPLAY IN UI END */
+
                 
                 }
                     

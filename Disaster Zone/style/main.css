@@ -245,6 +245,27 @@ body {
     font-size: 16pt;
 }
 
+/* ARAPAOA EDIT */
+
+#eventType {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 60px;
+    color: white;
+    font-weight: 300;
+    font-size: 16pt;
+}
+
+#eventLocation {
+    margin-top: 35px;
+}
+
+#eventRating {
+    margin-top: 50px;
+}
+
+/* ARAPAOA EDIT [END] */
+
 #dummyEvent h6 {
     position: absolute;
     font-weight: 400;
