@@ -66,10 +66,9 @@ addressUser: document.getElementById("mapAddress").innerHTML
 			currentLong = earthQLngArray[i];
 			currentMag = earthQMagnitudeArray[i];
 			currentDepth = earthQDepthArray[i];
-		}
-EarthquakeDB.set({
- test:{
- 	earthquakeID,
+			EarthquakeDB.set({
+ earthquakeID:{
+ 	
 	currentLat,
 	currentLong,
 	currentMag,
@@ -78,6 +77,8 @@ EarthquakeDB.set({
  }
 
 });
+		}
+
 
 
 
