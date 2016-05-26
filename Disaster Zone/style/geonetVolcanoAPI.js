@@ -176,18 +176,21 @@ function volcanoMarkerCreateLoop() {
 
                     bindCircle(); //binds circle to marker
 
-                    /* 1# DISPLAY IN UI */
-                    var textContent = document.createElement('div');
-                    $(textContent).addClass("dummyEvent");
-                    textContent.innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType"></h4><h6 id="eventLocation"></h6><h6 id="eventRating"></h6><h6 id="eventTime"></h6><div id="gradientL"></div>';
-                    $(".eventsList").append(textContent);
-
-                    var textContent = document.createElement('div');
-                    $(textContent).addClass("dummyEvent");
-                    textContent.innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType"></h4><h6 id="eventLocation"></h6><h6 id="eventRating"></h6><h6 id="eventTime"></h6><div id="gradientL"></div>';
-                    $(".eventsList").append(textContent);
                     
 
+                    /* 1# DISPLAY IN UI */
+                    //var textContent = document.createElement('div');
+                    //$(textContent).addClass("dummyEvent");
+                    //textContent.innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType"></h4><h6 id="eventLocation"></h6><h6 id="eventRating"></h6><h6 id="eventTime"></h6><div id="gradientL"></div>';
+                    //$(".eventsList").append(textContent);
+
+                   var textContent = document.createElement('div');
+                    $(textContent).addClass("dummyEvent");
+                    textContent.innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType"></h4><h6 id="eventLocation"></h6><h6 id="eventRating"></h6><h6 id="eventTime"></h6><div id="gradientL"></div>';
+                    
+                    $(".eventsList").append(textContent);
+
+                    /* 1.0# SET CONTENT */
                     //SET EVENT TITLE
                     document.getElementById("eventType").textContent = volUIVar;
                     //SET EVENT LOCATION
@@ -196,6 +199,16 @@ function volcanoMarkerCreateLoop() {
                     document.getElementById("eventRating").textContent = volAlertLevelText + volcanoLevelArray[i] + " " + volcanoActivityArray[i];
                     //SET LAST CHECKED EVENT
                     document.getElementById("eventTime").textContent = date.toUTCString();
+                    /*  1.0# SET CONTENT */
+
+                    /* BROKEN CODE
+                    //textContent.append(".eventsList");
+                    //document.querySelectorAll(".eventsList").appendChild(textContent);
+                    //controlDiv.appendChild(textContent); */
+                   
+                    
+
+                    
 
                     /* DISPLAY IN UI END */
 
