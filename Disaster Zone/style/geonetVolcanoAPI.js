@@ -79,6 +79,10 @@ var volcanoHazardsArray = [
     , //[11] || RUAPEHU
 
 ];
+
+//Text content array
+var textContentArray = [
+];
 /* 1.1# VOLCANO VARABLE ARRAY [END]*/
 
 
@@ -179,16 +183,17 @@ function volcanoMarkerCreateLoop() {
                     
 
                     /* 1# DISPLAY IN UI */
+                    
                     //var textContent = document.createElement('div');
                     //$(textContent).addClass("dummyEvent");
                     //textContent.innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType"></h4><h6 id="eventLocation"></h6><h6 id="eventRating"></h6><h6 id="eventTime"></h6><div id="gradientL"></div>';
                     //$(".eventsList").append(textContent);
 
-                   var textContent = document.createElement('div');
-                    $(textContent).addClass("dummyEvent");
-                    textContent.innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType"></h4><h6 id="eventLocation"></h6><h6 id="eventRating"></h6><h6 id="eventTime"></h6><div id="gradientL"></div>';
+                    textContentArray[i] = document.createElement('div');
+                    $(textContentArray[i]).addClass("dummyEvent");
+                    textContentArray[i].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType"></h4><h6 id="eventLocation"></h6><h6 id="eventRating"></h6><h6 id="eventTime"></h6><div id="gradientL"></div>';
                     
-                    $(".eventsList").append(textContent);
+                    $(".eventsList").prepend(textContentArray[i]);
 
                     /* 1.0# SET CONTENT */
                     //SET EVENT TITLE
@@ -205,12 +210,8 @@ function volcanoMarkerCreateLoop() {
                     //textContent.append(".eventsList");
                     //document.querySelectorAll(".eventsList").appendChild(textContent);
                     //controlDiv.appendChild(textContent); */
-                   
+                    /* DISPLAY IN UI [END] */
                     
-
-                    
-
-                    /* DISPLAY IN UI END */
 
                 
                 }
@@ -237,6 +238,25 @@ function volcanoMarkerCreateLoop() {
                     });
 
                     bindCircle(); //binds circle to marker
+
+                    /* 2.0# */
+                    textContentArray[i] = document.createElement('div');
+                    $(textContentArray[i]).addClass("dummyEvent");
+                    textContentArray[i].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/light/volcanoL.png"> <h4 id="eventType2"></h4><h6 id="eventLocation2"></h6><h6 id="eventRating2"></h6><h6 id="eventTime2"></h6><div id="gradientL"></div>';
+
+                    $(".eventsList").prepend(textContentArray[i]);
+
+                    /* 2.0# SET CONTENT */
+                    //SET EVENT TITLE
+                    document.getElementById("eventType2").textContent = volUIVar;
+                    //SET EVENT LOCATION
+                    document.getElementById("eventLocation2").textContent = volcanoMarkerTitleArray[i];
+                    //SET EVENT HAZARDS
+                    document.getElementById("eventRating2").textContent = volAlertLevelText + volcanoLevelArray[i] + " " + volcanoActivityArray[i];
+                    //SET LAST CHECKED EVENT
+                    document.getElementById("eventTime2").textContent = date.toUTCString();
+                    /*  1.0# SET CONTENT */
+
 
                 }
 

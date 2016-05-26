@@ -246,7 +246,14 @@ body {
 }
 
 /* ARAPAOA EDIT */
+/* some how broke your id class of event icon :( */
+#eventIcon  {
+    position: absolute;
+    width: 60px;
+    margin-top: 20px;
+}
 
+/* ALERT LEVEl 1*/
 #eventType {
     position: absolute;
     margin-top: 10px;
@@ -268,6 +275,28 @@ body {
     margin-top: 68px;
 }
 
+/* ALERT LEVEl 2*/
+#eventType2 {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 60px;
+    color: white;
+    font-weight: 300;
+    font-size: 16pt;
+}
+
+#eventLocation2 {
+    margin-top: 35px;
+}
+
+#eventRating2 {
+    margin-top: 50px;
+}
+
+#eventTime2 {
+    margin-top: 68px;
+}
+
 .dummyEvent {
     height: 100px;
     border-top: solid 1px rgba(255,255,255,0.5);
@@ -275,7 +304,6 @@ body {
     
     background-color: rgba(0,0,0,0);
 }
-
 
 .dummyEvent h6 {
     position: absolute;
