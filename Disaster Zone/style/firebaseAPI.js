@@ -69,11 +69,12 @@ addressUser: document.getElementById("mapAddress").innerHTML
 		}
 EarthquakeDB.set({
  test:{
- 	earthquakeID
- 	currentDepth,
- 	currentMag,
- 	currentLong,
- 	currentLat
+ 	earthquakeID,
+	currentLat,
+	currentLong,
+	currentMag,
+	currentDepth
+
  }
 
 });
@@ -91,10 +92,6 @@ Volcando:{
 	volcanoMarkerTitleArray
 
 }, 
-Volcanmaybe:{ 
-
-	}
-},
 EarthBeQuaking: {
 	earthQLatArray,
 	earthQLngArray,
