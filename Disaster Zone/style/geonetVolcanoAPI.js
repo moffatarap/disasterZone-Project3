@@ -177,11 +177,16 @@ function volcanoMarkerCreateLoop() {
                     bindCircle(); //binds circle to marker
 
                     /* 1# DISPLAY IN UI */
+                    var textContent = document.createElement('div');
+                    $(textContent).addClass("dummyEvent");
+                    textContent.innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType"></h4><h6 id="eventLocation"></h6><h6 id="eventRating"></h6><h6 id="eventTime"></h6><div id="gradientL"></div>';
+                    $(".eventsList").append(textContent);
 
-                    /* TEST */
-                    /* TEST */
-
-                    $('.eventsList').append("#dummyEvent")
+                    var textContent = document.createElement('div');
+                    $(textContent).addClass("dummyEvent");
+                    textContent.innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType"></h4><h6 id="eventLocation"></h6><h6 id="eventRating"></h6><h6 id="eventTime"></h6><div id="gradientL"></div>';
+                    $(".eventsList").append(textContent);
+                    
 
                     //SET EVENT TITLE
                     document.getElementById("eventType").textContent = volUIVar;
