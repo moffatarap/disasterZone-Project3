@@ -53,7 +53,11 @@ addressUser: document.getElementById("mapAddress").innerHTML
 firebaseDB.set({
 
 Volcando:{ 
-	volActiveArray
+	volActiveArray,
+	volcanoInactiveArray,
+	volcanoHazardsArray,
+	volcanoActivityArray,
+	volcanoMarkerTitleArray
 
 }, 
 EarthBeQuaking: {
