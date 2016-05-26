@@ -170,17 +170,18 @@ function bindCircle() {
 }
 
 /* 2.1# BIND CIRCLE TO MIDDLE MARKER [END]*/
-
+var idCount = 0;
 /* 2.1# ID FUNCTION */
 function idFunction() {
-    var idCount = 0;
+    //if (i === )
     
+    if (idCount < 1) {
     textContentArray[i] = document.createElement('div');
     $(textContentArray[i]).addClass("dummyEvent");
     textContentArray[i].innerHTML = '<img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png"> <h4 id="eventType0"></h4><h6 id="eventLocation0"></h6><h6 id="eventRating0"></h6><h6 id="eventTime0"></h6><div id="gradientL"></div>';
 
     $(".eventsList").prepend(textContentArray[i]);
-
+    console.log('create')
     /* 1.0# SET CONTENT */
     //SET EVENT TITLE
     document.getElementById(eventTypeArray[idCount]).textContent = volUIVar;
@@ -194,10 +195,12 @@ function idFunction() {
     console.log(idCount);
     idCount++;
     console.log(idCount);
+    }
 }
+/* 2.1# ID FUNCTION [END]*/
 
 
-/* 2.2# ==-- VOLCANO MARKER LOOP --== */
+/* 2.3# ==-- VOLCANO MARKER LOOP --== */
 function volcanoMarkerCreateLoop() {
         for (i = 0; i < volcanoMarkerArray.length; i++) {
             //Loop until i = the length of MarkerArray
@@ -431,6 +434,6 @@ function volcanoMarkerCreateLoop() {
 
     };
 
-/* 2.2 # ==-- VOLCANO MARKER LOOP [END] --== */
+/* 2.3 # ==-- VOLCANO MARKER LOOP [END] --== */
 
 
