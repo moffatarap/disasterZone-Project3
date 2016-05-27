@@ -475,18 +475,34 @@ var mapOptions = {
 
 };
 
-/* 0# == VOLCANO JSON READ == */
+/* 0# == SORT UI ELEMENTS == */
+function sortDescending(a, b) {
+    var date1 = $(a).find("#earthQEventTime0").text();
+    date1 = date1.split('-');
+    date1 = new Date(date1[2], date1[1] - 1, date1[0]);
+
+    var date2 = $(b).find(".year").text();
+    date2 = date2.split('-');
+    date2 = new Date(date2[2], date2[1] - 1, date2[0]);
+
+    return date1;
+};
+
+$(document).ready(function () {
+    $('.eventsList .dummyEvent').sort(sortDescending).appendTo('.eventsList');
+});
 
 
 
-
-/* 0 == VOLCANO JSON READ [END]== */
+/* 0 == SORT UI ELEMENTS == */
 
 
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
 window.onload = function () {
     console.log('windowOnLoad'); //debug
     geoLocateUser();
+    sortDescending();
+    $('.eventsList .dummyEvent').sort(sortDescending).appendTo('.eventsList');
     
 
     //on first loop create map

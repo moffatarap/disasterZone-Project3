@@ -255,7 +255,7 @@ function earthQuakeMarkerCreateLoop() {
             $(earthQTextContentArray[i]).addClass("dummyEvent");
             earthQTextContentArray[i].innerHTML = earthQTextInnerHtmlArray[1];
 
-            $(".eventsList").prepend(earthQTextContentArray[i]);
+            $(".eventsList").append(earthQTextContentArray[i]);
             //earthQIDNameArray[i];
             
             // 2.0# SET CONTENT
