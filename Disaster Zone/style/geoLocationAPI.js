@@ -476,16 +476,22 @@ var mapOptions = {
 };
 
 /* 0# == SORT UI ELEMENTS == */
+var count = 0;
 function sortDescending(a, b) {
-    var date1 = $(a).find("#earthQEventTime0").text();
+    
+    var date1 = $(a).find(textContentArray[count]).text();
     date1 = date1.split('-');
     date1 = new Date(date1[2], date1[1] - 1, date1[0]);
 
     var date2 = $(b).find(".year").text();
     date2 = date2.split('-');
     date2 = new Date(date2[2], date2[1] - 1, date2[0]);
-
+    count++;
+    console.log(count);
     return date1;
+    
+    /* debugging */
+   
 };
 
 $(document).ready(function () {
@@ -501,8 +507,7 @@ $(document).ready(function () {
 window.onload = function () {
     console.log('windowOnLoad'); //debug
     geoLocateUser();
-    sortDescending();
-    $('.eventsList .dummyEvent').sort(sortDescending).appendTo('.eventsList');
+
     
 
     //on first loop create map
@@ -510,7 +515,7 @@ window.onload = function () {
         /* = 1# GOOGLE MAP CREATE = */
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
         volJSON(); //Loads JSON Data volcanos geonet
-        earthJSON(); //Loads JSON data earthquakes goenet
+        //earthJSON(); //Loads JSON data earthquakes goenet
 
         ///*====== 2# DISASTER MARKER CREATION AND ALERT CIRCLE ======*/
 

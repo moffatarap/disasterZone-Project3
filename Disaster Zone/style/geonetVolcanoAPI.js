@@ -293,7 +293,10 @@ function volcanoMarkerCreateLoop() {
                     document.getElementById(eventRatingArray[0]).textContent = volAlertLevelText + volcanoLevelArray[i] + " " + volcanoActivityArray[i];
                     //SET LAST CHECKED EVENT
                     document.getElementById(eventTimeArray[0]).textContent = date.toUTCString();
-                   /* DISPLAY IN UI [END] */
+                    /* DISPLAY IN UI [END] */
+
+                    sortDescending();
+                    $('.eventsList .dummyEvent').sort(sortDescending).appendTo('.eventsList');
                     
                 }
                     
@@ -338,6 +341,9 @@ function volcanoMarkerCreateLoop() {
                     //SET LAST CHECKED EVENT
                     document.getElementById(eventTimeArray[1]).textContent = date.toUTCString();
                     /* 2# DISPLAY IN UI [END] */
+
+                    sortDescending();
+                    $('.eventsList .dummyEvent').sort(sortDescending).appendTo('.eventsList');
                 }
 
 
@@ -382,6 +388,9 @@ function volcanoMarkerCreateLoop() {
                     //SET LAST CHECKED EVENT
                     document.getElementById(eventTimeArray[2]).textContent = date.toUTCString();
                     /* 3# DISPLAY IN UI [END] */
+
+                    sortDescending();
+                    $('.eventsList .dummyEvent').sort(sortDescending).appendTo('.eventsList');
                 }
 
                 //VOL ALERT = 4
@@ -425,6 +434,9 @@ function volcanoMarkerCreateLoop() {
                     //SET LAST CHECKED EVENT
                     document.getElementById(eventTimeArray[3]).textContent = date.toUTCString();
                     /* 4# DISPLAY IN UI [END] */
+
+                    sortDescending();
+                    $('.eventsList .dummyEvent').sort(sortDescending).appendTo('.eventsList');
                 }
 
                 //VOL ALERT = 5
@@ -468,6 +480,9 @@ function volcanoMarkerCreateLoop() {
                     //SET LAST CHECKED EVENT
                     document.getElementById(eventTimeArray[4]).textContent = date.toUTCString();
                     /* 5# DISPLAY IN UI [END] */
+
+                    sortDescending();
+                    $('.eventsList .dummyEvent').sort(sortDescending).appendTo('.eventsList');
                 }
 
            }
