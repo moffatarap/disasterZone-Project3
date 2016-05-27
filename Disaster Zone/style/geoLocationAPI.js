@@ -627,22 +627,7 @@ window.onload = function () {
 }
 
 /* 1# = ON LOAD SET STYLE MAP AND STARTING LOCATION [END] =*/
-/* 1.1# =- PUBNUB REALTIME STORE INFO -= 
-function pubs() {
-    pubnub = PUBNUB.init({
-        publish_key: 'pub-c-afe941da-29b9-4d8c-a2a5-b79cd7aa797b',
-        subscribe_key: 'sub-c-189f8734-04e1-11e6-a6dc-02ee2ddab7fe'
-    })
 
-    pubnub.subscribe({
-        channel: "myMap",
-        message: function (message, channel) {
-            console.log(message)
-            latLng = message['LatLng'];
-        },
-
-    })
-} */
 /* 1.1# =- PUBNUB REALTIME STORE INFO -= */
 
 /* 1.2# =-- CONVERT LatLng TO ADDRESS --= */
@@ -688,8 +673,7 @@ function writeAddressName(latLng) {
 
 /* 2# == GEO LOCATE USER == */
 function geoLocateUser() {
-    //loadPubNub Realtime GEOLOCATION API FUNCTION
-    //pubs();
+
     //add 1 to mapLoad varable
     mapLoad += 1;
 
@@ -955,7 +939,10 @@ setInterval(function () {
         /* 6.3# ======--- GEOLOCATION ALERTS v2 [END] ---====== */
 
         geoRefresh = 2; //reset value to 2
+        
+        /* ADD IN REAL-TIME CHECKING OF EARTH AND VOL DATA */
 
+        /* ADD IN REAL-TIME CHECKING OF EARTH AND VOL DATA [END]*/
     }
         //if geoRefresh var = > 10 then add 1 to geoRefresh 
     else {
