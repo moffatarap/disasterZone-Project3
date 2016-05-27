@@ -166,15 +166,50 @@ function markerAnimaton() {
 /* 3.2# MARKER ANIMATION [END]*/
 
 /* 3.3# GEOCODER REVERSE */
-function writeEarthQAddress() {
+var earthQLatLng = { lat: parseFloat(earthQLatArray[0]), lng: parseFloat (earthQLngArray[0]) };
+function writeEarthQAddress(earthQLatLng) {
     geocoderEarthQ = new google.maps.Geocoder();
+    geocoderEarthQ.geocode({
+        "location": earthQLatLng
+
+       },
+       
+       function (resultsEarthQ, statusEarthQ){
+           if (statusEarthQ === google.maps.GeocoderStatus.OK) {
+               console.log(earthQLatLng);
+           }
+
+       }
+    )
+    console.log(earthQLatLng);
 }
+
+function geoLocateUser() {
+
+    // If the browser supports the Geolocation API
+    if (navigator.geolocation) {
+        //console.log('geoLocateUser'); debug
+        var positionOptions = {
+            enableHighAccuracy: true, //accuracy 
+            timeout: 10 * 2000 // 10 seconds
+
+        };
+        navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
+
+    }
+    else {
+        //console.log('doesNotSupport'); debug
+        //document.getElementById("errorCantFind").innerHTML = "<p>Your browser doesn't support location</p>";
+    }
+
+}
+
 
 /* 3.3# GEOCODER REVERSE [END]*/
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
 function earthQuakeMarkerCreateLoop() {
-    
+    writeEarthQAddress();
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
         //Math.round
