@@ -1,0 +1,30 @@
+{
+   "properties": [
+       {
+           "publicid": "Fire",
+           "origintime": "2016-05-14 22:18:05.322000",
+           "depth": 9.6875,
+           "intensity": "weak"
+       },
+       {
+           "publicid": "Flood",
+           "origintime": "2016-05-14 22:18:05.322000",
+           "depth": 9.6875,
+           "intensity": "weak"
+       },
+	   {
+           "publicid": "Hurricane",
+           "origintime": "2016-05-14 22:18:05.322000",
+           "depth": 9.6875,
+           "intensity": "weak"
+       },
+	    {
+           "publicid": "Tornado",
+           "origintime": "2016-05-14 22:18:05.322000",
+           "depth": 9.6875,
+           "intensity": "weak"
+        }
+	   
+	   
+   ]
+}

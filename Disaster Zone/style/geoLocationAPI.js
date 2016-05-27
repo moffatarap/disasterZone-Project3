@@ -14,8 +14,6 @@ var fourDPR = 10000;  //sets rounding var
 var alertCircleStrokeWeight = 2; //sets stroke weight for alert circle
 var showInactiveVol = 0; //show or hide inactive volcanos 0 to hide inactive volcano 1 to show
 
-
-
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
 //location warning LAT 
 var disasterLocLatArray = [
