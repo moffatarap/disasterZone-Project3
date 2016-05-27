@@ -165,9 +165,12 @@ function markerAnimaton() {
 }
 /* 3.2# MARKER ANIMATION [END]*/
 
-/* 3.3# UI DISPLAY */
+/* 3.3# GEOCODER REVERSE */
+function writeEarthQAddress() {
+    geocoderEarthQ = new google.maps.Geocoder();
+}
 
-/* 3.3# CAP FIRST LETTER [END]*/
+/* 3.3# GEOCODER REVERSE [END]*/
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
 function earthQuakeMarkerCreateLoop() {
