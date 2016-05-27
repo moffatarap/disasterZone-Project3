@@ -1,3 +1,4 @@
+/*= MAIN CSS Disaster Zone MDDN352 P3 [2016] SCHULTZSTEF (300308218) =*/
 html {
     max-width: 100%;
     overflow-x: hidden;
@@ -205,11 +206,13 @@ body {
     width: 350px;
     top: 45px;
     height: calc(100% - 45px);
+
     
     z-index: 2;
     
     background-color: rgba(25,25,25,0.75);
     -webkit-backdrop-filter: blur(20px);
+    
     
     transition: 0.4s;
 }
