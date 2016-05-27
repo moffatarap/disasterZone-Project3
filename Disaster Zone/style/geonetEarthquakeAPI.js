@@ -8,6 +8,8 @@ var earthQRadiusDivide = 2; //sets earthquake alert radius division
 var earthUIVar = "Earthquake"; //sets volcano title for UI
 var earthAlertLevelText = "Alert "; //alert level var
 var earthTextContent = document.createElement('div'); //creates vairable that is a div
+var earthQMag = ", Magnitude "; //var for displaying the magatuide of event
+var twoDP = 10; //var for rounding to 2 decimal places
 
 
 /*== ARRAYS ==*/
@@ -172,7 +174,8 @@ function earthQuakeMarkerCreateLoop() {
     
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
-
+        //Math.round
+        var earthQMagnitudeRound = Math.round(earthQMagnitudeArray[i] * twoDP) / twoDP; //rounds to two decimal palces
 
         /* CONVERT JSON DATE TIME TO UTC */
         var earthQTimeFormat = earthQTimeArray[i]; //for formatting earthquake event time based off json
@@ -221,7 +224,7 @@ function earthQuakeMarkerCreateLoop() {
             //SET EVENT LOCATION
             document.getElementById(earthQEventLocationArray[0]).textContent = earthQIDNameArray[i];
             //SET EVENT HAZARDS
-            document.getElementById(earthQEventRatingArray[0]).textContent = earthAlertLevelText + earthQIntesityArray[i];
+            document.getElementById(earthQEventRatingArray[0]).textContent = earthAlertLevelText + earthQIntesityArray[i] + earthQMag + earthQMagnitudeRound;
             //SET LAST CHECKED EVENT
             document.getElementById(earthQEventTimeArray[0]).textContent = earthQDateFormat.toUTCString();
             /* 1# DISPLAY IN UI [END] */
@@ -264,7 +267,7 @@ function earthQuakeMarkerCreateLoop() {
             //SET EVENT LOCATION
             document.getElementById(earthQEventLocationArray[1]).textContent = earthQIDNameArray[i];
             //SET EVENT HAZARDS
-            document.getElementById(earthQEventRatingArray[1]).textContent = earthAlertLevelText + earthQIntesityArray[i];
+            document.getElementById(earthQEventRatingArray[1]).textContent = earthAlertLevelText + earthQIntesityArray[i] + earthQMag + earthQMagnitudeRound;
             //SET LAST CHECKED EVENT
             document.getElementById(earthQEventTimeArray[1]).textContent = earthQDateFormat.toUTCString();
             /* 2# DISPLAY IN UI [END] */
@@ -308,7 +311,7 @@ function earthQuakeMarkerCreateLoop() {
             //SET EVENT LOCATION
             document.getElementById(earthQEventLocationArray[2]).textContent = earthQIDNameArray[i];
             //SET EVENT HAZARDS
-            document.getElementById(earthQEventRatingArray[2]).textContent = earthAlertLevelText + earthQIntesityArray[i];
+            document.getElementById(earthQEventRatingArray[2]).textContent = earthAlertLevelText + earthQIntesityArray[i] + earthQMag + earthQMagnitudeRound;
             //SET LAST CHECKED EVENT
             document.getElementById(earthQEventTimeArray[2]).textContent = earthQDateFormat.toUTCString();
             /* 3# DISPLAY IN UI [END] */
@@ -349,7 +352,7 @@ function earthQuakeMarkerCreateLoop() {
             //SET EVENT LOCATION
             document.getElementById(earthQEventLocationArray[3]).textContent = earthQIDNameArray[i];
             //SET EVENT HAZARDS
-            document.getElementById(earthQEventRatingArray[3]).textContent = earthAlertLevelText + earthQIntesityArray[i];
+            document.getElementById(earthQEventRatingArray[3]).textContent = earthAlertLevelText + earthQIntesityArray[i] + earthQMag + earthQMagnitudeRound;
             //SET LAST CHECKED EVENT
             document.getElementById(earthQEventTimeArray[3]).textContent = earthQDateFormat.toUTCString();
             /* 4# DISPLAY IN UI [END] */
@@ -392,7 +395,7 @@ function earthQuakeMarkerCreateLoop() {
             //SET EVENT LOCATION
             document.getElementById(earthQEventLocationArray[4]).textContent = earthQIDNameArray[i];
             //SET EVENT HAZARDS
-            document.getElementById(earthQEventRatingArray[4]).textContent = earthAlertLevelText + earthQIntesityArray[i];
+            document.getElementById(earthQEventRatingArray[4]).textContent = earthAlertLevelText + earthQIntesityArray[i] + earthQMag + earthQMagnitudeRound;
             //SET LAST CHECKED EVENT
             document.getElementById(earthQEventTimeArray[4]).textContent = earthQDateFormat.toUTCString();
             /* 5# DISPLAY IN UI [END] */
