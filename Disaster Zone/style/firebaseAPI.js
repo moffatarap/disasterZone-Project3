@@ -5,7 +5,15 @@
 
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
-firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/Events/>");
+firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
+var EarthquakeDB; //makes a path for earthquake testing
+EarthquakeDB = new Firebase("<https://pbwoooo.firebaseio.com/TestingEQ/>");
+var earthquakeID; // for loop for setting up DB
+
+var currentLat;
+var currentLong;
+var currentMag;
+var currentDepth;
 /** ARRAYS **/
 
 /*** FUNCTION ***/
@@ -24,7 +32,7 @@ function firebaseAPI() {
 
     }); **/
 
-    firebaseDB.set({
+  /**  firebaseDB.set({
      Events:{
 EARTHQUAKE:{
 latLngUser: userLatLng.toString(),
@@ -48,8 +56,52 @@ addressUser: document.getElementById("mapAddress").innerHTML
 }
 }
 
-    });
+    }); **/
+
+/*testing just the earthquake things*/
+
+	for (var i = earthQIDNameArray.length - 1; i >= 0; i--) {
+		earthquakeID = earthQIDNameArray[i];		
+			currentLat = earthQLatArray[i];
+			currentLong = earthQLngArray[i];
+			currentMag = earthQMagnitudeArray[i];
+			currentDepth = earthQDepthArray[i];
+			EarthquakeDB.set({
+ earthquakeID:{
+ 	
+	currentLat,
+	currentLong,
+	currentMag,
+	currentDepth
+
+ }
+
+});
+		}
 
 
+
+
+/** testing all of the DB things*/
+firebaseDB.set({
+
+Volcando:{ 
+	volActiveArray,
+	volcanoInactiveArray,
+	volcanoHazardsArray,
+	volcanoActivityArray,
+	volcanoMarkerTitleArray
+
+}, 
+EarthBeQuaking: {
+	earthQLatArray,
+	earthQLngArray,
+	earthQMagnitudeArray,
+	earthQDepthArray,
+	earthQIDNameArray
+}
+
+
+});
     
 }
