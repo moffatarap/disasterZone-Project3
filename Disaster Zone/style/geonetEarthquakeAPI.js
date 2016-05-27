@@ -165,62 +165,15 @@ function markerAnimaton() {
 }
 /* 3.2# MARKER ANIMATION [END]*/
 var earthQLatLng = { lat: parseFloat(earthQLatArray[0]), lng: parseFloat(earthQLngArray[0]) };
-/* 3.3# GEOCODER REVERSE 
-var earthQLatLng = { lat: parseFloat(earthQLatArray[0]), lng: parseFloat (earthQLngArray[0]) };
-function writeEarthQAddress(earthQLatLng) {
-    geocoderEarthQ = new google.maps.Geocoder();
-    geocoderEarthQ.geocode({
-        "location": earthQLatLng
 
-       },
-       
-       function (resultsEarthQ, statusEarthQ){
-           if (statusEarthQ === google.maps.GeocoderStatus.OK) {
-               console.log(earthQLatLng);
-           }
-
-       }
-    )
-    console.log(earthQLatLng);
-}*/
-
-//var earthQGeocoder = new google.maps.Geocoder;
-//geocodeLatLng(earthQLatLng, mapObject);
-
-function geocodeLatLng(earthQLatLng, mapObject) {
-    var earthQGeocoder = new google.maps.Geocoder;
-    geocodeLatLng(earthQLatLng, mapObject);
-    var input = earthQLatLng;
-    var latlngStr = input.split(',', 2);
-    var earthQlatLng = { lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1]) };
-    earthQGeocoder.geocode({'location': earthQlatLng}, function(results, status) {
-        
-        if (status === google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-                map.setZoom(11);
-                //var marker = new google.maps.Marker({
-                //    position: latlng,
-                //    map: map
-                //});
-                console.log(results[1].formatted_address);
-               // infowindow.open(map, marker);
-            } else {
-                //window.alert('No results found');
-            }
-        } else {
-            //window.alert('Geocoder failed due to: ' + status);
-        }
-    });
-}
-
-
-
+/* 3.3# GEOCODER REVERSE */
+//currently disabled and removed
 
 /* 3.3# GEOCODER REVERSE [END]*/
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
 function earthQuakeMarkerCreateLoop() {
-    geocodeLatLng();
+    //geocodeLatLng();
     //writeEarthQAddress();
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
