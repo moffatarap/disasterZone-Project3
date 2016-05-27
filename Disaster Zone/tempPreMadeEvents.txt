@@ -1,0 +1,155 @@
+  //    //Displays alert if user is within a defined radius of event, the event radius is dependent on the severity of the event.
+
+    //    //0# - EARTHQUAKE PAEKAKARIKI || SEVERE
+    //    if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[0] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[0] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[1] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[1]) {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert0").textContent = "EARTHQUAKE";
+    //        document.getElementById("disasterAlertValue0").textContent = "6.3";
+
+    //        //CSS
+    //        $("#disasterAlert0").css({ "visibility": "visible" }); //makes div visible
+    //        $("#disasterAlertSeverity0").css({ "background-color": "#f8522c" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: Earthquake'); debug
+
+    //    }
+
+    //    //0# - EARTHQUAKE PAEKAKARIKI || SEVERE 
+    //    else {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert0").textContent = "";
+    //        document.getElementById("disasterAlertValue0").textContent = "";
+
+    //        //CSS
+    //        $("#disasterAlert0").css({ "visibility": "hidden" }); //makes div visible
+    //        $("#disasterAlertSeverity0").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: Earthquake RESET');debug
+
+    //    };
+
+
+    //    //1# - FIRE PAEKAKARIKI || MODERATE
+    //    if  (latitude <= disasterLocLatArray[1] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[1] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[1] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[1] - disasterOffsetArray[5]) {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert1").textContent = "FIRE";
+    //        document.getElementById("disasterAlertValue1").textContent = "25";
+
+    //        //CSS
+    //        $("#disasterAlert1").css({ "visibility": "visible" }); //makes div visible
+    //        $("#disasterAlertSeverity1").css({ "background-color": "#f8f72d" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: FIRE'); debug
+    //    }
+
+    //    //1# - FIRE PAEKAKARIKI || MODERATE
+    //    else {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert1").textContent = "";
+    //        document.getElementById("disasterAlertValue1").textContent = "";
+
+    //        //CSS
+    //        $("#disasterAlert1").css({ "visibility": "hidden" }); //makes div visible
+    //        $("#disasterAlertSeverity1").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: FIRE RESET'); debug
+
+    //    };
+
+    //    //2# - FLOOD WELLINGTON || LIGHT
+    //    if (latitude <= disasterLocLatArray[2] + disasterOffsetArray[6] && latitude >= disasterLocLatArray[2] - disasterOffsetArray[6] && longitude <= disasterLocLngArray[2] + disasterOffsetArray[7] && longitude >= disasterLocLngArray[2] - disasterOffsetArray[7]) {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert2").textContent = "FLOOD";
+    //        document.getElementById("disasterAlertValue2").textContent = "2.20m";
+
+    //        //CSS
+    //        $("#disasterAlert2").css({ "visibility": "visible" }); //makes div visible
+    //        $("#disasterAlertSeverity2").css({ "background-color": "#20a276" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: FLOOD'); debug
+    //    }
+
+    //    //2# - FLOOD WELLINGTON || LIGHT
+    //    else {
+    //    //TEXT CONTENT
+    //    document.getElementById("disasterAlert2").textContent = "";
+    //    document.getElementById("disasterAlertValue2").textContent = "";
+
+    //    //CSS
+    //    $("#disasterAlert2").css({ "visibility": "hidden" }); //makes div visible
+    //    $("#disasterAlertSeverity2").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: FLOOD RESET'); debug
+
+    //};
+
+    //    //3# - HURRICANE WELLINGTON || STRONG
+    //    if (latitude <= disasterLocLatArray[3] + disasterOffsetArray[2] && latitude >= disasterLocLatArray[3] - disasterOffsetArray[2] && longitude <= disasterLocLngArray[3] + disasterOffsetArray[3] && longitude >= disasterLocLngArray[3] - disasterOffsetArray[3]) {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert3").textContent = "HURRICANE";
+    //        document.getElementById("disasterAlertValue3").textContent = "210 KPH";
+
+    //        //CSS
+    //        $("#disasterAlert3").css({ "visibility": "visible" }); //makes div visible
+    //        $("#disasterAlertSeverity3").css({ "background-color": "#f8b22c" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: HURRICANE'); debug
+    //    }
+
+    //    //3# - HURRICANE WELLINGTON || STRONG
+    //    else {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert3").textContent = "";
+    //        document.getElementById("disasterAlertValue3").textContent = "";
+
+    //        //CSS
+    //        $("#disasterAlert3").css({ "visibility": "hidden" }); //makes div visible
+    //        $("#disasterAlertSeverity3").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: HURRICANE RESET'); debug
+
+    //    };
+
+    //    //4# - TORNADO WELLINGTON || WEAK
+    //    if (latitude <= disasterLocLatArray[4] + disasterOffsetArray[8] && latitude >= disasterLocLatArray[4] - disasterOffsetArray[8] && longitude <= disasterLocLngArray[4] + disasterOffsetArray[9] && longitude >= disasterLocLngArray[4] - disasterOffsetArray[9]) {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert4").textContent = "TORNADO";
+    //        document.getElementById("disasterAlertValue4").textContent = "104 KPH";
+
+    //        //CSS
+    //        $("#disasterAlert4").css({ "visibility": "visible" }); //makes div visible
+    //        $("#disasterAlertSeverity4").css({ "background-color": "#34e6f2" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: TORNADO'); debug
+    //    }
+
+    //    //4# - TORNADO WELLINGTON || WEAK
+    //    else {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert4").textContent = "";
+    //        document.getElementById("disasterAlertValue4").textContent = "";
+
+    //        //CSS
+    //        $("#disasterAlert4").css({ "visibility": "hidden" }); //makes div visible
+    //        $("#disasterAlertSeverity4").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: TORNADO RESET'); debug
+
+    //    };
+
+
+
+    //    //5# - FIRE WELLINGTON TE ARO || WEAK
+    //    if (latitude <= disasterLocLatArray[5] + disasterOffsetArray[6] && latitude >= disasterLocLatArray[5] - disasterOffsetArray[6] && longitude <= disasterLocLngArray[5] + disasterOffsetArray[7] && longitude >= disasterLocLngArray[5] - disasterOffsetArray[7]) {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert5").textContent = "FIRE";
+    //        document.getElementById("disasterAlertValue5").textContent = "9";
+
+    //        //CSS
+    //        $("#disasterAlert5").css({ "visibility": "visible" }); //makes div visible
+    //        $("#disasterAlertSeverity5").css({ "background-color": "#34e6f2" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: FIRE'); debug
+    //    }
+
+    //    //5# - FIRE WELLINGTON TE ARO || WEAK
+    //    else {
+    //        //TEXT CONTENT
+    //        document.getElementById("disasterAlert5").textContent = "";
+    //        document.getElementById("disasterAlertValue5").textContent = "";
+
+    //        //CSS
+    //        $("#disasterAlert5").css({ "visibility": "hidden" }); //makes div visible
+    //        $("#disasterAlertSeverity5").css({ "visibility": "hidden" }); //sets bg color to that of severity of event
+    //        //console.log('ALERT: FIRE RESET'); debug
+
+    //    };
