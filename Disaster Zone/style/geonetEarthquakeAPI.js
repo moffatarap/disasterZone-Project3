@@ -127,19 +127,26 @@ function markerAnimaton() {
 }
 /* 3.2# MARKER ANIMATION [END]*/
 
+/* 3.3# CAP FIRST LETTER */
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+/* 3.3# CAP FIRST LETTER [END]*/
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
 function earthQuakeMarkerCreateLoop() {
     
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
+
         /* CONVERT JSON DATE TIME TO UTC */
         var earthQTimeFormat = earthQTimeArray[i]; //for formatting earthquake event time based off json
         var dateFromat = /(\d{2})\.(\d{2})\.(\d{4})/; //wanted date format
         var earthQDateFormat = new Date(earthQTimeFormat.replace(dateFromat, '$3-$2-$1')); //replacing date format
         /* CONVERT JSON DATE TIME TO UTC [END]*/
 
-       //EARTHQUAKE SEVERITY WEAK
+
+        //EARTHQUAKE SEVERITY WEAK
         if (earthQIntesityArray[i] === 'weak') {
             earthquakeMarkerArray[i] = new google.maps.Marker({
                //create marker
@@ -166,6 +173,8 @@ function earthQuakeMarkerCreateLoop() {
 
             /* TEST SHIT */
             
+
+            
             /* TEST SHIT*/
             
             /* 1# DISPLAY IN UI */
@@ -175,6 +184,7 @@ function earthQuakeMarkerCreateLoop() {
             earthQTextContentArray[i].innerHTML = earthQTextInnerHtmlArray[0];
 
             $(".eventsList").prepend(earthQTextContentArray[i]);
+            //earthQIDNameArray[i];
             
             // 1.0# SET CONTENT
             //SET EVENT TITLE
