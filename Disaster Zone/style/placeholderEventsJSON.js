@@ -252,7 +252,29 @@ function phMarkerCreateLoop() {
         });
 
         phEventsAlertCircleMarkerArray[2].bindTo('center', phMarkerArray[2], 'position'); //binds circle to location of marker
+
+
+        /* 3# DISPLAY IN UI */
+        //idFunction();
+        phTextContentArray[2] = document.createElement('div');
+        $(phTextContentArray[2]).addClass("dummyEvent");
+        phTextContentArray[2].innerHTML = phTextInnerHtmlArray[2];
+
+        $(".eventsList").prepend(phTextContentArray[2]);
+        //earthQIDNameArray[i];
+
+        // 3.0# SET CONTENT
+        //SET EVENT TITLE
+        document.getElementById(phEventTypeArray[2]).textContent = phPublicIdArray[2];
+        //SET EVENT LOCATION
+        document.getElementById(phEventLocationArray[2]).textContent = phLocationName[2];
+        //SET EVENT HAZARDS
+        document.getElementById(phEventRatingArray[2]).textContent = earthAlertLevelText + phIntensityArray[2];
+        //SET LAST CHECKED EVENT
+        document.getElementById(phEventTimeArray[2]).textContent = date.toUTCString();
+        /* 3# DISPLAY IN UI [END] */
     }
+
 
     if (phIntensityArray[3] === "weak") {
         phMarkerArray[3] = new google.maps.Marker({
@@ -274,20 +296,28 @@ function phMarkerCreateLoop() {
         });
 
         phEventsAlertCircleMarkerArray[3].bindTo('center', phMarkerArray[3], 'position'); //binds circle to location of marker
-    }
-        //for (i = 0; i < phEventLength; i++) {
 
-    //    //PH Weak
-    //    //if (phIntensityArray[i] === "weak") {
-    //    //    phMarkerArray[i] = new google.maps.Marker({
-    //    //        //create marker
-    //    //        map: mapObject,
-    //    //        title: phPublicIdArray[i],
-    //    //        position: { lat: phLatArray[i], lng: phLngArray[i] },
-    //    //        icon: iconArray[24],
-    //    //    });
-    //    //}
-    //}
+        /* 4# DISPLAY IN UI */
+        //idFunction();
+        phTextContentArray[3] = document.createElement('div');
+        $(phTextContentArray[3]).addClass("dummyEvent");
+        phTextContentArray[3].innerHTML = phTextInnerHtmlArray[3];
+
+        $(".eventsList").prepend(phTextContentArray[3]);
+        //earthQIDNameArray[i];
+
+        // 4.0# SET CONTENT
+        //SET EVENT TITLE
+        document.getElementById(phEventTypeArray[3]).textContent = phPublicIdArray[3];
+        //SET EVENT LOCATION
+        document.getElementById(phEventLocationArray[3]).textContent = phLocationName[3];
+        //SET EVENT HAZARDS
+        document.getElementById(phEventRatingArray[3]).textContent = earthAlertLevelText + phIntensityArray[3];
+        //SET LAST CHECKED EVENT
+        document.getElementById(phEventTimeArray[3]).textContent = date.toUTCString();
+        /* 4# DISPLAY IN UI [END] */
+    }
+       
 }
 
 /* 3# === PLACEHOLDER MARKER LOOP FUNCTION [END] === */
