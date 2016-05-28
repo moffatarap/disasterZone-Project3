@@ -36,7 +36,11 @@
     <!--=-- 3# GEONET EARTHQUAKE API [ENABLED] --=-->
     <script src="./style/geonetEarthquakeAPI.js"></script> 
     <!--=-- 3# GEONET EARTHQUAKE API [END] --=-->
-
+    
+    <!--=-- 3# PLACEHOLDER EVENTS [ENABLED] --=-->
+    <script src="./style/placeholderEventsJSON.js"></script>
+    <!--=-- 3# PLACEHOLDER EVENTS [ENABLED] --=-->
+    
     <!--== 4# FIREBASE API PB==-->
     <script src="./style/firebaseAPI.js"></script> 
     <!--== 4# FIREBASE API PB==-->
@@ -58,7 +62,7 @@
         
         <!-- Navigation Bar -->
         <div class="navBar">
-            <img id="navLogo" src="./media/img/favIcon.png">
+            <img id="navLogo" src="./media/img/logo_white.png">
             <h3 class="navTitle">Disaster Zone</h3>
             <div id="nav-discloseSidebar" class="tooltip">
                 <span class="tooltip-text">Show and hide the list of recent events.</span>
@@ -76,8 +80,19 @@
         <div id="mapAddress">
         </div>
         
-        <!--<div id="errorCantFind">
-        </div>-->
+        <div id="inZone">
+            <img id="inZone-icon" src="./media/img/inZoneIcon.png">
+            <h3 id="inZone-title">You appear to be in a disaster zone.</h3>
+            <h5 id="inZone-sub">Get help and updates on this situation...</h5>
+        </div>
+        
+        <div id="errorCantFind">
+            <div id="errorInnards">
+                <img id="error-icon" src="./media/img/locationErrorIcon.png">
+                <h3 id="errorTitle">Disaster Zone Needs Your Location.</h3>
+                <p id="errorBody">To display realtime information on disasters around you and across New Zealand, Disaster Zone needs to access your geolocation.<br/>If your browser asks you to allow this, please click Allow.<br/><br/>If this is not an option, ensure that your browser supports geolocation.<br/>Disaster Zone works best in the latest versions of Chrome, Firefox, and Safari.</p>
+            </div>
+        </div>
         
         <!-- Event detail card template -->
         <div id="detail-backgroundDim"></div>
@@ -92,20 +107,21 @@
         </div>
         
         <!-- Recent Events List -->
-        <div class="eventsList">
-
-            <h4 class="eventsList-title">RECENT EVENTS</h4>
-            <!-- EVENTS SHOW AND CREATED FOR VOLCANOS IN GEONET VOLCANO API SCRYPT-->
-            <!--<div class="dummyEvent">
-                <img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png">
-                <h4 id="eventType"></h4>
-                <h6 id="eventLocation"></h6>
-                <h6 id="eventRating"></h6>
-                <h6 id="eventTime"></h6>
-                <div id="gradientL"></div>
-            </div>-->
+        <div id="eventsList-container">
+            <div class="eventsList-title">RECENT EVENTS</div>
+            <div class="eventsList">
+                <!-- EVENTS SHOW AND CREATED FOR VOLCANOS IN GEONET VOLCANO API SCRYPT-->
+                <!--<div class="dummyEvent">
+                    <img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png">
+                    <h4 id="eventType"></h4>
+                    <h6 id="eventLocation"></h6>
+                    <h6 id="eventRating"></h6>
+                    <h6 id="eventTime"></h6>
+                    <div id="gradientL"></div>
+                </div>-->
+            </div>
         </div>
-        
+
         <div class="infoContainer">
             <div class="infoWindow">
                 <div id="infoHeader">
@@ -126,9 +142,13 @@
                 </div>
                 
                 <div id="infoWho">
-                    <h1 class="blame">ARAPAOA!!!</h1>
-                    <h1 class="blame">STEFAN!!!</h1>
-                    <h1 class="blame">PHOEBE!!!</h1>
+                    <img id="whoIcon" src="./media/img/logo_col.png">
+                    <h2 id="whoTitle">Disaster Zone</h2>
+                    <h3 id="copyright">&copy; 2016, Arapaoa Moffat. All rights reserved.</h3>
+                    <h4 id="uni">Produced for Project 3, MDDN 352, Victoria University of Wellington - School of Design</h4>
+                    <h4 class="blame">Project Lead & Backend Code Lead: <b>Arapaoa Moffat</b></h4>
+                    <h4 class="blame">UI/UX Design, Branding & Style Code: <b>Stefan Schultz</b></h4>
+                    <h4 class="blame">Backend Databasing & Data Management: <b>Phoebe Zeller</b></h4>
                 </div>
             </div>
         </div>
