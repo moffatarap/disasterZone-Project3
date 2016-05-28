@@ -30,7 +30,7 @@ var earthQLatArray = [
 var earthQLngArray = [
 ];
 
-//Earthquake ID || Geonets name for the event
+//Earthquake ID || Geonets name for the eventgit
 var earthQIDNameArray = [
 ];
 
@@ -127,7 +127,7 @@ function earthJSON() {
         });
 
         /* DEBUGGING 
-        console.log('#1 Intensity');
+        console.log('#1 Intensity');*/
         console.log(earthQIntesityArray); //display value of title array
         console.log('#2 Magitude');
         console.log(earthQMagnitudeArray); //display value of level array
@@ -164,14 +164,17 @@ function markerAnimaton() {
     earthquakeMarkerArray[i].setAnimation(google.maps.Animation.DROP);
 }
 /* 3.2# MARKER ANIMATION [END]*/
+var earthQLatLng = { lat: parseFloat(earthQLatArray[0]), lng: parseFloat(earthQLngArray[0]) };
 
-/* 3.3# UI DISPLAY */
+/* 3.3# GEOCODER REVERSE */
+//currently disabled and removed
 
-/* 3.3# CAP FIRST LETTER [END]*/
+/* 3.3# GEOCODER REVERSE [END]*/
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
 function earthQuakeMarkerCreateLoop() {
-    
+    //geocodeLatLng();
+    //writeEarthQAddress();
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
         //Math.round
@@ -228,6 +231,8 @@ function earthQuakeMarkerCreateLoop() {
             //SET LAST CHECKED EVENT
             document.getElementById(earthQEventTimeArray[0]).textContent = earthQDateFormat.toUTCString();
             /* 1# DISPLAY IN UI [END] */
+
+            console.log(i);
         }
 
         //EARTHQUAKE SEVERITY LIGHT

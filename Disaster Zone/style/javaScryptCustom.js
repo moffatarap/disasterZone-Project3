@@ -34,7 +34,7 @@ $(document).ready(function () {
     });   
 
             $(function () {
-            var slideout = $('.eventsList');
+            var slideout = $('#eventsList-container');
             $("#nav-discloseSidebar").toggle(function () {
                 slideout.animate({
                     right: '0px'
