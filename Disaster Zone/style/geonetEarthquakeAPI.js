@@ -2,7 +2,7 @@
 /*=/ VARABLES \=*/
 var geonetEarthQuake = "https://json.ey.nz/www.geonet.org.nz/quakes/services/felt.json"; //saves goenet url as var
 var geonetEarthQuakeLocal = "./json/geoNetEarthquakeVal.json"
-var earthQEventLength = 4; //sets earthquake array max events
+var earthQEventLength = 6; //sets earthquake array max events
 var earthQRadiusMulti = 4; //sets earthquake alert radius to be multiplyed by
 var earthQRadiusDivide = 2; //sets earthquake alert radius division
 var earthUIVar = "Earthquake"; //sets volcano title for UI
@@ -30,7 +30,7 @@ var earthQLatArray = [
 var earthQLngArray = [
 ];
 
-//Earthquake ID || Geonets name for the event
+//Earthquake ID || Geonets name for the eventgit
 var earthQIDNameArray = [
 ];
 
@@ -127,7 +127,7 @@ function earthJSON() {
         });
 
         /* DEBUGGING 
-        console.log('#1 Intensity');
+        console.log('#1 Intensity');*/
         console.log(earthQIntesityArray); //display value of title array
         console.log('#2 Magitude');
         console.log(earthQMagnitudeArray); //display value of level array
@@ -231,6 +231,8 @@ function earthQuakeMarkerCreateLoop() {
             //SET LAST CHECKED EVENT
             document.getElementById(earthQEventTimeArray[0]).textContent = earthQDateFormat.toUTCString();
             /* 1# DISPLAY IN UI [END] */
+
+            console.log(i);
         }
 
         //EARTHQUAKE SEVERITY LIGHT
