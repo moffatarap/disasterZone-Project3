@@ -91,6 +91,7 @@ function phJSON() {
 /* 2#  PLACEHOLDER FUNCTION [END]*/
 /* 3.2# MARKER ANIMATION*/
 
+
 /* 3.2# MARKER ANIMATION [END]*/
 /* 3# === PLACEHOLDER MARKER LOOP FUNCTION === */
 function phMarkerCreateLoop() {
@@ -104,8 +105,39 @@ function phMarkerCreateLoop() {
     });
 
     phMarkerArray[0].setAnimation(google.maps.Animation.DROP);
-
     
+        // circle alert create
+    phEventsAlertCircleMarkerArray[0] = new google.maps.Circle({
+        map: mapObject,
+        radius: alertCirlceRadiusArray[3], // sets alert radius from array 
+        fillColor: alertCircleColorArray[3], //sets color of fill from array
+        strokeColor: alertCircleColorArray[3], //sets stroke color from array
+        strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+    });
+
+    phEventsAlertCircleMarkerArray[0].bindTo('center', phMarkerArray[0], 'position'); //binds circle to location of marker
+    }
+
+    if (phIntensityArray[1] === "moderate") {
+        phMarkerArray[1] = new google.maps.Marker({
+            map: mapObject,
+            title: phPublicIdArray[1],
+            position: { lat: phLatArray[1], lng: phLngArray[1] }, //PAEKAKARIKI
+            icon: iconArray[7],
+        });
+
+        phMarkerArray[1].setAnimation(google.maps.Animation.DROP);
+
+        // circle alert create
+        phEventsAlertCircleMarkerArray[1] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[2], // sets alert radius from array 
+            fillColor: alertCircleColorArray[2], //sets color of fill from array
+            strokeColor: alertCircleColorArray[2], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        phEventsAlertCircleMarkerArray[1].bindTo('center', phMarkerArray[1], 'position'); //binds circle to location of marker
     }
         //for (i = 0; i < phEventLength; i++) {
 

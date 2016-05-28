@@ -10,11 +10,11 @@
        },
        {
            "publicid": "Flood",
-		   "location": "Blenheim",
+		   "location": "Arthur's Pass",
            "origintime": "2016-05-14 22:18:05.322000",
            "depth": 9.6875,
            "intensity": "moderate",
-		   "coordinates": [173.9612, -41.5134]
+		   "coordinates": [171.5653, -42.9458]
        },
 	   {
            "publicid": "Hurricane",

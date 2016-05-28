@@ -247,6 +247,10 @@ var volcanoAlertCircleMarkerArray = [
 var earthQAlertCircleMarkerArray = [
 
 ];
+//for placeeholder
+var phEventsAlertCircleMarkerArray = [
+
+];
 
 /* 5# ===== ALERT CIRCLE ARRAY [END] =====*/
 //sets radius for each disaster type meters to km 1km = 1000 meters
@@ -501,7 +505,7 @@ window.onload = function () {
     if (mapLoad === 1) {
         /* = 1# GOOGLE MAP CREATE = */
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
-        volJSON(); //Loads JSON Data volcanos geonet
+        //volJSON(); //Loads JSON Data volcanos geonet
         //earthJSON(); //Loads JSON data earthquakes goenet
         phJSON();
         
@@ -674,10 +678,9 @@ setInterval(function () {
         
         //console.log('ALERT: None'); debug
         if (geoRefresh === 1) {
-            earthJSON();
-            
-
+            //earthJSON();
         }
+
         geoRefresh += 1;
         /* IF NO DISASTERS ALERTS SET ALL TO NONE */
 
