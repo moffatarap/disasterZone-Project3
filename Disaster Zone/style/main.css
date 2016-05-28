@@ -219,10 +219,7 @@ body {
     top: 0;
     bottom: 0;
     
-<<<<<<< HEAD
-=======
     z-index: 3;
->>>>>>> refs/remotes/origin/gh-pages
     
     background-color: rgb(230,230,230);
 }
@@ -251,12 +248,8 @@ body {
 #errorBody {
     margin-top: -20px;
     text-align: center;
-<<<<<<< HEAD
-    
-=======
     width: 60%;
     margin-left: calc(50% - 30%);
->>>>>>> refs/remotes/origin/gh-pages
 }
 
 #eventsList-container {
