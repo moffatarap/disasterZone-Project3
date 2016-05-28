@@ -530,6 +530,9 @@ function writeAddressName(latLng) {
         if (status === google.maps.GeocoderStatus.OK) {
             // console.log('geoLocationOK'); debug
             //formatted address from latLng
+            //hides error message if postion found
+            $("#errorCantFind").css({ "visibility": "hidden" });
+            console.log('1 Geocoder Status OK')
             document.getElementById("mapAddress").innerHTML = results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
 
@@ -537,6 +540,9 @@ function writeAddressName(latLng) {
 
         else
             //if address cant be found show error code
+            //shows error message if postion found
+            $("#errorCantFind").css({ "visibility": "visible" });
+            console.log('2 Geocoder Status Fail')
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
 
@@ -580,9 +586,9 @@ function geoLocateUser() {
 
     }
     else {
-        console.log('doesNotSupport'); debug
-        //hides error message if postion found
+        //shows error message if postion found
         $("#errorCantFind").css({ "visibility": "visible" });
+        console.log('doesNotSupport'); //debug
         document.getElementById("errorCantFind").innerHTML = "<p>Your browser doesn't support location</p>";
     }
 
@@ -591,9 +597,7 @@ function geoLocateUser() {
 
 /* 3# === SUCCESS LOCATION OF USER === */
 function geolocationSuccess(position) {
-    //hides error message if postion found
-    $("#errorCantFind").css({ "visibility": "hidden" });
-    userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+   userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     // Write the formatted address
     writeAddressName(userLatLng);
     center: userLatLng; //centers map position to that of user latLng
@@ -604,7 +608,6 @@ function geolocationSuccess(position) {
 
 /* 4# ====  GEO LOCATION ERROR ==== */
 function geolocationError(positionError) {
-    $("#errorCantFind").css({ "visibility": "hidden" });
     document.getElementById("errorCantFind").innerHTML = "Error: " + positionError.message + "<br />";
 }
 /* 4# ====  GEO LOCATION ERROR [END]==== */
