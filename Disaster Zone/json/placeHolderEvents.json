@@ -2,27 +2,35 @@
    "properties": [
        {
            "publicid": "Fire",
+		   "location": "55 Cable St, Wellington 6011",
            "origintime": "2016-05-14 22:18:05.322000",
            "depth": 9.6875,
-           "intensity": "weak"
+           "intensity": "weak",
+		   "coordinates": [174.7817, -41.2905]
        },
        {
            "publicid": "Flood",
+		   "location": "Blenheim",
            "origintime": "2016-05-14 22:18:05.322000",
            "depth": 9.6875,
-           "intensity": "weak"
+           "intensity": "moderate",
+		   "coordinates": [173.9612, -41.5134]
        },
 	   {
            "publicid": "Hurricane",
+		   "location": "Tasman Sea 250km from NZ",
            "origintime": "2016-05-14 22:18:05.322000",
            "depth": 9.6875,
-           "intensity": "weak"
+           "intensity": "strong",           
+		   "coordinates": [167.8144, -38.4178]
        },
 	    {
            "publicid": "Tornado",
+		   "location": "Auckland",
            "origintime": "2016-05-14 22:18:05.322000",
            "depth": 9.6875,
-           "intensity": "weak"
+           "intensity": "light",
+		   "coordinates": [174.7633, -36.8485]
         }
 	   
 	   

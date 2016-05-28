@@ -285,7 +285,7 @@ var mapOptions = {
     draggable: true, //disable drag
     zoomControl: true, //disable or enable zoom
     zoomControlOptions: {
-        position: google.maps.ControlPosition.RIGHT_TOP
+        position: google.maps.ControlPosition.LEFT_BOTTOM
     },
     disableDoubleClickZoom: true, //disables zoom
     scrollwheel: false, //disables scroll wheel
@@ -503,7 +503,9 @@ window.onload = function () {
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
         volJSON(); //Loads JSON Data volcanos geonet
         earthJSON(); //Loads JSON data earthquakes goenet
-
+        phJSON();
+        
+       
     }
 
 
