@@ -48,11 +48,13 @@ var earthQTextContentArray = [
 
 
 //TEXT ARRAY
-var phTextInnerHtmlArray = [
-    '<img id="eventIcon" src="./media/img/mapKeys/event/light/fireL.png"> <h4 id="phEventType0"></h4><h6 id="phEventLocation0"></h6><h6 id="phEventRating0"></h6><h6 id="phEventTime0"></h6><div id="gradientL"></div>', //[0]
-    '<img id="eventIcon" src="./media/img/mapKeys/event/moderate/floodM.png"> <h4 id="phEventType1"></h4><h6 id="phEventLocation1"></h6><h6 id="phEventRating1"></h6><h6 id="phEventTime1"></h6><div id="gradientL"></div>', //[1]
-    '<img id="eventIcon" src="./media/img/mapKeys/event/strong/hurricaneST.png"> <h4 id="phEventType2"></h4><h6 id="phEventLocation2"></h6><h6 id="phEventRating2"></h6><h6 id="phEventTime2"></h6><div id="gradientL"></div>', //[2]
-    '<img id="eventIcon" src="./media/img/mapKeys/event/weak/tornadoW.png"> <h4 id="phEventType3"></h4><h6 id="phEventLocation3"></h6><h6 id="phEventRating3"></h6><h6 id="phEventTime3"></h6><div id="gradientL"></div>', //[3]
+var earthQTextInnerHtmlArray = [
+    '<img id="eventIcon" src="./media/img/mapKeys/event/weak/earthquakeW.png"> <h4 id="earthQEventType0"></h4><h6 id="earthQEventLocation0"></h6><h6 id="earthQEventRating0"></h6><h6 id="earthQEventTime0"></h6><div id="gradientL"></div>', //[0]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/light/earthquakeL.png"> <h4 id="earthQEventType1"></h4><h6 id="earthQEventLocation1"></h6><h6 id="earthQEventRating1"></h6><h6 id="earthQEventTime1"></h6><div id="gradientL"></div>', //[1]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/moderate/earthquakeM.png"> <h4 id="earthQEventType2"></h4><h6 id="earthQEventLocation2"></h6><h6 id="earthQEventRating2"></h6><h6 id="earthQEventTime2"></h6><div id="gradientL"></div>', //[2]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/strong/earthquakeST.png"> <h4 id="earthQEventType3"></h4><h6 id="earthQEventLocation3"></h6><h6 id="earthQEventRating3"></h6><h6 id="earthQEventTime3"></h6><div id="gradientL"></div>', //[3]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/severe/earthquakeS.png"> <h4 id="earthQEventType4"></h4><h6 id="earthQEventLocation4"></h6><h6 id="earthQEventRating4"></h6><h6 id="earthQEventTime4"></h6><div id="gradientL"></div>', //[4]
+
 ];
 
 /* TEMP FUNCTION FOR TESTING 
