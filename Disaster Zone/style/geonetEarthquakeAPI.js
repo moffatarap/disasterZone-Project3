@@ -164,14 +164,17 @@ function markerAnimaton() {
     earthquakeMarkerArray[i].setAnimation(google.maps.Animation.DROP);
 }
 /* 3.2# MARKER ANIMATION [END]*/
+var earthQLatLng = { lat: parseFloat(earthQLatArray[0]), lng: parseFloat(earthQLngArray[0]) };
 
-/* 3.3# UI DISPLAY */
+/* 3.3# GEOCODER REVERSE */
+//currently disabled and removed
 
-/* 3.3# CAP FIRST LETTER [END]*/
+/* 3.3# GEOCODER REVERSE [END]*/
 
 /* 4# ==== EARTHQUAKE MARKER LOOP ==== */
 function earthQuakeMarkerCreateLoop() {
-    
+    //geocodeLatLng();
+    //writeEarthQAddress();
     for (i = 0; i < earthQEventLength; i++) {
         //loop until i = earthQEventLength Var
         //Math.round
