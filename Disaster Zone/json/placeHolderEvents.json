@@ -2,7 +2,7 @@
    "properties": [
        {
            "publicid": "Fire",
-		   "location": "55 Cable St, Wellington 6011",
+		   "location": "55 Cable St, Wellington",
            "origintime": "2016-05-14 22:18:05.322000",
            "depth": 9.6875,
            "intensity": "light",
@@ -29,8 +29,8 @@
 		   "location": "Auckland",
            "origintime": "2016-05-14 22:18:05.322000",
            "depth": 9.6875,
-           "intensity": "light",
-		   "coordinates": [174.7633, -36.8485]
+           "intensity": "weak",
+		   "coordinates": [175.12031, -36.5501]
         }
 	   
 	   

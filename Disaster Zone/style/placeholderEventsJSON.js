@@ -4,7 +4,8 @@ var phEvents = "./json/placeHolderEvents.json"; //var local file of json
 var phEventLength = 4; //var sets length of events json
 var phAlertLevelText = "Alert "; //alert var
 var phContent = document.createElement('div'); //creates vairable that is a div
-
+var phHurrincaneAlertMulti = 10; //sets var for alert radius of hurricane
+var phTornadoAlertMulti = 40; //sets var alert radius tornado
 /*== ARRAYS ==*/
 //Name of event
 var phPublicIdArray = [
@@ -99,7 +100,7 @@ function phMarkerCreateLoop() {
     if (phIntensityArray[0] === "light") {
     phMarkerArray[0] = new google.maps.Marker({
         map: mapObject,
-        title: phPublicIdArray[0],
+        title: "Light " + phPublicIdArray[0] + " " + phLocationName[0],
         position: { lat: phLatArray[0], lng: phLngArray[0] }, //PAEKAKARIKI
         icon: iconArray[23],
     });
@@ -121,7 +122,7 @@ function phMarkerCreateLoop() {
     if (phIntensityArray[1] === "moderate") {
         phMarkerArray[1] = new google.maps.Marker({
             map: mapObject,
-            title: phPublicIdArray[1],
+            title: "Moderate " + phPublicIdArray[1] + " " + phLocationName[1],
             position: { lat: phLatArray[1], lng: phLngArray[1] }, //PAEKAKARIKI
             icon: iconArray[7],
         });
@@ -138,6 +139,50 @@ function phMarkerCreateLoop() {
         });
 
         phEventsAlertCircleMarkerArray[1].bindTo('center', phMarkerArray[1], 'position'); //binds circle to location of marker
+    }
+
+    if (phIntensityArray[2] === "strong") {
+        phMarkerArray[2] = new google.maps.Marker({
+            map: mapObject,
+            title: "Strong " + phPublicIdArray[2] + " " + phLocationName[2],
+            position: { lat: phLatArray[2], lng: phLngArray[2] },
+            icon: iconArray[11],
+        });
+
+        phMarkerArray[2].setAnimation(google.maps.Animation.DROP);
+
+        // circle alert create
+        phEventsAlertCircleMarkerArray[2] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[1] * phHurrincaneAlertMulti, // sets alert radius from array 
+            fillColor: alertCircleColorArray[1], //sets color of fill from array
+            strokeColor: alertCircleColorArray[1], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        phEventsAlertCircleMarkerArray[2].bindTo('center', phMarkerArray[2], 'position'); //binds circle to location of marker
+    }
+
+    if (phIntensityArray[3] === "weak") {
+        phMarkerArray[3] = new google.maps.Marker({
+            map: mapObject,
+            title: "Weak " + phPublicIdArray[3] + " " + phLocationName[3],
+            position: { lat: phLatArray[3], lng: phLngArray[3] },
+            icon: iconArray[19],
+        });
+
+        phMarkerArray[3].setAnimation(google.maps.Animation.DROP);
+
+        // circle alert create
+        phEventsAlertCircleMarkerArray[3] = new google.maps.Circle({
+            map: mapObject,
+            radius: alertCirlceRadiusArray[4] * phTornadoAlertMulti, // sets alert radius from array 
+            fillColor: alertCircleColorArray[4], //sets color of fill from array
+            strokeColor: alertCircleColorArray[4], //sets stroke color from array
+            strokeWeight: alertCircleStrokeWeight, //sets stroke weight from var
+        });
+
+        phEventsAlertCircleMarkerArray[3].bindTo('center', phMarkerArray[3], 'position'); //binds circle to location of marker
     }
         //for (i = 0; i < phEventLength; i++) {
 
