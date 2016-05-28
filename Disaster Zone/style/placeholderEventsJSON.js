@@ -120,7 +120,7 @@ function phJSON() {
 
         });
 
-        /* DEBUGGING */
+        /* DEBUGGING 
         console.log("#1");
         console.log(phPublicIdArray);
         console.log("#2");
@@ -134,7 +134,7 @@ function phJSON() {
         console.log("#6");
         console.log(phLngArray);
         console.log("#7");
-        console.log(phLocationName);
+        console.log(phLocationName);*/
 
         phMarkerCreateLoop(); //calls placeholder marker loop
     });

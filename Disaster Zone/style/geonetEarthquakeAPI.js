@@ -2,7 +2,7 @@
 /*=/ VARABLES \=*/
 var geonetEarthQuake = "https://json.ey.nz/www.geonet.org.nz/quakes/services/felt.json"; //saves goenet url as var
 var geonetEarthQuakeLocal = "./json/geoNetEarthquakeVal.json"
-var earthQEventLength = 6; //sets earthquake array max events
+var earthQEventLength = 4; //sets earthquake array max events
 var earthQRadiusMulti = 4; //sets earthquake alert radius to be multiplyed by
 var earthQRadiusDivide = 2; //sets earthquake alert radius division
 var earthUIVar = "Earthquake"; //sets volcano title for UI

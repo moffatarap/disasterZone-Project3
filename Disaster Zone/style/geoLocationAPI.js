@@ -495,9 +495,14 @@ function sortDescending(a, b) {
 
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
 window.onload = function () {
+    
     console.log('windowOnLoad'); //debug
+    
+    $("#errorCantFind").css({ "visibility": "visible" });
     geoLocateUser();
     //sortDescending();
+    /* DISPLAYS ERROR CANT FIND */
+    
     
     
 
@@ -527,6 +532,10 @@ function writeAddressName(latLng) {
         if (status === google.maps.GeocoderStatus.OK) {
             // console.log('geoLocationOK'); debug
             //formatted address from latLng
+            //hides error message if postion found
+            $("#errorCantFind").css({ "visibility": "hidden" });
+            console.log('1 Geocoder Status OK')
+            
             document.getElementById("mapAddress").innerHTML = results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
 
@@ -534,6 +543,9 @@ function writeAddressName(latLng) {
 
         else
             //if address cant be found show error code
+            //shows error message if postion found
+            $("#errorCantFind").css({ "visibility": "visible" });
+            console.log('2 Geocoder Status Fail')
             document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
 
@@ -544,7 +556,7 @@ function writeAddressName(latLng) {
         mapUserMarker = new google.maps.Marker({
             map: mapObject,
             position: userLatLng,
-            //icon: disasterIconStandardArray[6], //SIZE IS ISSUE
+            icon: disasterIconStandardArray[6], //SIZE IS ISSUE
         })
 
     }
@@ -567,6 +579,7 @@ function geoLocateUser() {
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         //console.log('geoLocateUser'); debug
+        
         var positionOptions = {
             enableHighAccuracy: true, //accuracy 
             timeout: 10 * 2000 // 10 seconds
@@ -576,7 +589,9 @@ function geoLocateUser() {
 
     }
     else {
-        //console.log('doesNotSupport'); debug
+        //shows error message if postion found
+        $("#errorCantFind").css({ "visibility": "visible" });
+        console.log('doesNotSupport'); //debug
         document.getElementById("errorCantFind").innerHTML = "<p>Your browser doesn't support location</p>";
     }
 
@@ -585,8 +600,7 @@ function geoLocateUser() {
 
 /* 3# === SUCCESS LOCATION OF USER === */
 function geolocationSuccess(position) {
-    userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    //console.log('mapPositionSucess'); debug
+   userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     // Write the formatted address
     writeAddressName(userLatLng);
     center: userLatLng; //centers map position to that of user latLng
