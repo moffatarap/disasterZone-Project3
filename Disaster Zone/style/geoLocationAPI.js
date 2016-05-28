@@ -495,9 +495,7 @@ function sortDescending(a, b) {
 
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
 window.onload = function () {
-    
     console.log('windowOnLoad'); //debug
-    
     $("#errorCantFind").css({ "visibility": "visible" });
     geoLocateUser();
     //sortDescending();
@@ -535,7 +533,6 @@ function writeAddressName(latLng) {
             //hides error message if postion found
             $("#errorCantFind").css({ "visibility": "hidden" });
             console.log('1 Geocoder Status OK')
-            
             document.getElementById("mapAddress").innerHTML = results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
 
@@ -556,7 +553,7 @@ function writeAddressName(latLng) {
         mapUserMarker = new google.maps.Marker({
             map: mapObject,
             position: userLatLng,
-            icon: disasterIconStandardArray[6], //SIZE IS ISSUE
+            //icon: disasterIconStandardArray[6], //SIZE IS ISSUE
         })
 
     }
