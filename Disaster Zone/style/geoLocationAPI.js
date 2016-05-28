@@ -502,7 +502,7 @@ window.onload = function () {
         /* = 1# GOOGLE MAP CREATE = */
         mapObject = new google.maps.Map(document.getElementById("googleAPI"), mapOptions);
         volJSON(); //Loads JSON Data volcanos geonet
-        earthJSON(); //Loads JSON data earthquakes goenet
+        //earthJSON(); //Loads JSON data earthquakes goenet
         phJSON();
         
        
@@ -602,8 +602,7 @@ function reDraw() {
     /*DISPLAY WARNING IF USER IS NEAR DISASTER */
 
     /* DEBUG SECTION */
-
-    //console.log('reDraw');writes to debug redraw
+   //console.log('reDraw');writes to debug redraw
     //console.log(geoRefresh); checks value of geoRefresh
 
     /* DEBUG SECTION END */
@@ -672,9 +671,14 @@ setInterval(function () {
     }
         //if geoRefresh var = > 10 then add 1 to geoRefresh 
     else {
-        geoRefresh += 1;
+        
         //console.log('ALERT: None'); debug
+        if (geoRefresh === 1) {
+            earthJSON();
+            
 
+        }
+        geoRefresh += 1;
         /* IF NO DISASTERS ALERTS SET ALL TO NONE */
 
     }

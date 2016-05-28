@@ -89,16 +89,23 @@ function phJSON() {
 
 }
 /* 2#  PLACEHOLDER FUNCTION [END]*/
+/* 3.2# MARKER ANIMATION*/
 
+/* 3.2# MARKER ANIMATION [END]*/
 /* 3# === PLACEHOLDER MARKER LOOP FUNCTION === */
 function phMarkerCreateLoop() {
-    if (phIntensityArray[0] === "weak") {
+
+    if (phIntensityArray[0] === "light") {
     phMarkerArray[0] = new google.maps.Marker({
         map: mapObject,
-        title: 'ffffffsss',
+        title: phPublicIdArray[0],
         position: { lat: phLatArray[0], lng: phLngArray[0] }, //PAEKAKARIKI
-        icon: iconArray[0],
+        icon: iconArray[23],
     });
+
+    phMarkerArray[0].setAnimation(google.maps.Animation.DROP);
+
+    
     }
         //for (i = 0; i < phEventLength; i++) {
 
