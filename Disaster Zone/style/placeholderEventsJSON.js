@@ -47,13 +47,51 @@ var phTextContentArray = [
 ];
 
 var phTextInnerHtmlArray = [
-    '<img id="eventIcon" src="./media/img/mapKeys/event/weak/earthquakeW.png"> <h4 id="phEventType0"></h4><h6 id="phEventLocation0"></h6><h6 id="phEventRating0"></h6><h6 id="phEventTime0"></h6><div id="gradientL"></div>', //[0]
-    '<img id="eventIcon" src="./media/img/mapKeys/event/light/phuakeL.png"> <h4 id="phEventType1"></h4><h6 id="phEventLocation1"></h6><h6 id="phEventRating1"></h6><h6 id="phEventTime1"></h6><div id="gradientL"></div>', //[1]
-    '<img id="eventIcon" src="./media/img/mapKeys/event/moderate/phuakeM.png"> <h4 id="phEventType2"></h4><h6 id="phEventLocation2"></h6><h6 id="phEventRating2"></h6><h6 id="phEventTime2"></h6><div id="gradientL"></div>', //[2]
-    '<img id="eventIcon" src="./media/img/mapKeys/event/strong/phuakeST.png"> <h4 id="phEventType3"></h4><h6 id="phEventLocation3"></h6><h6 id="phEventRating3"></h6><h6 id="phEventTime3"></h6><div id="gradientL"></div>', //[3]
-    '<img id="eventIcon" src="./media/img/mapKeys/event/severe/phuakeS.png"> <h4 id="phEventType4"></h4><h6 id="phEventLocation4"></h6><h6 id="phEventRating4"></h6><h6 id="phEventTime4"></h6><div id="gradientL"></div>', //[4]
-
+    '<img id="eventIcon" src="./media/img/mapKeys/event/light/fireL.png"> <h4 id="phEventType0"></h4><h6 id="phEventLocation0"></h6><h6 id="phEventRating0"></h6><h6 id="phEventTime0"></h6><div id="gradientL"></div>', //[0]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/moderate/floodM.png"> <h4 id="phEventType1"></h4><h6 id="phEventLocation1"></h6><h6 id="phEventRating1"></h6><h6 id="phEventTime1"></h6><div id="gradientL"></div>', //[1]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/strong/hurricaneST.png"> <h4 id="phEventType2"></h4><h6 id="phEventLocation2"></h6><h6 id="phEventRating2"></h6><h6 id="phEventTime2"></h6><div id="gradientL"></div>', //[2]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/weak/tornadoW.png"> <h4 id="phEventType3"></h4><h6 id="phEventLocation3"></h6><h6 id="phEventRating3"></h6><h6 id="phEventTime3"></h6><div id="gradientL"></div>', //[3]
 ];
+
+/* 1.1# ==- CSS VARABLE ARRAYS -== */
+
+//EVENT TYPE
+var phEventTypeArray = [
+    "phEventType0", //[0]
+    "phEventType1", //[1]
+    "phEventType2", //[2]
+    "phEventType3", //[3]
+    "phEventType4", //[4]
+];
+
+//EVENT LOCATION
+var phEventLocationArray = [
+    "phEventLocation0", //[0]
+    "phEventLocation1", //[1]
+    "phEventLocation2", //[2]
+    "phEventLocation3", //[3]
+    "phEventLocation4", //[4]
+];
+
+//EVENT RATING
+var phEventRatingArray = [
+    "phEventRating0", //[0]
+    "phEventRating1", //[1]
+    "phEventRating2", //[2]
+    "phEventRating3", //[3]
+    "phEventRating4", //[4]
+];
+
+//EVENT TIME
+var phEventTimeArray = [
+    "phEventTime0", //[0]
+    "phEventTime1", //[1]
+    "phEventTime2", //[2]
+    "phEventTime3", //[3]
+    "phEventTime4", //[4]
+];
+
+/* 2.1# ==- CSS VARABLE ARRAYS [END]-== */
 /* 1# TEMP FUNCTION 
 window.onload = function () {
     phJSON();
@@ -137,18 +175,18 @@ function phMarkerCreateLoop() {
     $(phTextContentArray[0]).addClass("dummyEvent");
     phTextContentArray[0].innerHTML = phTextInnerHtmlArray[0];
 
-    $(".eventsList").prepend(earthQTextContentArray[i]);
+    $(".eventsList").prepend(phTextContentArray[0]);
         //earthQIDNameArray[i];
 
         // 1.0# SET CONTENT
         //SET EVENT TITLE
-    document.getElementById(earthQEventTypeArray[0]).textContent = earthUIVar;
+    document.getElementById(phEventTypeArray[0]).textContent = phPublicIdArray[0];
         //SET EVENT LOCATION
-    document.getElementById(earthQEventLocationArray[0]).textContent = earthQIDNameArray[i];
+    document.getElementById(phEventLocationArray[0]).textContent = phLocationName[0];
         //SET EVENT HAZARDS
-    document.getElementById(earthQEventRatingArray[0]).textContent = earthAlertLevelText + earthQIntesityArray[i] + earthQMag + earthQMagnitudeRound;
+    document.getElementById(phEventRatingArray[0]).textContent = earthAlertLevelText + phIntensityArray[0];
         //SET LAST CHECKED EVENT
-    document.getElementById(earthQEventTimeArray[0]).textContent = earthQDateFormat.toUTCString();
+    document.getElementById(phEventTimeArray[0]).textContent = date.toUTCString();
         /* 1# DISPLAY IN UI [END] */
     }
 
@@ -172,6 +210,26 @@ function phMarkerCreateLoop() {
         });
 
         phEventsAlertCircleMarkerArray[1].bindTo('center', phMarkerArray[1], 'position'); //binds circle to location of marker
+
+        /* 2# DISPLAY IN UI */
+        //idFunction();
+        phTextContentArray[1] = document.createElement('div');
+        $(phTextContentArray[1]).addClass("dummyEvent");
+        phTextContentArray[1].innerHTML = phTextInnerHtmlArray[1];
+
+        $(".eventsList").prepend(phTextContentArray[1]);
+        //earthQIDNameArray[i];
+
+        // 2.0# SET CONTENT
+        //SET EVENT TITLE
+        document.getElementById(phEventTypeArray[1]).textContent = phPublicIdArray[1];
+        //SET EVENT LOCATION
+        document.getElementById(phEventLocationArray[1]).textContent = phLocationName[1];
+        //SET EVENT HAZARDS
+        document.getElementById(phEventRatingArray[1]).textContent = earthAlertLevelText + phIntensityArray[1];
+        //SET LAST CHECKED EVENT
+        document.getElementById(phEventTimeArray[1]).textContent = date.toUTCString();
+        /* 2# DISPLAY IN UI [END] */
     }
 
     if (phIntensityArray[2] === "strong") {
