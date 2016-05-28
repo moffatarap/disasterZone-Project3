@@ -5,9 +5,9 @@
 
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
-firebaseDB = new Firebase("<https://disasterzone.firebaseio.com/>");
+firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
 var EarthquakeDB; //makes a path for earthquake testing
-EarthquakeDB = new Firebase("<https://disasterzone.firebaseio.com/>");
+EarthquakeDB = new Firebase("<https://pbwoooo.firebaseio.com/TestingEQ/>");
 var earthquakeID; // for loop for setting up DB
 
 var currentLat;
