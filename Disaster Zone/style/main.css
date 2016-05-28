@@ -497,6 +497,97 @@ body {
 #earthQEventTime4 {
     margin-top: 68px;
 }
+
+/* PLACEHOLDER EVENTS */
+/* 1 */
+#phEventType0 {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 60px;
+    color: white;
+    font-weight: 300;
+    font-size: 16pt;
+}
+
+#phEventLocation0 {
+    margin-top: 35px;
+}
+
+#phEventRating0 {
+    margin-top: 50px;
+}
+
+#phQEventTime0 {
+    margin-top: 68px;
+}
+
+/* 2 */
+#phEventType1 {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 60px;
+    color: white;
+    font-weight: 300;
+    font-size: 16pt;
+}
+
+#phEventLocation1 {
+    margin-top: 35px;
+}
+
+#phEventRating1 {
+    margin-top: 50px;
+}
+
+#phQEventTime1 {
+    margin-top: 68px;
+}
+
+/* 3 */
+#phEventType2 {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 60px;
+    color: white;
+    font-weight: 300;
+    font-size: 16pt;
+}
+
+#phEventLocation2 {
+    margin-top: 35px;
+}
+
+#phEventRating2 {
+    margin-top: 50px;
+}
+
+#phQEventTime2 {
+    margin-top: 68px;
+}
+
+/* 4 */
+#phEventType3 {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 60px;
+    color: white;
+    font-weight: 300;
+    font-size: 16pt;
+}
+
+#phEventLocation3 {
+    margin-top: 35px;
+}
+
+#phEventRating3 {
+    margin-top: 50px;
+}
+
+#phQEventTime3 {
+    margin-top: 68px;
+}
+
+
 /* ALERT LEVELS END */
 .dummyEvent {
     height: 100px;

@@ -41,6 +41,19 @@ var phLocationName = [
 var phMarkerArray = [
 
 ];
+
+//Text content array
+var phTextContentArray = [
+];
+
+var phTextInnerHtmlArray = [
+    '<img id="eventIcon" src="./media/img/mapKeys/event/weak/earthquakeW.png"> <h4 id="phEventType0"></h4><h6 id="phEventLocation0"></h6><h6 id="phEventRating0"></h6><h6 id="phEventTime0"></h6><div id="gradientL"></div>', //[0]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/light/phuakeL.png"> <h4 id="phEventType1"></h4><h6 id="phEventLocation1"></h6><h6 id="phEventRating1"></h6><h6 id="phEventTime1"></h6><div id="gradientL"></div>', //[1]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/moderate/phuakeM.png"> <h4 id="phEventType2"></h4><h6 id="phEventLocation2"></h6><h6 id="phEventRating2"></h6><h6 id="phEventTime2"></h6><div id="gradientL"></div>', //[2]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/strong/phuakeST.png"> <h4 id="phEventType3"></h4><h6 id="phEventLocation3"></h6><h6 id="phEventRating3"></h6><h6 id="phEventTime3"></h6><div id="gradientL"></div>', //[3]
+    '<img id="eventIcon" src="./media/img/mapKeys/event/severe/phuakeS.png"> <h4 id="phEventType4"></h4><h6 id="phEventLocation4"></h6><h6 id="phEventRating4"></h6><h6 id="phEventTime4"></h6><div id="gradientL"></div>', //[4]
+
+];
 /* 1# TEMP FUNCTION 
 window.onload = function () {
     phJSON();
@@ -117,6 +130,26 @@ function phMarkerCreateLoop() {
     });
 
     phEventsAlertCircleMarkerArray[0].bindTo('center', phMarkerArray[0], 'position'); //binds circle to location of marker
+
+        /* 1# DISPLAY IN UI */
+        //idFunction();
+    phTextContentArray[0] = document.createElement('div');
+    $(phTextContentArray[0]).addClass("dummyEvent");
+    phTextContentArray[0].innerHTML = phTextInnerHtmlArray[0];
+
+    $(".eventsList").prepend(earthQTextContentArray[i]);
+        //earthQIDNameArray[i];
+
+        // 1.0# SET CONTENT
+        //SET EVENT TITLE
+    document.getElementById(earthQEventTypeArray[0]).textContent = earthUIVar;
+        //SET EVENT LOCATION
+    document.getElementById(earthQEventLocationArray[0]).textContent = earthQIDNameArray[i];
+        //SET EVENT HAZARDS
+    document.getElementById(earthQEventRatingArray[0]).textContent = earthAlertLevelText + earthQIntesityArray[i] + earthQMag + earthQMagnitudeRound;
+        //SET LAST CHECKED EVENT
+    document.getElementById(earthQEventTimeArray[0]).textContent = earthQDateFormat.toUTCString();
+        /* 1# DISPLAY IN UI [END] */
     }
 
     if (phIntensityArray[1] === "moderate") {
