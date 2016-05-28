@@ -80,8 +80,19 @@
         <div id="mapAddress">
         </div>
         
-        <!--<div id="errorCantFind">
-        </div>-->
+        <div id="inZone">
+            <img id="inZone-icon" src="./media/img/inZoneIcon.png">
+            <h3 id="inZone-title">You appear to be in a disaster zone.</h3>
+            <h5 id="inZone-sub">Get help and updates on this situation...</h5>
+        </div>
+        
+        <div id="errorCantFind">
+            <div id="errorInnards">
+                <img id="error-icon" src="./media/img/locationErrorIcon.png">
+                <h3 id="errorTitle">Disaster Zone Needs Your Location.</h3>
+                <p id="errorBody">To display realtime information on disasters around you and across New Zealand, Disaster Zone needs to access your geolocation.<br/>If your browser asks you to allow this, please click Allow.<br/>If this is not an option, ensure that your browser supports geolocation.<br/>Disaster Zone works best in the latest versions of Chrome, Firefox, and Safari.</p>
+            </div>
+        </div>
         
         <!-- Event detail card template -->
         <div id="detail-backgroundDim"></div>
@@ -96,20 +107,21 @@
         </div>
         
         <!-- Recent Events List -->
-        <div class="eventsList">
-
-            <h4 class="eventsList-title">RECENT EVENTS</h4>
-            <!-- EVENTS SHOW AND CREATED FOR VOLCANOS IN GEONET VOLCANO API SCRYPT-->
-            <!--<div class="dummyEvent">
-                <img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png">
-                <h4 id="eventType"></h4>
-                <h6 id="eventLocation"></h6>
-                <h6 id="eventRating"></h6>
-                <h6 id="eventTime"></h6>
-                <div id="gradientL"></div>
-            </div>-->
+        <div id="eventsList-container">
+            <div class="eventsList-title">RECENT EVENTS</div>
+            <div class="eventsList">
+                <!-- EVENTS SHOW AND CREATED FOR VOLCANOS IN GEONET VOLCANO API SCRYPT-->
+                <!--<div class="dummyEvent">
+                    <img id="eventIcon" src="./media/img/mapKeys/event/weak/volcanoW.png">
+                    <h4 id="eventType"></h4>
+                    <h6 id="eventLocation"></h6>
+                    <h6 id="eventRating"></h6>
+                    <h6 id="eventTime"></h6>
+                    <div id="gradientL"></div>
+                </div>-->
+            </div>
         </div>
-        
+
         <div class="infoContainer">
             <div class="infoWindow">
                 <div id="infoHeader">
