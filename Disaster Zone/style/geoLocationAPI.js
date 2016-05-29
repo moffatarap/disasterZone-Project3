@@ -653,10 +653,10 @@ setInterval(function () {
         latitude = Math.round(latitude * fourDPR) / fourDPR; //round lat to 4 decimal places
         longitude = Math.round(longitude * fourDPR) / fourDPR; //round lng to 4 decimal places
 
-        //DEBUG
+        /*DEBUG
         console.log(latitude);
         console.log(longitude);
-        //DEBUG END
+        DEBUG END */
 
         /*BREAK USER LATLNG INTO LAT AND LNG [END] */
 

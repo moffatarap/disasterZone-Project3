@@ -232,7 +232,7 @@ function earthQuakeMarkerCreateLoop() {
             document.getElementById(earthQEventTimeArray[0]).textContent = earthQDateFormat.toUTCString();
             /* 1# DISPLAY IN UI [END] */
 
-            console.log(i);
+            //console.log(i);
         }
 
         //EARTHQUAKE SEVERITY LIGHT
