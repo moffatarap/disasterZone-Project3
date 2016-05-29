@@ -483,8 +483,8 @@ function volcanoMarkerCreateLoop() {
                     icon: disasterIconStandardArray[5],
                 }); 
                 
-                //DEBUG Log Active Volcano
-                console.log(volcanoMarkerTitleArray[i]);
+                /*DEBUG Log Active Volcano
+                console.log(volcanoMarkerTitleArray[i]); */
             }
                         
         }

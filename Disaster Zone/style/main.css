@@ -178,11 +178,12 @@ body {
 #inZone {
     position: absolute;
     height: 50px;
-    margin-top: 50px;
+    margin-top:-50px;
     left: 0;
     right: 0;
     
     background-color: rgb(218,0,0);
+    transition: 0.3s;
 }
 
 #inZone-icon {
