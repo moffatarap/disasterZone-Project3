@@ -795,7 +795,8 @@ text-transform: capitalize;
     box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
     
     background-color: rgb(230,230,235);
-    border-radius: 5px;    
+    border-radius: 5px;   
+    overflow: scroll;
 }
 
 #infoHeader {
@@ -936,6 +937,133 @@ text-transform: capitalize;
 .blame > b {
     font-weight: 700;
     color: rgb(80,80,80);
+}
+
+/* WHAT SCREEN STYLING */
+#whatIcons-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 100px;
+    color: rgb(51, 87, 105);
+}
+
+#whatIcons-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#fireKey {
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 10px;
+    width: 80px;
+}
+
+#fireExp {
+    position: absolute;
+    margin-left: calc(10% + 80px);
+    margin-top: 25px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+b {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 14pt;
+    color: rgb(80,80,80);
+}
+
+#tornadoKey {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 10px;
+    width: 80px;
+}
+
+#tornadoExp {
+    position: absolute;
+    margin-left: calc(50% + 80px);
+    margin-top: 25px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#hurricaneKey {
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 100px;
+    width: 80px;
+}
+
+#hurricaneExp {
+    position: absolute;
+    margin-left: calc(10% + 80px);
+    margin-top: 115px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#floodKey {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 100px;
+    width: 80px;
+}
+
+#floodExp {
+    position: absolute;
+    margin-left: calc(50% + 80px);
+    margin-top: 115px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#quakeKey {
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 190px;
+    width: 80px;
+}
+
+#quakeExp {
+    position: absolute;
+    margin-left: calc(10% + 80px);
+    margin-top: 205px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#volcanoKey {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 190px;
+    width: 80px;
+}
+
+#volcanoExp {
+    position: absolute;
+    margin-left: calc(50% + 80px);
+    margin-top: 205px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#whatScale-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 320px;
+    color: rgb(51, 87, 105);
+}
+
+#whatScale-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
 }
 
 /* TABLET STYLING */
