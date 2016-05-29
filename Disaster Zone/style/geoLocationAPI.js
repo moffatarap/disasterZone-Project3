@@ -692,6 +692,8 @@ setInterval(function () {
         
         //console.log('ALERT: None'); debug
         if (geoRefresh === 1) {
+            $("#inZone").css({ "margin-top": "50px" });
+            
             earthJSON();
         }
 

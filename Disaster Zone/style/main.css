@@ -178,7 +178,7 @@ body {
 #inZone {
     position: absolute;
     height: 50px;
-    
+    margin-top:-50px;
     left: 0;
     right: 0;
     
