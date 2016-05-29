@@ -1066,6 +1066,43 @@ b {
     margin-left: 10%;
 }
 
+#scale {
+    margin-left: calc(50% - 250px)
+}
+
+.scaleKey {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+}
+
+#weak {
+    background-color: rgb(70, 203, 244);
+}
+
+#light {
+    background-color: rgb(36, 203, 85);
+}
+
+#moderate {
+    background-color: rgb(244, 203, 0);
+}
+
+#strong {
+    background-color: rgb(248, 136, 0);
+}
+
+#severe {
+    background-color: rgb(218, 0, 0);
+}
+
+.scaleDetail {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    font-weight: 600;
+}
+
 /* TABLET STYLING */
 
 @media screen and (max-width: 1000px) {
