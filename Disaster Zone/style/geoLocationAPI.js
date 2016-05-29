@@ -661,17 +661,17 @@ setInterval(function () {
         /*BREAK USER LATLNG INTO LAT AND LNG [END] */
 
         /* 6.3# ======--- GEOLOCATION ALERTS PLACEHOLDER---====== [ENABLED] */
-        if  (latitude <= disasterLocLatArray[1] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[1] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[1] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[1] - disasterOffsetArray[5]) {
+        if  (latitude <= disasterLocLatArray[0] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[5]) {
             
               //CSS
-                    $("#inZone").css({ "margin-top": "-50px" });
+                    $("#inZone").css({ "margin-top": "50px" });
                     console.log('ALERT: FIRE'); //debug
                 }
 
                 //1# - FIRE TE PAPA || MODERATE
                 else {
                     //TEXT CONTENT
-                     $("#inZone").css({ "margin-top": "50px" });
+                     $("#inZone").css({ "margin-top": "-50px" });
                     
                     console.log('ALERT: FIRE RESET'); //debug
 
