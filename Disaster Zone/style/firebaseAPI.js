@@ -1,4 +1,4 @@
-/*Firebase API Disaster Zone MDDN352 P3 [2016] ZELLERPHOE */
+﻿/*Firebase API Disaster Zone MDDN352 P3 [2016] ZELLERPHOE */
 //loaded into geoLocationAPI
 //TEMP DB loaded
 //ACTUAL DB: https://pbwoooo.firebaseio.com
@@ -7,7 +7,7 @@
 var firebaseDB; //creates firebaseDB var
 firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
 var EarthquakeDB; //makes a path for earthquake testing
-EarthquakeDB = new Firebase("<https://pbwoooo.firebaseio.com/TestingEQ/>");
+EarthquakeDB = new Firebase("<https://disaster-zone-events.firebaseio.com/test/>");
 var earthquakeID; // for loop for setting up DB
 
 var currentLat;
@@ -66,9 +66,9 @@ addressUser: document.getElementById("mapAddress").innerHTML
 			currentLong = earthQLngArray[i];
 			currentMag = earthQMagnitudeArray[i];
 			currentDepth = earthQDepthArray[i];
-			EarthquakeDB.set({
- earthquakeID:{
- 	
+			EarthquakeDB.push({
+ earthquakes:{
+ 	earthquakeID,
 	currentLat,
 	currentLong,
 	currentMag,
