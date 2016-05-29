@@ -661,21 +661,21 @@ setInterval(function () {
         /*BREAK USER LATLNG INTO LAT AND LNG [END] */
 
         /* 6.3# ======--- GEOLOCATION ALERTS PLACEHOLDER---====== [ENABLED] */
-        if  (latitude <= disasterLocLatArray[0] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[5]) {
+
+        /* 1# WELLINGTON FIRE TE PAPA || LIGHT */
+        if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[6] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[6] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[6] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[6]) {
             
-              //CSS
-                    $("#inZone").css({ "margin-top": "50px" });
+              //1# - inZone
+                    $("#inZone").css({ "margin-top": "50px" }); //display alert
                     console.log('ALERT: FIRE'); //debug
                 }
 
-                //1# - FIRE TE PAPA || MODERATE
+              //1# - out ofZone
                 else {
-                    //TEXT CONTENT
-                     $("#inZone").css({ "margin-top": "-50px" });
-                    
+                    $("#inZone").css({ "margin-top": "-50px" }); //hide alert
                     console.log('ALERT: FIRE RESET'); //debug
+        };
 
-                };
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
 
         /* 6.3# ======--- GEOLOCATION ALERTS v2 ---====== [DISABLED]

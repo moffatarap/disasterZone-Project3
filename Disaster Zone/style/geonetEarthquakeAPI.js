@@ -127,7 +127,7 @@ function earthJSON() {
         });
 
         /* DEBUGGING 
-        console.log('#1 Intensity');*/
+        console.log('#1 Intensity');
         console.log(earthQIntesityArray); //display value of title array
         console.log('#2 Magitude');
         console.log(earthQMagnitudeArray); //display value of level array
