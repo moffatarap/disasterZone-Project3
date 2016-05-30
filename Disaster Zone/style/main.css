@@ -928,7 +928,7 @@ text-transform: capitalize;
     width: 800px;
     height: 40px;
     
-    z-index: 1;
+    z-index: 2;
     
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -961,7 +961,7 @@ text-transform: capitalize;
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
     
-    z-index: 3;
+    z-index: 1;
     
     color: white;
     font-weight: 300;
@@ -1253,6 +1253,23 @@ b {
     margin-left: 10%;
     padding-bottom: 20px;
 }
+
+/* HOW SCREEN STYLING */
+#privacy-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 100px;
+    color: rgb(51, 87, 105);
+}
+
+#privacy-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 20px;
+}
+
 
 /* TABLET STYLING */
 
