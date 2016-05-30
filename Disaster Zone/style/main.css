@@ -451,7 +451,7 @@ body {
     margin-top: 20px;
 }
 
-/* VOL ALERT LEVEl 1*/
+/* ALERT LEVEl 1*/
 #eventType0 {
     position: absolute;
     margin-top: 10px;
@@ -473,7 +473,7 @@ body {
     margin-top: 68px;
 }
 
-/* VOL ALERT LEVEl 2*/
+/* ALERT LEVEl 2*/
 #eventType1 {
     position: absolute;
     margin-top: 10px;
@@ -495,7 +495,7 @@ body {
     margin-top: 68px;
 }
 
-/* VOL ALERT LEVEL 3*/
+/* ALERT LEVEL 3*/
 #eventType2 {
     position: absolute;
     margin-top: 10px;
@@ -517,7 +517,7 @@ body {
     margin-top: 68px;
 }
 
-/* VOL ALERT LEVEL 4*/
+/* ALERT LEVEL 4*/
 #eventType3 {
     position: absolute;
     margin-top: 10px;
@@ -539,7 +539,7 @@ body {
     margin-top: 68px;
 }
 
-/* VOL ALERT LEVEL 5*/
+/* ALERT LEVEL 5*/
 #eventType4 {
     position: absolute;
     margin-top: 10px;
@@ -561,68 +561,9 @@ body {
     margin-top: 68px;
 }
 
-/* L ALERT LEVEL 5*/
-#eventType4 {
-    position: absolute;
-    margin-top: 10px;
-    margin-left: 60px;
-    color: white;
-    font-weight: 300;
-    font-size: 16pt;
-}
 
-#eventLocation4 {
-    margin-top: 35px;
-}
 
-#eventRating4 {
-    margin-top: 50px;
-}
-
-#eventTime4 {
-    margin-top: 68px;
-}
-
-/* EARTH ALERT LEVEL 1*/
-#earthQEventType0 {
-    position: absolute;
-    margin-top: 10px;
-    margin-left: 60px;
-    color: white;
-    font-weight: 300;
-    font-size: 16pt;
-}
-
-#earthQEventLocation0 {
-    margin-top: 35px;
-}
-
-#earthQEventRating0 {
-    margin-top: 50px;
-}
-
-#earthQEventTime0 {
-    margin-top: 68px;
-}
-
-/* EARTH ALERT LEVEL 2*/
-#earthQEventType1 {
-    position: absolute;
-    margin-top: 10px;
-    margin-left: 60px;
-    color: white;
-    font-weight: 300;
-    font-size: 16pt;
-}
-
-#earthQEventLocation1 {
-    margin-top: 35px;
-}
-
-#earthQEventRating1 {
-    margin-top: 50px;
-}
-
+<<<<<<< HEAD
 #earthQEventTime1 {
     margin-top: 68px;
 }
@@ -784,6 +725,8 @@ body {
 
 
 /* ALERT LEVELS END */
+=======
+>>>>>>> parent of ca9ff28... 13.5 - loopCreationOfUiMarkersWorks
 .dummyEvent {
     height: 100px;
     border-top: solid 1px rgba(255,255,255,0.5);
