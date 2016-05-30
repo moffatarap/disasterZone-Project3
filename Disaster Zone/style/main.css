@@ -1047,11 +1047,13 @@ text-transform: capitalize;
     font-size: 12pt;
     color: rgb(90,90,90);
     margin-bottom: 30px;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .blame {
-    width: 600px;
-    margin-left: calc(50% - 300px);
+    width: 80%;
+    margin-left: 10%;
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
@@ -1193,7 +1195,8 @@ b {
 }
 
 #scale {
-    margin-left: calc(50% - 400px);
+    width: 80%;
+    margin-left: 10%;
     line-height: 50px;
     text-align: center;
     
@@ -1284,6 +1287,22 @@ b {
         width: 150px;
         left: calc(50% - 75px);
     }
+    
+    .infoWindow {
+        width: 90%;
+        left: 5%;
+    }
+    
+    #infoHeader {
+        width: 90%;
+        left: 5%;
+    }
+    
+    #infoSelect {
+        width: 90%;
+        left: 5%;
+    }
+    
 }
 
 /* MOBILE STYLING */
@@ -1309,10 +1328,10 @@ b {
     }
     
     #errorInnards {
-    position: absolute;
-    left: 0;
-    top: 60px;
-    right: 0;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        right: 0;
 }
 
     #error-icon {
