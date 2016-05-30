@@ -961,6 +961,8 @@ text-transform: capitalize;
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
     
+    z-index: 3;
+    
     color: white;
     font-weight: 300;
     font-size: 14pt;
@@ -1232,6 +1234,21 @@ b {
     width: 100px;
     text-align: center;
     font-weight: 600;
+}
+
+#whatIs-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 40px;
+    color: rgb(51, 87, 105);
+}
+
+#whatIs-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 20px;
 }
 
 /* TABLET STYLING */
