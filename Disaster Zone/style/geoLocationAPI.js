@@ -663,21 +663,21 @@ setInterval(function () {
 
         /* 6.3# ======--- GEOLOCATION ALERTS PLACEHOLDER---====== [ENABLED] */
 
-        ///* 1# WELLINGTON FIRE TE PAPA || LIGHT */
-        //if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[6] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[6] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[6] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[6]) {
+        /* 1# WELLINGTON FIRE TE PAPA || LIGHT */
+        if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[6] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[6] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[6] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[6]) {
             
-        //      //1# - inZone
-        //     $("#inZone").css({ "margin-top": "50px" }); //display alert
-        //     $("#floatingKey").css({"margin-top": "110px"}); //set offset of key when disaster event shown
-        //     console.log('ALERT: FIRE'); //debug
-        //        }
+              //1# - inZone
+             $("#inZone").css({ "margin-top": "50px" }); //display alert
+             $("#floatingKey").css({"margin-top": "110px"}); //set offset of key when disaster event shown
+             console.log('ALERT: FIRE'); //debug
+                }
 
-        //      //1# - out ofZone
-        //        else {
-        //    $("#inZone").css({ "margin-top": "-50px" }); //hide alert
-        //    $("#floatingKey").css({ "margin-top": "60px" }); //set offset of key when disaster event shown
-        //    console.log('ALERT: FIRE RESET'); //debug
-        //};
+              //1# - out ofZone
+                else {
+            $("#inZone").css({ "margin-top": "-50px" }); //hide alert
+            $("#floatingKey").css({ "margin-top": "60px" }); //set offset of key when disaster event shown
+            console.log('ALERT: FIRE RESET'); //debug
+        };
 
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
 
