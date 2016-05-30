@@ -80,6 +80,23 @@
         <div id="mapAddress">
         </div>
         
+        <div id="floatingKey">
+            <h4 id="floatingKey-title">KEY</h4>
+            <div id="floatingKey-splitter"></div>
+            <img id="floatingKey-fireKey" src="./media/img/mapKeys/key/fire.png">
+            <h5 id="floatingKey-fireExp">Fire</h5>
+            <img id="floatingKey-tornadoKey" src="./media/img/mapKeys/key/tornado.png">
+            <h5 id="floatingKey-tornadoExp">Tornado</h5>
+            <img id="floatingKey-hurricaneKey" src="./media/img/mapKeys/key/hurricane.png">
+            <h5 id="floatingKey-hurricaneExp">Hurricane</h5>
+            <img id="floatingKey-floodKey" src="./media/img/mapKeys/key/flood.png">
+            <h5 id="floatingKey-floodExp">Flood</h5>
+            <img id="floatingKey-quakeKey" src="./media/img/mapKeys/key/earthquake.png">
+            <h5 id="floatingKey-quakeExp">Earthquake</h5>
+            <img id="floatingKey-volcanoKey" src="./media/img/mapKeys/key/volcano.png">
+            <h5 id="floatingKey-volcanoExp">Volcano</h5>
+        </div>
+        
         <div id="inZone">
             <img id="inZone-icon" src="./media/img/inZoneIcon.png">
             <h3 id="inZone-title">You appear to be in a disaster zone.</h3>
@@ -133,8 +150,35 @@
                     <div id="how">How?</div>
                     <div id="who">Who?</div>
                 </div>
-                <div id="infoWhat">
                 
+                <div id="infoWhat">
+                    <h3 id="whatIcons-title">What's on the map?</h3>
+                    
+                    <p id="whatIcons-body">Each disaster type is represented by an icon on the map. These icons and the measured scales are explained below.</p>
+                    <img id="fireKey" src="./media/img/mapKeys/key/fire.png">
+                    <h5 id="fireExp"><b>Fire</b><br/>Fire Danger Rating</h5>
+                    <img id="tornadoKey" src="./media/img/mapKeys/key/tornado.png">
+                    <h5 id="tornadoExp"><b>Tornado</b><br/>Enhanced Fujita Scale</h5>
+                    <img id="hurricaneKey" src="./media/img/mapKeys/key/hurricane.png">
+                    <h5 id="hurricaneExp"><b>Hurricane</b><br/>Saffir-Simpson Scale</h5>
+                    <img id="floodKey" src="./media/img/mapKeys/key/flood.png">
+                    <h5 id="floodExp"><b>Flood</b><br/>Metres of Water</h5>
+                    <img id="quakeKey" src="./media/img/mapKeys/key/earthquake.png">
+                    <h5 id="quakeExp"><b>Earthquake</b><br/>Moment Magnitude Scale</h5>
+                    <img id="volcanoKey" src="./media/img/mapKeys/key/volcano.png">
+                    <h5 id="volcanoExp"><b>Volcano</b><br/>Geonet Volcanic Unrest Scale</h5>
+                    
+                    <h3 id="whatScale-title">What are the colours?</h3>
+                    <p id="whatScale-body">The colours of the icons indicate how severe an event is, based on the scale of measurement given above. The colour range and their meanings are explained below.</p>
+                    <div id="scale">
+                        <div class="scaleKey" id="weak">Weak</div>
+                        <div class="scaleKey" id="light">Light</div>
+                        <div class="scaleKey" id="moderate">Moderate</div>
+                        <div class="scaleKey" id="strong">Strong</div>
+                        <div class="scaleKey" id="severe">Severe</div>
+                    </div>
+                    
+                    <h3 id="whatIs-title">What is Disaster Zone?</h3>
                 </div>
                 
                 <div id="infoHow">

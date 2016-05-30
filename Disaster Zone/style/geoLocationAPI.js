@@ -17,21 +17,18 @@ var showInactiveVol = 0; //show or hide inactive volcanos 0 to hide inactive vol
 /* 1# = DISASTER WARNING LOCATION ARRAYS =*/
 //location warning LAT 
 var disasterLocLatArray = [
-    -40.9881, //[0] - LAT || PAEKAKARIKI EARTHQUAKE
-    -40.9800, //[1] - LAT || PAEKAKARIKI FIRE CAMPBELL PARK
-    -41.3000, //[2] - LAT || WELLINGTON FLOOD BASIN RESERVE
-    -36.8485, //[3] - LAT || AUCKLAND HURRICANE
-    -39.0556, //[4] - LAT || NEW PLYMOUTH TORNADO
-    -41.2955, //[5] - LAT || WELLINGTON FIRE TE ARO 
+    -41.2905, //[0] - LAT || WELLINGTON FIRE TE PAPA 
+    -42.9458, //[1] - LAT || ARTHURS PASS FLOOD
+    -38.4178, //[2] - LAT || TASMAN SEA HURRICANE
+    -36.5501, //[3] - LAT || AUCKLAND TORNADO
 ];
+
 //location warning LNG 
 var disasterLocLngArray = [
-    174.9510, //[0] - LNG || PAEKAKARIKI EARTHQUAKE
-    174.9560, //[1] - LNG || PAEKAKARIKI FIRE CAMPBELL PARK
-    174.7801, //[2] - LNG || WELLINGTON FLOOD BASIN RESERVE
-    174.7633, //[3] - LNG || AUCKLAND HURRICANE
-    174.0752, //[4] - LNG || NEW PLYMOUTH TORNADO
-    174.7756, //[5] - LNG || WELLINGTON FIRE TE ARO 
+    174.7817, //[0] - LNG || WELLINGTON FIRE TE PAPA 
+    171.5653, //[1] - LNG || ARTHURS PASS FLOOD
+    167.8144, //[2] - LNG || TASMAN SEA HURRICANE
+    175.1203, //[3] - LNG || AUCKLAND TORNADO
 ];
 /* 1# = DISASTER LOCATION ARRAYS [END] =*/
 
@@ -497,7 +494,7 @@ function sortDescending(a, b) {
 window.onload = function () {
     
     console.log('windowOnLoad'); //debug
-    
+    $("#floatingKey").css({ "margin-top": "60px" }); //set offset of key when disaster event shown
     $("#errorCantFind").css({ "visibility": "visible" });
     geoLocateUser();
     //sortDescending();
@@ -637,6 +634,7 @@ setInterval(function () {
     reDraw();
     /* 6.0# ====== GeoLocate User Every Second refresh ======*/
     //if geoRefresh var = 10, then run geolocation function and reset geoRefresh to 1
+
     if (geoRefresh === 10) {
         geoLocateUser();
         //console.log('geoLocateUser');writes to debug geoLocateUser
@@ -656,15 +654,31 @@ setInterval(function () {
         latitude = Math.round(latitude * fourDPR) / fourDPR; //round lat to 4 decimal places
         longitude = Math.round(longitude * fourDPR) / fourDPR; //round lng to 4 decimal places
 
-        //DEBUG
+        /*DEBUG
         console.log(latitude);
         console.log(longitude);
-        //DEBUG END
+        DEBUG END */
 
         /*BREAK USER LATLNG INTO LAT AND LNG [END] */
 
-        /* 6.3# ======--- GEOLOCATION ALERTS ---====== [DISABLED] */
-  
+        /* 6.3# ======--- GEOLOCATION ALERTS PLACEHOLDER---====== [ENABLED] */
+
+        /* 1# WELLINGTON FIRE TE PAPA || LIGHT */
+        if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[5]) {
+            
+              //1# - inZone
+             $("#inZone").css({ "margin-top": "50px" }); //display alert
+             $("#floatingKey").css({"margin-top": "110px"}); //set offset of key when disaster event shown
+             console.log('ALERT: FIRE'); //debug
+                }
+
+              //1# - out ofZone
+                else {
+            $("#inZone").css({ "margin-top": "-50px" }); //hide alert
+            $("#floatingKey").css({ "margin-top": "60px" }); //set offset of key when disaster event shown
+            console.log('ALERT: FIRE RESET'); //debug
+        };
+
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
 
         /* 6.3# ======--- GEOLOCATION ALERTS v2 ---====== [DISABLED]
@@ -692,6 +706,8 @@ setInterval(function () {
         
         //console.log('ALERT: None'); debug
         if (geoRefresh === 1) {
+            //$("#inZone").css({ "margin-top": "50px" });
+            
             earthJSON();
         }
 

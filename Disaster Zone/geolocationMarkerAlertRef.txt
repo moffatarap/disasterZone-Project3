@@ -138,6 +138,7 @@ http://www.geonet.org.nz/quakes/services/felt.json
 http://api.geonet.org.nz/
 http://info.geonet.org.nz/display/quake/Shaking+Intensity
 http://json.ey.nz/
+http://info.geonet.org.nz/display/appdata/Advanced+Queries
 
 /*** EARTHQUAKE REF MAG ***/
 //[0] SEVERE

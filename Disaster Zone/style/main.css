@@ -178,11 +178,14 @@ body {
 #inZone {
     position: absolute;
     height: 50px;
-    margin-top: 50px;
+    margin-top: -50px;
+    
     left: 0;
     right: 0;
     
     background-color: rgb(218,0,0);
+    
+    transition: 0.3s;
 }
 
 #inZone-icon {
@@ -284,9 +287,130 @@ body {
     height: 50px;
     line-height: 51px;
     font-weight: 800;
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(0,0,0,0.5);
     -webkit-backdrop-filter: blur(20px);
     z-index: 5;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.4);
+}
+
+#floatingKey {
+    position: absolute;
+    width: 200px;
+    height: 35px;
+    
+    border-radius: 7px;
+    left: 10px;
+    
+    background-color: rgba(250,250,250,0.7);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+#floatingKey > img {
+    display: none;
+}
+
+#floatingKey > h5 {
+    display: none;
+}
+
+#floatingKey > div {
+    display: none;
+}
+
+#floatingKey:hover {
+    position: absolute;
+    height: 350px;
+}
+#floatingKey:hover > div {
+    display: block;
+}
+
+#floatingKey:hover > h5 {
+    position: absolute;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 12pt;
+    color: rgb(80,80,80);
+    
+    margin-left: 50px;
+    display: block;
+}
+
+#floatingKey-title {
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 10px;
+    font-weight: 700;
+    color: rgb(90,90,90);
+    width: 180px;
+    text-align: center;
+}
+
+#floatingKey-splitter:hover {
+    position: absolute;
+    margin-top: 35px;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(100,100,100,0.5);
+    display: block;
+}
+
+#floatingKey:hover > img {
+    width: 50px;
+    position: absolute;
+    display: block;
+}
+
+#floatingKey-fireKey {
+    margin-top: 40px;
+}
+
+#floatingKey-tornadoKey {
+    margin-top: 90px;
+}
+
+#floatingKey-hurricaneKey {
+    margin-top: 140px;
+}
+
+#floatingKey-floodKey {
+    margin-top: 190px;
+}
+
+#floatingKey-quakeKey {
+    margin-top: 240px;
+}
+
+#floatingKey-volcanoKey {
+    margin-top: 290px;
+}
+
+#floatingKey-fireExp {
+    margin-top: 50px;
+}
+
+#floatingKey-tornadoExp {
+    margin-top: 100px;
+}
+
+#floatingKey-hurricaneExp {
+    margin-top: 150px;
+}
+
+#floatingKey-floodExp {
+    margin-top: 200px;
+}
+
+#floatingKey-quakeExp {
+    margin-top: 250px;
+}
+
+#floatingKey-volcanoExp {
+    margin-top: 300px;
 }
 
 #dummyEvent {
@@ -795,7 +919,8 @@ text-transform: capitalize;
     box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
     
     background-color: rgb(230,230,235);
-    border-radius: 5px;    
+    border-radius: 5px;   
+    overflow: scroll;
 }
 
 #infoHeader {
@@ -938,6 +1063,177 @@ text-transform: capitalize;
     color: rgb(80,80,80);
 }
 
+/* WHAT SCREEN STYLING */
+#whatIcons-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 100px;
+    color: rgb(51, 87, 105);
+}
+
+#whatIcons-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#fireKey {
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 10px;
+    width: 80px;
+}
+
+#fireExp {
+    position: absolute;
+    margin-left: calc(10% + 80px);
+    margin-top: 25px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+b {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 14pt;
+    color: rgb(80,80,80);
+}
+
+#tornadoKey {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 10px;
+    width: 80px;
+}
+
+#tornadoExp {
+    position: absolute;
+    margin-left: calc(50% + 80px);
+    margin-top: 25px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#hurricaneKey {
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 100px;
+    width: 80px;
+}
+
+#hurricaneExp {
+    position: absolute;
+    margin-left: calc(10% + 80px);
+    margin-top: 115px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#floodKey {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 100px;
+    width: 80px;
+}
+
+#floodExp {
+    position: absolute;
+    margin-left: calc(50% + 80px);
+    margin-top: 115px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#quakeKey {
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 190px;
+    width: 80px;
+}
+
+#quakeExp {
+    position: absolute;
+    margin-left: calc(10% + 80px);
+    margin-top: 205px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#volcanoKey {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 190px;
+    width: 80px;
+}
+
+#volcanoExp {
+    position: absolute;
+    margin-left: calc(50% + 80px);
+    margin-top: 205px;
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+#whatScale-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 320px;
+    color: rgb(51, 87, 105);
+}
+
+#whatScale-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#scale {
+    margin-left: calc(50% - 400px);
+    line-height: 50px;
+    text-align: center;
+    
+}
+
+.scaleKey {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: white;
+}
+
+#weak {
+    background-color: rgb(70, 203, 244);
+}
+
+#light {
+    background-color: rgb(36, 203, 85);
+}
+
+#moderate {
+    background-color: rgb(244, 203, 0);
+}
+
+#strong {
+    background-color: rgb(248, 136, 0);
+}
+
+#severe {
+    background-color: rgb(218, 0, 0);
+}
+
+.scaleDetail {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    font-weight: 600;
+}
+
 /* TABLET STYLING */
 
 @media screen and (max-width: 1000px) {
@@ -989,6 +1285,10 @@ text-transform: capitalize;
         width: 75%;
         left: 50%;
         margin-left: -37.5%;
+    }
+    
+    #floatingKey {
+        margin-left: calc(50% - 110px);
     }
     
     #errorInnards {
