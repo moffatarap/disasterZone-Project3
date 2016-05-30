@@ -178,19 +178,13 @@ body {
 #inZone {
     position: absolute;
     height: 50px;
-<<<<<<< HEAD
     margin-top: -50px;
-=======
     
->>>>>>> origin/stefBranch
     left: 0;
     right: 0;
     
     background-color: rgb(218,0,0);
-<<<<<<< HEAD
     
-=======
->>>>>>> origin/stefBranch
     transition: 0.3s;
 }
 
@@ -330,6 +324,9 @@ body {
 #floatingKey:hover {
     position: absolute;
     height: 350px;
+}
+#floatingKey:hover > div {
+    display: block;
 }
 
 #floatingKey:hover > h5 {
