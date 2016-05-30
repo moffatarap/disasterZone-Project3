@@ -299,7 +299,6 @@ body {
     height: 35px;
     
     border-radius: 7px;
-    top: 60px;
     left: 10px;
     
     background-color: rgba(250,250,250,0.7);
@@ -1192,13 +1191,20 @@ b {
 }
 
 #scale {
-    margin-left: calc(50% - 250px)
+    margin-left: calc(50% - 400px);
+    line-height: 50px;
+    text-align: center;
+    
 }
 
 .scaleKey {
     display: inline-block;
     width: 100px;
     height: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: white;
 }
 
 #weak {
