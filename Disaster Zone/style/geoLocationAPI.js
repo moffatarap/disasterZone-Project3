@@ -664,7 +664,7 @@ setInterval(function () {
         /* 6.3# ======--- GEOLOCATION ALERTS PLACEHOLDER---====== [ENABLED] */
 
         /* 1# WELLINGTON FIRE TE PAPA || LIGHT */
-        if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[6] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[6] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[6] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[6]) {
+        if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[5]) {
             
               //1# - inZone
              $("#inZone").css({ "margin-top": "50px" }); //display alert
