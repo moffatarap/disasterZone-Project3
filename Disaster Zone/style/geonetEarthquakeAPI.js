@@ -57,6 +57,20 @@ var earthQTextInnerHtmlArray = [
 
 ];
 
+/* EARTHQUAKE SEVERITY REF */
+var earthQuakeSeverityCompare = [
+    1.0, //[0] - || WEAK LOW
+    3.0, //[1] - || WEAK HIGH
+    3.1, //[2] - || LIGHT LOW
+    3.9, //[3] - || LIGHT HIGH
+    4.0, //[4] - || MODERATE LOW
+    4.9, //[5] - || MODERATE HIGH
+    5.0, //[6] - || STRONG LOW
+    5.9, //[7] - || STRONG HIGH
+    6.0, //[8] - || SEVERE+
+];
+/* EARTHQUAKE SEVERITY REF [END]*/
+
 /* TEMP FUNCTION FOR TESTING 
 window.onload = function () {
     earthJSON();
@@ -106,7 +120,7 @@ var earthQEventTimeArray = [
 
 /* 2# EARTHQUAKE FUNCTION */
 function earthJSON() {
-    $.getJSON(geonetEarthQuake, function (data) {
+    $.getJSON(geonetEarthQuakeLocal, function (data) {
         $.each(data.features, function (i, eq) {
             //data id displayed in table row || this one is volcano title
             if (i < earthQEventLength) {
@@ -185,10 +199,17 @@ function earthQuakeMarkerCreateLoop() {
         var dateFromat = /(\d{2})\.(\d{2})\.(\d{4})/; //wanted date format
         var earthQDateFormat = new Date(earthQTimeFormat.replace(dateFromat, '$3-$2-$1')); //replacing date format
         /* CONVERT JSON DATE TIME TO UTC [END]*/
-        parseInt(earthQMagnitudeArray[i]);
+
+        /* PARSE ARRAY TO INT */
+        parseFloat(earthQuakeSeverityCompare[i]);
+        parseFloat(earthQMagnitudeArray[i]);
+
+        /* PARSE ARRAY TO INT [END] */
+        console.log(earthQMagnitudeArray[i]);
 
         //EARTHQUAKE SEVERITY WEAK
-        if (earthQMagnitudeArray[i] > 1.0 && 3.0) {
+        if (earthQMagnitudeArray[i] > earthQuakeSeverityCompare[0] && earthQMagnitudeArray[i] < earthQuakeSeverityCompare[1]) {
+            
             earthquakeMarkerArray[i] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
@@ -284,7 +305,7 @@ function earthQuakeMarkerCreateLoop() {
         //}
 
         //EARTHQUAKE SEVERITY LIGHT
-        if (earthQIntesityArray[i] === 'light') {
+        if (earthQMagnitudeArray[i] > earthQuakeSeverityCompare[2] && earthQMagnitudeArray[i] < earthQuakeSeverityCompare[3]) {
             earthquakeMarkerArray[i] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
@@ -324,11 +345,12 @@ function earthQuakeMarkerCreateLoop() {
             //SET LAST CHECKED EVENT
             document.getElementById(earthQEventTimeArray[1]).textContent = earthQDateFormat.toUTCString();
             /* 2# DISPLAY IN UI [END] */
+            console.log("Light Earthquake");
             
         }
 
         //EARTHQUAKE SEVERITY MODERATE
-        if (earthQIntesityArray[i] === 'moderate') {
+        if (earthQMagnitudeArray[i] > earthQuakeSeverityCompare[4] && earthQMagnitudeArray[i] < earthQuakeSeverityCompare[5]) {
             earthquakeMarkerArray[i] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
@@ -371,7 +393,7 @@ function earthQuakeMarkerCreateLoop() {
         }
 
         //EARTHQUAKE SEVERITY STRONG
-        if (earthQIntesityArray[i] === 'strong') {
+        if (earthQMagnitudeArray[i] > earthQuakeSeverityCompare[6] && earthQMagnitudeArray[i] < earthQuakeSeverityCompare[7]) {
             earthquakeMarkerArray[i] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
@@ -413,7 +435,7 @@ function earthQuakeMarkerCreateLoop() {
 
 
         //EARTHQUAKE SEVERITY SEVERE
-        if (earthQIntesityArray[i] === 'severe') {
+        if (earthQMagnitudeArray[i] > earthQuakeSeverityCompare[8]) {
             earthquakeMarkerArray[i] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
