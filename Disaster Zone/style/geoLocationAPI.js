@@ -654,7 +654,7 @@ setInterval(function () {
     else {
 
         //console.log('ALERT: None'); debug
-        if (geoRefresh === 2) {
+        if (geoRefresh === 1) {
             earthJSON();
         }
 
