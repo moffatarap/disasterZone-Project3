@@ -57,6 +57,16 @@ var earthQTextInnerHtmlArray = [
 
 ];
 
+//TEXT ARRAY LIGHT EQ
+var earthQTextInnerHtmlLightArray = [
+   '<img id="eventIcon" src="./media/img/mapKeys/event/weak/earthquakeW.png"> <h4 id="earthQEventTypeLight0"></h4><h6 id="earthQEventLocationLight0"></h6><h6 id="earthQEventRatingLight0"></h6><h6 id="earthQEventTimeLight0"></h6><div id="gradientL"></div>', //[0]
+   '<img id="eventIcon" src="./media/img/mapKeys/event/weak/earthquakeW.png"> <h4 id="earthQEventTypeLight1"></h4><h6 id="earthQEventLocationLight1"></h6><h6 id="earthQEventRatingLight1"></h6><h6 id="earthQEventTimeLight1"></h6><div id="gradientL"></div>', //[0]
+   '<img id="eventIcon" src="./media/img/mapKeys/event/weak/earthquakeW.png"> <h4 id="earthQEventTypeLight2"></h4><h6 id="earthQEventLocationLight2"></h6><h6 id="earthQEventRatingLight2"></h6><h6 id="earthQEventTimeLight2"></h6><div id="gradientL"></div>', //[0]
+   '<img id="eventIcon" src="./media/img/mapKeys/event/weak/earthquakeW.png"> <h4 id="earthQEventTypeLight3"></h4><h6 id="earthQEventLocationLight3"></h6><h6 id="earthQEventRatingLight3"></h6><h6 id="earthQEventTimeLight3"></h6><div id="gradientL"></div>', //[0]
+   '<img id="eventIcon" src="./media/img/mapKeys/event/weak/earthquakeW.png"> <h4 id="earthQEventTypeLight4"></h4><h6 id="earthQEventLocationLight4"></h6><h6 id="earthQEventRatingLight4"></h6><h6 id="earthQEventTimeLight4"></h6><div id="gradientL"></div>', //[0]
+   '<img id="eventIcon" src="./media/img/mapKeys/event/weak/earthquakeW.png"> <h4 id="earthQEventTypeLight5"></h4><h6 id="earthQEventLocationLight5"></h6><h6 id="earthQEventRatingLight5"></h6><h6 id="earthQEventTimeLight5"></h6><div id="gradientL"></div>', //[0]
+
+];
 /* TEMP FUNCTION FOR TESTING 
 window.onload = function () {
     earthJSON();
