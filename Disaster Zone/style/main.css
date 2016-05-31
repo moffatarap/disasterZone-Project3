@@ -1274,6 +1274,36 @@ b {
     padding-bottom: 20px;
 }
 
+#provider-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 10px;
+    color: rgb(51, 87, 105);
+}
+
+#provider-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 20px;
+}
+
+#location-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 10px;
+    color: rgb(51, 87, 105);
+}
+
+#location-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 20px;
+}
+
 
 /* TABLET STYLING */
 
