@@ -186,8 +186,9 @@ function earthQuakeMarkerCreateLoop() {
         var earthQDateFormat = new Date(earthQTimeFormat.replace(dateFromat, '$3-$2-$1')); //replacing date format
         /* CONVERT JSON DATE TIME TO UTC [END]*/
         parseInt(earthQMagnitudeArray[i]);
+
         //EARTHQUAKE SEVERITY WEAK
-        if (earthQMagnitudeArray[i] < 'weak') {
+        if (earthQMagnitudeArray[i] > 1.0 && 3.0) {
             earthquakeMarkerArray[i] = new google.maps.Marker({
                 //create marker
                 map: mapObject,
@@ -231,7 +232,7 @@ function earthQuakeMarkerCreateLoop() {
             document.getElementById(earthQEventTimeArray[0]).textContent = earthQDateFormat.toUTCString();
             /* 1# DISPLAY IN UI [END] */
 
-            //console.log(i);
+            console.log("Weak Earthquake");
         }
 
         ////EARTHQUAKE SEVERITY WEAK
