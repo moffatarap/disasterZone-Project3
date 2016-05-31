@@ -7,7 +7,7 @@
 var firebaseDB; //creates firebaseDB var
 firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
 var EarthquakeDB; //makes a path for earthquake testing
-EarthquakeDB = new Firebase("<https://disaster-zone-events.firebaseio.com/test/>");
+EarthquakeDB = new Firebase("<https://disaster-zone-events.firebaseio.com/earthquake/>");
 var earthquakeID; // for loop for setting up DB
 
 var currentLat;
@@ -58,8 +58,8 @@ addressUser: document.getElementById("mapAddress").innerHTML
 
     }); **/
 
-/*testing just the earthquake things*/
-
+/*earthquake Database*/
+EarthquakeDB.remove();
 	for (var i = earthQIDNameArray.length - 1; i >= 0; i--) {
 		earthquakeID = earthQIDNameArray[i];		
 			currentLat = earthQLatArray[i];
@@ -67,19 +67,33 @@ addressUser: document.getElementById("mapAddress").innerHTML
 			currentMag = earthQMagnitudeArray[i];
 			currentDepth = earthQDepthArray[i];
 			EarthquakeDB.push({
- earthquakes:{
+ currentEarthquakes:{
  	earthquakeID,
 	currentLat,
 	currentLong,
 	currentMag,
 	currentDepth
-
  }
 
 });
 		}
 
+/*volcano database
+ EarthquakeDB.push({
+    
+ currentEarthquakes:{
+    earthquakeID,
+    currentLat,
+    currentLong,
+    currentMag,
+    currentDepth
+ }
 
+});
+        }
+
+
+*/
 
 
 /** testing all of the DB things*/
