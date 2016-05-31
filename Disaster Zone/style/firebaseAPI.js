@@ -6,6 +6,7 @@
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
 firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
+VolcanoDB = new Firebase("<https://disaster-zone-events.firebaseio.com/Volcano/>");
 var EarthquakeDB; //makes a path for earthquake testing
 EarthquakeDB = new Firebase("<https://disaster-zone-events.firebaseio.com/earthquake/>");
 var earthquakeID; // for loop for setting up DB
@@ -78,22 +79,29 @@ EarthquakeDB.remove();
 });
 		}
 
-/*volcano database
- EarthquakeDB.push({
-    
- currentEarthquakes:{
-    earthquakeID,
-    currentLat,
-    currentLong,
-    currentMag,
-    currentDepth
- }
+/*volcano database*/
+
+ VolcanoDB.set({
+
+ currentVolcanosActive:{
+    volActiveArray
+ },
+ allVolcanos:{
+    volcanoMarkerTitleArray
+},
+inactiveVolcanos:{
+    volcanoInactiveArray
+},
+volcanoActivityAndHazards:{
+    volcanoHazardsArray,
+    volcanoActivityArray
+}
 
 });
-        }
+        
 
 
-*/
+
 
 
 /** testing all of the DB things*/
