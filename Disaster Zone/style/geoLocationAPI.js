@@ -257,7 +257,7 @@ var alertCirlceRadiusArray = [
     20000,//[2] MODERATE || 20km
     5000,//[3] LIGHT     || 5km
     1500,//[4] WEAK      || 1.5km
-]; 
+];
 
 /* 5# ===== ALERT CIRCLE ARRAY END =====*/
 
@@ -469,7 +469,7 @@ var mapOptions = {
             }
         ]
     }
-]
+    ]
     /* STYLE SETTINGS */
 
 };
@@ -492,16 +492,16 @@ function sortDescending(a, b) {
 
 /* 1# == ON LOAD SET STYLE MAP AND STARTING LOCATION ==*/
 window.onload = function () {
-    
+
     console.log('windowOnLoad'); //debug
     $("#floatingKey").css({ "margin-top": "60px" }); //set offset of key when disaster event shown
     $("#errorCantFind").css({ "visibility": "visible" });
     geoLocateUser();
     //sortDescending();
     /* DISPLAYS ERROR CANT FIND */
-    
-    
-    
+
+
+
 
     //on first loop create map
     if (mapLoad === 1) {
@@ -510,8 +510,8 @@ window.onload = function () {
         volJSON(); //Loads JSON Data volcanos geonet
         //earthJSON(); //Loads JSON data earthquakes goenet
         phJSON();
-        
-       
+
+
     }
 
 
@@ -532,7 +532,7 @@ function writeAddressName(latLng) {
             //hides error message if postion found
             $("#errorCantFind").css({ "visibility": "hidden" });
             console.log('1 Geocoder Status OK')
-            
+
             document.getElementById("mapAddress").innerHTML = results[0].formatted_address + "<br/>";
             //+= for debugging, to show all addresses = to just show one address at a time
 
@@ -542,8 +542,8 @@ function writeAddressName(latLng) {
             //if address cant be found show error code
             //shows error message if postion found
             $("#errorCantFind").css({ "visibility": "visible" });
-            console.log('2 Geocoder Status Fail')
-            document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
+        console.log('2 Geocoder Status Fail')
+        document.getElementById("errorCantFind").innerHTML = "No address found" + "<br />";
     });
 
     //set marker creation on load of map
@@ -563,7 +563,7 @@ function writeAddressName(latLng) {
         mapUserMarker.setPosition(userLatLng); //mapUserMarker LatLng
 
     }
-    
+
 }
 /* 1.2# =-- CONVERT LatLng TO ADDRESS --= */
 
@@ -576,7 +576,7 @@ function geoLocateUser() {
     // If the browser supports the Geolocation API
     if (navigator.geolocation) {
         //console.log('geoLocateUser'); debug
-        
+
         var positionOptions = {
             enableHighAccuracy: true, //accuracy 
             timeout: 10 * 2000 // 10 seconds
@@ -597,7 +597,7 @@ function geoLocateUser() {
 
 /* 3# === SUCCESS LOCATION OF USER === */
 function geolocationSuccess(position) {
-   userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     // Write the formatted address
     writeAddressName(userLatLng);
     center: userLatLng; //centers map position to that of user latLng
@@ -617,7 +617,7 @@ function reDraw() {
     /*DISPLAY WARNING IF USER IS NEAR DISASTER */
 
     /* DEBUG SECTION */
-   //console.log('reDraw');writes to debug redraw
+    //console.log('reDraw');writes to debug redraw
     //console.log(geoRefresh); checks value of geoRefresh
 
     /* DEBUG SECTION END */
@@ -635,51 +635,55 @@ setInterval(function () {
     /* 6.0# ====== GeoLocate User Every Second refresh ======*/
     //if geoRefresh var = 10, then run geolocation function and reset geoRefresh to 1
 
-    if (geoRefresh === 10) {
-        geoLocateUser();
-        //console.log('geoLocateUser');writes to debug geoLocateUser
+    /* 6.1# ======-- BREAK USER LATLNG INTO LAT AND LNG --====== */
+    //SET VAR
+    latitude = userLatLng.lat(); //sets latitude to userLatLng lat value
+    longitude = userLatLng.lng(); //sets lon to userLatLng lat value
 
-        
-        
-        /* 6.1# ======- PUSH DATA TO FIREBASE -====== [REMOTE]*/
-         
-        firebaseAPI(); //firebase function call from firebaseAPI scrypt
+    //ROUND VAR
+    latitude = Math.round(latitude * fourDPR) / fourDPR; //round lat to 4 decimal places
+    longitude = Math.round(longitude * fourDPR) / fourDPR; //round lng to 4 decimal places
 
-        /* 6.2# ======-- BREAK USER LATLNG INTO LAT AND LNG --====== */
-        //SET VAR
-        latitude = userLatLng.lat(); //sets latitude to userLatLng lat value
-        longitude = userLatLng.lng(); //sets lon to userLatLng lat value
+    /*BREAK USER LATLNG INTO LAT AND LNG [END] */
 
-        //ROUND VAR
-        latitude = Math.round(latitude * fourDPR) / fourDPR; //round lat to 4 decimal places
-        longitude = Math.round(longitude * fourDPR) / fourDPR; //round lng to 4 decimal places
+    /*DEBUG
+    console.log(latitude);
+    console.log(longitude);
+    DEBUG END */
 
-        /*DEBUG
-        console.log(latitude);
-        console.log(longitude);
-        DEBUG END */
-
-        /*BREAK USER LATLNG INTO LAT AND LNG [END] */
-
+    if (geoRefresh === 2) {
         /* 6.3# ======--- GEOLOCATION ALERTS PLACEHOLDER---====== [ENABLED] */
 
         /* 1# WELLINGTON FIRE TE PAPA || LIGHT */
         if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[5]) {
-            
-              //1# - inZone
-             $("#inZone").css({ "margin-top": "50px" }); //display alert
-             $("#floatingKey").css({"margin-top": "110px"}); //set offset of key when disaster event shown
-             console.log('ALERT: FIRE'); //debug
-                }
 
-              //1# - out ofZone
-                else {
+            //1# - inZone
+            $("#inZone").css({ "margin-top": "50px" }); //display alert
+            $("#floatingKey").css({ "margin-top": "110px" }); //set offset of key when disaster event shown
+            console.log('ALERT: FIRE'); //debug
+        }
+
+            //1# - out ofZone
+        else {
             $("#inZone").css({ "margin-top": "-50px" }); //hide alert
             $("#floatingKey").css({ "margin-top": "60px" }); //set offset of key when disaster event shown
             console.log('ALERT: FIRE RESET'); //debug
         };
 
         /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
+    };
+
+    if (geoRefresh === 10) {
+        geoLocateUser();
+        //console.log('geoLocateUser');writes to debug geoLocateUser
+
+
+
+        /* 6.3# ======- PUSH DATA TO FIREBASE -====== [REMOTE]*/
+
+        firebaseAPI(); //firebase function call from firebaseAPI scrypt
+
+
 
         /* 6.3# ======--- GEOLOCATION ALERTS v2 ---====== [DISABLED]
         //Trying using radius of circle to alert to events works on draggable marker 
@@ -696,18 +700,18 @@ setInterval(function () {
         /* 6.3# ======--- GEOLOCATION ALERTS v2 [END] ---====== */
 
         geoRefresh = 2; //reset value to 2
-        
+
         /* ADD IN REAL-TIME CHECKING OF EARTH AND VOL DATA */
 
         /* ADD IN REAL-TIME CHECKING OF EARTH AND VOL DATA [END]*/
     }
         //if geoRefresh var = > 10 then add 1 to geoRefresh 
     else {
-        
+
         //console.log('ALERT: None'); debug
         if (geoRefresh === 1) {
             //$("#inZone").css({ "margin-top": "50px" });
-            
+
             earthJSON();
         }
 
