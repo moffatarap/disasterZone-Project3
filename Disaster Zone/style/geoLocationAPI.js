@@ -635,55 +635,51 @@ setInterval(function () {
     /* 6.0# ====== GeoLocate User Every Second refresh ======*/
     //if geoRefresh var = 10, then run geolocation function and reset geoRefresh to 1
 
-    /* 6.1# ======-- BREAK USER LATLNG INTO LAT AND LNG --====== */
-    //SET VAR
-    latitude = userLatLng.lat(); //sets latitude to userLatLng lat value
-    longitude = userLatLng.lng(); //sets lon to userLatLng lat value
-
-    //ROUND VAR
-    latitude = Math.round(latitude * fourDPR) / fourDPR; //round lat to 4 decimal places
-    longitude = Math.round(longitude * fourDPR) / fourDPR; //round lng to 4 decimal places
-
-    /*BREAK USER LATLNG INTO LAT AND LNG [END] */
-
-    /*DEBUG
-    console.log(latitude);
-    console.log(longitude);
-    DEBUG END */
-
-    if (geoRefresh === 2) {
-        /* 6.3# ======--- GEOLOCATION ALERTS PLACEHOLDER---====== [ENABLED] */
-
-        /* 1# WELLINGTON FIRE TE PAPA || LIGHT */
-        if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[5]) {
-
-            //1# - inZone
-            $("#inZone").css({ "margin-top": "50px" }); //display alert
-            $("#floatingKey").css({ "margin-top": "110px" }); //set offset of key when disaster event shown
-            console.log('ALERT: FIRE'); //debug
-        }
-
-            //1# - out ofZone
-        else {
-            $("#inZone").css({ "margin-top": "-50px" }); //hide alert
-            $("#floatingKey").css({ "margin-top": "60px" }); //set offset of key when disaster event shown
-            console.log('ALERT: FIRE RESET'); //debug
-        };
-
-        /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
-    };
-
     if (geoRefresh === 10) {
         geoLocateUser();
         //console.log('geoLocateUser');writes to debug geoLocateUser
 
         
         
-        /* 6.3# ======- PUSH DATA TO FIREBASE -====== [REMOTE]*/
+        /* 6.1# ======- PUSH DATA TO FIREBASE -====== [REMOTE]*/
          
         firebaseAPI(); //firebase function call from firebaseAPI scrypt
 
-        
+        /* 6.2# ======-- BREAK USER LATLNG INTO LAT AND LNG --====== */
+        //SET VAR
+        latitude = userLatLng.lat(); //sets latitude to userLatLng lat value
+        longitude = userLatLng.lng(); //sets lon to userLatLng lat value
+
+        //ROUND VAR
+        latitude = Math.round(latitude * fourDPR) / fourDPR; //round lat to 4 decimal places
+        longitude = Math.round(longitude * fourDPR) / fourDPR; //round lng to 4 decimal places
+
+        /*DEBUG
+        console.log(latitude);
+        console.log(longitude);
+        DEBUG END */
+
+        /*BREAK USER LATLNG INTO LAT AND LNG [END] */
+
+        /* 6.3# ======--- GEOLOCATION ALERTS PLACEHOLDER---====== [ENABLED] */
+
+        /* 1# WELLINGTON FIRE TE PAPA || LIGHT */
+        if (latitude <= disasterLocLatArray[0] + disasterOffsetArray[4] && latitude >= disasterLocLatArray[0] - disasterOffsetArray[4] && longitude <= disasterLocLngArray[0] + disasterOffsetArray[5] && longitude >= disasterLocLngArray[0] - disasterOffsetArray[5]) {
+            
+              //1# - inZone
+             $("#inZone").css({ "margin-top": "50px" }); //display alert
+             $("#floatingKey").css({"margin-top": "110px"}); //set offset of key when disaster event shown
+             console.log('ALERT: FIRE'); //debug
+                }
+
+              //1# - out ofZone
+                else {
+            $("#inZone").css({ "margin-top": "-50px" }); //hide alert
+            $("#floatingKey").css({ "margin-top": "60px" }); //set offset of key when disaster event shown
+            console.log('ALERT: FIRE RESET'); //debug
+        };
+
+        /* 6.3# ======--- GEOLOCATION ALERTS [END] ---====== */
 
         /* 6.3# ======--- GEOLOCATION ALERTS v2 ---====== [DISABLED]
         //Trying using radius of circle to alert to events works on draggable marker 
