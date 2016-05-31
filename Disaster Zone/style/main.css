@@ -791,6 +791,10 @@ body {
     color: white;
     font-size: 10pt;
     margin-left: 60px;
+    width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 /* SETS FIRST LETTER OF H6 to caps*/
 .dummyEvent h6 {
