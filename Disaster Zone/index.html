@@ -11,7 +11,7 @@
 
     <!-- Load new stylesheet -->
     <link rel="stylesheet" type="text/css" href="./style/main.css">
-    <link rel="stylesheet" type="text/css" href="./style/earthQuake.css">
+	 <link rel="stylesheet" type="text/css" href="./style/earthQuake.css">
     
     <!-- -==== External and internal fonts load ====- -->
     <!--=== Google fonts ===-->
@@ -185,7 +185,11 @@
                 
                 <div id="infoHow">
                     <h3 id="privacy-title">Your Data & Privacy</h3>
-                    <p id="privacy-body">Disaster Zone has been created with your privacy in mind. Your geolocation data is used to help locate you and disasters around you. This information is called back to Google, using their Maps service, and completely anonymously to an online Firebase database for development and testing purposes. </p>
+                    <p id="privacy-body">Disaster Zone has been created with your privacy in mind. Your geolocation data is used to help locate you and disasters around you. This information is called back to Google, using their Maps service, and completely anonymously to an online Firebase database for development and testing purposes. This information, while showing a formatted address, retains no other personally identifying information.</p>
+                    <h3 id="provider-title">Data Providers</h3>
+                    <p id="provider-body">Disaster Zone currently gets data from Geonet New Zealand, pulling information on earthquakes and volcanic activity across New Zealand. No personal or identifying data is sent to this provider; all location-based work is handled locally; client side.<br/><br/>In the future, severe weather information (such as cyclones and tornados) can be retrieved from the MetService. Flood information could be accessed from a range of providers, as could fire information.</p>
+                    <h3 id="location-title">Geolocation</h3>
+                    <p id="location-body">Location information is accessed using the standard HTML5 JavaScript Geolocation function, which can reliably provide a relatively accurate indication of user location when the site is loaded over WiFi.<br/><br/>Wired LAN internet access usually fails to provide accurate user location, redirecting instead to the nearest ISP junction box. For the best results, we recommend using Wireless.</p>
                 </div>
                 
                 <div id="infoWho">
