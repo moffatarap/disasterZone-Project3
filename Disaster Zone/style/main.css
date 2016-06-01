@@ -791,6 +791,10 @@ body {
     color: white;
     font-size: 10pt;
     margin-left: 60px;
+    width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 /* SETS FIRST LETTER OF H6 to caps*/
 .dummyEvent h6 {
@@ -928,7 +932,7 @@ text-transform: capitalize;
     width: 800px;
     height: 40px;
     
-    z-index: 1;
+    z-index: 2;
     
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -960,6 +964,8 @@ text-transform: capitalize;
     background-color: rgba(10,10,10,0.8);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+    
+    z-index: 1;
     
     color: white;
     font-weight: 300;
@@ -1045,11 +1051,13 @@ text-transform: capitalize;
     font-size: 12pt;
     color: rgb(90,90,90);
     margin-bottom: 30px;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .blame {
-    width: 600px;
-    margin-left: calc(50% - 300px);
+    width: 80%;
+    margin-left: 10%;
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
@@ -1191,7 +1199,8 @@ b {
 }
 
 #scale {
-    margin-left: calc(50% - 400px);
+    width: 80%;
+    margin-left: 10%;
     line-height: 50px;
     text-align: center;
     
@@ -1234,6 +1243,68 @@ b {
     font-weight: 600;
 }
 
+#whatIs-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 40px;
+    color: rgb(51, 87, 105);
+}
+
+#whatIs-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 20px;
+}
+
+/* HOW SCREEN STYLING */
+#privacy-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 100px;
+    color: rgb(51, 87, 105);
+}
+
+#privacy-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 20px;
+}
+
+#provider-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 10px;
+    color: rgb(51, 87, 105);
+}
+
+#provider-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 20px;
+}
+
+#location-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18pt;
+    margin-top: 10px;
+    color: rgb(51, 87, 105);
+}
+
+#location-body {
+    margin-top: -20px;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 20px;
+}
+
+
 /* TABLET STYLING */
 
 @media screen and (max-width: 1000px) {
@@ -1267,6 +1338,22 @@ b {
         width: 150px;
         left: calc(50% - 75px);
     }
+    
+    .infoWindow {
+        width: 90%;
+        left: 5%;
+    }
+    
+    #infoHeader {
+        width: 90%;
+        left: 5%;
+    }
+    
+    #infoSelect {
+        width: 90%;
+        left: 5%;
+    }
+    
 }
 
 /* MOBILE STYLING */
@@ -1292,10 +1379,10 @@ b {
     }
     
     #errorInnards {
-    position: absolute;
-    left: 0;
-    top: 60px;
-    right: 0;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        right: 0;
 }
 
     #error-icon {

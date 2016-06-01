@@ -11,6 +11,7 @@
 
     <!-- Load new stylesheet -->
     <link rel="stylesheet" type="text/css" href="./style/main.css">
+    <link rel="stylesheet" type="text/css" href="./style/earthQuake.css">
     
     <!-- -==== External and internal fonts load ====- -->
     <!--=== Google fonts ===-->
@@ -154,19 +155,19 @@
                 <div id="infoWhat">
                     <h3 id="whatIcons-title">What's on the map?</h3>
                     
-                    <p id="whatIcons-body">Each disaster type is represented by an icon on the map. These icons and the measured scales are explained below.</p>
-                    <img id="fireKey" src="./media/img/mapKeys/key/fire.png">
-                    <h5 id="fireExp"><b>Fire</b><br/>Fire Danger Rating</h5>
-                    <img id="tornadoKey" src="./media/img/mapKeys/key/tornado.png">
-                    <h5 id="tornadoExp"><b>Tornado</b><br/>Enhanced Fujita Scale</h5>
-                    <img id="hurricaneKey" src="./media/img/mapKeys/key/hurricane.png">
-                    <h5 id="hurricaneExp"><b>Hurricane</b><br/>Saffir-Simpson Scale</h5>
-                    <img id="floodKey" src="./media/img/mapKeys/key/flood.png">
-                    <h5 id="floodExp"><b>Flood</b><br/>Metres of Water</h5>
-                    <img id="quakeKey" src="./media/img/mapKeys/key/earthquake.png">
-                    <h5 id="quakeExp"><b>Earthquake</b><br/>Moment Magnitude Scale</h5>
-                    <img id="volcanoKey" src="./media/img/mapKeys/key/volcano.png">
-                    <h5 id="volcanoExp"><b>Volcano</b><br/>Geonet Volcanic Unrest Scale</h5>
+                    <p id="whatIcons-body">Each disaster type is represented by an icon on the map. These icons and the measured scales are explained below.<br/>At any time from the main screen, you can open the overlay key for a simpler explanation of the icons.</p>
+                        <img id="fireKey" src="./media/img/mapKeys/key/fire.png">
+                        <h5 id="fireExp"><b>Fire</b><br/>Fire Danger Rating</h5>
+                        <img id="tornadoKey" src="./media/img/mapKeys/key/tornado.png">
+                        <h5 id="tornadoExp"><b>Tornado</b><br/>Enhanced Fujita Scale</h5>
+                        <img id="hurricaneKey" src="./media/img/mapKeys/key/hurricane.png">
+                        <h5 id="hurricaneExp"><b>Hurricane</b><br/>Saffir-Simpson Scale</h5>
+                        <img id="floodKey" src="./media/img/mapKeys/key/flood.png">
+                        <h5 id="floodExp"><b>Flood</b><br/>Metres of Water</h5>
+                        <img id="quakeKey" src="./media/img/mapKeys/key/earthquake.png">
+                        <h5 id="quakeExp"><b>Earthquake</b><br/>Moment Magnitude Scale</h5>
+                        <img id="volcanoKey" src="./media/img/mapKeys/key/volcano.png">
+                        <h5 id="volcanoExp"><b>Volcano</b><br/>Geonet Volcanic Unrest Scale</h5>
                     
                     <h3 id="whatScale-title">What are the colours?</h3>
                     <p id="whatScale-body">The colours of the icons indicate how severe an event is, based on the scale of measurement given above. The colour range and their meanings are explained below.</p>
@@ -179,10 +180,16 @@
                     </div>
                     
                     <h3 id="whatIs-title">What is Disaster Zone?</h3>
+                    <p id="whatIs-body">Disaster Zone is a cross-platform web app, designed to provide relevant, real time information about disasters and natural events as they occur across New Zealand.<br/><br/>Information is presented simply and clearly, allowing the user an immediate overview of any situation, centred around their location.<br/><br/>Lightweight and responsive, Disaster Zone is intended to be accessible any time, anywhere, with the end goal of being an invaluable resource in the event of natural disaster.<br/><br/>Disaster Zone is currently in beta, and heavily under development. Earthquake and volcano reporting works fully, with more disasters on the way, demonstrated as placeholder events to indicate future functionality. There is room for dramatic expansion and continuation beyond the bounds seen here.</p>
                 </div>
                 
                 <div id="infoHow">
-                
+                    <h3 id="privacy-title">Your Data & Privacy</h3>
+                    <p id="privacy-body">Disaster Zone has been created with your privacy in mind. Your geolocation data is used to help locate you and disasters around you. This information is called back to Google, using their Maps service, and completely anonymously to an online Firebase database for development and testing purposes. This information, while showing a formatted address, retains no other personally identifying information.</p>
+                    <h3 id="provider-title">Data Providers</h3>
+                    <p id="provider-body">Disaster Zone currently gets data from Geonet New Zealand, pulling information on earthquakes and volcanic activity across New Zealand. No personal or identifying data is sent to this provider; all location-based work is handled locally; client side.<br/><br/>In the future, severe weather information (such as cyclones and tornados) can be retrieved from the MetService. Flood information could be accessed from a range of providers, as could fire information.</p>
+                    <h3 id="location-title">Geolocation</h3>
+                    <p id="location-body">Location information is accessed using the standard HTML5 JavaScript Geolocation function, which can reliably provide a relatively accurate indication of user location when the site is loaded over WiFi.<br/><br/>Wired LAN internet access usually fails to provide accurate user location, redirecting instead to the nearest ISP junction box. For the best results, we recommend using Wireless.</p>
                 </div>
                 
                 <div id="infoWho">
