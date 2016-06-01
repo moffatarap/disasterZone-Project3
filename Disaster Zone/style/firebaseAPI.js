@@ -6,6 +6,8 @@
 /* VARABLES */
 var firebaseDB; //creates firebaseDB var
 firebaseDB = new Firebase("<https://pbwoooo.firebaseio.com/>");
+/*dumby events*/
+dummyDB = new Firebase("<https://disaster-zone-events.firebaseio.com/DumbyEvents/>");
 VolcanoDB = new Firebase("<https://disaster-zone-events.firebaseio.com/Volcano/>");
 var EarthquakeDB; //makes a path for earthquake testing
 EarthquakeDB = new Firebase("<https://disaster-zone-events.firebaseio.com/earthquake/>");
@@ -98,7 +100,28 @@ volcanoActivityAndHazards:{
 }
 
 });
-        
+
+dummyDB.remove();
+ for (var i = phPublicIdArray.length - 1; i >= 0; i--) {
+ 			DummyID = phPublicIdArray[i];		
+			DummyLat = phLatArray[i];
+			DummyLng = phLngArray[i];
+			DummyLocation = phLocationName[i];
+			DummyDepth = phDepthArray[i];
+			DummyIntense = phIntensityArray[i];
+			dummyDB.push({
+				DummyEvents:{
+				DummyID,
+				DummyLat,
+				DummyLng,
+				DummyLocation,	
+				DummyDepth,
+				DummyIntense
+				}
+
+				});
+ }
+       
 
 
 
