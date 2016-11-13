@@ -154,7 +154,7 @@ function volJSON() {
 
         });
 
-        /* DEBUGGING  
+        /* DEBUGGING  */
         console.log('#1');
         console.log(volcanoMarkerTitleArray); //display value of title array
         console.log('#2');
